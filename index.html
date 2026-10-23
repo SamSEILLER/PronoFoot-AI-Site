@@ -42,6 +42,9 @@
     .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #07111f; background: var(--accent); font-size: 19px; }
     .brand-ai { color: var(--accent); }
     .brand-kicker { margin-left: 49px; color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-link { color: var(--accent); text-decoration: none; border: 1px solid rgba(141,245,197,.35); border-radius: 999px; padding: 9px 12px; font-size: 11px; font-weight: 750; white-space: nowrap; }
+    .nav-link:hover { background: rgba(141,245,197,.08); }
     .status-pill { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: var(--muted); font-size: 11px; letter-spacing: .08em; white-space: nowrap; }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px rgba(141,245,197,.65); }
     main { display: block; padding: 38px 0 45px; }
@@ -66,7 +69,8 @@
     @media (max-width: 760px) {
       header, main, footer { width: min(100% - 28px, 1120px); }
       header { align-items: flex-start; padding: 20px 0; }
-      .status-pill { font-size: 9px; padding: 8px 10px; }
+      .header-actions { flex-direction: column; align-items: flex-end; gap: 8px; }
+      .nav-link, .status-pill { font-size: 9px; padding: 8px 10px; }
       main { padding: 32px 0 37px; }
       h1 { white-space: normal; font-size: clamp(34px, 8vw, 52px); }
       .data-grid { grid-template-columns: 1fr; }
@@ -87,7 +91,10 @@
       <div class="brand"><div class="brand-mark" aria-hidden="true">P</div><span>PronoFoot <span class="brand-ai">AI</span></span></div>
       <div class="brand-kicker">Observer · Comprendre · Mesurer</div>
     </div>
-    <div class="status-pill"><span class="dot" aria-hidden="true"></span> SUIVI DES DONNÉES</div>
+    <div class="header-actions">
+      <a class="nav-link" href="predictions.html">Prédictions & résultats</a>
+      <div class="status-pill"><span class="dot" aria-hidden="true"></span> SUIVI DES DONNÉES</div>
+    </div>
   </header>
 
   <main>
