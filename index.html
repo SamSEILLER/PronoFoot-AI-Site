@@ -45,6 +45,7 @@
     .header-actions { display: flex; align-items: center; gap: 12px; }
     .nav-link { color: var(--accent); text-decoration: none; border: 1px solid rgba(141,245,197,.35); border-radius: 999px; padding: 9px 12px; font-size: 11px; font-weight: 750; white-space: nowrap; }
     .nav-link:hover { background: rgba(141,245,197,.08); }
+    .nav-active { background: rgba(141,245,197,.1); border-color: rgba(141,245,197,.7); }
     .status-pill { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: var(--muted); font-size: 11px; letter-spacing: .08em; white-space: nowrap; }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px rgba(141,245,197,.65); }
     main { display: block; padding: 38px 0 45px; }
@@ -92,7 +93,8 @@
       <div class="brand-kicker">Observer · Comprendre · Mesurer</div>
     </div>
     <div class="header-actions">
-      <a class="nav-link" href="predictions.html">Prédictions & résultats</a>
+      <a class="nav-link nav-active" href="index.html" aria-current="page">Prédictions</a>
+      <a class="nav-link" href="predictions.html">Historique & bilan</a>
       <div class="status-pill"><span class="dot" aria-hidden="true"></span> SUIVI DES DONNÉES</div>
     </div>
   </header>
