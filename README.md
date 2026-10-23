@@ -1,22 +1,25 @@
 # PronoFoot-AI-Site
 
-Site public de PronoFoot-AI. Ce dépôt est distinct du moteur d'analyse privé [PronoFoot-AI](https://github.com/SamSEILLER/PronoFoot-AI).
+Site public de PronoFoot AI. Le moteur d'analyse reste dans le dépôt privé [PronoFoot-AI](https://github.com/SamSEILLER/PronoFoot-AI).
 
-## Objectif
+## Pages
 
-Fournir une interface publique pour les informations et analyses que le moteur privé aura explicitement validées et autorisées à publier.
+- `index.html` : présentation du projet et état des données.
+- `predictions.html` : estimations expérimentales et comparaison aux scores réels.
+- `predictions-data.json` : jeu de données public généré par le moteur privé.
+- `site-status.json` et `sync-status.json` : état de fraîcheur des données et dernière synchronisation.
+
+## Statut du modèle
+
+Les estimations utilisent une baseline Poisson expérimentale. Le backtest chronologique sur les archives réelles est descriptif ; calibration, comparaison à une baseline de marché et validation restent à faire. Aucune prédiction n'est déclarée validée et la porte de publication du modèle reste fermée.
 
 ## Contraintes de sécurité
 
-- Ce dépôt est public : ne jamais y ajouter de secrets, clés API, jetons, données brutes privées ou informations sous licence sans autorisation.
-- Le site ne doit pas se connecter directement aux ressources internes du moteur.
-- Les données affichées devront comporter leur date de mise à jour et leurs limites pertinentes.
-- En cas de données absentes, périmées ou invalides, afficher un état indisponible plutôt que fabriquer un résultat.
+- Ne jamais ajouter de secrets, clés API, jetons ou données brutes privées.
+- Ne publier que des résultats dérivés explicitement produits par le workflow de synchronisation.
+- Afficher les limites du modèle et les scores réels uniquement lorsqu'ils sont présents dans les archives.
+- Si les données sont absentes ou invalides, afficher un état indisponible plutôt que fabriquer un résultat.
 
-## Exploitation
+## Synchronisation
 
-Le projet doit pouvoir être modifié depuis le navigateur GitHub et déployé sur un hébergement distant, sans installation locale obligatoire. L'hébergeur et le pipeline de déploiement restent à choisir.
-
-## Statut
-
-Le dépôt contient actuellement uniquement ce README. L'interface, la source des données publiques et le déploiement ne sont pas encore implémentés.
+Le workflow du dépôt privé copie les pages et régénère le jeu de données public lors des changements du site, du modèle ou des archives. Le déploiement sur un hébergement web reste distinct de la synchronisation GitHub.
