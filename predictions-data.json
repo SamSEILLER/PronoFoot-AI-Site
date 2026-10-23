@@ -1,10 +1,19 @@
 {
-  "generated_at_utc": "2026-10-23T14:17:50.182044+00:00",
+  "generated_at_utc": "2026-10-23T15:31:56.673094+00:00",
   "model": "poisson_baseline_v1",
   "status": "EXPERIMENTAL",
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
+  "analysis_start_utc": null,
+  "version_backtest": {
+    "method": "walk_forward_chronological_since_analysis_change",
+    "evaluated_matches": 0,
+    "skipped_matches": 0,
+    "brier_score": null,
+    "status": "awaiting_matches",
+    "note": "Évaluation limitée aux matchs postérieurs à la dernière modification du script d’analyse. Les prédictions passées ne peuvent être attribuées à cette version que si elles ont été archivées avant le match."
+  },
   "backtest": {
     "method": "walk_forward_chronological",
     "evaluated_matches": 897,
@@ -18,6 +27,7 @@
   "upcoming": [
     {
       "id": "fr-ligue-2:m_3T5SG2",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-23T18:00:00Z",
@@ -40,6 +50,7 @@
     },
     {
       "id": "fr-ligue-2:m_3vXtC6",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-23T18:00:00Z",
@@ -62,6 +73,7 @@
     },
     {
       "id": "fr-ligue-2:m_1xpDGh",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-23T18:00:00Z",
@@ -84,6 +96,7 @@
     },
     {
       "id": "de-bundesliga:m_00TkE1",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-23T18:30:00Z",
@@ -106,6 +119,7 @@
     },
     {
       "id": "be-first-division-a:m_4JyHOG",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-23T18:45:00Z",
@@ -128,6 +142,7 @@
     },
     {
       "id": "fr-ligue-1:m_1rlN1U",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-23T18:45:00Z",
@@ -150,6 +165,7 @@
     },
     {
       "id": "it-serie-a:m_0pSK27",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-23T18:45:00Z",
@@ -172,6 +188,7 @@
     },
     {
       "id": "gb-premier-league:m_0CikU4",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-23T19:00:00Z",
@@ -194,6 +211,7 @@
     },
     {
       "id": "gb-premier-league:m_3KNB9I",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-24T11:30:00Z",
@@ -216,6 +234,7 @@
     },
     {
       "id": "es-la-liga:m_2Cci0A",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-24T12:00:00Z",
@@ -238,6 +257,7 @@
     },
     {
       "id": "it-serie-a:m_1tcYjG",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-24T13:00:00Z",
@@ -260,6 +280,7 @@
     },
     {
       "id": "it-serie-a:m_3zKOH3",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-24T13:00:00Z",
@@ -282,6 +303,7 @@
     },
     {
       "id": "de-bundesliga:m_08BW5e",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-24T13:30:00Z",
@@ -304,6 +326,7 @@
     },
     {
       "id": "de-bundesliga:m_3xgItg",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-24T13:30:00Z",
@@ -326,6 +349,7 @@
     },
     {
       "id": "be-first-division-a:m_1hmK9X",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-24T14:00:00Z",
@@ -348,6 +372,7 @@
     },
     {
       "id": "gb-premier-league:m_3VTlmY",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-24T14:00:00Z",
@@ -370,6 +395,7 @@
     },
     {
       "id": "pt-primeira-liga:m_36YLPP",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-24T14:30:00Z",
@@ -392,6 +418,7 @@
     },
     {
       "id": "it-serie-a:m_1AljkV",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-24T16:00:00Z",
@@ -414,6 +441,7 @@
     },
     {
       "id": "de-bundesliga:m_4e2kal",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-24T16:30:00Z",
@@ -436,6 +464,7 @@
     },
     {
       "id": "es-la-liga:m_0il15v",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-24T16:30:00Z",
@@ -458,6 +487,7 @@
     },
     {
       "id": "gb-premier-league:m_3flxzg",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-24T16:30:00Z",
@@ -480,6 +510,7 @@
     },
     {
       "id": "pt-primeira-liga:m_2hou62",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-24T17:00:00Z",
@@ -502,6 +533,7 @@
     },
     {
       "id": "us-mls:m_4ErI93",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T17:30:00Z",
@@ -524,6 +556,7 @@
     },
     {
       "id": "be-first-division-a:m_0FU6Yt",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-24T18:45:00Z",
@@ -546,6 +579,7 @@
     },
     {
       "id": "fr-ligue-1:m_2L1RAf",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-24T18:45:00Z",
@@ -568,6 +602,7 @@
     },
     {
       "id": "it-serie-a:m_3cODef",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-24T18:45:00Z",
@@ -590,6 +625,7 @@
     },
     {
       "id": "pt-primeira-liga:m_2AeYfQ",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-24T19:30:00Z",
@@ -612,6 +648,7 @@
     },
     {
       "id": "us-mls:m_1m8oAy",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T19:30:00Z",
@@ -634,6 +671,7 @@
     },
     {
       "id": "us-mls:m_2G7wYu",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T21:30:00Z",
@@ -656,6 +694,7 @@
     },
     {
       "id": "us-mls:m_3h2B3l",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T23:30:00Z",
@@ -678,6 +717,7 @@
     },
     {
       "id": "us-mls:m_0vSce8",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T23:30:00Z",
@@ -700,6 +740,7 @@
     },
     {
       "id": "us-mls:m_4H61gP",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T23:30:00Z",
@@ -722,6 +763,7 @@
     },
     {
       "id": "us-mls:m_4LqW7y",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-24T23:30:00Z",
@@ -744,6 +786,7 @@
     },
     {
       "id": "us-mls:m_0fXjjQ",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T01:30:00Z",
@@ -766,6 +809,7 @@
     },
     {
       "id": "us-mls:m_2F7mZ5",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T01:30:00Z",
@@ -788,6 +832,7 @@
     },
     {
       "id": "us-mls:m_1oXlDG",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T01:30:00Z",
@@ -810,6 +855,7 @@
     },
     {
       "id": "us-mls:m_0yyUIt",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T01:30:00Z",
@@ -832,6 +878,7 @@
     },
     {
       "id": "us-mls:m_3v0OXI",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T01:30:00Z",
@@ -854,6 +901,7 @@
     },
     {
       "id": "us-mls:m_3ZZTaF",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T02:30:00Z",
@@ -876,6 +924,7 @@
     },
     {
       "id": "us-mls:m_3eSeVe",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-25T02:30:00Z",
@@ -898,6 +947,7 @@
     },
     {
       "id": "it-serie-a:m_4cNmrx",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-25T11:30:00Z",
@@ -920,6 +970,7 @@
     },
     {
       "id": "be-first-division-a:m_38393v",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-25T12:30:00Z",
@@ -942,6 +993,7 @@
     },
     {
       "id": "es-la-liga:m_1PJrKk",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-25T13:00:00Z",
@@ -964,6 +1016,7 @@
     },
     {
       "id": "fr-ligue-1:m_4Z1eLV",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-25T14:00:00Z",
@@ -986,6 +1039,7 @@
     },
     {
       "id": "gb-premier-league:m_1LrBNT",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-25T14:00:00Z",
@@ -1008,6 +1062,7 @@
     },
     {
       "id": "gb-premier-league:m_3pgdLY",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-25T14:00:00Z",
@@ -1030,6 +1085,7 @@
     },
     {
       "id": "gb-premier-league:m_1f8upu",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-25T14:00:00Z",
@@ -1052,6 +1108,7 @@
     },
     {
       "id": "it-serie-a:m_1abIcT",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-25T14:00:00Z",
@@ -1074,6 +1131,7 @@
     },
     {
       "id": "de-bundesliga:m_3YgM7X",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-25T14:30:00Z",
@@ -1096,6 +1154,7 @@
     },
     {
       "id": "be-first-division-a:m_4DRPKr",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-25T15:00:00Z",
@@ -1118,6 +1177,7 @@
     },
     {
       "id": "es-la-liga:m_1Nmiaa",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-25T15:15:00Z",
@@ -1140,6 +1200,7 @@
     },
     {
       "id": "pt-primeira-liga:m_39JsCU",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-25T15:30:00Z",
@@ -1162,6 +1223,7 @@
     },
     {
       "id": "fr-ligue-1:m_43stYq",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-25T16:15:00Z",
@@ -1184,6 +1246,7 @@
     },
     {
       "id": "fr-ligue-1:m_0LOiqg",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-25T16:15:00Z",
@@ -1206,6 +1269,7 @@
     },
     {
       "id": "fr-ligue-1:m_1l9Fv2",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-25T16:15:00Z",
@@ -1228,6 +1292,7 @@
     },
     {
       "id": "de-bundesliga:m_1dZPZA",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-25T16:30:00Z",
@@ -1250,6 +1315,7 @@
     },
     {
       "id": "gb-premier-league:m_0Fcvht",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-25T16:30:00Z",
@@ -1272,6 +1338,7 @@
     },
     {
       "id": "it-serie-a:m_1nwlES",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-25T17:00:00Z",
@@ -1294,6 +1361,7 @@
     },
     {
       "id": "be-first-division-a:m_0I7QGl",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-25T17:30:00Z",
@@ -1316,6 +1384,7 @@
     },
     {
       "id": "es-la-liga:m_22ay5L",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-25T17:30:00Z",
@@ -1338,6 +1407,7 @@
     },
     {
       "id": "pt-primeira-liga:m_4XIBMU",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-25T18:00:00Z",
@@ -1360,6 +1430,7 @@
     },
     {
       "id": "pt-primeira-liga:m_4EmSQu",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-25T18:00:00Z",
@@ -1382,6 +1453,7 @@
     },
     {
       "id": "be-first-division-a:m_1TLHOO",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-25T18:15:00Z",
@@ -1404,6 +1476,7 @@
     },
     {
       "id": "fr-ligue-1:m_3DY8iO",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-25T19:45:00Z",
@@ -1426,6 +1499,7 @@
     },
     {
       "id": "it-serie-a:m_0oV4JG",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-25T19:45:00Z",
@@ -1448,6 +1522,7 @@
     },
     {
       "id": "es-la-liga:m_1fvtTi",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-25T20:00:00Z",
@@ -1470,6 +1545,7 @@
     },
     {
       "id": "us-mls:m_0N9lXC",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-26T01:00:00Z",
@@ -1492,6 +1568,7 @@
     },
     {
       "id": "pt-primeira-liga:m_3AKDbz",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-26T18:45:00Z",
@@ -1514,6 +1591,7 @@
     },
     {
       "id": "fr-ligue-2:m_3I8Ig2",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-26T19:45:00Z",
@@ -1536,6 +1614,7 @@
     },
     {
       "id": "fr-ligue-2:m_1MHDEI",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-26T19:45:00Z",
@@ -1558,6 +1637,7 @@
     },
     {
       "id": "es-la-liga:m_1XOUXe",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-26T20:00:00Z",
@@ -1580,6 +1660,7 @@
     },
     {
       "id": "it-serie-a:m_0Apv0v",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-27T17:30:00Z",
@@ -1602,6 +1683,7 @@
     },
     {
       "id": "it-serie-a:m_2L71CW",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-27T19:45:00Z",
@@ -1624,6 +1706,7 @@
     },
     {
       "id": "it-serie-a:m_0sBSLz",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-27T19:45:00Z",
@@ -1646,6 +1729,7 @@
     },
     {
       "id": "it-serie-a:m_3fadot",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-28T17:30:00Z",
@@ -1668,6 +1752,7 @@
     },
     {
       "id": "it-serie-a:m_4Qr3lF",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-28T17:30:00Z",
@@ -1690,6 +1775,7 @@
     },
     {
       "id": "it-serie-a:m_1WJM3Y",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-28T17:30:00Z",
@@ -1712,6 +1798,7 @@
     },
     {
       "id": "it-serie-a:m_2Ijf0h",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-28T19:45:00Z",
@@ -1734,6 +1821,7 @@
     },
     {
       "id": "it-serie-a:m_1lw8Rx",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-28T19:45:00Z",
@@ -1756,6 +1844,7 @@
     },
     {
       "id": "us-mls:m_1d61Oi",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-28T23:30:00Z",
@@ -1778,6 +1867,7 @@
     },
     {
       "id": "us-mls:m_4LIR2e",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-28T23:30:00Z",
@@ -1800,6 +1890,7 @@
     },
     {
       "id": "us-mls:m_0rWoXw",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-28T23:30:00Z",
@@ -1822,6 +1913,7 @@
     },
     {
       "id": "us-mls:m_3FvdnV",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-28T23:30:00Z",
@@ -1844,6 +1936,7 @@
     },
     {
       "id": "us-mls:m_4DJunR",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-28T23:30:00Z",
@@ -1866,6 +1959,7 @@
     },
     {
       "id": "us-mls:m_0vV67a",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1888,6 +1982,7 @@
     },
     {
       "id": "us-mls:m_4O3WuQ",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1910,6 +2005,7 @@
     },
     {
       "id": "us-mls:m_2bXDoU",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1932,6 +2028,7 @@
     },
     {
       "id": "us-mls:m_1CbqCj",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1954,6 +2051,7 @@
     },
     {
       "id": "us-mls:m_2XJ4n5",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1976,6 +2074,7 @@
     },
     {
       "id": "us-mls:m_31kjXI",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T00:30:00Z",
@@ -1998,6 +2097,7 @@
     },
     {
       "id": "us-mls:m_20ysMY",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T02:30:00Z",
@@ -2020,6 +2120,7 @@
     },
     {
       "id": "us-mls:m_4P9jTg",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T02:30:00Z",
@@ -2042,6 +2143,7 @@
     },
     {
       "id": "us-mls:m_18wmhD",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-29T02:30:00Z",
@@ -2064,6 +2166,7 @@
     },
     {
       "id": "it-serie-a:m_0h3uIF",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-29T19:45:00Z",
@@ -2086,6 +2189,7 @@
     },
     {
       "id": "fr-ligue-1:m_49qvGz",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-30T18:00:00Z",
@@ -2108,6 +2212,7 @@
     },
     {
       "id": "fr-ligue-2:m_2vFCN3",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-30T19:00:00Z",
@@ -2130,6 +2235,7 @@
     },
     {
       "id": "fr-ligue-2:m_0FFUe1",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-30T19:00:00Z",
@@ -2152,6 +2258,7 @@
     },
     {
       "id": "be-first-division-a:m_2T8QnJ",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-30T19:45:00Z",
@@ -2174,6 +2281,7 @@
     },
     {
       "id": "es-la-liga:m_0i0ZRd",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-30T20:00:00Z",
@@ -2196,6 +2304,7 @@
     },
     {
       "id": "fr-ligue-1:m_1bgQkd",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-30T20:05:00Z",
@@ -2220,6 +2329,7 @@
   "recent_results": [
     {
       "id": "uefa-europa-league:m_45EQn7",
+      "prediction_created_at": null,
       "competition": "Ligue Europa UEFA",
       "competition_id": "uefa-europa-league",
       "kickoff": "2026-10-22T19:00:00Z",
@@ -2246,6 +2356,7 @@
     },
     {
       "id": "uefa-europa-league:m_3BS3ZY",
+      "prediction_created_at": null,
       "competition": "Ligue Europa UEFA",
       "competition_id": "uefa-europa-league",
       "kickoff": "2026-10-22T19:00:00Z",
@@ -2272,6 +2383,7 @@
     },
     {
       "id": "us-mls:m_09AWom",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-21T23:15:00Z",
@@ -2298,6 +2410,7 @@
     },
     {
       "id": "uefa-champions-league:m_3QUxWo",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-21T19:00:00Z",
@@ -2324,6 +2437,7 @@
     },
     {
       "id": "uefa-champions-league:m_2Q8JBE",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-21T19:00:00Z",
@@ -2350,6 +2464,7 @@
     },
     {
       "id": "uefa-champions-league:m_1LBGR1",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-21T19:00:00Z",
@@ -2376,6 +2491,7 @@
     },
     {
       "id": "es-la-liga:m_0bCfNS",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-21T18:00:00Z",
@@ -2402,6 +2518,7 @@
     },
     {
       "id": "uefa-champions-league:m_2fv7yB",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-21T16:45:00Z",
@@ -2428,6 +2545,7 @@
     },
     {
       "id": "uefa-champions-league:m_1ETAAh",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-20T19:00:00Z",
@@ -2454,6 +2572,7 @@
     },
     {
       "id": "uefa-champions-league:m_12BHNW",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-20T19:00:00Z",
@@ -2480,6 +2599,7 @@
     },
     {
       "id": "uefa-champions-league:m_14BqaI",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-20T19:00:00Z",
@@ -2506,6 +2626,7 @@
     },
     {
       "id": "uefa-champions-league:m_1w0acT",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-20T19:00:00Z",
@@ -2532,6 +2653,7 @@
     },
     {
       "id": "pt-primeira-liga:m_4SRyIC",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-19T19:15:00Z",
@@ -2558,6 +2680,7 @@
     },
     {
       "id": "es-la-liga:m_13g2y0",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-19T19:00:00Z",
@@ -2584,6 +2707,7 @@
     },
     {
       "id": "fr-ligue-2:m_3d2phM",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-19T18:45:00Z",
@@ -2610,6 +2734,7 @@
     },
     {
       "id": "it-serie-a:m_1exn1L",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-19T18:45:00Z",
@@ -2636,6 +2761,7 @@
     },
     {
       "id": "it-serie-a:m_1VpC1F",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-19T16:30:00Z",
@@ -2662,6 +2788,7 @@
     },
     {
       "id": "us-mls:m_28oaYn",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T21:00:00Z",
@@ -2688,6 +2815,7 @@
     },
     {
       "id": "es-la-liga:m_42Fvm8",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-18T19:00:00Z",
@@ -2714,6 +2842,7 @@
     },
     {
       "id": "fr-ligue-1:m_2VNJyu",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-18T18:45:00Z",
@@ -2740,6 +2869,7 @@
     },
     {
       "id": "it-serie-a:m_08dbQS",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-18T18:45:00Z",
@@ -2766,6 +2896,7 @@
     },
     {
       "id": "it-serie-a:m_1x8lYm",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-18T16:00:00Z",
@@ -2792,6 +2923,7 @@
     },
     {
       "id": "de-bundesliga:m_3Zmu6u",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-18T15:30:00Z",
@@ -2818,6 +2950,7 @@
     },
     {
       "id": "gb-premier-league:m_0nCoAp",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-18T15:30:00Z",
@@ -2844,6 +2977,7 @@
     },
     {
       "id": "fr-ligue-1:m_1ybaO4",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-18T15:15:00Z",
@@ -2870,6 +3004,7 @@
     },
     {
       "id": "fr-ligue-1:m_0iPVoc",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-18T15:15:00Z",
@@ -2896,6 +3031,7 @@
     },
     {
       "id": "fr-ligue-1:m_1uUPuf",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-18T15:15:00Z",
@@ -2922,6 +3058,7 @@
     },
     {
       "id": "es-la-liga:m_2gB2TY",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-18T14:15:00Z",
@@ -2948,6 +3085,7 @@
     },
     {
       "id": "de-bundesliga:m_2DfhZ2",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-18T13:30:00Z",
@@ -2974,6 +3112,7 @@
     },
     {
       "id": "fr-ligue-1:m_2RULhx",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-18T13:00:00Z",
@@ -3000,6 +3139,7 @@
     },
     {
       "id": "gb-premier-league:m_2Qu6Lk",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-18T13:00:00Z",
@@ -3026,6 +3166,7 @@
     },
     {
       "id": "gb-premier-league:m_19HAaR",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-18T13:00:00Z",
@@ -3052,6 +3193,7 @@
     },
     {
       "id": "gb-premier-league:m_3xDs72",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-18T13:00:00Z",
@@ -3078,6 +3220,7 @@
     },
     {
       "id": "it-serie-a:m_1wPfwm",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-18T13:00:00Z",
@@ -3104,6 +3247,7 @@
     },
     {
       "id": "it-serie-a:m_0YD43d",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-18T10:30:00Z",
@@ -3130,6 +3274,7 @@
     },
     {
       "id": "us-mls:m_1Ghpfn",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T02:30:00Z",
@@ -3156,6 +3301,7 @@
     },
     {
       "id": "us-mls:m_40aXP5",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T02:30:00Z",
@@ -3182,6 +3328,7 @@
     },
     {
       "id": "us-mls:m_2XmadO",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T02:30:00Z",
@@ -3208,6 +3355,7 @@
     },
     {
       "id": "us-mls:m_1vsOWT",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T02:30:00Z",
@@ -3234,6 +3382,7 @@
     },
     {
       "id": "us-mls:m_1XUfOI",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T00:30:00Z",
@@ -3260,6 +3409,7 @@
     },
     {
       "id": "us-mls:m_1oxXIE",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T00:30:00Z",
@@ -3286,6 +3436,7 @@
     },
     {
       "id": "us-mls:m_3aziiO",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-18T00:30:00Z",
@@ -3312,6 +3463,7 @@
     },
     {
       "id": "us-mls:m_2ge69N",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T23:30:00Z",
@@ -3338,6 +3490,7 @@
     },
     {
       "id": "us-mls:m_3f09D4",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T23:30:00Z",
@@ -3364,6 +3517,7 @@
     },
     {
       "id": "us-mls:m_1xEbRf",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T23:30:00Z",
@@ -3390,6 +3544,7 @@
     },
     {
       "id": "us-mls:m_33gLJR",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T23:30:00Z",
@@ -3416,6 +3571,7 @@
     },
     {
       "id": "us-mls:m_4I76WY",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T23:30:00Z",
@@ -3442,6 +3598,7 @@
     },
     {
       "id": "us-mls:m_3VsUd6",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T20:30:00Z",
@@ -3468,6 +3625,7 @@
     },
     {
       "id": "es-la-liga:m_301zqq",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-17T19:00:00Z",
@@ -3494,6 +3652,7 @@
     },
     {
       "id": "fr-ligue-1:m_1b4zha",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-17T18:45:00Z",
@@ -3520,6 +3679,7 @@
     },
     {
       "id": "it-serie-a:m_2DPqBk",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-17T18:45:00Z",
@@ -3546,6 +3706,7 @@
     },
     {
       "id": "us-mls:m_2qQWpV",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-17T18:30:00Z",
@@ -3572,6 +3733,7 @@
     },
     {
       "id": "fr-ligue-2:m_04wjOg",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-17T18:00:00Z",
@@ -3598,6 +3760,7 @@
     },
     {
       "id": "de-bundesliga:m_1IbEtF",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-17T16:30:00Z",
@@ -3624,6 +3787,7 @@
     },
     {
       "id": "es-la-liga:m_10CVCK",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-17T16:30:00Z",
@@ -3650,6 +3814,7 @@
     },
     {
       "id": "gb-premier-league:m_4RD4YJ",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-17T16:30:00Z",
@@ -3676,6 +3841,7 @@
     },
     {
       "id": "it-serie-a:m_0EXXVh",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-17T16:00:00Z",
@@ -3702,6 +3868,7 @@
     },
     {
       "id": "fr-ligue-1:m_4RbsRB",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-17T15:15:00Z",
@@ -3728,6 +3895,7 @@
     },
     {
       "id": "es-la-liga:m_0QudQW",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-17T14:15:00Z",
@@ -3754,6 +3922,7 @@
     },
     {
       "id": "gb-premier-league:m_1308RP",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-17T14:00:00Z",
@@ -3780,6 +3949,7 @@
     },
     {
       "id": "gb-premier-league:m_0flqse",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-17T14:00:00Z",
@@ -3806,6 +3976,7 @@
     },
     {
       "id": "de-bundesliga:m_1Ez6NE",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-17T13:30:00Z",
@@ -3832,6 +4003,7 @@
     },
     {
       "id": "de-bundesliga:m_3BxJha",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-17T13:30:00Z",
@@ -3858,6 +4030,7 @@
     },
     {
       "id": "it-serie-a:m_3OWlJP",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-17T13:00:00Z",
@@ -3884,6 +4057,7 @@
     },
     {
       "id": "es-la-liga:m_0MHtdh",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-17T12:00:00Z",
@@ -3910,6 +4084,7 @@
     },
     {
       "id": "gb-premier-league:m_3fEVzy",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-17T11:30:00Z",
@@ -3936,6 +4111,7 @@
     },
     {
       "id": "de-bundesliga:m_2dYlDX",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-16T18:30:00Z",
@@ -3962,6 +4138,7 @@
     },
     {
       "id": "fr-ligue-2:m_31sQLg",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-16T18:00:00Z",
@@ -3988,6 +4165,7 @@
     },
     {
       "id": "fr-ligue-2:m_37Tem6",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-16T18:00:00Z",
@@ -4014,6 +4192,7 @@
     },
     {
       "id": "fr-ligue-2:m_4SbDel",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-16T18:00:00Z",
@@ -4040,6 +4219,7 @@
     },
     {
       "id": "fr-ligue-2:m_3ZAvyl",
+      "prediction_created_at": null,
       "competition": "Ligue 2",
       "competition_id": "fr-ligue-2",
       "kickoff": "2026-10-16T18:00:00Z",
@@ -4066,6 +4246,7 @@
     },
     {
       "id": "uefa-europa-league:m_2b5S3e",
+      "prediction_created_at": null,
       "competition": "Ligue Europa UEFA",
       "competition_id": "uefa-europa-league",
       "kickoff": "2026-10-15T19:00:00Z",
@@ -4092,6 +4273,7 @@
     },
     {
       "id": "uefa-europa-league:m_1GR5Qy",
+      "prediction_created_at": null,
       "competition": "Ligue Europa UEFA",
       "competition_id": "uefa-europa-league",
       "kickoff": "2026-10-15T19:00:00Z",
@@ -4118,6 +4300,7 @@
     },
     {
       "id": "uefa-europa-league:m_3rVc1Z",
+      "prediction_created_at": null,
       "competition": "Ligue Europa UEFA",
       "competition_id": "uefa-europa-league",
       "kickoff": "2026-10-15T16:45:00Z",
@@ -4144,6 +4327,7 @@
     },
     {
       "id": "us-mls:m_1TPnzi",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T02:30:00Z",
@@ -4170,6 +4354,7 @@
     },
     {
       "id": "us-mls:m_3FVrY2",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T02:30:00Z",
@@ -4196,6 +4381,7 @@
     },
     {
       "id": "us-mls:m_2HBE7j",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T02:30:00Z",
@@ -4222,6 +4408,7 @@
     },
     {
       "id": "us-mls:m_3ml70j",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T01:30:00Z",
@@ -4248,6 +4435,7 @@
     },
     {
       "id": "us-mls:m_4PVMrv",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T01:30:00Z",
@@ -4274,6 +4462,7 @@
     },
     {
       "id": "us-mls:m_4DKXnB",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T00:30:00Z",
@@ -4300,6 +4489,7 @@
     },
     {
       "id": "us-mls:m_4KsT4u",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T00:30:00Z",
@@ -4326,6 +4516,7 @@
     },
     {
       "id": "us-mls:m_0ViX2D",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T00:30:00Z",
@@ -4352,6 +4543,7 @@
     },
     {
       "id": "us-mls:m_2uApWn",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-15T00:30:00Z",
@@ -4378,6 +4570,7 @@
     },
     {
       "id": "us-mls:m_3W4jSi",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4404,6 +4597,7 @@
     },
     {
       "id": "us-mls:m_46BvO2",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4430,6 +4624,7 @@
     },
     {
       "id": "us-mls:m_3meZjb",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4456,6 +4651,7 @@
     },
     {
       "id": "us-mls:m_4NM5xl",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4482,6 +4678,7 @@
     },
     {
       "id": "us-mls:m_4g5PSc",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4508,6 +4705,7 @@
     },
     {
       "id": "us-mls:m_3JCOtb",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-14T23:30:00Z",
@@ -4534,6 +4732,7 @@
     },
     {
       "id": "uefa-champions-league:m_0nhvU6",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-14T19:00:00Z",
@@ -4560,6 +4759,7 @@
     },
     {
       "id": "uefa-champions-league:m_1r6TyQ",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-14T19:00:00Z",
@@ -4586,6 +4786,7 @@
     },
     {
       "id": "uefa-champions-league:m_4SWjzR",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-13T19:00:00Z",
@@ -4612,6 +4813,7 @@
     },
     {
       "id": "uefa-champions-league:m_24qLy7",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-13T19:00:00Z",
@@ -4638,6 +4840,7 @@
     },
     {
       "id": "uefa-champions-league:m_1rmeUJ",
+      "prediction_created_at": null,
       "competition": "Ligue des champions UEFA",
       "competition_id": "uefa-champions-league",
       "kickoff": "2026-10-13T19:00:00Z",
@@ -4664,6 +4867,7 @@
     },
     {
       "id": "pt-primeira-liga:m_3jkrkt",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-12T19:15:00Z",
@@ -4690,6 +4894,7 @@
     },
     {
       "id": "es-la-liga:m_2Nuzb0",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-12T19:00:00Z",
@@ -4716,6 +4921,7 @@
     },
     {
       "id": "it-serie-a:m_0dRaIx",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-12T18:45:00Z",
@@ -4742,6 +4948,7 @@
     },
     {
       "id": "it-serie-a:m_3WZAJ8",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-12T16:30:00Z",
@@ -4768,6 +4975,7 @@
     },
     {
       "id": "us-mls:m_1evFXq",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-11T23:00:00Z",
@@ -4794,6 +5002,7 @@
     },
     {
       "id": "pt-primeira-liga:m_0h3VFJ",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-11T19:30:00Z",
@@ -4820,6 +5029,7 @@
     },
     {
       "id": "it-serie-a:m_1xgLNq",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-11T18:45:00Z",
@@ -4846,6 +5056,7 @@
     },
     {
       "id": "be-first-division-a:m_4ejI3H",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-11T17:15:00Z",
@@ -4872,6 +5083,7 @@
     },
     {
       "id": "pt-primeira-liga:m_3QFqc1",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-11T17:00:00Z",
@@ -4898,6 +5110,7 @@
     },
     {
       "id": "be-first-division-a:m_4C8yUu",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-11T16:30:00Z",
@@ -4924,6 +5137,7 @@
     },
     {
       "id": "es-la-liga:m_3PazTX",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-11T16:30:00Z",
@@ -4950,6 +5164,7 @@
     },
     {
       "id": "it-serie-a:m_1xblSn",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-11T16:00:00Z",
@@ -4976,6 +5191,7 @@
     },
     {
       "id": "gb-premier-league:m_0En7Dw",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-11T15:30:00Z",
@@ -5002,6 +5218,7 @@
     },
     {
       "id": "fr-ligue-1:m_3PIYm0",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-11T15:15:00Z",
@@ -5028,6 +5245,7 @@
     },
     {
       "id": "pt-primeira-liga:m_3aJ84G",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-10-11T14:30:00Z",
@@ -5054,6 +5272,7 @@
     },
     {
       "id": "be-first-division-a:m_3WOmX1",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-11T14:00:00Z",
@@ -5080,6 +5299,7 @@
     },
     {
       "id": "de-bundesliga:m_0AXpZd",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-10-11T13:30:00Z",
@@ -5106,6 +5326,7 @@
     },
     {
       "id": "fr-ligue-1:m_480LDf",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-10-11T13:00:00Z",
@@ -5132,6 +5353,7 @@
     },
     {
       "id": "gb-premier-league:m_0WdyE0",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-10-11T13:00:00Z",
@@ -5158,6 +5380,7 @@
     },
     {
       "id": "it-serie-a:m_0iiE28",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-11T13:00:00Z",
@@ -5184,6 +5407,7 @@
     },
     {
       "id": "it-serie-a:m_0c0woG",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-11T13:00:00Z",
@@ -5210,6 +5434,7 @@
     },
     {
       "id": "es-la-liga:m_3QSUEv",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-10-11T12:00:00Z",
@@ -5236,6 +5461,7 @@
     },
     {
       "id": "be-first-division-a:m_480fBH",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-10-11T11:30:00Z",
@@ -5262,6 +5488,7 @@
     },
     {
       "id": "it-serie-a:m_4Lm9mP",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-10-11T10:30:00Z",
@@ -5288,6 +5515,7 @@
     },
     {
       "id": "us-mls:m_2FbCpZ",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-11T02:30:00Z",
@@ -5314,6 +5542,7 @@
     },
     {
       "id": "us-mls:m_0aJg0b",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-10-11T01:30:00Z",
