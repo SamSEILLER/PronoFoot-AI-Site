@@ -117,6 +117,22 @@
       .version-metrics { grid-template-columns:1fr; }
       .section-head { align-items: flex-start; flex-direction: column; }
     }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.2em; font-size:11px; font-weight:800; }
+    .section-head { display:flex; justify-content:space-between; align-items:flex-end; gap:18px; margin:30px 0 15px; }
+    .section-title { font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .muted { color:var(--muted); font-size:12px; }
+    .notice { margin:22px 0; padding:14px 16px; border:1px solid rgba(255,210,125,.35); border-radius:14px; background:rgba(255,210,125,.055); color:#f5dfb2; font-size:12px; line-height:1.6; }
+    .filters { display:grid; grid-template-columns:minmax(150px,.7fr) minmax(180px,1fr) minmax(220px,1.5fr); gap:10px; margin:20px 0 14px; }
+    .version-list { display:grid; gap:11px; }
+    .version-card { border:1px solid var(--line); border-radius:15px; background:var(--panel); padding:17px 18px; }
+    .version-top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    .version-name { font-size:14px; font-weight:780; overflow-wrap:anywhere; }
+    .version-meta { margin-top:8px; color:var(--muted); font-size:11px; line-height:1.6; }
+    .version-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:14px; }
+    .version-metric { background:rgba(7,17,31,.55); border-radius:10px; padding:10px; }
+    .version-metric span { display:block; color:var(--muted); font-size:10px; }
+    .version-metric strong { display:block; margin-top:5px; font-size:16px; }
+    @media(max-width:560px){.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.section-head{align-items:flex-start;flex-direction:column}.version-metrics{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -137,162 +153,77 @@
     <h1>Historique & <span class="headline-accent">bilan.</span></h1>
     <p class="subtitle">Les résultats récents, les prédictions conservées avant les matchs et le suivi des performances depuis la dernière modification du script d’analyse.</p>
     <div class="notice"><strong>Modèle expérimental — non validé.</strong> Les prédictions archivées sont identifiées comme telles. Lorsqu’aucune prédiction pré-match n’a été conservée, le site le signale et ne la présente pas comme une prévision d’origine.</div>
-
-    <div class="section-head">
-      <div class="section-title">Résultats des 7 derniers jours</div>
-      <div class="muted" id="history-period">Calcul de la période…</div>
-    </div>
+    <div class="section-head"><div class="section-title">Résultats des 7 derniers jours</div><div class="muted" id="history-period">Calcul de la période…</div></div>
     <div class="filters">
-      <select id="competition-filter" aria-label="Filtrer par compétition">
-        <option value="all">Toutes les compétitions</option>
-      </select>
-      <select id="tracking-filter" aria-label="Filtrer le statut de la prédiction">
-        <option value="all">Toutes les prédictions</option>
-        <option value="archived">Prédiction pré-match archivée</option>
-        <option value="reconstructed">Prédiction non archivée</option>
-      </select>
+      <select id="competition-filter" aria-label="Filtrer par compétition"><option value="all">Toutes les compétitions</option></select>
+      <select id="tracking-filter" aria-label="Filtrer le statut"><option value="all">Toutes les prédictions</option><option value="archived">Prédiction pré-match archivée</option><option value="reconstructed">Prédiction d’origine non archivée</option></select>
       <input id="search-filter" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe">
     </div>
     <div class="match-list" id="match-list"><div class="empty">Lecture de l’historique…</div></div>
-
-    <div class="section-head">
-      <div class="section-title">Bilan depuis la dernière modification du script</div>
-      <div class="muted" id="analysis-period">Chargement de la version active…</div>
-    </div>
+    <div class="section-head"><div class="section-title">Bilan depuis la dernière modification du script</div><div class="muted" id="analysis-period">Chargement de la version active…</div></div>
     <div class="stats" aria-label="Bilan de la version active">
       <section class="stat"><div class="stat-label">Version active</div><div class="stat-value" id="active-version">—</div><div class="stat-detail" id="active-version-detail">Version du script d’analyse</div></section>
       <section class="stat"><div class="stat-label">Matchs évalués</div><div class="stat-value" id="version-evaluated">—</div><div class="stat-detail">Depuis la modification du script</div></section>
       <section class="stat"><div class="stat-label">Score de Brier</div><div class="stat-value" id="version-brier">—</div><div class="stat-detail">Sur la période de la version active</div></section>
-      <section class="stat"><div class="stat-label">Bilan de référence</div><div class="stat-value" id="reference-brier">—</div><div class="stat-detail" id="reference-detail">Backtest de référence toutes périodes confondues</div></section>
+      <section class="stat"><div class="stat-label">Bilan de référence</div><div class="stat-value" id="reference-brier">—</div><div class="stat-detail" id="reference-detail">Backtest de référence</div></section>
     </div>
     <div class="notice" id="version-note">Le bilan de la version active sera renseigné à mesure que des matchs postérieurs à sa date de modification seront évalués.</div>
-
-    <div class="section-head">
-      <div class="section-title">Évolution entre les versions</div>
-      <div class="muted">Historique des empreintes du script d’analyse</div>
-    </div>
+    <div class="section-head"><div class="section-title">Évolution entre les versions</div><div class="muted">Historique des empreintes du script d’analyse</div></div>
     <div class="version-list" id="version-list"><div class="empty">Lecture de l’historique des versions…</div></div>
   </main>
 
-  <footer>
-    PronoFoot AI · Observer · Comprendre · Mesurer<br>
-    Les résultats des sept derniers jours sont filtrés selon la date du match. Les performances par version ne sont comparables que si les périodes et les matchs évalués sont comparables. Le score de Brier seul ne valide ni la qualité générale du modèle ni sa rentabilité.
-  </footer>
+  <footer>PronoFoot AI · Observer · Comprendre · Mesurer<br>Les performances entre versions ne sont comparables que sur des périodes et des matchs comparables. Le score de Brier seul ne valide ni la qualité générale du modèle ni sa rentabilité.</footer>
 
   <script>
     (() => {
-      const labels = {home:'1', draw:'N', away:'2'};
-      const list = document.getElementById('match-list');
-      const competitionFilter = document.getElementById('competition-filter');
-      const trackingFilter = document.getElementById('tracking-filter');
-      const searchFilter = document.getElementById('search-filter');
-      let recent = [];
-      const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
-        '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
-      })[char]);
-      const pct = value => Number.isFinite(Number(value)) ? Math.round(Number(value) * 100) + '%' : '—';
-      const score = value => value == null || !Number.isFinite(Number(value)) ? '—' : Number(value).toFixed(4);
-      const formatDate = value => {
-        if (!value) return 'Date inconnue';
-        const date = new Date(value);
-        return Number.isNaN(date.getTime()) ? 'Date inconnue' :
-          new Intl.DateTimeFormat('fr-FR', {weekday:'short', day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit', timeZone:'Europe/Paris'}).format(date);
+      const labels={home:'1',draw:'N',away:'2'};
+      const list=document.getElementById('match-list'), compFilter=document.getElementById('competition-filter');
+      const trackFilter=document.getElementById('tracking-filter'), search=document.getElementById('search-filter');
+      let recent=[];
+      const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
+      const score=v=>v==null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(4);
+      const fmt=v=>{if(!v)return'—';const d=new Date(v);return Number.isNaN(d.getTime())?'—':new Intl.DateTimeFormat('fr-FR',{dateStyle:'medium',timeStyle:'short',timeZone:'Europe/Paris'}).format(d)};
+      const card=r=>{
+        const archived=r.prediction_snapshot_available===true;
+        const predTag=archived?'<span class="pill ok">Prédiction pré-match archivée</span>':'<span class="pill warn">Prédiction d’origine non archivée</span>';
+        const outcome=r.correct===true?'<span class="pill ok">Issue correcte</span>':r.correct===false?'<span class="pill bad">Issue différente</span>':'<span class="pill warn">Non évaluée</span>';
+        const probs=['home','draw','away'].map(k=>'<div class="prob'+(r.predicted_outcome===k?' active':'')+'"><span>'+labels[k]+'</span><strong>'+pct(r.probabilities&&r.probabilities[k])+'</strong></div>').join('');
+        return '<article class="match-card"><div><div class="match-meta"><span>'+esc(r.competition)+'</span><span>·</span><span>'+esc(fmt(r.kickoff))+'</span></div><div class="match-teams">'+esc(r.home)+'<span class="versus">vs</span>'+esc(r.away)+'</div><div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">'+predTag+outcome+'</div><div class="muted" style="margin-top:8px">Issue prédite : '+esc(r.predicted_label||labels[r.predicted_outcome])+' · Version : '+esc(r.prediction_model_version||'non identifiée')+'</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités 1 / N / 2 · Score réel : <strong>'+esc(r.actual_score.display)+'</strong></div><div class="probabilities">'+probs+'</div></div></article>';
       };
-      const card = row => {
-        const actual = row.actual_score && row.actual_score.display ? row.actual_score.display : 'Score indisponible';
-        const archived = row.prediction_snapshot_available === true;
-        const predictionTag = archived ? '<span class="pill ok">Prédiction pré-match archivée</span>' :
-          '<span class="pill warn">Prédiction d’origine non archivée</span>';
-        const outcomeTag = row.correct === true ? '<span class="pill ok">Issue correcte</span>' :
-          row.correct === false ? '<span class="pill bad">Issue différente</span>' : '<span class="pill warn">Non évaluée</span>';
-        const probabilities = ['home','draw','away'].map(key =>
-          '<div class="prob' + (row.predicted_outcome === key ? ' active' : '') + '"><span>' + labels[key] +
-          '</span><strong>' + pct(row.probabilities && row.probabilities[key]) + '</strong></div>').join('');
-        return '<article class="match-card"><div><div class="match-meta"><span>' + escapeHtml(row.competition || 'Compétition inconnue') +
-          '</span><span>·</span><span>' + escapeHtml(formatDate(row.kickoff)) + '</span></div><div class="match-teams">' +
-          escapeHtml(row.home) + '<span class="versus">vs</span>' + escapeHtml(row.away) + '</div><div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">' +
-          predictionTag + outcomeTag + '</div><div class="muted" style="margin-top:8px">Prédiction : ' + escapeHtml(row.predicted_label || labels[row.predicted_outcome]) +
-          ' · Version : ' + escapeHtml(row.prediction_model_version || 'non identifiée') + '</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités archivées / disponibles · Score réel : <strong>' +
-          escapeHtml(actual) + '</strong></div><div class="probabilities">' + probabilities + '</div></div></article>';
+      const render=()=>{
+        const q=search.value.trim().toLocaleLowerCase('fr'), comp=compFilter.value, tracking=trackFilter.value;
+        const rows=recent.filter(r=>(comp==='all'||r.competition_id===comp)&&(tracking==='all'||(tracking==='archived'?r.prediction_snapshot_available===true:r.prediction_snapshot_available!==true))&&(!q||(r.home+' '+r.away+' '+r.competition).toLocaleLowerCase('fr').includes(q)));
+        list.innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">Aucun résultat sur les sept derniers jours pour ces filtres.</div>';
       };
-      const renderRecent = () => {
-        const competition = competitionFilter.value;
-        const tracking = trackingFilter.value;
-        const query = searchFilter.value.trim().toLocaleLowerCase('fr');
-        const filtered = recent.filter(row =>
-          (competition === 'all' || row.competition_id === competition) &&
-          (tracking === 'all' || (tracking === 'archived' ? row.prediction_snapshot_available === true : row.prediction_snapshot_available !== true)) &&
-          (!query || (row.home + ' ' + row.away + ' ' + row.competition).toLocaleLowerCase('fr').includes(query))
-        );
-        list.innerHTML = filtered.length ? filtered.map(card).join('') :
-          '<div class="empty">Aucun résultat sur les sept derniers jours pour ces filtres.</div>';
-      };
-      const renderVersions = (data) => {
-        const versions = Array.isArray(data.model_history) ? data.model_history.slice().reverse() : [];
-        const versionList = document.getElementById('version-list');
-        if (!versions.length) {
-          versionList.innerHTML = '<div class="empty">L’historique des versions commencera à se remplir après la synchronisation avec suivi des versions.</div>';
-          return;
-        }
-        versionList.innerHTML = versions.map((item, index) => {
-          const previous = versions[index + 1];
-          let delta = '—';
-          if (previous && item.brier_score != null && previous.brier_score != null) {
-            const value = Number(item.brier_score) - Number(previous.brier_score);
-            delta = (value > 0 ? '+' : '') + value.toFixed(4) + ' vs version précédente';
-          }
-          return '<article class="version-card"><div class="version-top"><div class="version-name">' + escapeHtml(item.version_id || 'Version inconnue') +
-            '</div><span class="pill ' + (index === 0 ? 'ok' : 'warn') + '">' + (index === 0 ? 'Version la plus récente' : 'Version antérieure') +
-            '</span></div><div class="version-meta">Première détection : ' + escapeHtml(formatDate(item.first_seen_utc)) +
-            ' · Dernière évaluation : ' + escapeHtml(formatDate(item.last_evaluated_utc)) + '<br>Commit source : ' + escapeHtml(item.source_commit || '—') +
-            ' · Début d’évaluation : ' + escapeHtml(formatDate(item.analysis_start_utc)) + '</div><div class="version-metrics">' +
-            '<div class="version-metric"><span>Matchs depuis la modification</span><strong>' + escapeHtml(item.evaluated_matches ?? 0) + '</strong></div>' +
-            '<div class="version-metric"><span>Brier sur la version</span><strong>' + escapeHtml(score(item.brier_score)) + '</strong></div>' +
-            '<div class="version-metric"><span>Écart au Brier de la version précédente</span><strong>' + escapeHtml(delta) + '</strong></div>' +
-            '</div><div class="version-meta">Bilan de référence : ' + escapeHtml(item.reference_evaluated_matches ?? 0) +
-            ' matchs · Brier ' + escapeHtml(score(item.reference_brier_score)) +
-            '. Les écarts sont indicatifs si les échantillons ne sont pas identiques.</div></article>';
+      const renderVersions=data=>{
+        const versions=Array.isArray(data.model_history)?data.model_history.slice().reverse():[];
+        const target=document.getElementById('version-list');
+        if(!versions.length){target.innerHTML='<div class="empty">L’historique des versions sera alimenté à chaque synchronisation du site.</div>';return}
+        target.innerHTML=versions.map((v,i)=>{
+          const prev=versions[i+1];let delta='—';
+          if(prev&&v.brier_score!=null&&prev.brier_score!=null){const d=Number(v.brier_score)-Number(prev.brier_score);delta=(d>0?'+':'')+d.toFixed(4)+' vs version précédente'}
+          return '<article class="version-card"><div class="version-top"><div class="version-name">'+esc(v.version_id)+'</div><span class="pill '+(i===0?'ok':'warn')+'">'+(i===0?'Version la plus récente':'Version antérieure')+'</span></div><div class="version-meta">Première détection : '+esc(fmt(v.first_seen_utc))+' · Dernière évaluation : '+esc(fmt(v.last_evaluated_utc))+'<br>Commit : '+esc(v.source_commit||'—')+' · Début d’évaluation : '+esc(fmt(v.analysis_start_utc))+'</div><div class="version-metrics"><div class="version-metric"><span>Matchs depuis modification</span><strong>'+esc(v.evaluated_matches??0)+'</strong></div><div class="version-metric"><span>Brier de version</span><strong>'+esc(score(v.brier_score))+'</strong></div><div class="version-metric"><span>Écart au précédent</span><strong>'+esc(delta)+'</strong></div></div><div class="version-meta">Référence : '+esc(v.reference_evaluated_matches??0)+' matchs · Brier '+esc(score(v.reference_brier_score))+'. Les écarts restent indicatifs si les échantillons diffèrent.</div></article>';
         }).join('');
       };
-      fetch('predictions-data.json', {cache:'no-store'})
-        .then(response => { if (!response.ok) throw new Error('Données indisponibles'); return response.json(); })
-        .then(data => {
-          const now = new Date();
-          const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-          const allRecent = Array.isArray(data.recent_results) ? data.recent_results : [];
-          recent = allRecent.filter(row => {
-            if (!row.actual_score || !row.kickoff) return false;
-            const kickoff = new Date(row.kickoff);
-            return !Number.isNaN(kickoff.getTime()) && kickoff >= start && kickoff <= now;
-          }).sort((a,b) => new Date(b.kickoff) - new Date(a.kickoff));
-          document.getElementById('history-period').textContent = formatDate(start.toISOString()) + ' – ' + formatDate(now.toISOString()) + ' · ' + recent.length + ' résultats';
-          const competitions = new Map();
-          allRecent.forEach(row => { if (row.competition_id) competitions.set(row.competition_id, row.competition); });
-          [...competitions.entries()].sort((a,b) => a[1].localeCompare(b[1], 'fr')).forEach(([id,name]) => {
-            const option = document.createElement('option'); option.value = id; option.textContent = name; competitionFilter.appendChild(option);
-          });
-          const vb = data.version_backtest || {};
-          document.getElementById('active-version').textContent = data.analysis_version || data.model || '—';
-          document.getElementById('active-version-detail').textContent = 'Commit : ' + String(data.analysis_source_commit || '—').slice(0,7);
-          document.getElementById('analysis-period').textContent = 'Depuis le ' + formatDate(data.analysis_version_since_utc || data.analysis_start_utc);
-          document.getElementById('version-evaluated').textContent = vb.evaluated_matches ?? '0';
-          document.getElementById('version-brier').textContent = score(vb.brier_score);
-          document.getElementById('reference-brier').textContent = score(data.backtest && data.backtest.brier_score);
-          document.getElementById('reference-detail').textContent = (data.backtest && data.backtest.evaluated_matches || 0) + ' matchs · saison la plus récente par compétition';
-          document.getElementById('version-note').textContent = vb.evaluated_matches > 0 ?
-            'Le bilan de version utilise ' + vb.evaluated_matches + ' matchs postérieurs à la dernière modification enregistrée du script. Le Brier de référence utilise un échantillon plus large et n’est pas directement comparable.' :
-            'Aucun match terminé n’a encore été évalué depuis la dernière modification du script. Le bilan de cette version restera en attente jusqu’à ce que des matchs soient disponibles.';
-          renderRecent();
-          renderVersions(data);
-        })
-        .catch(() => {
-          list.innerHTML = '<div class="error">Les données historiques ne sont pas disponibles pour le moment.</div>';
-          document.getElementById('version-list').innerHTML = '<div class="error">Historique des versions indisponible.</div>';
-          document.getElementById('active-version').textContent = 'Indisponible';
-        });
-      competitionFilter.addEventListener('change', renderRecent);
-      trackingFilter.addEventListener('change', renderRecent);
-      searchFilter.addEventListener('input', renderRecent);
+      fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+        const now=new Date(), start=new Date(now.getTime()-7*24*60*60*1000);
+        recent=(Array.isArray(d.recent_results)?d.recent_results:[]).filter(r=>r.actual_score&&r.kickoff&&new Date(r.kickoff)>=start&&new Date(r.kickoff)<=now).sort((a,b)=>new Date(b.kickoff)-new Date(a.kickoff));
+        document.getElementById('history-period').textContent=fmt(start.toISOString())+' – '+fmt(now.toISOString())+' · '+recent.length+' résultats';
+        const comps=new Map();(d.recent_results||[]).forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition)});
+        [...comps.entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr')).forEach(([id,n])=>{const o=document.createElement('option');o.value=id;o.textContent=n;compFilter.appendChild(o)});
+        const vb=d.version_backtest||{};
+        document.getElementById('active-version').textContent=d.analysis_version||d.model||'—';
+        document.getElementById('active-version-detail').textContent='Commit : '+String(d.analysis_source_commit||'—').slice(0,7);
+        document.getElementById('analysis-period').textContent='Depuis le '+fmt(d.analysis_version_since_utc||d.analysis_start_utc);
+        document.getElementById('version-evaluated').textContent=vb.evaluated_matches??0;
+        document.getElementById('version-brier').textContent=score(vb.brier_score);
+        document.getElementById('reference-brier').textContent=score(d.backtest&&d.backtest.brier_score);
+        document.getElementById('reference-detail').textContent=((d.backtest&&d.backtest.evaluated_matches)||0)+' matchs · saison la plus récente par compétition';
+        document.getElementById('version-note').textContent=vb.evaluated_matches>0?'Bilan sur '+vb.evaluated_matches+' matchs postérieurs à la modification. Le Brier de référence couvre un échantillon plus large et n’est pas directement comparable.':'Aucun match terminé n’a encore été évalué depuis la dernière modification du script. Le bilan de cette version est en attente.';
+        render();renderVersions(d);
+      }).catch(()=>{list.innerHTML='<div class="error">Les données historiques ne sont pas disponibles pour le moment.</div>';document.getElementById('version-list').innerHTML='<div class="error">Historique des versions indisponible.</div>';document.getElementById('active-version').textContent='Indisponible'});
+      compFilter.addEventListener('change',render);trackFilter.addEventListener('change',render);search.addEventListener('input',render);
     })();
   </script>
 </body>
