@@ -74,6 +74,9 @@
     .prob strong { display: block; color: var(--text); font-size: 14px; margin-top: 3px; }
     .prob.active { border-color: rgba(141,245,197,.5); background: rgba(141,245,197,.08); color: var(--accent); }
     .prob.active strong { color: var(--accent); }
+    .odds-block { margin-top:10px; }
+    .odds-label { color:var(--muted); font-size:10px; margin-bottom:6px; }
+    .prediction-meta { margin-top:8px; color:var(--muted); font-size:10px; line-height:1.6; overflow-wrap:anywhere; }
     .result-block { text-align: right; }
     .result-label { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     .result-score { font-size: 25px; font-weight: 800; letter-spacing: -.04em; margin: 5px 0; }
@@ -189,7 +192,7 @@
         const predTag=archived?'<span class="pill ok">Prédiction pré-match archivée</span>':'<span class="pill warn">Prédiction d’origine non archivée</span>';
         const outcome=r.correct===true?'<span class="pill ok">Issue correcte</span>':r.correct===false?'<span class="pill bad">Issue différente</span>':'<span class="pill warn">Non évaluée</span>';
         const probs=['home','draw','away'].map(k=>'<div class="prob'+(r.predicted_outcome===k?' active':'')+'"><span>'+labels[k]+'</span><strong>'+pct(r.probabilities&&r.probabilities[k])+'</strong></div>').join('');
-        return '<article class="match-card"><div><div class="match-meta"><span>'+esc(r.competition)+'</span><span>·</span><span>'+esc(fmt(r.kickoff))+'</span></div><div class="match-teams">'+esc(r.home)+'<span class="versus">vs</span>'+esc(r.away)+'</div><div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">'+predTag+outcome+'</div><div class="muted" style="margin-top:8px">Issue prédite : '+esc(r.predicted_label||labels[r.predicted_outcome])+' · Version : '+esc(r.prediction_model_version||'non identifiée')+'</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités 1 / N / 2 · Score réel : <strong>'+esc(r.actual_score.display)+'</strong></div><div class="probabilities">'+probs+'</div></div></article>';
+        const o=r.odds_1x2;const odds=o?['home','draw','away'].map(k=>'<div class="prob"><span>'+labels[k]+'</span><strong>'+Number(o[k]).toFixed(2)+'</strong></div>').join(''):'<div class="muted">Cotes non archivées</div>';return '<article class="match-card"><div><div class="match-meta"><span>'+esc(r.competition)+'</span><span>·</span><span>'+esc(fmt(r.kickoff))+'</span></div><div class="match-teams">'+esc(r.home)+'<span class="versus">vs</span>'+esc(r.away)+'</div><div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">'+predTag+outcome+'</div><div class="muted" style="margin-top:8px">Issue prédite : '+esc(r.predicted_label||labels[r.predicted_outcome])+' · Version : '+esc(r.prediction_model_version||'non identifiée')+'</div><div class="prediction-meta">Prédiction enregistrée : '+esc(fmt(r.prediction_created_at))+'</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités du modèle 1 / N / 2 · Score réel : <strong>'+esc(r.actual_score.display)+'</strong></div><div class="probabilities">'+probs+'</div><div class="odds-block"><div class="odds-label">Cotes Unibet 1 / N / 2'+(o?' · '+esc(fmt(o.fetched_at)):'')+'</div><div class="probabilities">'+odds+'</div></div></div></article>';
       };
       const render=()=>{
         const q=search.value.trim().toLocaleLowerCase('fr'), comp=compFilter.value, tracking=trackFilter.value;
@@ -214,7 +217,7 @@
         [...comps.entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr')).forEach(([id,n])=>{const o=document.createElement('option');o.value=id;o.textContent=n;compFilter.appendChild(o)});
         const vb=d.version_backtest||{};
         document.getElementById('active-version').textContent=d.analysis_version||d.model||'—';
-        document.getElementById('active-version-detail').textContent='Commit : '+String(d.analysis_source_commit||'—').slice(0,7);
+        document.getElementById('active-version-detail').textContent='Commit : '+String(d.analysis_source_commit||'—').slice(0,7)+' · Première prédiction pré-match archivée : '+fmt(d.first_archived_prediction_at_utc);
         document.getElementById('analysis-period').textContent='Depuis le '+fmt(d.analysis_version_since_utc||d.analysis_start_utc);
         document.getElementById('version-evaluated').textContent=vb.evaluated_matches??0;
         document.getElementById('version-brier').textContent=score(vb.brier_score);
