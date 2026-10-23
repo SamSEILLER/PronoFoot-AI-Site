@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-10-23T13:48:40.504727+00:00",
+  "database": {
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-23T04:26:38.095339+00:00",
+    "records": 10317,
+    "errors": 0,
+    "detail": "0 saison(s) en échec"
+  },
+  "statistics": {
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-23T04:26:38.095339+00:00",
+    "results": 7978,
+    "issues": 0,
+    "detail": "0 anomalie(s) structurelle(s)"
+  },
+  "odds": {
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-23T04:27:06+00:00",
+    "events_with_odds": 51,
+    "errors": 0,
+    "unmatched": 3,
+    "without_markets": 0,
+    "detail": "3 événement(s) non associé(s)"
+  }
+}\n
