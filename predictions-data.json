@@ -1,0 +1,3142 @@
+{
+  "generated_at_utc": "2026-10-23T14:16:38.969738+00:00",
+  "model": "poisson_baseline_v1",
+  "status": "EXPERIMENTAL",
+  "publication_approved": false,
+  "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
+  "evaluation_status": "REVIEW_REQUIRED",
+  "backtest": {
+    "method": "walk_forward_chronological",
+    "evaluated_matches": 897,
+    "skipped_matches": 215,
+    "brier_score": 0.6152835659136049,
+    "data_issue_count": 0,
+    "data_issue_examples": [],
+    "publication_approved": false,
+    "note": "Backtest descriptif sur la saison la plus récente de chaque compétition. Comparaison de référence et calibration encore nécessaires."
+  },
+  "upcoming": [],
+  "recent_results": [
+    {
+      "id": "uefa-europa-league:m_45EQn7",
+      "competition": "Ligue Europa UEFA",
+      "competition_id": "uefa-europa-league",
+      "kickoff": "2026-10-22T19:00:00Z",
+      "home": "Celtic",
+      "away": "Celta Vigo",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.34689342,
+        "draw": 0.23845525,
+        "away": 0.41465133
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": true,
+      "history_matches": 422,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-europa-league:m_3BS3ZY",
+      "competition": "Ligue Europa UEFA",
+      "competition_id": "uefa-europa-league",
+      "kickoff": "2026-10-22T19:00:00Z",
+      "home": "Hoffenheim",
+      "away": "Lyon",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.32777444,
+        "draw": 0.23375677,
+        "away": 0.43846879
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 0,
+        "display": "3–0"
+      },
+      "correct": false,
+      "history_matches": 422,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_09AWom",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-21T23:15:00Z",
+      "home": "FC Cincinnati",
+      "away": "DC United",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.49406174,
+        "draw": 0.22724943,
+        "away": 0.27868883
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 1512,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_3QUxWo",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-21T19:00:00Z",
+      "home": "Inter",
+      "away": "Shakhtar Donetsk",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.53252582,
+        "draw": 0.22176506,
+        "away": 0.24570912
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 425,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_2Q8JBE",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-21T19:00:00Z",
+      "home": "Bayern München",
+      "away": "Arsenal",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.47192308,
+        "draw": 0.22401843,
+        "away": 0.30405849
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 2,
+        "away": 2,
+        "display": "2–2"
+      },
+      "correct": false,
+      "history_matches": 425,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_1LBGR1",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-21T19:00:00Z",
+      "home": "Real Madrid",
+      "away": "RB Leipzig",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.61508127,
+        "draw": 0.19558194,
+        "away": 0.18933679
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 1,
+        "display": "4–1"
+      },
+      "correct": true,
+      "history_matches": 425,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_0bCfNS",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-21T18:00:00Z",
+      "home": "Levante",
+      "away": "Athletic Club",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40741655,
+        "draw": 0.25024544,
+        "away": 0.34233801
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": true,
+      "history_matches": 848,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_2fv7yB",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-21T16:45:00Z",
+      "home": "Lille",
+      "away": "Galatasaray",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.58023311,
+        "draw": 0.19890964,
+        "away": 0.22085724
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 2,
+        "away": 4,
+        "display": "2–4"
+      },
+      "correct": false,
+      "history_matches": 423,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_1ETAAh",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-20T19:00:00Z",
+      "home": "Napoli",
+      "away": "Bodø/Glimt",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.53602016,
+        "draw": 0.21686868,
+        "away": 0.24711116
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 3,
+        "display": "4–3"
+      },
+      "correct": true,
+      "history_matches": 416,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_12BHNW",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-20T19:00:00Z",
+      "home": "VfB Stuttgart",
+      "away": "Atlético Madrid",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.44072989,
+        "draw": 0.21524087,
+        "away": 0.34402924
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 416,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_14BqaI",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-20T19:00:00Z",
+      "home": "Paris Saint-Germain",
+      "away": "Barcelona",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.52011784,
+        "draw": 0.19444792,
+        "away": 0.28543424
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 2,
+        "display": "4–2"
+      },
+      "correct": true,
+      "history_matches": 416,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_1w0acT",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-20T19:00:00Z",
+      "home": "Liverpool",
+      "away": "Villarreal",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.64020609,
+        "draw": 0.19603497,
+        "away": 0.16375893
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 3,
+        "display": "4–3"
+      },
+      "correct": true,
+      "history_matches": 416,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "pt-primeira-liga:m_4SRyIC",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-19T19:15:00Z",
+      "home": "Braga",
+      "away": "Gil Vicente",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.5047433,
+        "draw": 0.24729444,
+        "away": 0.24796227
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": false,
+      "history_matches": 675,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_13g2y0",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-19T19:00:00Z",
+      "home": "Getafe",
+      "away": "Rayo Vallecano",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41995684,
+        "draw": 0.2937679,
+        "away": 0.28627526
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 847,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_3d2phM",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-19T18:45:00Z",
+      "home": "Rodez",
+      "away": "Montpellier",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.3628698,
+        "draw": 0.2960335,
+        "away": 0.34109671
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 374,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1exn1L",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-19T18:45:00Z",
+      "home": "Parma",
+      "away": "Torino",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.39545994,
+        "draw": 0.26717414,
+        "away": 0.33736592
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 829,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1VpC1F",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-19T16:30:00Z",
+      "home": "Monza",
+      "away": "Cagliari",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.33918727,
+        "draw": 0.27383814,
+        "away": 0.38697459
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 0,
+        "display": "4–0"
+      },
+      "correct": false,
+      "history_matches": 828,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_28oaYn",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T21:00:00Z",
+      "home": "FC Cincinnati",
+      "away": "Columbus Crew",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.42830988,
+        "draw": 0.23096516,
+        "away": 0.34072496
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 2,
+        "display": "0–2"
+      },
+      "correct": false,
+      "history_matches": 1511,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_42Fvm8",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-18T19:00:00Z",
+      "home": "Real Madrid",
+      "away": "Sevilla",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.58674776,
+        "draw": 0.21193836,
+        "away": 0.20131388
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 1,
+        "display": "4–1"
+      },
+      "correct": true,
+      "history_matches": 846,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_2VNJyu",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-18T18:45:00Z",
+      "home": "Lyon",
+      "away": "Nice",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.5250236,
+        "draw": 0.22714004,
+        "away": 0.24783636
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 674,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_08dbQS",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-18T18:45:00Z",
+      "home": "Juventus",
+      "away": "Lazio",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.44769769,
+        "draw": 0.27605703,
+        "away": 0.27624528
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 827,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1x8lYm",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-18T16:00:00Z",
+      "home": "Milan",
+      "away": "Atalanta",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.34890071,
+        "draw": 0.26686151,
+        "away": 0.38423778
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 2,
+        "display": "3–2"
+      },
+      "correct": false,
+      "history_matches": 826,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_3Zmu6u",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-18T15:30:00Z",
+      "home": "Borussia Mönchengladbach",
+      "away": "Hoffenheim",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43414063,
+        "draw": 0.22794505,
+        "away": 0.33791432
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": false,
+      "history_matches": 664,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_0nCoAp",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-18T15:30:00Z",
+      "home": "Nottingham Forest",
+      "away": "Arsenal",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.29913757,
+        "draw": 0.27539356,
+        "away": 0.42546887
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 1,
+        "display": "0–1"
+      },
+      "correct": true,
+      "history_matches": 828,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_1ybaO4",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-18T15:15:00Z",
+      "home": "Lorient",
+      "away": "Monaco",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.42226812,
+        "draw": 0.23734743,
+        "away": 0.34038445
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 671,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_0iPVoc",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-18T15:15:00Z",
+      "home": "Paris FC",
+      "away": "Rennes",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.45224883,
+        "draw": 0.22932353,
+        "away": 0.31842763
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 3,
+        "display": "4–3"
+      },
+      "correct": true,
+      "history_matches": 671,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_1uUPuf",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-18T15:15:00Z",
+      "home": "Le Havre",
+      "away": "Auxerre",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.39186639,
+        "draw": 0.24731329,
+        "away": 0.36082032
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": false,
+      "history_matches": 671,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_2gB2TY",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-18T14:15:00Z",
+      "home": "Celta Vigo",
+      "away": "Deportivo Alavés",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46782329,
+        "draw": 0.24778562,
+        "away": 0.28439109
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 844,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_2DfhZ2",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-18T13:30:00Z",
+      "home": "Bayer Leverkusen",
+      "away": "Freiburg",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.56565387,
+        "draw": 0.21723817,
+        "away": 0.21710796
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 663,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_2RULhx",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-18T13:00:00Z",
+      "home": "Angers",
+      "away": "Marseille",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.31998921,
+        "draw": 0.25148268,
+        "away": 0.4285281
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 2,
+        "away": 5,
+        "display": "2–5"
+      },
+      "correct": true,
+      "history_matches": 670,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_2Qu6Lk",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-18T13:00:00Z",
+      "home": "Brighton & Hove Albion",
+      "away": "Crystal Palace",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.44318379,
+        "draw": 0.2523681,
+        "away": 0.30444811
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 5,
+        "away": 0,
+        "display": "5–0"
+      },
+      "correct": true,
+      "history_matches": 825,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_19HAaR",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-18T13:00:00Z",
+      "home": "AFC Bournemouth",
+      "away": "Sunderland",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.47612397,
+        "draw": 0.26022876,
+        "away": 0.26364727
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 825,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_3xDs72",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-18T13:00:00Z",
+      "home": "Leeds United",
+      "away": "Manchester United",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43293943,
+        "draw": 0.25660642,
+        "away": 0.31045415
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 825,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1wPfwm",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-18T13:00:00Z",
+      "home": "Fiorentina",
+      "away": "Como",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.3597451,
+        "draw": 0.27298849,
+        "away": 0.36726642
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": true,
+      "history_matches": 825,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_0YD43d",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-18T10:30:00Z",
+      "home": "Udinese",
+      "away": "Lecce",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40409328,
+        "draw": 0.28557008,
+        "away": 0.31033664
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 824,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1Ghpfn",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T02:30:00Z",
+      "home": "Portland Timbers",
+      "away": "Colorado Rapids",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.52146772,
+        "draw": 0.2144941,
+        "away": 0.26403818
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 1507,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_40aXP5",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T02:30:00Z",
+      "home": "Seattle Sounders FC",
+      "away": "CF Montréal",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.56248519,
+        "draw": 0.2167745,
+        "away": 0.22074031
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1507,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2XmadO",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T02:30:00Z",
+      "home": "San Jose Earthquakes",
+      "away": "Nashville SC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41210568,
+        "draw": 0.24099617,
+        "away": 0.34689816
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1507,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1vsOWT",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T02:30:00Z",
+      "home": "LA Galaxy",
+      "away": "San Diego FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43779255,
+        "draw": 0.22601164,
+        "away": 0.33619581
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 2,
+        "away": 2,
+        "display": "2–2"
+      },
+      "correct": false,
+      "history_matches": 1507,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1XUfOI",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T00:30:00Z",
+      "home": "Austin FC",
+      "away": "Vancouver Whitecaps",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.35049845,
+        "draw": 0.25510771,
+        "away": 0.39439385
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": true,
+      "history_matches": 1504,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1oxXIE",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T00:30:00Z",
+      "home": "Houston Dynamo FC",
+      "away": "FC Dallas",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41786783,
+        "draw": 0.24846774,
+        "away": 0.33366443
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 2,
+        "away": 2,
+        "display": "2–2"
+      },
+      "correct": false,
+      "history_matches": 1504,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3aziiO",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-18T00:30:00Z",
+      "home": "Sporting Kansas City",
+      "away": "Real Salt Lake",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41676902,
+        "draw": 0.23268671,
+        "away": 0.35054427
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": false,
+      "history_matches": 1504,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2ge69N",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T23:30:00Z",
+      "home": "Orlando City",
+      "away": "DC United",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.51129414,
+        "draw": 0.2273409,
+        "away": 0.26136496
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 1,
+        "display": "4–1"
+      },
+      "correct": true,
+      "history_matches": 1499,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3f09D4",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T23:30:00Z",
+      "home": "Red Bull New York",
+      "away": "Toronto FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.49342405,
+        "draw": 0.23522064,
+        "away": 0.27135531
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 2,
+        "display": "0–2"
+      },
+      "correct": false,
+      "history_matches": 1499,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1xEbRf",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T23:30:00Z",
+      "home": "Atlanta United",
+      "away": "Inter Miami CF",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.35167277,
+        "draw": 0.22195063,
+        "away": 0.4263766
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": true,
+      "history_matches": 1499,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_33gLJR",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T23:30:00Z",
+      "home": "New York City FC",
+      "away": "Los Angeles FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41606855,
+        "draw": 0.23585113,
+        "away": 0.34808032
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1499,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4I76WY",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T23:30:00Z",
+      "home": "New England Revolution",
+      "away": "Chicago Fire FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.38490285,
+        "draw": 0.23219635,
+        "away": 0.3829008
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 1499,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3VsUd6",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T20:30:00Z",
+      "home": "Minnesota United",
+      "away": "St. Louis City",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46348502,
+        "draw": 0.23528732,
+        "away": 0.30122766
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 2,
+        "display": "3–2"
+      },
+      "correct": true,
+      "history_matches": 1498,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_301zqq",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-17T19:00:00Z",
+      "home": "Valencia",
+      "away": "Athletic Club",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41023067,
+        "draw": 0.26602969,
+        "away": 0.32373965
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 842,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_1b4zha",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-17T18:45:00Z",
+      "home": "Lille",
+      "away": "Brest",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.54079524,
+        "draw": 0.23151899,
+        "away": 0.22768577
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 668,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_2DPqBk",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-17T18:45:00Z",
+      "home": "Roma",
+      "away": "Genoa",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.54730536,
+        "draw": 0.25333981,
+        "away": 0.19935483
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 823,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2qQWpV",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-17T18:30:00Z",
+      "home": "Philadelphia Union",
+      "away": "Charlotte FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.48946008,
+        "draw": 0.23857144,
+        "away": 0.27196848
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 2,
+        "away": 2,
+        "display": "2–2"
+      },
+      "correct": false,
+      "history_matches": 1497,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_04wjOg",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-17T18:00:00Z",
+      "home": "Red Star",
+      "away": "Saint-Étienne",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.3623755,
+        "draw": 0.26649256,
+        "away": 0.37113194
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 1,
+        "display": "0–1"
+      },
+      "correct": true,
+      "history_matches": 373,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_1IbEtF",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-17T16:30:00Z",
+      "home": "Bayern München",
+      "away": "RB Leipzig",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.66413472,
+        "draw": 0.17446602,
+        "away": 0.16139925
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 6,
+        "away": 1,
+        "display": "6–1"
+      },
+      "correct": true,
+      "history_matches": 662,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_10CVCK",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-17T16:30:00Z",
+      "home": "Real Betis",
+      "away": "Barcelona",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.33394209,
+        "draw": 0.23487368,
+        "away": 0.43118423
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 2,
+        "away": 5,
+        "display": "2–5"
+      },
+      "correct": true,
+      "history_matches": 841,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_4RD4YJ",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-17T16:30:00Z",
+      "home": "Newcastle United",
+      "away": "Aston Villa",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.48183587,
+        "draw": 0.23414215,
+        "away": 0.28402198
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 1,
+        "display": "0–1"
+      },
+      "correct": false,
+      "history_matches": 824,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_0EXXVh",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-17T16:00:00Z",
+      "home": "Bologna",
+      "away": "Inter",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.28298695,
+        "draw": 0.25509477,
+        "away": 0.46191828
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": true,
+      "history_matches": 822,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_4RbsRB",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-17T15:15:00Z",
+      "home": "Strasbourg",
+      "away": "Paris Saint-Germain",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.34027661,
+        "draw": 0.23567622,
+        "away": 0.42404717
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": true,
+      "history_matches": 667,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_0QudQW",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-17T14:15:00Z",
+      "home": "Villarreal",
+      "away": "Elche",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.57281488,
+        "draw": 0.21070962,
+        "away": 0.2164755
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 840,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_1308RP",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-17T14:00:00Z",
+      "home": "Manchester City",
+      "away": "Ipswich Town",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.59784808,
+        "draw": 0.20483934,
+        "away": 0.19731258
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 2,
+        "display": "3–2"
+      },
+      "correct": true,
+      "history_matches": 821,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_0flqse",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-17T14:00:00Z",
+      "home": "Brentford",
+      "away": "Liverpool",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40098671,
+        "draw": 0.23012749,
+        "away": 0.3688858
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": false,
+      "history_matches": 821,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_1Ez6NE",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-17T13:30:00Z",
+      "home": "Hamburger SV",
+      "away": "VfB Stuttgart",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.3708177,
+        "draw": 0.22852742,
+        "away": 0.40065488
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": false,
+      "history_matches": 657,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_3BxJha",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-17T13:30:00Z",
+      "home": "Union Berlin",
+      "away": "Borussia Dortmund",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.35167336,
+        "draw": 0.24178009,
+        "away": 0.40654655
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 657,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_3OWlJP",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-17T13:00:00Z",
+      "home": "Venezia",
+      "away": "Napoli",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.26034406,
+        "draw": 0.27672879,
+        "away": 0.46292715
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": false,
+      "history_matches": 821,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_0MHtdh",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-17T12:00:00Z",
+      "home": "Espanyol",
+      "away": "Atlético Madrid",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.3477053,
+        "draw": 0.27262809,
+        "away": 0.37966661
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 1,
+        "display": "0–1"
+      },
+      "correct": true,
+      "history_matches": 839,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_3fEVzy",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-17T11:30:00Z",
+      "home": "Everton",
+      "away": "Chelsea",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.37722673,
+        "draw": 0.25062275,
+        "away": 0.37215052
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 2,
+        "display": "0–2"
+      },
+      "correct": false,
+      "history_matches": 820,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_2dYlDX",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-16T18:30:00Z",
+      "home": "Eintracht Frankfurt",
+      "away": "1. FC Köln",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.5233982,
+        "draw": 0.21710766,
+        "away": 0.25949414
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 656,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_31sQLg",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-16T18:00:00Z",
+      "home": "Guingamp",
+      "away": "Pau",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40379887,
+        "draw": 0.24828902,
+        "away": 0.34791211
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": false,
+      "history_matches": 366,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_37Tem6",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-16T18:00:00Z",
+      "home": "Grenoble",
+      "away": "Boulogne",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.35187319,
+        "draw": 0.32918875,
+        "away": 0.31893806
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 2,
+        "display": "0–2"
+      },
+      "correct": false,
+      "history_matches": 366,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_4SbDel",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-16T18:00:00Z",
+      "home": "Laval",
+      "away": "Clermont Foot",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.36531936,
+        "draw": 0.2651162,
+        "away": 0.36956445
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 3,
+        "away": 3,
+        "display": "3–3"
+      },
+      "correct": false,
+      "history_matches": 366,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-2:m_3ZAvyl",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-16T18:00:00Z",
+      "home": "Annecy FC",
+      "away": "Nancy",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43896411,
+        "draw": 0.2656348,
+        "away": 0.29540109
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": false,
+      "history_matches": 366,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-europa-league:m_2b5S3e",
+      "competition": "Ligue Europa UEFA",
+      "competition_id": "uefa-europa-league",
+      "kickoff": "2026-10-15T19:00:00Z",
+      "home": "Dinamo Zagreb",
+      "away": "Anderlecht",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43341701,
+        "draw": 0.23831972,
+        "away": 0.32826327
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 404,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-europa-league:m_1GR5Qy",
+      "competition": "Ligue Europa UEFA",
+      "competition_id": "uefa-europa-league",
+      "kickoff": "2026-10-15T19:00:00Z",
+      "home": "Ferencváros",
+      "away": "Viktoria Plzeň",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.4891847,
+        "draw": 0.24316984,
+        "away": 0.26764545
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 404,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-europa-league:m_3rVc1Z",
+      "competition": "Ligue Europa UEFA",
+      "competition_id": "uefa-europa-league",
+      "kickoff": "2026-10-15T16:45:00Z",
+      "home": "Union St.Gilloise",
+      "away": "Real Sociedad",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46144887,
+        "draw": 0.25002294,
+        "away": 0.2885282
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 396,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1TPnzi",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T02:30:00Z",
+      "home": "Los Angeles FC",
+      "away": "Austin FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.57094983,
+        "draw": 0.22824728,
+        "away": 0.20080289
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": true,
+      "history_matches": 1494,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3FVrY2",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T02:30:00Z",
+      "home": "LA Galaxy",
+      "away": "Portland Timbers",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.5024689,
+        "draw": 0.22495219,
+        "away": 0.27257891
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 1494,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2HBE7j",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T02:30:00Z",
+      "home": "San Diego FC",
+      "away": "Houston Dynamo FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.4537216,
+        "draw": 0.23927125,
+        "away": 0.30700715
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 3,
+        "away": 3,
+        "display": "3–3"
+      },
+      "correct": false,
+      "history_matches": 1494,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3ml70j",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T01:30:00Z",
+      "home": "Colorado Rapids",
+      "away": "Minnesota United",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.44725331,
+        "draw": 0.23361765,
+        "away": 0.31912903
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 2,
+        "away": 2,
+        "display": "2–2"
+      },
+      "correct": false,
+      "history_matches": 1492,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4PVMrv",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T01:30:00Z",
+      "home": "Real Salt Lake",
+      "away": "San Jose Earthquakes",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.4947388,
+        "draw": 0.22511907,
+        "away": 0.28014213
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1492,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4DKXnB",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T00:30:00Z",
+      "home": "Nashville SC",
+      "away": "Sporting Kansas City",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.60716559,
+        "draw": 0.20119852,
+        "away": 0.19163589
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 0,
+        "display": "4–0"
+      },
+      "correct": true,
+      "history_matches": 1488,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4KsT4u",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T00:30:00Z",
+      "home": "St. Louis City",
+      "away": "Vancouver Whitecaps",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.37702797,
+        "draw": 0.24440119,
+        "away": 0.37857083
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 1488,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_0ViX2D",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T00:30:00Z",
+      "home": "Chicago Fire FC",
+      "away": "Philadelphia Union",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.37539921,
+        "draw": 0.23173927,
+        "away": 0.39286151
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 3,
+        "display": "1–3"
+      },
+      "correct": true,
+      "history_matches": 1488,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2uApWn",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-15T00:30:00Z",
+      "home": "FC Dallas",
+      "away": "Seattle Sounders FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41972612,
+        "draw": 0.2448615,
+        "away": 0.33541238
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 1488,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3W4jSi",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "FC Cincinnati",
+      "away": "New England Revolution",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.49725404,
+        "draw": 0.22703991,
+        "away": 0.27570605
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 2,
+        "away": 3,
+        "display": "2–3"
+      },
+      "correct": false,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_46BvO2",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "Inter Miami CF",
+      "away": "New York City FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.52728745,
+        "draw": 0.21688793,
+        "away": 0.25582463
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3meZjb",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "CF Montréal",
+      "away": "Atlanta United",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43464884,
+        "draw": 0.25543225,
+        "away": 0.3099189
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4NM5xl",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "Columbus Crew",
+      "away": "Charlotte FC",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.47966213,
+        "draw": 0.23913226,
+        "away": 0.28120561
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": true,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_4g5PSc",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "Toronto FC",
+      "away": "Orlando City",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.4286359,
+        "draw": 0.22327583,
+        "away": 0.34808827
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 3,
+        "away": 3,
+        "display": "3–3"
+      },
+      "correct": false,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_3JCOtb",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-14T23:30:00Z",
+      "home": "DC United",
+      "away": "Red Bull New York",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.35027267,
+        "draw": 0.24860151,
+        "away": 0.40112582
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": false,
+      "history_matches": 1482,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_0nhvU6",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-14T19:00:00Z",
+      "home": "Manchester City",
+      "away": "Paris Saint-Germain",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.39440311,
+        "draw": 0.23213751,
+        "away": 0.37345938
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 2,
+        "away": 4,
+        "display": "2–4"
+      },
+      "correct": false,
+      "history_matches": 407,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_1r6TyQ",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-14T19:00:00Z",
+      "home": "Bodø/Glimt",
+      "away": "Borussia Dortmund",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.50140307,
+        "draw": 0.20727281,
+        "away": 0.29132412
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 407,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_4SWjzR",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-13T19:00:00Z",
+      "home": "Arsenal",
+      "away": "Lille",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.5610194,
+        "draw": 0.22598762,
+        "away": 0.21299298
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 0,
+        "display": "3–0"
+      },
+      "correct": true,
+      "history_matches": 398,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_24qLy7",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-13T19:00:00Z",
+      "home": "Galatasaray",
+      "away": "Barcelona",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46814864,
+        "draw": 0.21556034,
+        "away": 0.31629102
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 4,
+        "display": "1–4"
+      },
+      "correct": false,
+      "history_matches": 398,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "uefa-champions-league:m_1rmeUJ",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-10-13T19:00:00Z",
+      "home": "Inter",
+      "away": "Club Brugge",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.57026483,
+        "draw": 0.20977531,
+        "away": 0.21995986
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 3,
+        "away": 4,
+        "display": "3–4"
+      },
+      "correct": false,
+      "history_matches": 398,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "pt-primeira-liga:m_3jkrkt",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-12T19:15:00Z",
+      "home": "Famalicão",
+      "away": "Alverca",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.50029847,
+        "draw": 0.25996227,
+        "away": 0.23973926
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 4,
+        "display": "1–4"
+      },
+      "correct": false,
+      "history_matches": 674,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_2Nuzb0",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-12T19:00:00Z",
+      "home": "Levante",
+      "away": "Sevilla",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.4281743,
+        "draw": 0.24098055,
+        "away": 0.33084515
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 3,
+        "away": 3,
+        "display": "3–3"
+      },
+      "correct": false,
+      "history_matches": 837,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_0dRaIx",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-12T18:45:00Z",
+      "home": "Torino",
+      "away": "Udinese",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.38517149,
+        "draw": 0.26228609,
+        "away": 0.35254242
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 819,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_3WZAJ8",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-12T16:30:00Z",
+      "home": "Atalanta",
+      "away": "Venezia",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.53614232,
+        "draw": 0.24455095,
+        "away": 0.21930673
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": true,
+      "history_matches": 818,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_1evFXq",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-11T23:00:00Z",
+      "home": "St. Louis City",
+      "away": "LA Galaxy",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.45012895,
+        "draw": 0.23529131,
+        "away": 0.31457974
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 6,
+        "away": 2,
+        "display": "6–2"
+      },
+      "correct": true,
+      "history_matches": 1481,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "pt-primeira-liga:m_0h3VFJ",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-11T19:30:00Z",
+      "home": "Arouca",
+      "away": "Estrela da Amadora",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46723002,
+        "draw": 0.25347471,
+        "away": 0.27929526
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 1,
+        "away": 0,
+        "display": "1–0"
+      },
+      "correct": true,
+      "history_matches": 673,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1xgLNq",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-11T18:45:00Z",
+      "home": "Cagliari",
+      "away": "Juventus",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.31466357,
+        "draw": 0.27095076,
+        "away": 0.41438566
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 817,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "be-first-division-a:m_4ejI3H",
+      "competition": "Belgian Pro League",
+      "competition_id": "be-first-division-a",
+      "kickoff": "2026-10-11T17:15:00Z",
+      "home": "KV Mechelen",
+      "away": "St.Truiden",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.42840914,
+        "draw": 0.24256986,
+        "away": 0.329021
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 3,
+        "display": "4–3"
+      },
+      "correct": true,
+      "history_matches": 696,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "pt-primeira-liga:m_3QFqc1",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-11T17:00:00Z",
+      "home": "Benfica",
+      "away": "Vitória de Guimarães",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.64204978,
+        "draw": 0.20440892,
+        "away": 0.1535413
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 672,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "be-first-division-a:m_4C8yUu",
+      "competition": "Belgian Pro League",
+      "competition_id": "be-first-division-a",
+      "kickoff": "2026-10-11T16:30:00Z",
+      "home": "Westerlo",
+      "away": "Royal Antwerp",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40882145,
+        "draw": 0.25996381,
+        "away": 0.33121474
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 5,
+        "away": 1,
+        "display": "5–1"
+      },
+      "correct": true,
+      "history_matches": 695,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_3PazTX",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-11T16:30:00Z",
+      "home": "Real Betis",
+      "away": "Osasuna",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.54172788,
+        "draw": 0.24785496,
+        "away": 0.21041715
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 5,
+        "away": 2,
+        "display": "5–2"
+      },
+      "correct": true,
+      "history_matches": 835,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_1xblSn",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-11T16:00:00Z",
+      "home": "Sassuolo",
+      "away": "Milan",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.33269892,
+        "draw": 0.25719774,
+        "away": 0.41010334
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 816,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_0En7Dw",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-11T15:30:00Z",
+      "home": "Liverpool",
+      "away": "Manchester City",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.42258353,
+        "draw": 0.25036925,
+        "away": 0.32704722
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 3,
+        "display": "0–3"
+      },
+      "correct": false,
+      "history_matches": 818,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_3PIYm0",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-11T15:15:00Z",
+      "home": "Rennes",
+      "away": "Auxerre",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.52058617,
+        "draw": 0.23480493,
+        "away": 0.24460889
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 4,
+        "away": 1,
+        "display": "4–1"
+      },
+      "correct": true,
+      "history_matches": 664,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "pt-primeira-liga:m_3aJ84G",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-11T14:30:00Z",
+      "home": "Rio Ave",
+      "away": "Nacional",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.39396014,
+        "draw": 0.27065372,
+        "away": 0.33538614
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 2,
+        "display": "3–2"
+      },
+      "correct": true,
+      "history_matches": 671,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "be-first-division-a:m_3WOmX1",
+      "competition": "Belgian Pro League",
+      "competition_id": "be-first-division-a",
+      "kickoff": "2026-10-11T14:00:00Z",
+      "home": "Union St.Gilloise",
+      "away": "OH Leuven",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.65472884,
+        "draw": 0.21458038,
+        "away": 0.13069078
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 694,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "de-bundesliga:m_0AXpZd",
+      "competition": "Bundesliga",
+      "competition_id": "de-bundesliga",
+      "kickoff": "2026-10-11T13:30:00Z",
+      "home": "1. FC Köln",
+      "away": "Borussia Mönchengladbach",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46179057,
+        "draw": 0.22673481,
+        "away": 0.31147462
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 654,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "fr-ligue-1:m_480LDf",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "home": "Nice",
+      "away": "Strasbourg",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.43419244,
+        "draw": 0.24151113,
+        "away": 0.32429643
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": true,
+      "history_matches": 663,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "gb-premier-league:m_0WdyE0",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "home": "Crystal Palace",
+      "away": "Nottingham Forest",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.347365,
+        "draw": 0.25031311,
+        "away": 0.4023219
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": false,
+      "history_matches": 816,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_0iiE28",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "home": "Lazio",
+      "away": "Monza",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.52118914,
+        "draw": 0.2359181,
+        "away": 0.24289276
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 3,
+        "away": 1,
+        "display": "3–1"
+      },
+      "correct": true,
+      "history_matches": 814,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_0c0woG",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-11T13:00:00Z",
+      "home": "Lecce",
+      "away": "Bologna",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.28549041,
+        "draw": 0.26650653,
+        "away": 0.44800306
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": true,
+      "history_matches": 814,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "es-la-liga:m_3QSUEv",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-11T12:00:00Z",
+      "home": "Elche",
+      "away": "Celta Vigo",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.41497775,
+        "draw": 0.25344219,
+        "away": 0.33158006
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 833,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "be-first-division-a:m_480fBH",
+      "competition": "Belgian Pro League",
+      "competition_id": "be-first-division-a",
+      "kickoff": "2026-10-11T11:30:00Z",
+      "home": "Standard Liège",
+      "away": "Sporting Charleroi",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.35548812,
+        "draw": 0.28913758,
+        "away": 0.3553743
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 0,
+        "away": 1,
+        "display": "0–1"
+      },
+      "correct": false,
+      "history_matches": 693,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "it-serie-a:m_4Lm9mP",
+      "competition": "Serie A",
+      "competition_id": "it-serie-a",
+      "kickoff": "2026-10-11T10:30:00Z",
+      "home": "Como",
+      "away": "Roma",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.40521166,
+        "draw": 0.26759712,
+        "away": 0.32719122
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 0,
+        "away": 0,
+        "display": "0–0"
+      },
+      "correct": false,
+      "history_matches": 813,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_2FbCpZ",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-11T02:30:00Z",
+      "home": "Los Angeles FC",
+      "away": "Vancouver Whitecaps",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.45411947,
+        "draw": 0.24569511,
+        "away": 0.30018542
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1480,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    },
+    {
+      "id": "us-mls:m_0aJg0b",
+      "competition": "MLS",
+      "competition_id": "us-mls",
+      "kickoff": "2026-10-11T01:30:00Z",
+      "home": "Colorado Rapids",
+      "away": "San Jose Earthquakes",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.49260384,
+        "draw": 0.22593397,
+        "away": 0.28146218
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 1479,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
+      "status": "finished"
+    }
+  ],
+  "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives."
+}
