@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-23T15:32:14.741068+00:00",
+  "generated_at_utc": "2026-10-23T15:33:08.512399+00:00",
   "model": "poisson_baseline_v1",
   "status": "EXPERIMENTAL",
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
-  "analysis_start_utc": "2026-10-23T15:31:57+00:00",
+  "analysis_start_utc": "2026-10-23T15:32:52+00:00",
   "version_backtest": {
     "method": "walk_forward_chronological_since_analysis_change",
     "evaluated_matches": 0,
@@ -48,7 +48,7 @@
       "away_expected_goals": 1.1668,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_3vXtC6",
@@ -73,7 +73,7 @@
       "away_expected_goals": 1.1976,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_1xpDGh",
@@ -98,7 +98,7 @@
       "away_expected_goals": 1.2861,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_00TkE1",
@@ -123,7 +123,7 @@
       "away_expected_goals": 1.2621,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_4JyHOG",
@@ -148,7 +148,7 @@
       "away_expected_goals": 1.2942,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_1rlN1U",
@@ -173,7 +173,7 @@
       "away_expected_goals": 1.2874,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_0pSK27",
@@ -198,7 +198,7 @@
       "away_expected_goals": 1.0952,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_0CikU4",
@@ -223,7 +223,7 @@
       "away_expected_goals": 1.7893,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_3KNB9I",
@@ -248,7 +248,7 @@
       "away_expected_goals": 1.4043,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_2Cci0A",
@@ -273,7 +273,7 @@
       "away_expected_goals": 1.1011,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1tcYjG",
@@ -298,7 +298,7 @@
       "away_expected_goals": 1.1231,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_3zKOH3",
@@ -323,7 +323,7 @@
       "away_expected_goals": 1.3156,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_08BW5e",
@@ -348,7 +348,7 @@
       "away_expected_goals": 1.2235,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_3xgItg",
@@ -373,7 +373,7 @@
       "away_expected_goals": 1.4254,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_1hmK9X",
@@ -398,7 +398,7 @@
       "away_expected_goals": 1.3668,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_3VTlmY",
@@ -423,7 +423,7 @@
       "away_expected_goals": 0.9043,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_36YLPP",
@@ -448,7 +448,7 @@
       "away_expected_goals": 1.1556,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1AljkV",
@@ -473,7 +473,7 @@
       "away_expected_goals": 1.0439,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_4e2kal",
@@ -498,7 +498,7 @@
       "away_expected_goals": 1.3897,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_0il15v",
@@ -523,7 +523,7 @@
       "away_expected_goals": 1.2776,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_3flxzg",
@@ -548,7 +548,7 @@
       "away_expected_goals": 1.2847,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_2hou62",
@@ -573,7 +573,7 @@
       "away_expected_goals": 1.2145,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4ErI93",
@@ -598,7 +598,7 @@
       "away_expected_goals": 1.3428,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_0FU6Yt",
@@ -623,7 +623,7 @@
       "away_expected_goals": 1.2994,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_2L1RAf",
@@ -648,7 +648,7 @@
       "away_expected_goals": 1.1139,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_3cODef",
@@ -673,7 +673,7 @@
       "away_expected_goals": 1.0656,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_2AeYfQ",
@@ -698,7 +698,7 @@
       "away_expected_goals": 1.4084,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_1m8oAy",
@@ -723,7 +723,7 @@
       "away_expected_goals": 1.0783,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_2G7wYu",
@@ -748,7 +748,7 @@
       "away_expected_goals": 1.7797,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_3h2B3l",
@@ -773,7 +773,7 @@
       "away_expected_goals": 1.7167,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0vSce8",
@@ -798,7 +798,7 @@
       "away_expected_goals": 1.2273,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4H61gP",
@@ -823,7 +823,7 @@
       "away_expected_goals": 1.7191,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4LqW7y",
@@ -848,7 +848,7 @@
       "away_expected_goals": 1.2112,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0fXjjQ",
@@ -873,7 +873,7 @@
       "away_expected_goals": 1.4522,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_2F7mZ5",
@@ -898,7 +898,7 @@
       "away_expected_goals": 1.397,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_1oXlDG",
@@ -923,7 +923,7 @@
       "away_expected_goals": 1.4613,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0yyUIt",
@@ -948,7 +948,7 @@
       "away_expected_goals": 1.3387,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_3v0OXI",
@@ -973,7 +973,7 @@
       "away_expected_goals": 1.418,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_3ZZTaF",
@@ -998,7 +998,7 @@
       "away_expected_goals": 1.2961,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_3eSeVe",
@@ -1023,7 +1023,7 @@
       "away_expected_goals": 1.4243,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_4cNmrx",
@@ -1048,7 +1048,7 @@
       "away_expected_goals": 1.163,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_38393v",
@@ -1073,7 +1073,7 @@
       "away_expected_goals": 1.0017,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_1PJrKk",
@@ -1098,7 +1098,7 @@
       "away_expected_goals": 0.8792,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_4Z1eLV",
@@ -1123,7 +1123,7 @@
       "away_expected_goals": 1.2874,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_1LrBNT",
@@ -1148,7 +1148,7 @@
       "away_expected_goals": 1.4912,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_3pgdLY",
@@ -1173,7 +1173,7 @@
       "away_expected_goals": 1.3282,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_1f8upu",
@@ -1198,7 +1198,7 @@
       "away_expected_goals": 1.2956,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1abIcT",
@@ -1223,7 +1223,7 @@
       "away_expected_goals": 1.1365,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_3YgM7X",
@@ -1248,7 +1248,7 @@
       "away_expected_goals": 1.8183,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_4DRPKr",
@@ -1273,7 +1273,7 @@
       "away_expected_goals": 1.2141,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_1Nmiaa",
@@ -1298,7 +1298,7 @@
       "away_expected_goals": 1.2913,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_39JsCU",
@@ -1323,7 +1323,7 @@
       "away_expected_goals": 1.2381,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_43stYq",
@@ -1348,7 +1348,7 @@
       "away_expected_goals": 1.3087,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_0LOiqg",
@@ -1373,7 +1373,7 @@
       "away_expected_goals": 1.2041,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_1l9Fv2",
@@ -1398,7 +1398,7 @@
       "away_expected_goals": 1.2923,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "de-bundesliga:m_1dZPZA",
@@ -1423,7 +1423,7 @@
       "away_expected_goals": 2.0088,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "gb-premier-league:m_0Fcvht",
@@ -1448,7 +1448,7 @@
       "away_expected_goals": 1.1147,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1nwlES",
@@ -1473,7 +1473,7 @@
       "away_expected_goals": 1.4352,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_0I7QGl",
@@ -1498,7 +1498,7 @@
       "away_expected_goals": 1.2135,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_22ay5L",
@@ -1523,7 +1523,7 @@
       "away_expected_goals": 1.1653,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_4XIBMU",
@@ -1548,7 +1548,7 @@
       "away_expected_goals": 1.4945,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_4EmSQu",
@@ -1573,7 +1573,7 @@
       "away_expected_goals": 1.4219,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_1TLHOO",
@@ -1598,7 +1598,7 @@
       "away_expected_goals": 0.8884,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_3DY8iO",
@@ -1623,7 +1623,7 @@
       "away_expected_goals": 1.1793,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_0oV4JG",
@@ -1648,7 +1648,7 @@
       "away_expected_goals": 1.4046,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_1fvtTi",
@@ -1673,7 +1673,7 @@
       "away_expected_goals": 1.2409,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0N9lXC",
@@ -1698,7 +1698,7 @@
       "away_expected_goals": 1.1727,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "pt-primeira-liga:m_3AKDbz",
@@ -1723,7 +1723,7 @@
       "away_expected_goals": 1.4543,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_3I8Ig2",
@@ -1748,7 +1748,7 @@
       "away_expected_goals": 1.2885,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_1MHDEI",
@@ -1773,7 +1773,7 @@
       "away_expected_goals": 1.6085,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_1XOUXe",
@@ -1798,7 +1798,7 @@
       "away_expected_goals": 1.0707,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_0Apv0v",
@@ -1823,7 +1823,7 @@
       "away_expected_goals": 1.2629,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_2L71CW",
@@ -1848,7 +1848,7 @@
       "away_expected_goals": 0.8302,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_0sBSLz",
@@ -1873,7 +1873,7 @@
       "away_expected_goals": 1.3287,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_3fadot",
@@ -1898,7 +1898,7 @@
       "away_expected_goals": 1.6216,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_4Qr3lF",
@@ -1923,7 +1923,7 @@
       "away_expected_goals": 1.3332,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1WJM3Y",
@@ -1948,7 +1948,7 @@
       "away_expected_goals": 1.1634,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_2Ijf0h",
@@ -1973,7 +1973,7 @@
       "away_expected_goals": 1.43,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_1lw8Rx",
@@ -1998,7 +1998,7 @@
       "away_expected_goals": 1.3767,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_1d61Oi",
@@ -2023,7 +2023,7 @@
       "away_expected_goals": 1.2811,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4LIR2e",
@@ -2048,7 +2048,7 @@
       "away_expected_goals": 1.0999,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0rWoXw",
@@ -2073,7 +2073,7 @@
       "away_expected_goals": 1.5265,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_3FvdnV",
@@ -2098,7 +2098,7 @@
       "away_expected_goals": 1.1483,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4DJunR",
@@ -2123,7 +2123,7 @@
       "away_expected_goals": 1.4463,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_0vV67a",
@@ -2148,7 +2148,7 @@
       "away_expected_goals": 1.2032,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4O3WuQ",
@@ -2173,7 +2173,7 @@
       "away_expected_goals": 1.307,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_2bXDoU",
@@ -2198,7 +2198,7 @@
       "away_expected_goals": 1.4712,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_1CbqCj",
@@ -2223,7 +2223,7 @@
       "away_expected_goals": 1.5453,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_2XJ4n5",
@@ -2248,7 +2248,7 @@
       "away_expected_goals": 1.6057,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_31kjXI",
@@ -2273,7 +2273,7 @@
       "away_expected_goals": 1.2693,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_20ysMY",
@@ -2298,7 +2298,7 @@
       "away_expected_goals": 1.4614,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_4P9jTg",
@@ -2323,7 +2323,7 @@
       "away_expected_goals": 1.4779,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "us-mls:m_18wmhD",
@@ -2348,7 +2348,7 @@
       "away_expected_goals": 1.2699,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "it-serie-a:m_0h3uIF",
@@ -2373,7 +2373,7 @@
       "away_expected_goals": 1.4118,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_49qvGz",
@@ -2398,7 +2398,7 @@
       "away_expected_goals": 1.9296,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_2vFCN3",
@@ -2423,7 +2423,7 @@
       "away_expected_goals": 1.1931,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-2:m_0FFUe1",
@@ -2448,7 +2448,7 @@
       "away_expected_goals": 1.4121,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "be-first-division-a:m_2T8QnJ",
@@ -2473,7 +2473,7 @@
       "away_expected_goals": 1.5134,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "es-la-liga:m_0i0ZRd",
@@ -2498,7 +2498,7 @@
       "away_expected_goals": 1.1452,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     },
     {
       "id": "fr-ligue-1:m_1bgQkd",
@@ -2523,7 +2523,7 @@
       "away_expected_goals": 1.304,
       "status": "upcoming",
       "prediction_snapshot_available": true,
-      "prediction_model_version": null
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
     }
   ],
   "recent_results": [
@@ -17031,17 +17031,17 @@
   "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives.",
   "analysis_version": "poisson_baseline_v1-bb49a8eea007",
   "analysis_version_hash": "bb49a8eea007",
-  "analysis_version_since_utc": "2026-10-23T15:31:57+00:00",
-  "analysis_source_commit": "566ab51cb6dbf25683cda07452e431406822186f",
+  "analysis_version_since_utc": "2026-10-23T15:32:52+00:00",
+  "analysis_source_commit": "f8ce1c95ddafedbaeac3028455e8c135b57093d4",
   "model_history": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
       "model": "poisson_baseline_v1",
       "analysis_version_hash": "bb49a8eea007",
-      "first_seen_utc": "2026-10-23T15:32:17.533553+00:00",
-      "last_evaluated_utc": "2026-10-23T15:32:17.533553+00:00",
-      "source_commit": "566ab51cb6dbf25683cda07452e431406822186f",
-      "analysis_start_utc": "2026-10-23T15:31:57+00:00",
+      "first_seen_utc": "2026-10-23T15:33:10.613947+00:00",
+      "last_evaluated_utc": "2026-10-23T15:33:10.613947+00:00",
+      "source_commit": "f8ce1c95ddafedbaeac3028455e8c135b57093d4",
+      "analysis_start_utc": "2026-10-23T15:32:52+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,

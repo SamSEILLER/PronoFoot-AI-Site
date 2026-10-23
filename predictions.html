@@ -41,7 +41,9 @@
     .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: #07111f; background: var(--accent); font-size: 19px; }
     .brand-ai, .headline-accent { color: var(--accent); }
     .brand-kicker { margin-left: 49px; color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; }
+    .header-actions { display:flex; align-items:center; gap:10px; }
     .nav-link { color: var(--accent); text-decoration: none; border: 1px solid rgba(141,245,197,.35); border-radius: 999px; padding: 10px 14px; font-size: 12px; font-weight: 750; white-space: nowrap; }
+    .nav-active { background:rgba(141,245,197,.1); border-color:rgba(141,245,197,.7); }
     .nav-link:hover { background: rgba(141,245,197,.08); }
     main { padding: 28px 0 48px; }
     .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .2em; font-size: 11px; font-weight: 800; }
@@ -79,6 +81,15 @@
     .pill.warn { color: var(--warn); border-color: rgba(255,210,125,.35); }
     .pill.bad { color: var(--bad); border-color: rgba(255,157,157,.35); }
     .empty, .error { padding: 28px 18px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 14px; font-size: 13px; line-height: 1.7; }
+    .version-list { display:grid; gap:11px; }
+    .version-card { border:1px solid var(--line); border-radius:15px; background:var(--panel); padding:17px 18px; }
+    .version-top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    .version-name { font-size:14px; font-weight:780; overflow-wrap:anywhere; }
+    .version-meta { margin-top:8px; color:var(--muted); font-size:11px; line-height:1.6; }
+    .version-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:14px; }
+    .version-metric { background:rgba(7,17,31,.55); border-radius:10px; padding:10px; }
+    .version-metric span { display:block; color:var(--muted); font-size:10px; }
+    .version-metric strong { display:block; margin-top:5px; font-size:16px; }
     footer { padding: 23px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.7; }
     @media (max-width: 800px) {
       header, main, footer { width: min(100% - 28px, 1120px); }
@@ -89,6 +100,7 @@
     }
     @media (max-width: 560px) {
       header { align-items: flex-start; gap: 12px; }
+      .header-actions { flex-wrap:wrap; justify-content:flex-end; }
       .nav-link { padding: 9px 10px; font-size: 10px; white-space: normal; text-align: center; }
       .brand { font-size: 17px; }
       .brand-mark { width: 34px; height: 34px; }
@@ -100,6 +112,7 @@
       .filters input { grid-column: 1 / -1; }
       .match-card { grid-template-columns: 1fr; gap: 13px; padding: 15px; }
       .result-block { grid-column: auto; }
+      .version-metrics { grid-template-columns:1fr; }
       .section-head { align-items: flex-start; flex-direction: column; }
     }
   </style>
@@ -111,138 +124,173 @@
       <div class="brand"><div class="brand-mark" aria-hidden="true">P</div><span>PronoFoot <span class="brand-ai">AI</span></span></div>
       <div class="brand-kicker">Observer · Comprendre · Mesurer</div>
     </div>
-    <a class="nav-link" href="index.html">← Accueil</a>
+    <div class="header-actions">
+      <a class="nav-link" href="index.html">Prédictions</a>
+      <a class="nav-link nav-active" href="predictions.html" aria-current="page">Historique & bilan</a>
+    </div>
   </header>
 
   <main>
-    <div class="eyebrow">Suivi des estimations</div>
-    <h1>Prédictions & <span class="headline-accent">résultats.</span></h1>
-    <p class="subtitle">Les probabilités estimées avant les matchs, puis les scores réels une fois les rencontres terminées. Chaque résultat reste consultable pour mesurer le modèle dans le temps.</p>
-
-    <div class="notice"><strong>Modèle expérimental — non validé.</strong> Les estimations ci-dessous proviennent d’une baseline Poisson non calibrée. Elles ne constituent pas des pronostics validés ni des conseils de pari. La publication du modèle reste désactivée.</div>
-
-    <div class="stats" aria-label="Résumé du modèle">
-      <section class="stat"><div class="stat-label">Matchs à venir</div><div class="stat-value" id="upcoming-count">—</div><div class="stat-detail">Estimations disponibles sur 14 jours</div></section>
-      <section class="stat"><div class="stat-label">Résultats évalués</div><div class="stat-value" id="evaluated-count">—</div><div class="stat-detail">Backtest chronologique</div></section>
-      <section class="stat"><div class="stat-label">Score de Brier</div><div class="stat-value" id="brier-score">—</div><div class="stat-detail">Plus bas est préférable, à comparer à une référence</div></section>
-      <section class="stat"><div class="stat-label">État du modèle</div><div class="stat-value" id="model-state">—</div><div class="stat-detail" id="model-detail">Validation non approuvée</div></section>
-    </div>
+    <div class="eyebrow">Suivi historique · versions du modèle</div>
+    <h1>Historique & <span class="headline-accent">bilan.</span></h1>
+    <p class="subtitle">Les résultats récents, les prédictions conservées avant les matchs et le suivi des performances depuis la dernière modification du script d’analyse.</p>
+    <div class="notice"><strong>Modèle expérimental — non validé.</strong> Les prédictions archivées sont identifiées comme telles. Lorsqu’aucune prédiction pré-match n’a été conservée, le site le signale et ne la présente pas comme une prévision d’origine.</div>
 
     <div class="section-head">
-      <div class="section-title">Matchs et scores</div>
-      <div class="muted" id="generated-at">Chargement des données…</div>
+      <div class="section-title">Résultats des 7 derniers jours</div>
+      <div class="muted" id="history-period">Calcul de la période…</div>
     </div>
     <div class="filters">
-      <select id="status-filter" aria-label="Filtrer les matchs">
-        <option value="all">Tous les matchs</option>
-        <option value="upcoming">À venir</option>
-        <option value="finished">Terminés</option>
-      </select>
       <select id="competition-filter" aria-label="Filtrer par compétition">
         <option value="all">Toutes les compétitions</option>
       </select>
+      <select id="tracking-filter" aria-label="Filtrer le statut de la prédiction">
+        <option value="all">Toutes les prédictions</option>
+        <option value="archived">Prédiction pré-match archivée</option>
+        <option value="reconstructed">Prédiction non archivée</option>
+      </select>
       <input id="search-filter" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe">
     </div>
-    <div class="match-list" id="match-list"><div class="empty">Lecture du dernier jeu de données…</div></div>
+    <div class="match-list" id="match-list"><div class="empty">Lecture de l’historique…</div></div>
+
+    <div class="section-head">
+      <div class="section-title">Bilan depuis la dernière modification du script</div>
+      <div class="muted" id="analysis-period">Chargement de la version active…</div>
+    </div>
+    <div class="stats" aria-label="Bilan de la version active">
+      <section class="stat"><div class="stat-label">Version active</div><div class="stat-value" id="active-version">—</div><div class="stat-detail" id="active-version-detail">Version du script d’analyse</div></section>
+      <section class="stat"><div class="stat-label">Matchs évalués</div><div class="stat-value" id="version-evaluated">—</div><div class="stat-detail">Depuis la modification du script</div></section>
+      <section class="stat"><div class="stat-label">Score de Brier</div><div class="stat-value" id="version-brier">—</div><div class="stat-detail">Sur la période de la version active</div></section>
+      <section class="stat"><div class="stat-label">Bilan de référence</div><div class="stat-value" id="reference-brier">—</div><div class="stat-detail" id="reference-detail">Backtest de référence toutes périodes confondues</div></section>
+    </div>
+    <div class="notice" id="version-note">Le bilan de la version active sera renseigné à mesure que des matchs postérieurs à sa date de modification seront évalués.</div>
+
+    <div class="section-head">
+      <div class="section-title">Évolution entre les versions</div>
+      <div class="muted">Historique des empreintes du script d’analyse</div>
+    </div>
+    <div class="version-list" id="version-list"><div class="empty">Lecture de l’historique des versions…</div></div>
   </main>
 
   <footer>
     PronoFoot AI · Observer · Comprendre · Mesurer<br>
-    Les scores réels proviennent des archives de matchs disponibles. Le backtest présenté porte sur la saison la plus récente de chaque compétition et ne suffit pas à valider la performance ni la rentabilité du modèle.
+    Les résultats des sept derniers jours sont filtrés selon la date du match. Les performances par version ne sont comparables que si les périodes et les matchs évalués sont comparables. Le score de Brier seul ne valide ni la qualité générale du modèle ni sa rentabilité.
   </footer>
 
   <script>
     (() => {
-      const labels = {home: '1', draw: 'N', away: '2'};
+      const labels = {home:'1', draw:'N', away:'2'};
       const list = document.getElementById('match-list');
-      const statusFilter = document.getElementById('status-filter');
       const competitionFilter = document.getElementById('competition-filter');
+      const trackingFilter = document.getElementById('tracking-filter');
       const searchFilter = document.getElementById('search-filter');
-      let dataset = {upcoming: [], recent_results: []};
-
+      let recent = [];
       const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
       })[char]);
       const pct = value => Number.isFinite(Number(value)) ? Math.round(Number(value) * 100) + '%' : '—';
+      const score = value => value == null || !Number.isFinite(Number(value)) ? '—' : Number(value).toFixed(4);
       const formatDate = value => {
         if (!value) return 'Date inconnue';
         const date = new Date(value);
         return Number.isNaN(date.getTime()) ? 'Date inconnue' :
           new Intl.DateTimeFormat('fr-FR', {weekday:'short', day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit', timeZone:'Europe/Paris'}).format(date);
       };
-      const probabilityCells = (row) => ['home', 'draw', 'away'].map(key => {
-        const active = row.predicted_outcome === key ? ' active' : '';
-        return '<div class="prob' + active + '"><span>' + labels[key] + '</span><strong>' +
-          pct(row.probabilities && row.probabilities[key]) + '</strong></div>';
-      }).join('');
       const card = row => {
-        const upcoming = row.status === 'upcoming';
-        const resultText = upcoming ? 'À venir' : (row.actual_score ? row.actual_score.display : 'Score indisponible');
-        let evaluation = '<span class="pill warn">À évaluer</span>';
-        if (upcoming) evaluation = '<span class="pill warn">Avant match</span>';
-        else if (row.correct === true) evaluation = '<span class="pill ok">Issue anticipée correcte</span>';
-        else if (row.correct === false) evaluation = '<span class="pill bad">Issue différente</span>';
-        return '<article class="match-card">' +
-          '<div><div class="match-meta"><span>' + escapeHtml(row.competition) + '</span><span>·</span><span>' + escapeHtml(formatDate(row.kickoff)) + '</span></div>' +
-          '<div class="match-teams">' + escapeHtml(row.home) + '<span class="versus">vs</span>' + escapeHtml(row.away) + '</div>' +
-          '<div class="muted" style="margin-top:8px">Issue la plus probable : <strong>' + escapeHtml(row.predicted_label || labels[row.predicted_outcome]) + '</strong> · historique utilisé : ' + escapeHtml(row.history_matches || 0) + ' matchs</div></div>' +
-          '<div><div class="muted" style="margin-bottom:7px">Probabilités 1 / N / 2</div><div class="probabilities">' + probabilityCells(row) + '</div></div>' +
-          '<div class="result-block"><div><div class="result-label">Score réel</div><div class="result-score">' + escapeHtml(resultText) + '</div></div><div>' + evaluation + '</div></div>' +
-          '</article>';
+        const actual = row.actual_score && row.actual_score.display ? row.actual_score.display : 'Score indisponible';
+        const archived = row.prediction_snapshot_available === true;
+        const predictionTag = archived ? '<span class="pill ok">Prédiction pré-match archivée</span>' :
+          '<span class="pill warn">Prédiction d’origine non archivée</span>';
+        const outcomeTag = row.correct === true ? '<span class="pill ok">Issue correcte</span>' :
+          row.correct === false ? '<span class="pill bad">Issue différente</span>' : '<span class="pill warn">Non évaluée</span>';
+        const probabilities = ['home','draw','away'].map(key =>
+          '<div class="prob' + (row.predicted_outcome === key ? ' active' : '') + '"><span>' + labels[key] +
+          '</span><strong>' + pct(row.probabilities && row.probabilities[key]) + '</strong></div>').join('');
+        return '<article class="match-card"><div><div class="match-meta"><span>' + escapeHtml(row.competition || 'Compétition inconnue') +
+          '</span><span>·</span><span>' + escapeHtml(formatDate(row.kickoff)) + '</span></div><div class="match-teams">' +
+          escapeHtml(row.home) + '<span class="versus">vs</span>' + escapeHtml(row.away) + '</div><div style="margin-top:9px;display:flex;gap:6px;flex-wrap:wrap">' +
+          predictionTag + outcomeTag + '</div><div class="muted" style="margin-top:8px">Prédiction : ' + escapeHtml(row.predicted_label || labels[row.predicted_outcome]) +
+          ' · Version : ' + escapeHtml(row.prediction_model_version || 'non identifiée') + '</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités archivées / disponibles · Score réel : <strong>' +
+          escapeHtml(actual) + '</strong></div><div class="probabilities">' + probabilities + '</div></div></article>';
       };
-
-      const render = () => {
-        const mode = statusFilter.value;
+      const renderRecent = () => {
         const competition = competitionFilter.value;
+        const tracking = trackingFilter.value;
         const query = searchFilter.value.trim().toLocaleLowerCase('fr');
-        const all = [
-          ...(mode === 'finished' ? [] : dataset.upcoming),
-          ...(mode === 'upcoming' ? [] : dataset.recent_results)
-        ];
-        const filtered = all.filter(row =>
+        const filtered = recent.filter(row =>
           (competition === 'all' || row.competition_id === competition) &&
+          (tracking === 'all' || (tracking === 'archived' ? row.prediction_snapshot_available === true : row.prediction_snapshot_available !== true)) &&
           (!query || (row.home + ' ' + row.away + ' ' + row.competition).toLocaleLowerCase('fr').includes(query))
         );
         list.innerHTML = filtered.length ? filtered.map(card).join('') :
-          '<div class="empty">Aucun match ne correspond aux filtres. Essaie une autre compétition ou un autre statut.</div>';
+          '<div class="empty">Aucun résultat sur les sept derniers jours pour ces filtres.</div>';
       };
-
+      const renderVersions = (data) => {
+        const versions = Array.isArray(data.model_history) ? data.model_history.slice().reverse() : [];
+        const versionList = document.getElementById('version-list');
+        if (!versions.length) {
+          versionList.innerHTML = '<div class="empty">L’historique des versions commencera à se remplir après la synchronisation avec suivi des versions.</div>';
+          return;
+        }
+        versionList.innerHTML = versions.map((item, index) => {
+          const previous = versions[index + 1];
+          let delta = '—';
+          if (previous && item.brier_score != null && previous.brier_score != null) {
+            const value = Number(item.brier_score) - Number(previous.brier_score);
+            delta = (value > 0 ? '+' : '') + value.toFixed(4) + ' vs version précédente';
+          }
+          return '<article class="version-card"><div class="version-top"><div class="version-name">' + escapeHtml(item.version_id || 'Version inconnue') +
+            '</div><span class="pill ' + (index === 0 ? 'ok' : 'warn') + '">' + (index === 0 ? 'Version la plus récente' : 'Version antérieure') +
+            '</span></div><div class="version-meta">Première détection : ' + escapeHtml(formatDate(item.first_seen_utc)) +
+            ' · Dernière évaluation : ' + escapeHtml(formatDate(item.last_evaluated_utc)) + '<br>Commit source : ' + escapeHtml(item.source_commit || '—') +
+            ' · Début d’évaluation : ' + escapeHtml(formatDate(item.analysis_start_utc)) + '</div><div class="version-metrics">' +
+            '<div class="version-metric"><span>Matchs depuis la modification</span><strong>' + escapeHtml(item.evaluated_matches ?? 0) + '</strong></div>' +
+            '<div class="version-metric"><span>Brier sur la version</span><strong>' + escapeHtml(score(item.brier_score)) + '</strong></div>' +
+            '<div class="version-metric"><span>Écart au Brier de la version précédente</span><strong>' + escapeHtml(delta) + '</strong></div>' +
+            '</div><div class="version-meta">Bilan de référence : ' + escapeHtml(item.reference_evaluated_matches ?? 0) +
+            ' matchs · Brier ' + escapeHtml(score(item.reference_brier_score)) +
+            '. Les écarts sont indicatifs si les échantillons ne sont pas identiques.</div></article>';
+        }).join('');
+      };
       fetch('predictions-data.json', {cache:'no-store'})
-        .then(response => {
-          if (!response.ok) throw new Error('Données indisponibles');
-          return response.json();
-        })
+        .then(response => { if (!response.ok) throw new Error('Données indisponibles'); return response.json(); })
         .then(data => {
-          dataset = data;
-          const upcoming = Array.isArray(data.upcoming) ? data.upcoming : [];
-          const recent = Array.isArray(data.recent_results) ? data.recent_results : [];
-          document.getElementById('upcoming-count').textContent = upcoming.length;
-          document.getElementById('evaluated-count').textContent = data.backtest && data.backtest.evaluated_matches != null ? data.backtest.evaluated_matches : '—';
-          const brier = data.backtest && data.backtest.brier_score;
-          document.getElementById('brier-score').textContent = brier == null ? '—' : Number(brier).toFixed(3);
-          document.getElementById('model-state').textContent = data.publication_approved ? 'Validé' : 'Expérimental';
-          document.getElementById('model-detail').textContent = data.evaluation_status || 'Validation non approuvée';
-          document.getElementById('generated-at').textContent = 'Mis à jour le ' + formatDate(data.generated_at_utc);
+          const now = new Date();
+          const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+          const allRecent = Array.isArray(data.recent_results) ? data.recent_results : [];
+          recent = allRecent.filter(row => {
+            if (!row.actual_score || !row.kickoff) return false;
+            const kickoff = new Date(row.kickoff);
+            return !Number.isNaN(kickoff.getTime()) && kickoff >= start && kickoff <= now;
+          }).sort((a,b) => new Date(b.kickoff) - new Date(a.kickoff));
+          document.getElementById('history-period').textContent = formatDate(start.toISOString()) + ' – ' + formatDate(now.toISOString()) + ' · ' + recent.length + ' résultats';
           const competitions = new Map();
-          [...upcoming, ...recent].forEach(row => {
-            if (row.competition_id) competitions.set(row.competition_id, row.competition);
+          allRecent.forEach(row => { if (row.competition_id) competitions.set(row.competition_id, row.competition); });
+          [...competitions.entries()].sort((a,b) => a[1].localeCompare(b[1], 'fr')).forEach(([id,name]) => {
+            const option = document.createElement('option'); option.value = id; option.textContent = name; competitionFilter.appendChild(option);
           });
-          [...competitions.entries()].sort((a,b) => a[1].localeCompare(b[1], 'fr')).forEach(([id, name]) => {
-            const option = document.createElement('option');
-            option.value = id;
-            option.textContent = name;
-            competitionFilter.appendChild(option);
-          });
-          render();
+          const vb = data.version_backtest || {};
+          document.getElementById('active-version').textContent = data.analysis_version || data.model || '—';
+          document.getElementById('active-version-detail').textContent = 'Commit : ' + String(data.analysis_source_commit || '—').slice(0,7);
+          document.getElementById('analysis-period').textContent = 'Depuis le ' + formatDate(data.analysis_version_since_utc || data.analysis_start_utc);
+          document.getElementById('version-evaluated').textContent = vb.evaluated_matches ?? '0';
+          document.getElementById('version-brier').textContent = score(vb.brier_score);
+          document.getElementById('reference-brier').textContent = score(data.backtest && data.backtest.brier_score);
+          document.getElementById('reference-detail').textContent = (data.backtest && data.backtest.evaluated_matches || 0) + ' matchs · saison la plus récente par compétition';
+          document.getElementById('version-note').textContent = vb.evaluated_matches > 0 ?
+            'Le bilan de version utilise ' + vb.evaluated_matches + ' matchs postérieurs à la dernière modification enregistrée du script. Le Brier de référence utilise un échantillon plus large et n’est pas directement comparable.' :
+            'Aucun match terminé n’a encore été évalué depuis la dernière modification du script. Le bilan de cette version restera en attente jusqu’à ce que des matchs soient disponibles.';
+          renderRecent();
+          renderVersions(data);
         })
         .catch(() => {
-          list.innerHTML = '<div class="error">Les données de prédiction ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>';
-          document.getElementById('model-state').textContent = 'Indisponible';
+          list.innerHTML = '<div class="error">Les données historiques ne sont pas disponibles pour le moment.</div>';
+          document.getElementById('version-list').innerHTML = '<div class="error">Historique des versions indisponible.</div>';
+          document.getElementById('active-version').textContent = 'Indisponible';
         });
-
-      statusFilter.addEventListener('change', render);
-      competitionFilter.addEventListener('change', render);
-      searchFilter.addEventListener('input', render);
+      competitionFilter.addEventListener('change', renderRecent);
+      trackingFilter.addEventListener('change', renderRecent);
+      searchFilter.addEventListener('input', renderRecent);
     })();
   </script>
 </body>
