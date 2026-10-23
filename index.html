@@ -83,6 +83,25 @@
       .data-card { transition: border-color .2s ease, transform .2s ease; }
       .data-card:hover { transform: translateY(-2px); border-color: rgba(141,245,197,.32); }
     }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.2em; font-size:11px; font-weight:800; }
+    .section-head { display:flex; justify-content:space-between; align-items:flex-end; gap:18px; margin:30px 0 15px; }
+    .section-title { font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .muted { color:var(--muted); font-size:12px; }
+    .filters { display:grid; grid-template-columns:minmax(150px,.7fr) minmax(180px,1fr) minmax(220px,1.5fr); gap:10px; margin:20px 0 14px; }
+    select, input { width:100%; min-height:43px; border:1px solid var(--line); border-radius:11px; padding:10px 12px; background:rgba(7,17,31,.8); color:var(--text); font:inherit; font-size:12px; outline:none; }
+    .match-list { display:grid; gap:11px; }
+    .match-card { min-width:0; border:1px solid var(--line); border-radius:15px; background:var(--panel); padding:17px 18px; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(190px,1fr); gap:18px; align-items:center; }
+    .match-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:9px; color:var(--muted); font-size:10px; font-weight:750; letter-spacing:.08em; text-transform:uppercase; }
+    .match-teams { font-size:16px; font-weight:760; line-height:1.45; }
+    .versus { color:var(--muted); font-weight:500; padding:0 5px; }
+    .probabilities { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+    .prob { border:1px solid var(--line); border-radius:9px; padding:8px 5px; text-align:center; color:var(--muted); font-size:10px; }
+    .prob strong { display:block; color:var(--text); font-size:14px; margin-top:3px; }
+    .prob.active { border-color:rgba(141,245,197,.5); background:rgba(141,245,197,.08); color:var(--accent); }
+    .prob.active strong { color:var(--accent); }
+    .notice { margin:22px 0; padding:14px 16px; border:1px solid rgba(255,210,125,.35); border-radius:14px; background:rgba(255,210,125,.055); color:#f5dfb2; font-size:12px; line-height:1.6; }
+    .empty,.error { padding:28px 18px; text-align:center; color:var(--muted); border:1px dashed var(--line); border-radius:14px; font-size:13px; line-height:1.7; }
+    @media(max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.match-card{grid-template-columns:1fr;gap:13px;padding:15px}.section-head{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
@@ -100,8 +119,19 @@
   </header>
 
   <main>
-    <h1>Le football, vu par la <span class="headline-accent">donnée.</span></h1>
-    <p class="subtitle">Nous réunissons résultats, statistiques et cotes dans une chaîne contrôlée, pour analyser les matchs avec méthode et mesurer la fiabilité des modèles.</p>
+    <div class="eyebrow">Observer · Comprendre · Mesurer</div>
+    <h1>Les prochains matchs,<br>vus par la <span class="headline-accent">donnée.</span></h1>
+    <p class="subtitle">Retrouve les matchs à venir et les probabilités 1 / N / 2 calculées par le modèle avant le coup d’envoi.</p>
+    <div class="notice"><strong>Modèle expérimental — non validé.</strong> Ces probabilités sont des estimations, pas des certitudes ni des conseils de pari. Les prédictions publiées sont conservées pour le suivi historique.</div>
+    <div class="section-head"><div class="section-title">Prochains matchs</div><div class="muted" id="generated-at">Chargement des prédictions…</div></div>
+    <div class="filters">
+      <select id="date-filter" aria-label="Filtrer par période">
+        <option value="all">Toutes les dates disponibles</option><option value="today">Aujourd’hui</option><option value="tomorrow">Demain</option><option value="3days">3 prochains jours</option>
+      </select>
+      <select id="competition-filter" aria-label="Filtrer par compétition"><option value="all">Toutes les compétitions</option></select>
+      <input id="search-filter" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe">
+    </div>
+    <div class="match-list" id="match-list"><div class="empty">Lecture du dernier jeu de données…</div></div>
   </main>
 
   <footer aria-label="État des données">
@@ -130,57 +160,34 @@
 
   <script>
     (() => {
-      const number = value => new Intl.NumberFormat('fr-FR').format(Number(value || 0));
-      const formatTime = value => {
-        if (!value) return 'date inconnue';
-        const date = new Date(value);
-        return Number.isNaN(date.getTime()) ? 'date inconnue' :
-          new Intl.DateTimeFormat('fr-FR', {dateStyle:'medium', timeStyle:'short', timeZone:'Europe/Paris'}).format(date);
+      const labels={home:'1',draw:'N',away:'2'};
+      const list=document.getElementById('match-list'), dateFilter=document.getElementById('date-filter');
+      const competitionFilter=document.getElementById('competition-filter'), searchFilter=document.getElementById('search-filter');
+      let upcoming=[];
+      const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
+      const fmt=v=>{const d=new Date(v);return !v||Number.isNaN(d.getTime())?'Date inconnue':new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Paris'}).format(d)};
+      const card=r=>'<article class="match-card"><div><div class="match-meta"><span>'+esc(r.competition)+'</span><span>·</span><span>'+esc(fmt(r.kickoff))+'</span></div><div class="match-teams">'+esc(r.home)+'<span class="versus">vs</span>'+esc(r.away)+'</div><div class="muted" style="margin-top:8px">Issue la plus probable : <strong>'+esc(r.predicted_label||labels[r.predicted_outcome])+'</strong> · historique utilisé : '+esc(r.history_matches||0)+' matchs</div></div><div><div class="muted" style="margin-bottom:7px">Probabilités 1 / N / 2</div><div class="probabilities">'+['home','draw','away'].map(k=>'<div class="prob'+(r.predicted_outcome===k?' active':'')+'"><span>'+labels[k]+'</span><strong>'+pct(r.probabilities&&r.probabilities[k])+'</strong></div>').join('')+'</div></div></article>';
+      const render=()=>{
+        const now=new Date(), today=new Date(now.getFullYear(),now.getMonth(),now.getDate()), tomorrow=new Date(today); tomorrow.setDate(tomorrow.getDate()+1);
+        const end=new Date(today); end.setDate(end.getDate()+4);
+        const q=searchFilter.value.trim().toLocaleLowerCase('fr'), comp=competitionFilter.value;
+        const rows=upcoming.filter(r=>{const d=new Date(r.kickoff);if(Number.isNaN(d.getTime())||d<now)return false;
+          if(comp!=='all'&&r.competition_id!==comp)return false;
+          if(q&&!(r.home+' '+r.away+' '+r.competition).toLocaleLowerCase('fr').includes(q))return false;
+          if(dateFilter.value==='today'&&(d<today||d>=tomorrow))return false;
+          if(dateFilter.value==='tomorrow'&&(d<tomorrow||d>=end))return false;
+          if(dateFilter.value==='3days'&&(d<today||d>=end))return false;return true});
+        list.innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';
       };
-      const setCard = (key, data, value, detail) => {
-        const card = document.getElementById(key + '-card');
-        card.dataset.state = data && data.status ? data.status : 'unavailable';
-        document.getElementById(key + '-status').textContent = data && data.label ? data.label : 'Indisponible';
-        document.getElementById(key + '-value').textContent = value;
-        document.getElementById(key + '-detail').textContent = detail;
-      };
-      const unavailable = () => {
-        setCard('database', null, 'Données non disponibles', 'Aucun rapport de collecte récent n’a pu être chargé.');
-        setCard('statistics', null, 'Données non disponibles', 'Le contrôle qualité n’est pas disponible pour le moment.');
-        setCard('odds', null, 'Données non disponibles', 'Aucun rapport de récupération des cotes n’a pu être chargé.');
-        document.getElementById('last-check').textContent = 'Dernière vérification : indisponible';
-      };
-      fetch('site-status.json', {cache:'no-store'})
-        .then(response => {
-          if (!response.ok) throw new Error('status unavailable');
-          return response.json();
-        })
-        .then(status => {
-          const db = status.database || {};
-          const stats = status.statistics || {};
-          const odds = status.odds || {};
-          setCard('database', db,
-            db.records != null ? number(db.records) + ' matchs archivés' : 'Données non disponibles',
-            (db.errors === 0 ? '0 saison en échec' : number(db.errors || 0) + ' échec(s) de collecte') +
-              ' · mise à jour ' + formatTime(db.updated_at_utc));
-          setCard('statistics', stats,
-            stats.results != null ? number(stats.results) + ' résultats' : 'Données non disponibles',
-            (stats.issues === 0 ? '0 anomalie structurelle' : number(stats.issues || 0) + ' anomalie(s) structurelle(s)') +
-              ' · mise à jour ' + formatTime(stats.updated_at_utc));
-          const oddsErrors = Number(odds.errors || 0);
-          const oddsDetail = (oddsErrors === 0 ? '0 erreur de récupération' : number(oddsErrors) + ' erreur(s) de récupération') +
-            ' · ' + number(odds.unmatched || 0) + ' événement(s) non associé(s)' +
-            (Number(odds.without_markets || 0) ? ' · ' + number(odds.without_markets) + ' sans marché' : '') +
-            ' · mise à jour ' + formatTime(odds.updated_at_utc);
-          setCard('odds', odds,
-            odds.events_with_odds != null ? number(odds.events_with_odds) + ' matchs avec cotes' : 'Données non disponibles',
-            oddsDetail);
-          document.getElementById('last-check').textContent = 'Vérifié le ' + formatTime(status.generated_at_utc);
-        })
-        .catch(() => {
-          // Keep the page usable if the status file is temporarily unavailable.
-          unavailable();
-        });
+      fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+        upcoming=Array.isArray(d.upcoming)?d.upcoming:[];
+        document.getElementById('generated-at').textContent='Mis à jour le '+fmt(d.generated_at_utc)+' · '+upcoming.length+' matchs disponibles';
+        const comps=new Map();upcoming.forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition)});
+        [...comps.entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr')).forEach(([id,n])=>{const o=document.createElement('option');o.value=id;o.textContent=n;competitionFilter.appendChild(o)});
+        render();
+      }).catch(()=>{list.innerHTML='<div class="error">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
+      dateFilter.addEventListener('change',render);competitionFilter.addEventListener('change',render);searchFilter.addEventListener('input',render);
     })();
   </script>
 </body>
