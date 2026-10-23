@@ -157,7 +157,7 @@
           if(comp!=='all'&&r.competition_id!==comp)return false;
           if(q&&!(r.home+' '+r.away+' '+r.competition).toLocaleLowerCase('fr').includes(q))return false;
           if(dateFilter.value==='today'&&(d<today||d>=tomorrow))return false;
-          if(dateFilter.value==='tomorrow'&&(d<tomorrow||d>=end))return false;
+          if(dateFilter.value==='tomorrow'&&d.toDateString()!==tomorrow.toDateString())return false;
           if(dateFilter.value==='3days'&&(d<today||d>=end))return false;return true});
         list.innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';
       };
