@@ -103,6 +103,7 @@
       <div class="log"><strong>Interface</strong><span id="log-ui">En attente du script…</span></div>
       <div class="log"><strong>Dernière modification</strong><span id="log-modified">Lecture des métadonnées…</span></div>
       <div class="log"><strong>Contrôle navigateur</strong><span id="log-runtime">En attente du contrôle…</span></div>
+      <div class="log"><strong>Synchronisation publique</strong><span id="log-sync">Lecture du dernier statut…</span></div>
     </div>
   </footer>
 
@@ -119,6 +120,21 @@
       document.getElementById('log-runtime').textContent =
         'JavaScript actif · ' + (document.readyState === 'loading' ? 'initialisation' : 'DOM prêt');
       document.getElementById('log-status').textContent = '● Contrôles navigateur OK';
+      fetch('sync-status.json', { cache: 'no-store' })
+        .then(response => {
+          if (!response.ok) throw new Error('Statut de synchronisation indisponible');
+          return response.json();
+        })
+        .then(status => {
+          const synced = status.synced_at ? new Date(status.synced_at) : null;
+          const stamp = synced && !Number.isNaN(synced.getTime()) ? fmt.format(synced) : 'heure inconnue';
+          const commit = status.source_commit ? status.source_commit.slice(0, 7) : 'commit inconnu';
+          document.getElementById('log-sync').textContent =
+            status.status === 'synced' ? 'À jour · ' + commit + ' · ' + stamp : 'Statut non confirmé';
+        })
+        .catch(() => {
+          document.getElementById('log-sync').textContent = 'En attente du premier déploiement';
+        });
     })();
   </script>
 </body>
