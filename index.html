@@ -1,110 +1,88 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="PronoFoot AI réunit résultats, statistiques et cotes pour analyser les matchs avec méthode et mesurer la fiabilité des modèles.">
-  <title>PronoFoot AI — Le football, vu par la donnée.</title>
-  <style>
-    :root{color-scheme:light;--bg:#f3f7fb;--panel:#fff;--text:#15253b;--muted:#61738b;--accent:#087f63;--line:#dce6ef;--green:#087f63;--blue:#47759e;--red:#d94c54}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;color:var(--text);background:linear-gradient(180deg,#e8f3f7 0,#f7f9fc 330px,#f3f7fb 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    .pitch{position:absolute;inset:0 0 auto;height:280px;pointer-events:none;background:radial-gradient(ellipse at 50% -30%,rgba(27,145,117,.22),transparent 65%),linear-gradient(135deg,#e5f4f1,#eaf1fa);border-bottom:1px solid #dbe8ed}
-    header,main,footer{width:min(1280px,calc(100% - 40px));margin-inline:auto;position:relative}
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid rgba(120,150,170,.22)}
-    .brand-stack{display:flex;flex-direction:column;gap:5px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.04em;font-size:22px}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;color:#fff;background:linear-gradient(145deg,#0d9b75,#076b60);font-size:20px}.brand-ai,.headline-accent{color:var(--accent)}.brand-kicker{margin-left:50px;color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.17em}
-    .header-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.nav-link{color:#36516a;text-decoration:none;border:1px solid #d7e3ec;border-radius:11px;padding:10px 14px;font-size:12px;font-weight:750;background:#ffffffb8;white-space:nowrap}.nav-link:hover,.nav-active{background:#e0f5ee;color:#086d55;border-color:#a9dfce}
-    .status-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #e3d8a7;border-radius:11px;padding:9px 12px;color:#785a09;background:#fff9e7;font-size:11px;font-weight:750}.dot{width:7px;height:7px;border-radius:50%;background:#d6a323}
-    main{padding:32px 0 42px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:850}h1{margin:10px 0 8px;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.055em;font-weight:850}.subtitle{max-width:780px;color:var(--muted);font-size:15px;line-height:1.65;margin:0}
-    .notice{margin:20px 0;padding:11px 14px;border:1px solid #eadca9;border-radius:12px;background:#fff9e8;color:#775d1d;font-size:11px;line-height:1.55}
-    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:25px 0 14px}.section-title{font-size:15px;font-weight:850;letter-spacing:-.02em}.muted{color:var(--muted);font-size:11px}
-    .filters{display:grid;grid-template-columns:1fr 1fr 1fr minmax(190px,1.3fr);gap:10px;margin:16px 0 18px}select,input{width:100%;min-height:44px;border:1px solid #d5e1eb;border-radius:12px;padding:10px 12px;background:#fff;color:var(--text);font:inherit;font-size:12px;outline:none;box-shadow:0 2px 5px #1b385006}select:focus,input:focus{border-color:#7abda9;box-shadow:0 0 0 3px #0b97751c}
-    .match-list{display:grid;gap:13px}.match-card{min-width:0;border:1px solid #d7e5ed;border-radius:17px;background:linear-gradient(105deg,#fff 0%,#fff 58%,#f7fbfd 100%);padding:18px;display:grid;grid-template-columns:minmax(250px,1.05fr) minmax(300px,1.15fr) minmax(210px,.8fr);gap:18px;align-items:center;box-shadow:0 7px 22px #1638540b;position:relative;overflow:hidden}.match-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#17b58b,#5ba9c7)}
-    .match-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.035em}.league-tag{color:#176d5a;background:#e7f7f1;border-radius:6px;padding:3px 6px}
-    .teams{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);align-items:center;gap:7px}.team-name{font-size:14px;font-weight:800;line-height:1.3;overflow-wrap:anywhere}.team-home{text-align:left}.team-away{text-align:right}.versus{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef3f8;color:#6b7d91;font-size:10px;font-weight:850}.match-sub{margin-top:8px;color:var(--muted);font-size:10px}
-    .prob-title,.data-title{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#657a8d;font-weight:850;margin-bottom:8px}.probabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.prob{min-width:0;border:1px solid #dce6ef;border-radius:11px;padding:11px 9px;text-align:center;background:#f7f9fc;color:#61738b}.prob strong{display:block;color:#1a3048;font-size:19px;letter-spacing:-.04em;margin:3px 0 8px}.prob-label{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:850}.prob-track{height:6px;border-radius:99px;background:#e5ebf1;overflow:hidden}.prob-track span{display:block;height:100%;border-radius:99px}.prob.home{background:#e9f8f2;border-color:#c1e9d9}.prob.home .prob-label{color:#087f63}.prob.home .prob-track span{background:#16a87f}.prob.draw .prob-track span{background:#6c9bc3}.prob.away{background:#fff0f0;border-color:#f3d1d3}.prob.away .prob-label{color:#cf424c}.prob.away .prob-track span{background:#e95860}.prob-odds{margin-top:8px;padding:7px 5px;border-radius:8px;background:#ffffffb8;border-top:1px solid #dce6ef;font-size:12px;font-weight:850;color:#2d4359}.prob.active{box-shadow:inset 0 0 0 1px #148b6c}
-    .stats-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stat-mini{background:#f6f9fc;border:1px solid #e3ebf2;border-radius:10px;padding:9px}.stat-mini span{display:block;color:var(--muted);font-size:10px;margin-bottom:5px}.stat-mini strong{font-size:16px;letter-spacing:-.03em}.card-actions{display:flex;justify-content:flex-end;margin-top:10px}.detail-toggle{border:1px solid #cddfe8;border-radius:9px;background:#fff;color:#176d5a;font-size:11px;font-weight:800;padding:8px 10px;cursor:pointer}.detail-toggle:hover{background:#eaf7f2}.match-details{grid-column:1/-1;border-top:1px solid #e3ebf2;padding-top:14px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.detail-box{background:#f7f9fc;border:1px solid #e2eaf1;border-radius:11px;padding:11px}.detail-box h3{margin:0 0 8px;font-size:11px}.detail-row{display:flex;justify-content:space-between;gap:8px;font-size:11px;padding:4px 0;color:var(--muted)}.detail-row strong{color:var(--text)}.hidden{display:none!important}
-    footer{padding:20px 0 28px;border-top:1px solid #dce6ef}.footer-title{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.card-detail{margin-top:7px;color:var(--muted);font-size:11px;line-height:1.6}.empty,.error{padding:28px 18px;text-align:center;color:var(--muted);border:1px dashed #ccdce7;border-radius:14px;background:#fff;font-size:13px;line-height:1.7}
-    @media(max-width:1050px){.match-card{grid-template-columns:minmax(210px,1fr) minmax(260px,1.1fr)}.stats-column{grid-column:1/-1}.stats-mini{grid-template-columns:repeat(4,minmax(0,1fr))}.match-details{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header,main,footer{width:calc(100% - 24px)}header{align-items:flex-start;flex-direction:column;padding:16px 0;gap:14px}.header-actions{width:100%}.status-pill{font-size:10px}.nav-link{padding:9px 11px}main{padding:25px 0 32px}h1{font-size:34px}.subtitle{font-size:13px}.section-head{align-items:flex-start;flex-direction:column;gap:5px}.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.match-card{grid-template-columns:1fr;padding:14px;gap:14px}.teams{max-width:460px}.stats-column{grid-column:auto}.stats-mini{grid-template-columns:1fr 1fr}.match-details{grid-template-columns:1fr 1fr}.prob strong{font-size:18px}.match-sub{line-height:1.5}}
-    @media(max-width:390px){.filters{grid-template-columns:1fr}.filters input{grid-column:auto}.match-details{grid-template-columns:1fr}.prob{padding:8px 5px}.team-name{font-size:12px}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f8fb">
+<meta name="description" content="PronoFoot AI — probabilités de football et cotes Unibet réunies dans une interface claire.">
+<title>PronoFoot AI — Prédictions football</title>
+<style>
+:root{color-scheme:light;--ink:#10243a;--muted:#536d88;--green:#079b70;--green-dark:#006e55;--line:#dce7ef;--panel:#fff;--blue:#47769e;--red:#e84750}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f3f7fb;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.top-bg{height:250px;position:absolute;inset:0 0 auto;background:radial-gradient(ellipse at 50% -40%,#fff 0,transparent 65%),linear-gradient(115deg,#dcefeb 0%,#e9f1fa 55%,#e2eef4 100%);border-bottom:1px solid #d9e7eb}
+.wrap{width:min(1450px,calc(100% - 48px));margin:auto;position:relative}
+header{min-height:91px;display:flex;align-items:center;justify-content:space-between;gap:22px;border-bottom:1px solid #cddde5}
+.brand{display:flex;align-items:center;gap:12px;font-size:25px;font-weight:850;letter-spacing:-1.1px;white-space:nowrap}.brand-icon{width:46px;height:46px;display:grid;place-items:center;background:linear-gradient(145deg,#08ae7d,#006b5b);border-radius:15px;color:white;font-size:24px;box-shadow:0 7px 16px #0785652b}.brand em{font-style:normal;color:#079b70}.brand small{display:block;font-size:10px;letter-spacing:1.7px;font-weight:800;color:#49637a;margin-top:2px}
+nav{display:flex;gap:9px;align-items:center}.nav{padding:12px 18px;border-radius:12px;text-decoration:none;color:#2d4861;font-size:13px;font-weight:750;border:1px solid transparent}.nav.active{background:#078563;color:white;box-shadow:0 5px 12px #07856320}.nav:not(.active){background:#ffffffa8;border-color:#dbe6ed}
+.experimental{max-width:325px;padding:10px 14px;border:1px solid #f0dfa7;background:#fff9e7;border-radius:12px;display:flex;gap:10px;align-items:center;color:#705514;font-size:11px;line-height:1.45}.experimental strong{display:block;font-size:12px;color:#5b460b}.flask{font-size:22px}
+main{padding:27px 0 38px}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.eyebrow{color:#087d61;font-size:10px;font-weight:850;letter-spacing:1.8px;text-transform:uppercase}h1{font-size:clamp(34px,3.5vw,48px);line-height:1.06;letter-spacing:-1.9px;margin:8px 0 7px;font-weight:850}h1 span{color:#08a47a}.subtitle{margin:0;color:#45627c;font-size:15px}.hero-right{display:flex;align-items:center;gap:10px;white-space:nowrap}.count{font-size:13px;color:#3e5b74}.count strong{font-size:16px;color:#11263d}.date-select{min-height:44px;padding:0 14px;border:1px solid #d4e1e9;border-radius:12px;background:white;color:#17314a;font:inherit;font-size:12px;font-weight:700}
+.filters{display:grid;grid-template-columns:1fr 1fr 1fr 1.45fr;gap:10px;margin:23px 0 17px}.filter{min-width:0;height:54px;display:flex;align-items:center;gap:12px;padding:0 15px;background:#fff;border:1px solid #dce6ee;border-radius:13px;box-shadow:0 3px 10px #15334b08}.filter .ficon{font-size:20px;color:#1c496b}.filter select,.filter input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#1d3349;font:inherit;font-size:12px;font-weight:700}.filter input{font-weight:500}.filter select{appearance:auto}
+.list-head{display:grid;grid-template-columns:minmax(160px,.85fr) minmax(270px,1.3fr) minmax(390px,1.65fr) 42px;gap:16px;padding:0 18px 9px;color:#49647d;font-size:10px;font-weight:850;letter-spacing:.7px;text-transform:uppercase}.match-list{display:grid;gap:9px}
+.match-card{display:grid;grid-template-columns:minmax(160px,.85fr) minmax(270px,1.3fr) minmax(390px,1.65fr) 42px;gap:16px;align-items:center;padding:13px 15px;background:linear-gradient(100deg,#fff 0%,#fff 74%,#f8fbfd 100%);border:1px solid #dce7ef;border-radius:15px;box-shadow:0 4px 12px #18395208;position:relative;overflow:hidden}
+.match-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(#19c18e,#4da8c5)}
+.league{min-width:0;padding-left:4px}.league-line{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:850}.flag{width:27px;height:20px;border-radius:4px;display:grid;place-items:center;font-size:18px;overflow:hidden}.country{margin:3px 0 8px 35px;color:#637b91;font-size:11px}.kickoff{font-size:12px;font-weight:750;color:#1e3852}.venue{margin-top:5px;font-size:10px;color:#74889b}
+.teams{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) 35px minmax(0,1fr);gap:8px;align-items:center}.team{min-width:0;display:flex;align-items:center;gap:9px}.team.away{flex-direction:row-reverse;text-align:right}.crest{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:50%;border:1px solid #d9e5ec;background:linear-gradient(145deg,#fff,#edf4f8);color:#087f63;font-size:12px;font-weight:900;box-shadow:inset 0 0 0 3px #fff}.team-name{font-size:13px;font-weight:850;line-height:1.25;overflow-wrap:anywhere}.vs{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eef4f8;color:#42617d;font-size:10px;font-weight:850}
+.probabilities{min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.prob{min-width:0;padding:9px 9px 8px;border-radius:11px;border:1px solid #d9e7e9;background:#f4f8fa}.prob.home{background:#e5f8f0;border-color:#c1ecda}.prob.draw{background:#edf3f9;border-color:#dbe5ef}.prob.away{background:#fff0f0;border-color:#f5d5d7}.prob-top{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:7px}.outcome{font-size:16px;font-weight:900;color:#07845f}.draw .outcome{color:#426f96}.away .outcome{color:#dc3d47}.percent{font-size:16px;font-weight:900;letter-spacing:-.4px;color:#132c42}.track{height:7px;background:#d7e5e7;border-radius:99px;overflow:hidden}.track span{height:100%;display:block;border-radius:99px;background:linear-gradient(90deg,#08a975,#35d6a0)}.draw .track{background:#d9e3ec}.draw .track span{background:linear-gradient(90deg,#557fa3,#8db5d7)}.away .track{background:#f4d5d7}.away .track span{background:linear-gradient(90deg,#ee5158,#ff8589)}.odds{margin-top:7px;padding:5px 6px;border-radius:7px;background:#ffffffb8;text-align:center;font-size:12px;font-weight:900;color:#17334a}.prob.active{box-shadow:inset 0 0 0 1px #078b67}
+.detail-btn{width:38px;height:38px;border:1px solid #e0e9ef;background:#f4f8fb;border-radius:50%;font-size:22px;color:#244b69;cursor:pointer;display:grid;place-items:center;transition:transform .18s,background .18s}.detail-btn:hover{background:#e2f5ed}.detail-btn[aria-expanded="true"]{transform:rotate(90deg);background:#dff5ec}
+.match-details{grid-column:1/-1;border-top:1px solid #e4edf2;padding:13px 4px 2px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.detail-box{background:#f6f9fb;border:1px solid #e2eaf0;border-radius:10px;padding:11px}.detail-box h3{margin:0 0 7px;font-size:11px}.detail-row{display:flex;justify-content:space-between;gap:8px;padding:4px 0;color:#63788d;font-size:11px}.detail-row strong{color:#1b354c}.hidden{display:none!important}
+footer{padding:18px 0 28px;border-top:1px solid #d9e5ec;color:#657b90;font-size:11px;line-height:1.6}.footer-title{font-weight:850;color:#304b63;font-size:12px;letter-spacing:.8px;text-transform:uppercase}
+@media(max-width:1120px){.wrap{width:calc(100% - 32px)}header{flex-wrap:wrap;padding:15px 0}.list-head{display:none}.match-card{grid-template-columns:minmax(155px,.75fr) minmax(230px,1fr) minmax(330px,1.4fr) 38px;gap:10px;padding:12px}.crest{width:34px;height:34px;flex-basis:34px}.team{gap:6px}.team-name{font-size:12px}.prob{padding:8px 6px}.probabilities{gap:5px}.experimental{max-width:285px}}
+@media(max-width:820px){.wrap{width:calc(100% - 24px)}header{align-items:flex-start}.brand{font-size:21px}nav{order:3;width:100%}.nav{flex:1;text-align:center;padding:10px 8px}.experimental{margin-left:auto}.hero{align-items:flex-start;flex-direction:column}.hero-right{width:100%;justify-content:space-between}.filters{grid-template-columns:1fr 1fr;margin-top:17px}.filter.search{grid-column:1/-1}.match-card{grid-template-columns:1fr;gap:12px;padding:14px}.league{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 10px}.league-line{grid-column:1}.country{grid-column:1;margin:0 0 0 35px}.kickoff{grid-column:2;grid-row:1/3;text-align:right}.venue{display:none}.teams{max-width:560px;margin:0 auto;width:100%;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr)}.team-name{font-size:13px}.probabilities{gap:7px}.prob{padding:10px}.match-details{grid-template-columns:1fr 1fr}.detail-btn{position:absolute;right:12px;top:12px;width:30px;height:30px}}
+@media(max-width:420px){.brand{font-size:19px}.brand-icon{width:39px;height:39px}.experimental{font-size:10px;padding:8px}.filters{grid-template-columns:1fr}.filter.search{grid-column:auto}.hero-right{align-items:flex-start;flex-direction:column}.date-select{width:100%}.teams{gap:5px}.crest{width:30px;height:30px;flex-basis:30px;font-size:10px}.team{gap:5px}.team-name{font-size:11px}.vs{width:28px;height:28px}.probabilities{gap:5px}.prob{padding:8px 5px}.percent{font-size:14px}.odds{font-size:11px}.match-details{grid-template-columns:1fr}.match-card{padding:12px}}
+</style>
 </head>
-<body>
-  <div class="pitch" aria-hidden="true"></div>
-  <header>
-    <div class="brand-stack">
-      <div class="brand"><div class="brand-mark" aria-hidden="true">P</div><span>PronoFoot <span class="brand-ai">AI</span></span></div>
-      <div class="brand-kicker">Observer · Comprendre · Mesurer</div>
-    </div>
-    <div class="header-actions">
-      <a class="nav-link nav-active" href="index.html" aria-current="page">Prédictions</a>
-      <a class="nav-link" href="predictions.html">Historique & bilan</a>
-      <div class="status-pill"><span class="dot" aria-hidden="true"></span> SUIVI DES DONNÉES</div>
-    </div>
-  </header>
-
-  <main>
-    <div class="eyebrow">PronoFoot AI · Centre des matchs</div>
-    <h1>Prochains <span class="headline-accent">matchs</span></h1>
-    <p class="subtitle">Consulte les probabilités du modèle et les cotes Unibet, réunies dans les mêmes blocs pour chaque issue.</p>
-    <div class="notice"><strong>Modèle expérimental — non validé.</strong> Ces probabilités sont des estimations, pas des certitudes ni des conseils de pari. Les prédictions publiées sont conservées pour le suivi historique.</div>
-    <div class="section-head"><div class="section-title">Prochains matchs</div><div class="muted" id="generated-at">Chargement des prédictions…</div></div>
-    <div class="filters">
-      <select id="date-filter" aria-label="Filtrer par période">
-        <option value="all">Toutes les dates disponibles</option><option value="today">Aujourd’hui</option><option value="tomorrow">Demain</option><option value="3days">3 prochains jours</option>
-      </select>
-      <select id="competition-filter" aria-label="Filtrer par compétition"><option value="all">Toutes les compétitions</option></select>
-      <input id="search-filter" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe">
-    </div>
-    <div class="match-list" id="match-list"><div class="empty">Lecture du dernier jeu de données…</div></div>
-  </main>
-
-  <footer aria-label="Informations sur les prédictions">
-    <div class="footer-title">PronoFoot AI · Prédictions expérimentales</div>
-    <div class="card-detail">Les probabilités sont conservées pour le suivi lorsqu’une prédiction pré-match a été publiée. Consulte l’historique pour voir les résultats récents et le bilan du modèle.</div>
-  </footer>
-
-  <script>
-    (() => {
-      const labels={home:'1',draw:'N',away:'2'};
-      const list=document.getElementById('match-list'), dateFilter=document.getElementById('date-filter');
-      const competitionFilter=document.getElementById('competition-filter'), searchFilter=document.getElementById('search-filter');
-      let upcoming=[];
-      const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-      const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
-      const fmt=v=>{const d=new Date(v);return !v||Number.isNaN(d.getTime())?'Date inconnue':new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Paris'}).format(d)};
-      const val=v=>v===null||v===undefined||v===''?'—':v;
-      const num=v=>Number.isFinite(Number(v))?Number(v).toFixed(2):'—';
-      const card=r=>{
-        const o=r.odds_1x2||{}, p=r.probabilities||{};
-        const outcomes=[['home','1','home'],['draw','N','draw'],['away','2','away']];
-        const xgh=Number(r.home_expected_goals), xga=Number(r.away_expected_goals);
-        return '<article class="match-card"><section><div class="match-meta"><span class="league-tag">'+esc(r.competition)+'</span><span>'+esc(fmt(r.kickoff))+'</span></div><div class="teams"><div class="team-name team-home">'+esc(r.home)+'</div><div class="versus">VS</div><div class="team-name team-away">'+esc(r.away)+'</div></div><div class="match-sub">Estimations de buts · '+esc(r.home)+' '+num(xgh)+' — '+num(xga)+' '+esc(r.away)+'</div></section><section><div class="prob-title">Probabilités du modèle</div><div class="probabilities">'+outcomes.map(([k,l,cls])=>'<div class="prob '+cls+(r.predicted_outcome===k?' active':'')+'"><div class="prob-label"><span>'+l+'</span><span>'+pct(p[k])+'</span></div><div class="prob-track"><span style="width:'+Math.max(0,Math.min(100,Number(p[k])*100||0))+'%"></span></div><div class="prob-odds">Cote '+(Number.isFinite(Number(o[k]))?Number(o[k]).toFixed(2):'—')+'</div></div>').join('')+'</div></section><section class="stats-column"><div class="data-title">Repères disponibles</div><div class="stats-mini"><div class="stat-mini"><span>Buts attendus · '+esc(r.home)+'</span><strong>'+num(xgh)+'</strong></div><div class="stat-mini"><span>Buts attendus · '+esc(r.away)+'</span><strong>'+num(xga)+'</strong></div><div class="stat-mini"><span>Historique utilisé</span><strong>'+esc(val(r.history_matches))+'</strong></div><div class="stat-mini"><span>Issue la plus probable</span><strong>'+esc(val(r.predicted_label))+'</strong></div></div><div class="card-actions"><button type="button" class="detail-toggle" data-details="'+esc(r.id)+'" aria-expanded="false">Toutes les données +</button></div></section><section class="match-details hidden" id="details-'+esc(r.id)+'"><div class="detail-box"><h3>Probabilités estimées</h3>'+outcomes.map(([k,l])=>'<div class="detail-row"><span>Issue '+l+'</span><strong>'+pct(p[k])+'</strong></div>').join('')+'</div><div class="detail-box"><h3>Cotes disponibles · '+esc(val(o.bookmaker||'Unibet'))+'</h3>'+outcomes.map(([k,l])=>'<div class="detail-row"><span>'+l+'</span><strong>'+(Number.isFinite(Number(o[k]))?Number(o[k]).toFixed(2):'Indisponible')+'</strong></div>').join('')+'<div class="detail-row"><span>Relevé</span><strong>'+esc(o.fetched_at?fmt(o.fetched_at):'—')+'</strong></div></div><div class="detail-box"><h3>Indicateurs du modèle</h3><div class="detail-row"><span>Buts attendus · domicile</span><strong>'+num(xgh)+'</strong></div><div class="detail-row"><span>Buts attendus · extérieur</span><strong>'+num(xga)+'</strong></div><div class="detail-row"><span>Échantillon historique</span><strong>'+esc(val(r.history_matches))+' matchs</strong></div></div><div class="detail-box"><h3>Autres données</h3><div class="detail-row"><span>Autres bookmakers</span><strong>Non disponibles</strong></div><div class="detail-row"><span>Forme récente / classement</span><strong>Non disponibles</strong></div><div class="detail-row"><span>xG réel / tirs / possession</span><strong>Non disponibles</strong></div><div class="muted">Ces indicateurs seront affichés lorsqu’une source fiable les fournira.</div></div></section></article>';
-      };
-      const render=()=>{
-        const now=new Date(), today=new Date(now.getFullYear(),now.getMonth(),now.getDate()), tomorrow=new Date(today); tomorrow.setDate(tomorrow.getDate()+1);
-        const end=new Date(today); end.setDate(end.getDate()+4);
-        const q=searchFilter.value.trim().toLocaleLowerCase('fr'), comp=competitionFilter.value;
-        const rows=upcoming.filter(r=>{const d=new Date(r.kickoff);if(Number.isNaN(d.getTime())||d<now)return false;
-          if(comp!=='all'&&r.competition_id!==comp)return false;
-          if(q&&!(r.home+' '+r.away+' '+r.competition).toLocaleLowerCase('fr').includes(q))return false;
-          if(dateFilter.value==='today'&&(d<today||d>=tomorrow))return false;
-          if(dateFilter.value==='tomorrow'&&d.toDateString()!==tomorrow.toDateString())return false;
-          if(dateFilter.value==='3days'&&(d<today||d>=end))return false;return true});
-        list.innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';
-      };
-      fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
-        upcoming=Array.isArray(d.upcoming)?d.upcoming:[];
-        document.getElementById('generated-at').textContent='Mis à jour le '+fmt(d.generated_at_utc)+' · '+upcoming.length+' matchs disponibles';
-        const comps=new Map();upcoming.forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition)});
-        [...comps.entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr')).forEach(([id,n])=>{const o=document.createElement('option');o.value=id;o.textContent=n;competitionFilter.appendChild(o)});
-        render();
-      }).catch(()=>{list.innerHTML='<div class="error">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
-      list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('details-'+b.dataset.details);if(!panel)return;const opening=panel.classList.contains('hidden');panel.classList.toggle('hidden',!opening);b.setAttribute('aria-expanded',String(opening));b.textContent=opening?'Masquer les données −':'Toutes les données +';});
-      dateFilter.addEventListener('change',render);competitionFilter.addEventListener('change',render);searchFilter.addEventListener('input',render);
-    })();
-  </script>
-</body>
-</html>
+<body><div class="top-bg" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="brand-icon">⚽</div><div>PronoFoot <em>AI</em><small>PRÉDICTIONS FOOTBALL</small></div></div>
+  <nav><a class="nav active" href="index.html">▦ &nbsp; Prédictions</a><a class="nav" href="predictions.html">▥ &nbsp; Historique & bilan</a></nav>
+  <div class="experimental"><span class="flask">♧</span><div><strong>Modèle expérimental</strong>Ces prédictions sont fournies à titre informatif et ne garantissent pas un résultat.</div></div>
+</header>
+<main>
+  <div class="hero"><div><div class="eyebrow">PronoFoot AI · Centre des matchs</div><h1>Prochains <span>matchs</span></h1><p class="subtitle">Probabilités du modèle et cotes Unibet réunies pour chaque rencontre.</p></div><div class="hero-right"><div class="count"><strong id="match-count">—</strong> matchs à venir</div><select class="date-select" id="date-filter" aria-label="Filtrer par période"><option value="all">Toutes les dates disponibles</option><option value="today">Aujourd’hui</option><option value="tomorrow">Demain</option><option value="3days">3 prochains jours</option><option value="7days">7 prochains jours</option></select></div></div>
+  <div class="filters">
+    <label class="filter"><span class="ficon">♜</span><select id="competition-filter" aria-label="Filtrer par compétition"><option value="all">Toutes les compétitions</option></select></label>
+    <label class="filter"><span class="ficon">♟</span><select id="team-filter" aria-label="Filtrer par équipe"><option value="all">Toutes les équipes</option></select></label>
+    <label class="filter"><span class="ficon">▦</span><select id="date-short-filter" aria-label="Filtrer par date"><option value="all">Toutes les dates</option><option value="today">Aujourd’hui</option><option value="tomorrow">Demain</option><option value="3days">3 prochains jours</option></select></label>
+    <label class="filter search"><span class="ficon">⌕</span><input id="search-filter" type="search" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe"></label>
+  </div>
+  <div class="list-head"><span>Compétition / date</span><span>Match</span><span>Prédiction & cotes Unibet (1 / N / 2)</span><span></span></div>
+  <div class="match-list" id="match-list"><div class="empty">Chargement des matchs…</div></div>
+</main>
+<footer><div class="footer-title">PronoFoot AI · Prédictions expérimentales</div>Les probabilités sont des estimations issues du modèle. Les cotes Unibet sont affichées à titre de comparaison et ne sont pas utilisées par le modèle. Les statistiques absentes ne sont pas inventées.</footer>
+</div>
+<script>
+(()=> {
+ const list=document.getElementById('match-list'),dateFilter=document.getElementById('date-filter'),dateShort=document.getElementById('date-short-filter'),competitionFilter=document.getElementById('competition-filter'),teamFilter=document.getElementById('team-filter'),searchFilter=document.getElementById('search-filter');
+ let upcoming=[];
+ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
+ const fmt=v=>{const d=new Date(v);return !v||Number.isNaN(d.getTime())?'Date inconnue':new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Paris'}).format(d)};
+ const dayFmt=v=>{const d=new Date(v);return !v||Number.isNaN(d.getTime())?'Date inconnue':new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',timeZone:'Europe/Paris'}).format(d)};
+ const num=v=>Number.isFinite(Number(v))?Number(v).toFixed(2):'—';
+ const initials=n=>String(n||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
+ const val=v=>v===null||v===undefined||v===''?'—':v;
+ const outcomes=[['home','1','home'],['draw','N','draw'],['away','2','away']];
+ const card=r=>{
+   const o=r.odds_1x2||{},p=r.probabilities||{},xgh=Number(r.home_expected_goals),xga=Number(r.away_expected_goals);
+   const d=new Date(r.kickoff),country=(r.competition||'').toLowerCase().includes('premier')?'Angleterre':(r.competition||'').toLowerCase().includes('liga')?'Espagne':(r.competition||'').toLowerCase().includes('serie')?'Italie':(r.competition||'').toLowerCase().includes('bundes')?'Allemagne':(r.competition||'').toLowerCase().includes('ligue 1')?'France':(r.competition||'').toLowerCase().includes('portugal')?'Portugal':'Football';
+   const flag=country==='Angleterre'?'🏴':country==='Espagne'?'🇪🇸':country==='Italie'?'🇮🇹':country==='Allemagne'?'🇩🇪':country==='France'?'🇫🇷':country==='Portugal'?'🇵🇹':'⚽';
+   return '<article class="match-card"><section class="league"><div class="league-line"><span class="flag">'+flag+'</span><span>'+esc(r.competition)+'</span></div><div class="country">'+country+'</div><div class="kickoff">'+esc(dayFmt(r.kickoff))+'<br>'+esc(d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Paris'}))+'</div><div class="venue"></div></section><section class="teams"><div class="team home"><div class="crest">'+esc(initials(r.home))+'</div><div class="team-name">'+esc(r.home)+'</div></div><div class="vs">VS</div><div class="team away"><div class="crest">'+esc(initials(r.away))+'</div><div class="team-name">'+esc(r.away)+'</div></div></section><section class="probabilities">'+outcomes.map(([k,l,cls])=>'<div class="prob '+cls+(r.predicted_outcome===k?' active':'')+'"><div class="prob-top"><span class="outcome">'+l+'</span><span class="percent">'+pct(p[k])+'</span></div><div class="track"><span style="width:'+Math.max(0,Math.min(100,Number(p[k])*100||0))+'%"></span></div><div class="odds">'+(Number.isFinite(Number(o[k]))?' '+Number(o[k]).toFixed(2):'—')+'</div></div>').join('')+'</section><button class="detail-btn" type="button" data-details="'+esc(r.id)+'" aria-label="Voir les détails de '+esc(r.home)+' contre '+esc(r.away)+'" aria-expanded="false">›</button><section class="match-details hidden" id="details-'+esc(r.id)+'"><div class="detail-box"><h3>Probabilités du modèle</h3>'+outcomes.map(([k,l])=>'<div class="detail-row"><span>Issue '+l+'</span><strong>'+pct(p[k])+'</strong></div>').join('')+'</div><div class="detail-box"><h3>Cotes Unibet</h3>'+outcomes.map(([k,l])=>'<div class="detail-row"><span>'+l+'</span><strong>'+(Number.isFinite(Number(o[k]))?Number(o[k]).toFixed(2):'Indisponible')+'</strong></div>').join('')+'<div class="detail-row"><span>Relevé des cotes</span><strong>'+esc(o.fetched_at?fmt(o.fetched_at):'—')+'</strong></div></div><div class="detail-box"><h3>Buts attendus</h3><div class="detail-row"><span>'+esc(r.home)+'</span><strong>'+num(xgh)+'</strong></div><div class="detail-row"><span>'+esc(r.away)+'</span><strong>'+num(xga)+'</strong></div></div><div class="detail-box"><h3>Échantillon</h3><div class="detail-row"><span>Matchs historiques utilisés</span><strong>'+esc(val(r.history_matches))+'</strong></div><div class="detail-row"><span>Version du modèle</span><strong>Expérimentale</strong></div><div class="muted">Forme récente, classement et statistiques de match seront ajoutés lorsque les sources seront disponibles.</div></div></section></article>';
+ };
+ const render=()=>{
+   const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(today);tomorrow.setDate(tomorrow.getDate()+1);
+   const q=searchFilter.value.trim().toLocaleLowerCase('fr'),comp=competitionFilter.value,team=teamFilter.value,period=dateFilter.value!=='all'?dateFilter.value:dateShort.value;
+   const rows=upcoming.filter(r=>{const d=new Date(r.kickoff);if(Number.isNaN(d.getTime())||d<now)return false;if(comp!=='all'&&r.competition_id!==comp)return false;if(team!=='all'&&r.home!==team&&r.away!==team)return false;if(q&&!(r.home+' '+r.away+' '+r.competition).toLocaleLowerCase('fr').includes(q))return false;if(period==='today'&&(d<today||d>=tomorrow))return false;if(period==='tomorrow'&&(d<tomorrow||d>=new Date(tomorrow.getTime()+86400000)))return false;if(period==='3days'&&(d<today||d>=new Date(today.getTime()+3*86400000)))return false;if(period==='7days'&&(d<today||d>=new Date(today.getTime()+7*86400000)))return false;return true});
+   document.getElementById('match-count').textContent=rows.length;
+   list.innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';
+ };
+ fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+   upcoming=Array.isArray(d.upcoming)?d.upcoming:[];
+   const comps=new Map(),teams=new Set();upcoming.forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition);if(r.home)teams.add(r.home);if(r.away)teams.add(r.away)});
+   [...comps.entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr')).forEach(([id,n])=>{const o=document.createElement('option');o.value=id;o.textContent=n;competitionFilter.appendChild(o)});
+   [...teams].sort((a,b)=>a.localeCompare(b,'fr')).forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;teamFilter.appendChild(o)});
+   render();
+ }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
+ list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('details-'+b.dataset.details);if(!panel)return;const open=panel.classList.contains('hidden');panel.classList.toggle('hidden',!open);b.setAttribute('aria-expanded',String(open));b.textContent=open?'⌄':'›'});
+ [dateFilter,dateShort,competitionFilter,teamFilter].forEach(el=>el.addEventListener('change',render));searchFilter.addEventListener('input',render);
+})();
+</script>
+</body></html>
