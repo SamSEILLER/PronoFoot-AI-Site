@@ -75,6 +75,8 @@ footer{padding:18px 0 28px;border-top:1px solid #d9e5ec;color:#657b90;font-size:
  const dayFmt=v=>{const d=new Date(v);return !v||Number.isNaN(d.getTime())?'Date inconnue':new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'2-digit',month:'short',timeZone:'Europe/Paris'}).format(d)};
  const num=v=>Number.isFinite(Number(v))?Number(v).toFixed(2):'—';
  const initials=n=>String(n||'?').trim().split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();
+ const teamLogoIds={'Paris SG':160,'Paris Saint-Germain':160,'Marseille':176,'Olympique de Marseille':176,'Manchester City':382,'Liverpool':364,'Real Madrid':86,'FC Barcelona':83,'Inter Milan':110,'Inter':110,'Juventus':111,'Bayern Munich':132,'Bayern München':132,'Dortmund':124,'Borussia Dortmund':124,'Benfica':1929,'Sporting CP':2250,'Arsenal':359,'Chelsea':363,'Lyon':167,'Monaco':174};
+ const logoUrl=n=>teamLogoIds[n]?'https://a.espncdn.com/i/teamlogos/soccer/500/'+teamLogoIds[n]+'.png':'';
  const val=v=>v===null||v===undefined||v===''?'—':v;
  const outcomes=[['home','1','home'],['draw','N','draw'],['away','2','away']];
  const card=r=>{
