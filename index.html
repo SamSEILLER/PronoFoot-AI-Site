@@ -182,7 +182,7 @@ body.light-mode{
  --bg:#f1f5f9;--panel:#ffffff;--panel2:#e8f0f6;--line:#cbd8e3;--muted:#526a7c;--text:#10283a;
  background:linear-gradient(180deg,#eaf2f8 0%,#f7f9fc 260px,#eef3f7 100%);color:#10283a
 }
-body.light-mode .topbar{border-bottom-color:#cbd8e3}
+body.light-mode .topbar{border-bottom-color:#cbd8e3;background:#fff;padding-top:10px;border-radius:12px 12px 0 0} body.light-mode .tabs-filter{background:#f4f8fb;border-bottom:1px solid #d5e0e8} body.light-mode .board{background:#fff;border:1px solid #bdccd7} body.light-mode .table-head{background:#dce7ef;color:#314c60;font-weight:800} body.light-mode .competition-head{background:#e5edf3;color:#112f43} body.light-mode .match-row{background:#fff} body.light-mode .match-row:nth-child(even){background:#edf3f7} body.light-mode .match-row:hover{background:#dff6ec} body.light-mode .detail-expand{background:#eaf1f6}
 body.light-mode .brand{color:#10283a}
 body.light-mode .brand-ball{background:#d6f5e8;border-color:#0b9b6b}
 body.light-mode .searchbox,body.light-mode .top-action,body.light-mode .icon-btn,
@@ -230,6 +230,13 @@ body.light-mode .empty{color:#526a7c}
 body.light-mode .footer{color:#61798a}
 @media(max-width:850px){body.light-mode .match-row{background:#fff}}
 
+.odds-missing{display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;padding:2px 5px;border:1px dashed #5a7282;border-radius:4px;color:#afc0cb;font-size:10px;font-weight:800;letter-spacing:.3px}
+body.light-mode .odds-missing{border-color:#a5b5c1;background:#f1f4f6;color:#627786}
+body.light-mode .brand .live{color:#008d60}
+body.light-mode .icon-btn{background:#102b3d;color:#fff;border-color:#102b3d}
+body.light-mode .status.upcoming{color:#314f64}
+body.light-mode .detail-expand{box-shadow:inset 0 1px 0 #d2dee6}
+@media(max-width:850px){body.light-mode .topbar{border-radius:10px;padding:10px;background:#fff}body.light-mode .tabs-filter{padding:12px 3px;background:transparent;border:0}}
 </style>
 </head>
 <body>
@@ -276,7 +283,7 @@ body.light-mode .footer{color:#61798a}
   const probabilities=[['home','1','p1'],['draw','N','px'],['away','2','p2']];
   const pred=probabilities.map(([k,l])=>'<span class="'+(r.predicted_outcome===k?'chosen':'')+'">'+l+'<br><b>'+pct(p[k])+'</b></span>').join('');
   const bars=probabilities.map(([k,l,c])=>'<span class="'+c+'" style="width:'+Math.max(0,Math.min(100,(Number(p[k])||0)*100))+'%"></span>').join('');
-  const odds=probabilities.map(([k,l])=>'<div class="odd '+(r.predicted_outcome===k?'highlight':'')+'"><small>'+l+'</small>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'—')+'</div>').join('');
+  const odds=probabilities.map(([k,l])=>'<div class="odd '+(r.predicted_outcome===k?'highlight':'')+'"><small>'+l+'</small>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'<span class="odds-missing" title="Cote Unibet non disponible pour ce match">N/D</span>')+'</div>').join('');
   const d=new Date(r.kickoff);
   return '<div class="match-row" data-id="'+esc(r.id)+'">'+
    '<div class="cell"><div class="kickoff"><span class="status upcoming">'+esc(timeText(r.kickoff))+'</span><span class="status-dot" style="background:'+compColor(r.competition)+'"></span><span>'+esc(dateText(r.kickoff).split(' ').slice(0,2).join(' '))+'</span></div></div>'+
@@ -289,7 +296,7 @@ body.light-mode .footer{color:#61798a}
    '<div class="cell"><button class="details" data-details="'+esc(r.id)+'" aria-label="Détails '+esc(r.home)+' - '+esc(r.away)+'" aria-expanded="false">⌄</button></div>'+
    '<div class="detail-expand" id="detail-'+esc(r.id)+'" hidden>'+
     '<div class="detail-card"><strong>Probabilités du modèle</strong>'+probabilities.map(([k,l])=>'<div class="detail-line"><span>Issue '+l+'</span><b>'+pct(p[k])+'</b></div>').join('')+'</div>'+
-    '<div class="detail-card"><strong>Cotes Unibet</strong>'+probabilities.map(([k,l])=>'<div class="detail-line"><span>'+l+'</span><b>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'Indisponible')+'</b></div>').join('')+'<div class="detail-line"><span>Dernière mise à jour</span><b>'+esc(o.fetched_at?dateText(o.fetched_at):'—')+'</b></div></div>'+
+    '<div class="detail-card"><strong>Cotes Unibet</strong>'+probabilities.map(([k,l])=>'<div class="detail-line"><span>'+l+'</span><b>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'Non disponible')+'</b></div>').join('')+'<div class="detail-line"><span>Dernière mise à jour</span><b>'+esc(o.fetched_at?dateText(o.fetched_at):'—')+'</b></div></div>'+
     '<div class="detail-card"><strong>Buts attendus</strong><div class="detail-line"><span>'+esc(r.home)+'</span><b>'+num(r.home_expected_goals)+'</b></div><div class="detail-line"><span>'+esc(r.away)+'</span><b>'+num(r.away_expected_goals)+'</b></div></div>'+
     '<div class="detail-card"><strong>Informations du modèle</strong><div class="detail-line"><span>Matchs historiques</span><b>'+esc(r.history_matches==null?'—':r.history_matches)+'</b></div><div class="detail-line"><span>Issue estimée</span><b>'+esc(r.predicted_label||'—')+'</b></div><div class="detail-line"><span>Compétition</span><b>'+esc(r.competition||'—')+'</b></div></div>'+
    '</div></div>';
@@ -312,7 +319,7 @@ body.light-mode .footer{color:#61798a}
   const groups=new Map();rows.forEach(r=>{const k=r.competition||'Autres compétitions';if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
   list.innerHTML=Array.from(groups.entries()).map(([name,items])=>'<div class="competition-head"><span class="comp-star">★</span><span class="comp-name">'+compCountry(name)+' &nbsp; '+esc(name)+'</span><span class="comp-count">'+items.length+' match'+(items.length>1?'s':'')+'</span></div>'+items.map(row).join('')).join('');
  }
- fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
+ fetch(new URL('predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
   matches=Array.isArray(data.upcoming)?data.upcoming:[];
   const comps=new Map();matches.forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition)});
   Array.from(comps.entries()).sort((a,b)=>String(a[1]).localeCompare(String(b[1]),'fr')).forEach(([id,name])=>{const op=document.createElement('option');op.value=id;op.textContent=name;compFilter.appendChild(op)});
