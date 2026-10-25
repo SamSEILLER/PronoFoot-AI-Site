@@ -175,6 +175,61 @@ button{cursor:pointer}
  .odd small{font-size:8px}
  .detail-expand{grid-template-columns:1fr}
 }
+
+/* Vrai thème clair : fonds, surfaces, bordures et textes sont tous recolorés */
+body.light-mode{
+ color-scheme:light;
+ --bg:#f1f5f9;--panel:#ffffff;--panel2:#e8f0f6;--line:#cbd8e3;--muted:#526a7c;--text:#10283a;
+ background:linear-gradient(180deg,#eaf2f8 0%,#f7f9fc 260px,#eef3f7 100%);color:#10283a
+}
+body.light-mode .topbar{border-bottom-color:#cbd8e3}
+body.light-mode .brand{color:#10283a}
+body.light-mode .brand-ball{background:#d6f5e8;border-color:#0b9b6b}
+body.light-mode .searchbox,body.light-mode .top-action,body.light-mode .icon-btn,
+body.light-mode .filter,body.light-mode .tab{background:#fff;border-color:#c6d5e1;color:#203b50;box-shadow:0 2px 7px #17364b0b}
+body.light-mode .searchbox input{color:#10283a}
+body.light-mode .searchbox input::placeholder{color:#6b8192}
+body.light-mode .filter select,body.light-mode .top-action select{color:#203b50}
+body.light-mode .filter option{background:#fff;color:#203b50}
+body.light-mode .tab{color:#314b60}
+body.light-mode .tab.active{background:#00d68b;border-color:#00bd7b;color:#073c2c}
+body.light-mode .board{background:#fff;border-color:#c8d7e2;box-shadow:0 8px 26px #24445a12}
+body.light-mode .table-head{background:#e7eef4;border-bottom-color:#cfdae3;color:#526a7c}
+body.light-mode .competition-head{background:#f2f6f9;border-bottom-color:#d9e2e9;color:#17344a}
+body.light-mode .comp-count{color:#526a7c}
+body.light-mode .match-row{background:#fff;border-bottom-color:#e1e8ee}
+body.light-mode .match-row:nth-child(even){background:#f8fafc}
+body.light-mode .match-row:hover{background:#eaf7f2}
+body.light-mode .cell{border-right-color:#e0e8ee}
+body.light-mode .kickoff{color:#344f63}
+body.light-mode .status.upcoming{color:#526a7c}
+body.light-mode .status-dot{background:#8298a8}
+body.light-mode .side-name{color:#142f44}
+body.light-mode .score.none{color:#708596}
+body.light-mode .initial-crest{background:#e7eef4;border-color:#cbd8e2;color:#18384d}
+body.light-mode .metric-labels,body.light-mode .stat-pair strong{color:#203b50}
+body.light-mode .mini-track{background:#d6e0e7}
+body.light-mode .mini-track .s{background:#9aabb8}
+body.light-mode .mini-track .b{background:#3989cf}
+body.light-mode .stat-pair small{color:#617a8c}
+body.light-mode .prediction-top{color:#203b50}
+body.light-mode .prediction-top .chosen{color:#07875e}
+body.light-mode .prediction-bar .px{background:#9aaebb}
+body.light-mode .prediction-bar .p2{background:#b0bec8}
+body.light-mode .odd{background:#e8eff4;color:#19374b}
+body.light-mode .odd small{color:#60798b}
+body.light-mode .odd.highlight{background:#c9f5e3;color:#006947}
+body.light-mode .form-chip{background:#e3ebf1;color:#496275}
+body.light-mode .details{color:#1672a0}
+body.light-mode .detail-expand{background:#f1f6f9;border-top-color:#d1dee7}
+body.light-mode .detail-card{background:#fff;border-color:#d4e0e8}
+body.light-mode .detail-card strong{color:#19384d}
+body.light-mode .detail-line{color:#5c7384}
+body.light-mode .detail-line b{color:#19384d}
+body.light-mode .empty{color:#526a7c}
+body.light-mode .footer{color:#61798a}
+@media(max-width:850px){body.light-mode .match-row{background:#fff}}
+
 </style>
 </head>
 <body>
@@ -222,7 +277,7 @@ button{cursor:pointer}
   const pred=probabilities.map(([k,l])=>'<span class="'+(r.predicted_outcome===k?'chosen':'')+'">'+l+'<br><b>'+pct(p[k])+'</b></span>').join('');
   const bars=probabilities.map(([k,l,c])=>'<span class="'+c+'" style="width:'+Math.max(0,Math.min(100,(Number(p[k])||0)*100))+'%"></span>').join('');
   const odds=probabilities.map(([k,l])=>'<div class="odd '+(r.predicted_outcome===k?'highlight':'')+'"><small>'+l+'</small>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'—')+'</div>').join('');
-  const d=new Date(r.kickoff),favorite=favorites.has(r.home)||favorites.has(r.away);
+  const d=new Date(r.kickoff);
   return '<div class="match-row" data-id="'+esc(r.id)+'">'+
    '<div class="cell"><div class="kickoff"><span class="status upcoming">'+esc(timeText(r.kickoff))+'</span><span class="status-dot" style="background:'+compColor(r.competition)+'"></span><span>'+esc(dateText(r.kickoff).split(' ').slice(0,2).join(' '))+'</span></div></div>'+
    '<div class="cell"><div class="fixture"><div class="side"><button class="favorite-team" data-favorite="'+esc(r.home)+'" title="Ajouter '+esc(r.home)+' aux favoris" style="display:none"></button>'+crest(r.home)+'<span class="side-name">'+esc(r.home)+'</span></div><div class="score none">vs</div><div class="side away">'+crest(r.away)+'<span class="side-name">'+esc(r.away)+'</span></div></div></div>'+
@@ -265,7 +320,7 @@ button{cursor:pointer}
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
  [search,compFilter,dateRange,sortFilter].forEach(el=>el.addEventListener(el===search?'input':'change',render));
  list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃'});
- document.getElementById('theme-toggle').addEventListener('click',()=>{document.body.classList.toggle('high-contrast');document.body.style.setProperty('--green',document.body.classList.contains('high-contrast')?'#7dffca':'#00dc91')});
+ const themeToggle=document.getElementById('theme-toggle');themeToggle.addEventListener('click',()=>{const light=document.body.classList.toggle('light-mode');themeToggle.textContent=light?'☀':'☾';themeToggle.setAttribute('aria-label',light?'Passer au thème sombre':'Passer au thème clair');themeToggle.title=light?'Passer au thème sombre':'Passer au thème clair';document.querySelector('meta[name="theme-color"]').content=light?'#f1f5f9':'#06131d'});
 })();
 </script>
 </body>
