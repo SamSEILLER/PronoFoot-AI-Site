@@ -119,6 +119,62 @@ button{cursor:pointer}
  .board{border-radius:10px}.table-head,.match-row{min-width:900px;grid-template-columns:170px 190px 90px 130px 145px 145px 110px 35px}
  .detail-expand{min-width:900px}
 }
+
+/* Responsive final: top menu conservé, suppression des onglets de statut et du filtre équipes */
+.tabs-filter{display:flex;justify-content:flex-end;align-items:center;padding:14px 10px;gap:12px}
+.filters{display:flex;gap:9px;align-items:center;width:100%;justify-content:flex-end}
+.filter{min-width:190px}
+@media(max-width:850px){
+ .tabs-filter{padding:12px 3px}
+ .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .filter{min-width:0;width:100%}
+ .filter:first-child{grid-column:span 2}
+ .board{overflow:hidden}
+ .table-head{display:none}
+ .match-row{min-width:0;grid-template-columns:minmax(0,1fr) 38px;gap:0;padding:8px 8px 10px}
+ .match-row .cell{border-right:0;padding:5px 4px}
+ .match-row .cell:nth-child(1){grid-column:1;grid-row:1}
+ .match-row .cell:nth-child(2){grid-column:1;grid-row:2}
+ .match-row .cell:nth-child(3),.match-row .cell:nth-child(4),.match-row .cell:nth-child(7){display:none}
+ .match-row .cell:nth-child(5){grid-column:1;grid-row:3}
+ .match-row .cell:nth-child(6){grid-column:1;grid-row:4}
+ .match-row .cell:nth-child(8){grid-column:2;grid-row:1;align-self:center}
+ .kickoff{font-size:11px}
+ .fixture{grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:5px}
+ .side{gap:5px}
+ .side.away{flex-direction:row-reverse}
+ .side-name{font-size:11px}
+ .crest{width:27px;height:27px;flex-basis:27px}
+ .score{font-size:13px}
+ .prediction-top b{font-size:11px}
+ .odds{gap:6px}
+ .odd{min-height:31px}
+ .detail-expand{grid-column:1/-1;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));padding:10px 2px 2px}
+}
+@media(max-width:520px){
+ .shell{padding:8px 6px 18px}
+ .topbar{grid-template-columns:minmax(0,1fr) auto;gap:9px}
+ .brand{font-size:21px}
+ .searchbox{grid-column:1/-1;grid-row:2}
+ .top-action.date{max-width:150px;padding:0 8px;font-size:10px}
+ .top-action.date select{max-width:90px;font-size:10px}
+ .filters{grid-template-columns:1fr}
+ .filter:first-child{grid-column:auto}
+ .filter{height:38px}
+ .competition-head{min-height:36px;padding:0 10px}
+ .comp-name{font-size:12px}
+ .comp-count{font-size:10px}
+ .match-row{padding:7px 6px 9px}
+ .fixture{grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);gap:3px}
+ .side,.side.away{gap:4px}
+ .crest{width:23px;height:23px;flex-basis:23px}
+ .initial-crest{width:23px;height:23px;flex-basis:23px;font-size:8px}
+ .side-name{font-size:10px}
+ .odds{gap:4px}
+ .odd{font-size:11px;min-height:30px}
+ .odd small{font-size:8px}
+ .detail-expand{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -130,16 +186,9 @@ button{cursor:pointer}
  <button class="icon-btn" id="theme-toggle" aria-label="Changer le contraste" title="Changer le contraste">☾</button>
 </header>
 <div class="tabs-filter">
- <div class="tabs" role="tablist" aria-label="Statut des matchs">
-  <button class="tab active" data-status="all">Tous (<span id="count-all">—</span>)</button>
-  <button class="tab" data-status="live" disabled title="Les données actuelles ne contiennent pas de scores en direct">En direct (0)</button>
-  <button class="tab" data-status="upcoming">À venir (<span id="count-upcoming">—</span>)</button>
-  <button class="tab" data-status="finished" disabled>Terminés (0)</button>
- </div>
  <div class="filters">
   <label class="filter">⚽ <select id="competition-filter" aria-label="Compétition"><option value="all">Toutes les compétitions</option></select></label>
   <label class="filter">↕ <select id="sort-filter" aria-label="Tri"><option value="time">Heure (croissante)</option><option value="competition">Compétition</option><option value="probability">Probabilité la plus forte</option></select></label>
-  <label class="filter">★ <select id="favorite-filter" aria-label="Équipes"><option value="all">Toutes les équipes</option></select></label>
  </div>
 </div>
 <section class="board" aria-label="Tableau des matchs">
@@ -155,8 +204,7 @@ button{cursor:pointer}
  const compFilter=document.getElementById('competition-filter');
  const dateRange=document.getElementById('date-range');
  const sortFilter=document.getElementById('sort-filter');
- const favoriteFilter=document.getElementById('favorite-filter');
- let matches=[],status='all',favorites=new Set();
+ let matches=[];
  const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
  const num=v=>Number.isFinite(Number(v))?Number(v).toFixed(2):'—';
@@ -200,14 +248,11 @@ button{cursor:pointer}
    if(period==='today'&&d.toDateString()!==now.toDateString())return false;
    if(period==='7days'&&d.getTime()>now.getTime()+7*86400000)return false;
    if(period==='30days'&&d.getTime()>now.getTime()+30*86400000)return false;
-   if(favoriteFilter.value==='favorites'&&!favorites.has(r.home)&&!favorites.has(r.away))return false;
    return true;
   });
   if(sortFilter.value==='competition')rows.sort((a,b)=>String(a.competition).localeCompare(String(b.competition),'fr')||new Date(a.kickoff)-new Date(b.kickoff));
   else if(sortFilter.value==='probability')rows.sort((a,b)=>bestProbability(b)-bestProbability(a));
   else rows.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
-  document.getElementById('count-all').textContent=rows.length;
-  document.getElementById('count-upcoming').textContent=rows.length;
   if(!rows.length){list.innerHTML='<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';return;}
   const groups=new Map();rows.forEach(r=>{const k=r.competition||'Autres compétitions';if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r)});
   list.innerHTML=Array.from(groups.entries()).map(([name,items])=>'<div class="competition-head"><span class="comp-star">★</span><span class="comp-name">'+compCountry(name)+' &nbsp; '+esc(name)+'</span><span class="comp-count">'+items.length+' match'+(items.length>1?'s':'')+'</span></div>'+items.map(row).join('')).join('');
@@ -218,8 +263,7 @@ button{cursor:pointer}
   Array.from(comps.entries()).sort((a,b)=>String(a[1]).localeCompare(String(b[1]),'fr')).forEach(([id,name])=>{const op=document.createElement('option');op.value=id;op.textContent=name;compFilter.appendChild(op)});
   render();
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
- document.querySelectorAll('[data-status]').forEach(btn=>btn.addEventListener('click',()=>{if(btn.disabled)return;status=btn.dataset.status;document.querySelectorAll('[data-status]').forEach(b=>b.classList.toggle('active',b===btn));render()}));
- [search,compFilter,dateRange,sortFilter,favoriteFilter].forEach(el=>el.addEventListener(el===search?'input':'change',render));
+ [search,compFilter,dateRange,sortFilter].forEach(el=>el.addEventListener(el===search?'input':'change',render));
  list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃'});
  document.getElementById('theme-toggle').addEventListener('click',()=>{document.body.classList.toggle('high-contrast');document.body.style.setProperty('--green',document.body.classList.contains('high-contrast')?'#7dffca':'#00dc91')});
 })();
