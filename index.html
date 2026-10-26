@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f1f5f9">
+<meta name="theme-color" content="#f4eee5">
 <meta name="description" content="PronoFoot AI — tableau compact de prédictions football et cotes Unibet.">
 <title>PronoFoot AI — Prédictions football</title>
 <style>
-:root{color-scheme:dark;--bg:#04111a;--panel:#071923;--panel2:#0a202d;--line:#123344;--muted:#9bb5c7;--text:#eff7fc;--green:#00dc91;--green2:#00ad78;--blue:#55b9ff;--red:#ff4c5d}
+:root{color-scheme:light;--bg:#f4eee5;--panel:#fffaf3;--panel2:#eee3d5;--line:#d9c7b4;--muted:#786657;--text:#38291f;--green:#98613a;--green2:#7e4d2d;--blue:#87664c;--red:#b84a42}
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;background:radial-gradient(ellipse at 48% -20%,#123247 0,transparent 55%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px}
@@ -261,6 +261,39 @@ body.light-mode .header-status small{color:#526a7c}
 .sync-panel.sync-ok .sync-indicator{background:#00dc91;box-shadow:0 0 0 3px #00dc911c}
 .sync-panel.sync-stale .sync-indicator{background:#ffb84d;box-shadow:0 0 0 3px #ffb84d1c}
 @media(max-width:600px){.sync-grid{grid-template-columns:1fr}.sync-overall{margin-left:0;width:100%}.sync-item{padding:9px 10px}}
+
+/* Palette fixe brun, crème et terre cuite */
+body,body.light-mode{background:#f4eee5!important;color:#38291f!important}
+html{background:#f4eee5!important}
+body.light-mode .topbar,body.light-mode .board,body.light-mode .detail-card,
+body.light-mode .header-status,body.light-mode .searchbox,body.light-mode .top-action,
+body.light-mode .filter,body.light-mode .tab{background:#fffaf3!important;border-color:#d9c7b4!important;color:#493629!important}
+body.light-mode .table-head{background:#e5d6c5!important;color:#5e4634!important;border-color:#d2bda8!important}
+body.light-mode .competition-head,body.light-mode .future-day-label{background:#efe4d6!important;color:#674d39!important;border-color:#ddcbb8!important}
+body.light-mode .match-row,body.light-mode .match-row:nth-child(even){background:#fffaf3!important;border-color:#eadfd2!important}
+body.light-mode .match-row:hover{background:#f2e3d2!important}
+body.light-mode .brand,body.light-mode .side-name,body.light-mode .header-status b,
+body.light-mode .detail-card strong,body.light-mode .detail-line b,
+body.light-mode .metric-labels,body.light-mode .stat-pair strong,
+body.light-mode .prediction-top{color:#38291f!important}
+body.light-mode .brand .live,body.light-mode .page-title span,
+body.light-mode .eyebrow,body.light-mode .prediction-top .chosen{color:#98613a!important}
+body.light-mode .brand-ball{background:#ead7c2!important;border-color:#98613a!important}
+body.light-mode .tab.active,body.light-mode .main-nav a.active{background:#98613a!important;border-color:#98613a!important;color:#fffaf3!important}
+body.light-mode .main-nav a{border-color:#d9c7b4!important;color:#5e4634!important}
+body.light-mode .odd,body.light-mode .form-chip{background:#eee3d5!important;color:#674d39!important}
+body.light-mode .odd.highlight{background:#e5c9a9!important;color:#623b20!important}
+body.light-mode .searchbox input{color:#38291f!important}
+body.light-mode .searchbox input::placeholder{color:#8a7765!important}
+body.light-mode .mini-track{background:#e0d2c3!important}
+body.light-mode .mini-track .s{background:#b6a18c!important}
+body.light-mode .mini-track .b{background:#98714e!important}
+body.light-mode .status.upcoming,body.light-mode .kickoff,body.light-mode .footer,
+body.light-mode .detail-line,body.light-mode .stat-pair small{color:#786657!important}
+body.light-mode .detail-expand{background:#f8f0e6!important;border-color:#ddcbb8!important}
+body.light-mode .future-accordion{background:#fffaf3!important;border-color:#d9c7b4!important}
+body.light-mode .future-accordion>summary{background:#efe4d6!important;color:#493629!important}
+body.light-mode .odds-missing{background:#f0e7dc!important;border-color:#d4c2af!important;color:#786657!important}
 </style>
 </head>
 <body class="light-mode">
@@ -270,7 +303,7 @@ body.light-mode .header-status small{color:#526a7c}
  <nav class="main-nav" aria-label="Navigation principale"><a class="active" href="index.html" aria-current="page">Prédictions</a><a href="predictions.html">Historique &amp; bilan</a></nav>
  <label class="searchbox"><span class="glass">⌕</span><input id="search" type="search" placeholder="Rechercher une équipe, un match, une compétition..." aria-label="Rechercher"></label>
  <div class="header-status"><span class="live-dot"></span><span><b id="header-match-count">— matchs à venir</b><small>Pronostics &amp; cotes Unibet</small></span></div>
- <button class="icon-btn" id="theme-toggle" aria-label="Passer au thème sombre" title="Passer au thème sombre">☀</button>
+ 
 </header>
 <section class="intro"><div class="eyebrow">Centre des matchs · Pronostics &amp; cotes Unibet</div><h1 class="page-title">Les prochains <span>matchs.</span></h1><p class="page-subtitle">Probabilités estimées par le modèle et cotes Unibet disponibles pour les rencontres à venir.</p><div class="summary-strip"><div class="summary-pill">🎯 <span>Marchés couverts</span> <strong>1 · N · 2</strong></div></div></section>
 <div class="tabs-filter">
@@ -359,7 +392,6 @@ body.light-mode .header-status small{color:#526a7c}
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
  [search,compFilter].forEach(el=>el.addEventListener(el===search?'input':'change',render));
  list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃'});
- const themeToggle=document.getElementById('theme-toggle');themeToggle.addEventListener('click',()=>{const light=document.body.classList.toggle('light-mode');themeToggle.textContent=light?'☀':'☾';themeToggle.setAttribute('aria-label',light?'Passer au thème sombre':'Passer au thème clair');themeToggle.title=light?'Passer au thème sombre':'Passer au thème clair';document.querySelector('meta[name="theme-color"]').content=light?'#f1f5f9':'#06131d'});
 })();
 </script>
 </body>
