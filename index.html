@@ -252,7 +252,7 @@ body.light-mode .header-status small{color:#526a7c}
 .sync-heading{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px}
 .sync-indicator{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#e6b84a;box-shadow:0 0 0 3px #e6b84a1c}
 .sync-overall{margin-left:auto;color:#a7c0ce;font-size:11px;font-weight:500}
-.sync-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.sync-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
 .sync-item{display:flex;flex-direction:column;gap:4px;padding:10px 11px;border:1px solid #123344;border-radius:7px;background:#081d29;min-width:0}
 .sync-label{font-size:10px;color:#9bb5c7}
 .sync-item strong{font-size:12px;color:#e8f5fb}
@@ -272,7 +272,7 @@ body.light-mode .header-status small{color:#526a7c}
  <div class="header-status"><span class="live-dot"></span><span><b id="header-match-count">— matchs à venir</b><small>Pronostics &amp; cotes Unibet</small></span></div>
  <button class="icon-btn" id="theme-toggle" aria-label="Changer le contraste" title="Changer le contraste">☾</button>
 </header>
-<section class="intro"><div class="eyebrow">Centre des matchs · Pronostics &amp; cotes Unibet</div><h1 class="page-title">Les prochains <span>matchs.</span></h1><p class="page-subtitle">Retrouve les rencontres à venir, les probabilités estimées par le modèle et les cotes Unibet disponibles. Les matchs les plus proches apparaissent en premier ; ceux au-delà de 48 heures sont regroupés pour garder le tableau lisible.</p><div class="summary-strip"><div class="summary-pill">📅 <span>À venir</span> <strong id="summary-count">—</strong></div><div class="summary-pill">⏱ <span>Ordre chronologique</span></div><div class="summary-pill">🎯 <span>Marché</span> <strong>1 · N · 2</strong></div></div></section>
+<section class="intro"><div class="eyebrow">Centre des matchs · Pronostics &amp; cotes Unibet</div><h1 class="page-title">Les prochains <span>matchs.</span></h1><p class="page-subtitle">Probabilités estimées par le modèle et cotes Unibet disponibles pour les rencontres à venir.</p><div class="summary-strip"><div class="summary-pill">🎯 <span>Marchés couverts</span> <strong>1 · N · 2</strong></div></div></section>
 <div class="tabs-filter">
  <div class="filters">
   <label class="filter">⚽ <select id="competition-filter" aria-label="Compétition"><option value="all">Toutes les compétitions</option></select></label>
@@ -289,7 +289,7 @@ body.light-mode .header-status small{color:#526a7c}
   <div class="sync-grid">
    <div class="sync-item"><span class="sync-label">Données des matchs</span><strong id="sync-data-status">En attente</strong><small id="sync-data-time">Dernière génération : —</small></div>
    <div class="sync-item"><span class="sync-label">Collecte des cotes Unibet</span><strong id="sync-odds-status">À vérifier</strong><small>La disponibilité dépend des marchés retournés par la source.</small></div>
-   <div class="sync-item"><span class="sync-label">Scripts GitHub Actions</span><strong>Consulter les exécutions</strong><small><a href="https://github.com/SamSEILLER/PronoFoot-AI/actions" target="_blank" rel="noopener noreferrer">Historique des workflows ↗</a></small></div>
+  
   </div>
  </div>
  <p>PronoFoot AI · Modèle expérimental. Les probabilités sont des estimations informatives et ne garantissent pas un résultat. Les cotes Unibet sont affichées lorsqu’elles sont disponibles. Les scores, statistiques en direct et formes d’équipe non présents dans les données ne sont pas inventés.</p>
@@ -347,19 +347,8 @@ body.light-mode .header-status small{color:#526a7c}
   });
   rows.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
   const count=document.getElementById('header-match-count');if(count)count.textContent=rows.length+' match'+(rows.length>1?'s':'')+' à venir';
-  const summaryCount=document.getElementById('summary-count');if(summaryCount)summaryCount.textContent=rows.length;
   if(!rows.length){list.innerHTML='<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';return;}
-  const cutoff=now.getTime()+48*60*60*1000;
-  const near=rows.filter(r=>new Date(r.kickoff).getTime()<=cutoff);
-  const future=rows.filter(r=>new Date(r.kickoff).getTime()>cutoff);
-  const dayLabel=v=>{const d=new Date(v);return new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'2-digit',month:'long',timeZone:'Europe/Paris'}).format(d)};
-  let html=near.map(row).join('');
-  if(future.length){
-   const days=new Map();future.forEach(r=>{const d=new Date(r.kickoff);const key=d.toLocaleDateString('en-CA',{timeZone:'Europe/Paris'});if(!days.has(key))days.set(key,[]);days.get(key).push(r)});
-   let grouped='';days.forEach(items=>{grouped+='<div class="future-day-label">'+esc(dayLabel(items[0].kickoff))+' · '+items.length+' match'+(items.length>1?'s':'')+'</div>'+items.map(row).join('')});
-   html+='<details class="future-accordion"><summary>Matchs dans plus de 48 h <span class="future-count">'+future.length+' rencontre'+(future.length>1?'s':'')+'</span></summary>'+grouped+'</details>';
-  }
-  list.innerHTML=html;
+  list.innerHTML=rows.map(row).join('');
  }
  fetch(new URL('predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
   matches=Array.isArray(data.upcoming)?data.upcoming:[];
