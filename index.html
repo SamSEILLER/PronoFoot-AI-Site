@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f5ef">
+<meta name="theme-color" content="#f5f3eb">
 <meta name="description" content="PronoFoot AI — tableau compact de prédictions football et cotes Unibet.">
 <title>PronoFoot AI — Prédictions football</title>
 <style>
-:root{color-scheme:light;--bg:#f7f5ef;--panel:#ffffff;--panel2:#edf0f2;--line:#d8dde2;--muted:#647487;--text:#263746;--green:#24845b;--green2:#176b49;--blue:#14283f;--red:#b84a42}
+:root{color-scheme:light;--bg:#f5f3eb;--panel:#fffdf7;--panel2:#e8eee6;--line:#d2dbd0;--muted:#66766b;--text:#26382e;--green:#245c40;--green2:#19452f;--blue:#245c40;--red:#b84a42}
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;background:radial-gradient(ellipse at 48% -20%,#123247 0,transparent 55%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px}
@@ -262,38 +262,38 @@ body.light-mode .header-status small{color:#526a7c}
 .sync-panel.sync-stale .sync-indicator{background:#ffb84d;box-shadow:0 0 0 3px #ffb84d1c}
 @media(max-width:600px){.sync-grid{grid-template-columns:1fr}.sync-overall{margin-left:0;width:100%}.sync-item{padding:9px 10px}}
 
-/* Palette fixe Premium Sport : bleu nuit, or et ivoire */
-body,body.light-mode{background:#f7f5ef!important;color:#263746!important}
-html{background:#f7f5ef!important}
+/* Palette fixe Vert forêt & blanc cassé */
+body,body.light-mode{background:#f5f3eb!important;color:#26382e!important}
+html{background:#f5f3eb!important}
 body.light-mode .topbar,body.light-mode .board,body.light-mode .detail-card,
 body.light-mode .header-status,body.light-mode .searchbox,body.light-mode .top-action,
-body.light-mode .filter,body.light-mode .tab{background:#ffffff!important;border-color:#d8dde2!important;color:#263746!important}
-body.light-mode .table-head{background:#e7ebef!important;color:#526477!important;border-color:#d8dde2!important}
-body.light-mode .competition-head,body.light-mode .future-day-label{background:#edf0f2!important;color:#42576b!important;border-color:#d8dde2!important}
-body.light-mode .match-row,body.light-mode .match-row:nth-child(even){background:#ffffff!important;border-color:#e5e8eb!important}
-body.light-mode .match-row:hover{background:#f0eee6!important}
+body.light-mode .filter,body.light-mode .tab{background:#fffdf7!important;border-color:#d2dbd0!important;color:#26382e!important}
+body.light-mode .table-head{background:#e5ebe2!important;color:#52685a!important;border-color:#d2dbd0!important}
+body.light-mode .competition-head,body.light-mode .future-day-label{background:#edf0e8!important;color:#3f5948!important;border-color:#d2dbd0!important}
+body.light-mode .match-row,body.light-mode .match-row:nth-child(even){background:#fffdf7!important;border-color:#e2e7de!important}
+body.light-mode .match-row:hover{background:#eaf1e8!important}
 body.light-mode .brand,body.light-mode .side-name,body.light-mode .header-status b,
 body.light-mode .detail-card strong,body.light-mode .detail-line b,
 body.light-mode .metric-labels,body.light-mode .stat-pair strong,
-body.light-mode .prediction-top{color:#263746!important}
+body.light-mode .prediction-top{color:#26382e!important}
 body.light-mode .brand .live,body.light-mode .page-title span,
-body.light-mode .eyebrow,body.light-mode .prediction-top .chosen{color:#b0832f!important}
-body.light-mode .brand-ball{background:#f1e5c9!important;border-color:#b0832f!important}
-body.light-mode .tab.active,body.light-mode .main-nav a.active{background:#14283f!important;border-color:#14283f!important;color:#ffffff!important}
-body.light-mode .main-nav a{border-color:#d8dde2!important;color:#263746!important}
-body.light-mode .odd,body.light-mode .form-chip{background:#edf0f2!important;color:#42576b!important}
-body.light-mode .odd.highlight{background:#f3e5bf!important;color:#614713!important;border-color:#d6a84f!important}
-body.light-mode .searchbox input{color:#263746!important}
-body.light-mode .searchbox input::placeholder{color:#788796!important}
-body.light-mode .mini-track{background:#dfe4e8!important}
-body.light-mode .mini-track .s{background:#a9b4be!important}
-body.light-mode .mini-track .b{background:#d6a84f!important}
+body.light-mode .eyebrow,body.light-mode .prediction-top .chosen{color:#245c40!important}
+body.light-mode .brand-ball{background:#e1eadf!important;border-color:#245c40!important}
+body.light-mode .tab.active,body.light-mode .main-nav a.active{background:#245c40!important;border-color:#245c40!important;color:#fffdf7!important}
+body.light-mode .main-nav a{border-color:#d2dbd0!important;color:#26382e!important}
+body.light-mode .odd,body.light-mode .form-chip{background:#e8eee6!important;color:#3f5948!important}
+body.light-mode .odd.highlight{background:#d5e6d4!important;color:#19452f!important;border-color:#9fbea0!important}
+body.light-mode .searchbox input{color:#26382e!important}
+body.light-mode .searchbox input::placeholder{color:#7c8a7e!important}
+body.light-mode .mini-track{background:#dfe6dc!important}
+body.light-mode .mini-track .s{background:#aebcad!important}
+body.light-mode .mini-track .b{background:#477b57!important}
 body.light-mode .status.upcoming,body.light-mode .kickoff,body.light-mode .footer,
-body.light-mode .detail-line,body.light-mode .stat-pair small{color:#647487!important}
-body.light-mode .detail-expand{background:#f7f5ef!important;border-color:#d8dde2!important}
-body.light-mode .future-accordion{background:#ffffff!important;border-color:#d8dde2!important}
-body.light-mode .future-accordion>summary{background:#edf0f2!important;color:#263746!important}
-body.light-mode .odds-missing{background:#f0f1f2!important;border-color:#cdd4da!important;color:#647487!important}
+body.light-mode .detail-line,body.light-mode .stat-pair small{color:#66766b!important}
+body.light-mode .detail-expand{background:#f5f3eb!important;border-color:#d2dbd0!important}
+body.light-mode .future-accordion{background:#fffdf7!important;border-color:#d2dbd0!important}
+body.light-mode .future-accordion>summary{background:#e8eee6!important;color:#26382e!important}
+body.light-mode .odds-missing{background:#edf0e8!important;border-color:#d2dbd0!important;color:#66766b!important}
 body.light-mode .icon-btn{display:none!important}
 </style>
 </head>
