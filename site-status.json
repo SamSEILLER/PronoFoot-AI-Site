@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T08:56:39.796360+00:00",
+  "generated_at_utc": "2026-10-26T10:40:49.324415+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
@@ -19,7 +19,7 @@
   "odds": {
     "status": "ok",
     "label": "À jour",
-    "updated_at_utc": "2026-10-26T08:23:48.406175+00:00",
+    "updated_at_utc": "2026-10-26T09:52:19.274591+00:00",
     "events_with_odds": 0,
     "errors": 0,
     "unmatched": 0,
