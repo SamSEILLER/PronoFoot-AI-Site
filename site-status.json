@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-25T07:36:29.413668+00:00",
+  "generated_at_utc": "2026-10-26T05:59:21.838974+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
-    "updated_at_utc": "2026-10-25T04:20:16.113488+00:00",
+    "updated_at_utc": "2026-10-26T04:23:57.011243+00:00",
     "records": 10317,
     "errors": 0,
     "detail": "0 saison(s) en échec"
@@ -11,19 +11,19 @@
   "statistics": {
     "status": "ok",
     "label": "À jour",
-    "updated_at_utc": "2026-10-25T04:20:16.113488+00:00",
-    "results": 8029,
+    "updated_at_utc": "2026-10-26T04:23:57.011243+00:00",
+    "results": 8062,
     "issues": 0,
     "detail": "0 anomalie(s) structurelle(s)"
   },
   "odds": {
-    "status": "ok",
-    "label": "À jour",
-    "updated_at_utc": "2026-10-25T04:20:46+00:00",
-    "events_with_odds": 20,
-    "errors": 0,
-    "unmatched": 16,
-    "without_markets": 0,
-    "detail": "16 événement(s) non associé(s)"
+    "status": "warning",
+    "label": "À vérifier",
+    "updated_at_utc": "2026-10-26T04:24:30+00:00",
+    "events_with_odds": 78,
+    "errors": 4,
+    "unmatched": 20,
+    "without_markets": 10,
+    "detail": "20 événement(s) non associé(s)"
   }
 }
