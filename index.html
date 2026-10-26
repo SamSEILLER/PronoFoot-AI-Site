@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5f3eb">
+<meta name="theme-color" content="#263544">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23263544%22/%3E%3Ctext x=%2232%22 y=%2245%22 font-size=%2240%22 text-anchor=%22middle%22%3E⚽%3C/text%3E%3C/svg%3E">
 <meta name="description" content="PronoFoot AI — tableau compact de prédictions football et cotes Unibet.">
 <title>PronoFoot AI — Prédictions football</title>
 <style>
@@ -122,6 +123,7 @@ button,input,select{font:inherit}button{cursor:pointer}
   <button class="filter-button" type="button" id="focus-filters">☷ Filtres</button>
  </div>
  <select id="date-range" aria-label="Période" hidden><option value="all">Tous</option><option value="24h">24 h</option><option value="48h">48 h</option><option value="7d">7 jours</option></select>
+ <select id="competition-filter" aria-label="Compétition" hidden><option value="all">Toutes les compétitions</option></select>
 </section>
 <div class="dashboard-grid">
  <aside class="competition-sidebar" aria-label="Compétitions">
@@ -216,7 +218,7 @@ button,input,select{font:inherit}button{cursor:pointer}
   document.querySelectorAll('.match-row[data-id]').forEach(el=>el.classList.toggle('is-selected',String(el.dataset.id)===String(r.id)));
  }
  function render(){
-  const now=new Date(),cutoff=new Date(now.getTime()+48*60*60*1000),query=search.value.trim().toLocaleLowerCase('fr'),comp=compFilter.value;
+  const now=new Date(),cutoff=new Date(now.getTime()+48*60*60*1000),query=(search?search.value:'').trim().toLocaleLowerCase('fr'),comp=compFilter?compFilter.value:'all';
   let rows=matches.filter(r=>{
    const d=new Date(r.kickoff);if(!r.kickoff||isNaN(d)||d<now)return false;
    if(dateRange&&dateRange.value!=='all'){const hours=({'24h':24,'48h':48,'7d':168})[dateRange.value]||Infinity;if(d.getTime()>now.getTime()+hours*3600000)return false;}
@@ -250,10 +252,10 @@ button,input,select{font:inherit}button{cursor:pointer}
   render();
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
  [search,compFilter,dateRange,sortFilter].filter(Boolean).forEach(el=>el.addEventListener(el===search?'input':'change',render));
- document.querySelectorAll('[data-range]').forEach(btn=>btn.addEventListener('click',()=>{dateRange.value=btn.dataset.range||'all';document.querySelectorAll('[data-range]').forEach(x=>x.classList.toggle('active',x===btn));render()}));
+ document.querySelectorAll('[data-range]').forEach(btn=>btn.addEventListener('click',()=>{if(dateRange)dateRange.value=btn.dataset.range||'all';document.querySelectorAll('[data-range]').forEach(x=>x.classList.toggle('active',x===btn));render()}));
  const focusFilters=document.getElementById('focus-filters');if(focusFilters)focusFilters.addEventListener('click',()=>{const sidebar=document.querySelector('.competition-sidebar');if(sidebar){sidebar.scrollIntoView({behavior:'smooth',block:'center'});sidebar.style.outline='2px solid #16b765';setTimeout(()=>sidebar.style.outline='',1400);}});
- document.querySelector('.competition-option[data-competition="all"]').addEventListener('click',()=>{compFilter.value='all';render()});
- competitionSidebar.addEventListener('click',e=>{const b=e.target.closest('[data-competition]');if(!b)return;compFilter.value=b.dataset.competition;render()});
+ const allCompetitionButton=document.querySelector('.competition-option[data-competition="all"]');if(allCompetitionButton)allCompetitionButton.addEventListener('click',()=>{if(compFilter)compFilter.value='all';render()});
+ if(competitionSidebar)competitionSidebar.addEventListener('click',e=>{const b=e.target.closest('[data-competition]');if(!b)return;if(compFilter)compFilter.value=b.dataset.competition;render()});
  list.addEventListener('click',e=>{
   const rowEl=e.target.closest('.match-row[data-id]');
   if(rowEl){selectedMatchId=rowEl.dataset.id;renderSelected(matches.filter(r=>{const d=new Date(r.kickoff);return r.kickoff&&!isNaN(d)&&d>=new Date()&&(compFilter.value==='all'||r.competition_id===compFilter.value)&&(!search.value.trim()||(String(r.home)+' '+String(r.away)+' '+String(r.competition)).toLocaleLowerCase('fr').includes(search.value.trim().toLocaleLowerCase('fr')))}));}
