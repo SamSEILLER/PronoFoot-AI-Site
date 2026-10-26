@@ -353,6 +353,54 @@ body.light-mode .comp-count{color:#526579}
 body.light-mode .footer{color:#64748B}
 @media(max-width:850px){body.light-mode .topbar{background:#334155} .competition-label{font-size:10px}.competition-time .kickoff{font-size:10px}}
 
+
+/* Tableau de bord en trois panneaux : compétitions, rencontres, détail sélectionné */
+.dashboard-grid{display:grid;grid-template-columns:220px minmax(0,1fr) 285px;align-items:start;gap:14px;margin-top:4px}
+.competition-sidebar,.selected-panel{min-width:0;background:#fff;border:1px solid #D6E0E8;border-radius:14px;box-shadow:0 8px 24px #3341550b;overflow:hidden}
+.sidebar-heading{display:flex;justify-content:space-between;align-items:center;padding:15px 14px 12px;font-size:10px;font-weight:900;letter-spacing:.09em;color:#526579;border-bottom:1px solid #E8EFF5}
+.sidebar-count{display:grid;place-items:center;min-width:24px;height:22px;padding:0 6px;background:#E8EFF5;border-radius:6px;color:#334155}
+.competition-option{width:100%;display:flex;align-items:center;gap:9px;padding:11px 12px;border:0;border-bottom:1px solid #F0F4F8;background:#fff;text-align:left;color:#334155;font-size:12px}
+.competition-option:hover{background:#F3FBF6}
+.competition-option.active{background:#E8F9EF;color:#166534;font-weight:800;box-shadow:inset 3px 0 #22C55E}
+.competition-option b{margin-left:auto;font-size:11px;color:#64748B}
+.competition-option-icon{width:24px;height:24px;display:grid;place-items:center;flex:0 0 24px;background:#F0F4F8;border-radius:7px;font-size:13px}
+.competition-option.active .competition-option-icon{background:#DDFBE8}
+.sidebar-note{padding:12px;color:#64748B;font-size:10px;line-height:1.55;background:#F8FAFC}
+.board{min-width:0;margin:0}
+.board-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;background:#fff;border-bottom:1px solid #E8EFF5}
+.board-heading h2{margin:4px 0 0;color:#1F2937;font-size:17px;letter-spacing:-.02em}
+.board-kicker{color:#15803D;font-size:9px;font-weight:900;letter-spacing:.12em}
+.board-live-count{padding:6px 8px;border-radius:7px;background:#F0F4F8;color:#526579;font-size:10px;font-weight:800;white-space:nowrap}
+.selected-panel{position:sticky;top:12px}
+.selected-panel-head{padding:15px;border-bottom:1px solid #E8EFF5;background:#F8FAFC}
+.selected-panel-kicker{font-size:9px;font-weight:900;letter-spacing:.12em;color:#15803D}
+.selected-panel-head h2{margin:6px 0 4px;font-size:16px;line-height:1.3;color:#1F2937}
+.selected-panel-subtitle{color:#64748B;font-size:11px;line-height:1.5}
+.selected-teams{display:grid;grid-template-columns:1fr 32px 1fr;gap:6px;align-items:center;padding:15px 12px;border-bottom:1px solid #E8EFF5}
+.selected-team{text-align:center;min-width:0;font-size:11px;font-weight:800;color:#334155}
+.selected-team img{display:block;width:40px;height:40px;object-fit:contain;margin:0 auto 7px}
+.selected-team .initial-crest{margin:0 auto 7px}
+.selected-vs{text-align:center;font-size:10px;color:#94A3B8;font-weight:800}
+.selected-section{padding:13px 14px;border-bottom:1px solid #E8EFF5}
+.selected-section h3{margin:0 0 10px;font-size:11px;color:#334155}
+.selected-probability{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.selected-probability div{padding:9px 4px;text-align:center;border:1px solid #E2E8F0;border-radius:8px;background:#F8FAFC}
+.selected-probability span{display:block;font-size:10px;color:#64748B;margin-bottom:4px}
+.selected-probability b{font-size:16px;color:#1F2937}
+.selected-probability .selected-best{background:#DDFBE8;border-color:#BBF7D0}
+.selected-probability .selected-best b{color:#166534}
+.selected-odds-row,.selected-info-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;font-size:11px;color:#64748B}
+.selected-odds-row b,.selected-info-row b{color:#1F2937}
+.selected-panel-foot{padding:12px 14px;background:#F8FAFC;color:#64748B;font-size:10px;line-height:1.5}
+.selected-empty{padding:30px 18px;text-align:center}
+.selected-panel-icon{display:grid;place-items:center;width:42px;height:42px;margin:0 auto 12px;border-radius:12px;background:#E8F9EF;color:#15803D;font-size:24px}
+.selected-empty h2{font-size:14px;color:#334155;margin:0 0 8px}
+.selected-empty p{font-size:11px;color:#64748B;line-height:1.6;margin:0}
+.match-row.is-selected{outline:2px solid #22C55E;outline-offset:-2px;background:#F0FBF5!important}
+@media(max-width:1350px){.dashboard-grid{grid-template-columns:190px minmax(0,1fr)}.selected-panel{grid-column:2;position:static;display:grid;grid-template-columns:1fr 1fr}.selected-panel-head,.selected-teams{grid-column:1/-1}.selected-section{border-right:1px solid #E8EFF5}.selected-panel-foot{grid-column:1/-1}}
+@media(max-width:850px){.dashboard-grid{grid-template-columns:1fr;gap:10px}.competition-sidebar{display:block}.competition-sidebar #competition-sidebar-list{display:flex;gap:6px;overflow-x:auto;padding:0 8px 8px}.competition-sidebar .sidebar-heading{padding:10px 12px}.competition-option{width:auto;min-width:max-content;border:1px solid #E2E8F0;border-radius:8px;padding:8px 10px}.competition-option.active{box-shadow:inset 0 -3px #22C55E}.sidebar-note{display:none}.selected-panel{grid-column:1;display:block}.board-heading{padding:12px}.board .table-head{display:none}.board .match-row{min-width:0}.selected-panel{position:static}}
+@media(max-width:520px){.selected-panel{border-radius:10px}.selected-section{padding:11px 12px}.selected-team{font-size:10px}.selected-team img{width:32px;height:32px}.board-heading h2{font-size:15px}}
+
 </style>
 </head>
 <body class="light-mode">
@@ -371,10 +419,22 @@ body.light-mode .footer{color:#64748B}
   
  </div>
 </div>
-<section class="board" aria-label="Tableau des matchs">
- <div class="table-head"><span>Compétition · Ligue · Heure</span><span>Match</span><span>Score</span><span>Statistiques principales</span><span>Prédiction</span><span>Cotes Unibet</span><span>Forme</span><span>Détails</span></div>
- <div id="match-list"><div class="empty">Chargement des matchs…</div></div>
-</section>
+<div class="dashboard-grid">
+ <aside class="competition-sidebar" aria-label="Compétitions">
+  <div class="sidebar-heading"><span>COMPÉTITIONS</span><span class="sidebar-count" id="sidebar-competition-count">—</span></div>
+  <button class="competition-option active" data-competition="all"><span class="competition-option-icon">⚽</span><span>Toutes les compétitions</span><b id="sidebar-all-count">—</b></button>
+  <div id="competition-sidebar-list"></div>
+  <div class="sidebar-note">Les compétitions affichées dépendent des matchs présents dans les données chargées.</div>
+ </aside>
+ <section class="board" aria-label="Tableau des matchs">
+  <div class="board-heading"><div><span class="board-kicker">CENTRE DES MATCHS</span><h2>Rencontres à venir</h2></div><span class="board-live-count" id="board-match-count">— match(s)</span></div>
+  <div class="table-head"><span>Compétition · Heure</span><span>Match</span><span>Score</span><span>Statistiques principales</span><span>Prédiction</span><span>Cotes Unibet</span><span>Forme</span><span>Détails</span></div>
+  <div id="match-list"><div class="empty">Chargement des matchs…</div></div>
+ </section>
+ <aside class="selected-panel" aria-label="Détails du match sélectionné" id="selected-match-panel">
+  <div class="selected-empty"><span class="selected-panel-icon">⌁</span><h2>Sélectionne un match</h2><p>Les probabilités, les cotes disponibles et les informations du modèle apparaîtront ici.</p></div>
+ </aside>
+</div>
 <footer class="footer">Dernière mise à jour des données : <strong id="footer-data-updated">—</strong> (heure de Paris)</footer>
 </div>
 <script>
@@ -382,6 +442,9 @@ body.light-mode .footer{color:#64748B}
  const list=document.getElementById('match-list');
  const search=document.getElementById('search');
  const compFilter=document.getElementById('competition-filter');
+ const competitionSidebar=document.getElementById('competition-sidebar-list');
+ const selectedPanel=document.getElementById('selected-match-panel');
+ let selectedMatchId=null;
  const dateRange=document.getElementById('date-range');
  const sortFilter=document.getElementById('sort-filter');
  let matches=[];
@@ -419,6 +482,29 @@ body.light-mode .footer{color:#64748B}
     '<div class="detail-card"><strong>Informations du modèle</strong><div class="detail-line"><span>Matchs historiques</span><b>'+esc(r.history_matches==null?'—':r.history_matches)+'</b></div><div class="detail-line"><span>Issue estimée</span><b>'+esc(r.predicted_label||'—')+'</b></div><div class="detail-line"><span>Compétition</span><b>'+esc(r.competition||'—')+'</b></div></div>'+
    '</div></div>';
  };
+ function renderSidebar(rows){
+  const counts=new Map();rows.forEach(r=>{const id=r.competition_id||'unknown';const name=r.competition||'Compétition non renseignée';const current=counts.get(id)||{name,count:0};current.count++;counts.set(id,current)});
+  const allButton=document.querySelector('.competition-option[data-competition="all"]');
+  if(allButton)allButton.classList.toggle('active',compFilter.value==='all');
+  const allCount=document.getElementById('sidebar-all-count');if(allCount)allCount.textContent=String(rows.length);
+  const total=document.getElementById('sidebar-competition-count');if(total)total.textContent=String(counts.size);
+  competitionSidebar.innerHTML=Array.from(counts.entries()).sort((a,b)=>a[1].name.localeCompare(b[1].name,'fr')).map(([id,item])=>'<button class="competition-option '+(compFilter.value===id?'active':'')+'" data-competition="'+esc(id)+'"><span class="competition-option-icon">'+compCountry(item.name)+'</span><span>'+esc(item.name)+'</span><b>'+item.count+'</b></button>').join('');
+ }
+ function renderSelected(rows){
+  const r=rows.find(x=>String(x.id)===String(selectedMatchId))||rows[0];
+  if(!r){selectedPanel.innerHTML='<div class="selected-empty"><span class="selected-panel-icon">⌁</span><h2>Aucun match à afficher</h2><p>Modifie les filtres ou vérifie les données disponibles.</p></div>';return;}
+  selectedMatchId=r.id;
+  const p=r.probabilities||{},o=r.odds_1x2||{},probs=[['home','1'],['draw','N'],['away','2']];
+  const best=probs.reduce((a,b)=>(Number(p[b[0]])||0)>(Number(p[a[0]])||0)?b:a,probs[0]);
+  const oddsLine=probs.map(([k,l])=>'<div class="selected-odds-row"><span>'+l+' — '+(k==='home'?esc(r.home):k==='away'?esc(r.away):'Match nul')+'</span><b>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'N/D')+'</b></div>').join('');
+  selectedPanel.innerHTML='<div class="selected-panel-head"><div class="selected-panel-kicker">MATCH SÉLECTIONNÉ</div><h2>'+esc(r.competition||'Compétition non renseignée')+'</h2><div class="selected-panel-subtitle">'+esc(dateText(r.kickoff))+' · '+esc(r.predicted_label||'Prédiction du modèle')+'</div></div>'+
+   '<div class="selected-teams"><div class="selected-team">'+crest(r.home)+esc(r.home)+'</div><div class="selected-vs">VS</div><div class="selected-team">'+crest(r.away)+esc(r.away)+'</div></div>'+
+   '<div class="selected-section"><h3>Probabilités du modèle</h3><div class="selected-probability">'+probs.map(([k,l])=>'<div class="'+(k===best[0]?'selected-best':'')+'"><span>'+l+'</span><b>'+pct(p[k])+'</b></div>').join('')+'</div></div>'+
+   '<div class="selected-section"><h3>Cotes Unibet disponibles</h3>'+oddsLine+'</div>'+
+   '<div class="selected-section"><h3>Indicateurs du modèle</h3><div class="selected-info-row"><span>Buts attendus — '+esc(r.home)+'</span><b>'+num(r.home_expected_goals)+'</b></div><div class="selected-info-row"><span>Buts attendus — '+esc(r.away)+'</span><b>'+num(r.away_expected_goals)+'</b></div><div class="selected-info-row"><span>Matchs historiques</span><b>'+esc(r.history_matches==null?'—':r.history_matches)+'</b></div></div>'+
+   '<div class="selected-panel-foot">Valeurs affichées uniquement si présentes dans les données du match. N/D signifie que la cote n’est pas disponible.</div>';
+  document.querySelectorAll('.match-row[data-id]').forEach(el=>el.classList.toggle('is-selected',String(el.dataset.id)===String(r.id)));
+ }
  function render(){
   const now=new Date(),cutoff=new Date(now.getTime()+48*60*60*1000),query=search.value.trim().toLocaleLowerCase('fr'),comp=compFilter.value;
   let rows=matches.filter(r=>{
@@ -429,7 +515,9 @@ body.light-mode .footer{color:#64748B}
   });
   rows.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
   const count=document.getElementById('header-match-count');if(count)count.textContent=rows.length+' match'+(rows.length>1?'s':'')+' à venir';
-  if(!rows.length){list.innerHTML='<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';return;}
+  const boardCount=document.getElementById('board-match-count');if(boardCount)boardCount.textContent=rows.length+' match'+(rows.length>1?'s':'');
+  renderSidebar(matches.filter(r=>r.kickoff&&new Date(r.kickoff)>=now));
+  if(!rows.length){list.innerHTML='<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';renderSelected([]);return;}
   const immediate=rows.filter(r=>new Date(r.kickoff)<=cutoff);
   const later=rows.filter(r=>new Date(r.kickoff)>cutoff);
   let html=immediate.map(row).join('');
@@ -438,6 +526,7 @@ body.light-mode .footer{color:#64748B}
    html+='<details class="future-accordion"><summary>'+esc(label)+'<span class="future-count">À partir du '+esc(dateText(later[0].kickoff).split(' ').slice(0,2).join(' '))+'</span></summary>'+later.map(row).join('')+'</details>';
   }
   list.innerHTML=html;
+  renderSelected(rows);
  }
  fetch(new URL('data/predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
   matches=Array.isArray(data.upcoming)?data.upcoming:[];
@@ -450,7 +539,13 @@ body.light-mode .footer{color:#64748B}
   render();
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
  [search,compFilter].forEach(el=>el.addEventListener(el===search?'input':'change',render));
- list.addEventListener('click',e=>{const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃'});
+ document.querySelector('.competition-option[data-competition="all"]').addEventListener('click',()=>{compFilter.value='all';render()});
+ competitionSidebar.addEventListener('click',e=>{const b=e.target.closest('[data-competition]');if(!b)return;compFilter.value=b.dataset.competition;render()});
+ list.addEventListener('click',e=>{
+  const rowEl=e.target.closest('.match-row[data-id]');
+  if(rowEl){selectedMatchId=rowEl.dataset.id;renderSelected(matches.filter(r=>{const d=new Date(r.kickoff);return r.kickoff&&!isNaN(d)&&d>=new Date()&&(compFilter.value==='all'||r.competition_id===compFilter.value)&&(!search.value.trim()||(String(r.home)+' '+String(r.away)+' '+String(r.competition)).toLocaleLowerCase('fr').includes(search.value.trim().toLocaleLowerCase('fr')))}));}
+  const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃';
+ });
 })();
 </script>
 </body>
