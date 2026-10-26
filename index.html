@@ -250,8 +250,8 @@ button,input,select{font:inherit}button{cursor:pointer}
   render();
  }).catch(()=>{list.innerHTML='<div class="empty">Les prédictions ne sont pas disponibles pour le moment. Réessaie après la prochaine synchronisation.</div>'});
  [search,compFilter,dateRange,sortFilter].filter(Boolean).forEach(el=>el.addEventListener(el===search?'input':'change',render));
- document.querySelectorAll('[data-range]').forEach(btn=>btn.addEventListener('click',()=>{dateRange.value=btn.dataset.range||'all';document.querySelectorAll('[data-range]').forEach(x=>x.classList.toggle('active',x.dataset.range===dateRange.value));render()}));
- const focusFilters=document.getElementById('focus-filters');if(focusFilters)focusFilters.addEventListener('click',()=>{compFilter.focus();compFilter.scrollIntoView({behavior:'smooth',block:'center'});});
+ document.querySelectorAll('[data-range]').forEach(btn=>btn.addEventListener('click',()=>{dateRange.value=btn.dataset.range||'all';document.querySelectorAll('[data-range]').forEach(x=>x.classList.toggle('active',x===btn));render()}));
+ const focusFilters=document.getElementById('focus-filters');if(focusFilters)focusFilters.addEventListener('click',()=>{const sidebar=document.querySelector('.competition-sidebar');if(sidebar){sidebar.scrollIntoView({behavior:'smooth',block:'center'});sidebar.style.outline='2px solid #16b765';setTimeout(()=>sidebar.style.outline='',1400);}});
  document.querySelector('.competition-option[data-competition="all"]').addEventListener('click',()=>{compFilter.value='all';render()});
  competitionSidebar.addEventListener('click',e=>{const b=e.target.closest('[data-competition]');if(!b)return;compFilter.value=b.dataset.competition;render()});
  list.addEventListener('click',e=>{
