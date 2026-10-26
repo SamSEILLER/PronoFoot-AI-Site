@@ -18,7 +18,7 @@ button{cursor:pointer}
 .brand{display:flex;align-items:center;gap:10px;font-size:28px;font-weight:900;font-style:italic;letter-spacing:-1.5px;white-space:nowrap}
 .brand-ball{width:28px;height:28px;display:grid;place-items:center;border:2px solid #a9f8d7;border-radius:50%;font-size:18px;background:#0b483b}
 .brand .live{color:var(--green)}
-.main-nav{display:flex;align-items:center;gap:7px;white-space:nowrap}.main-nav a{padding:10px 13px;border:1px solid #17394a;border-radius:8px;color:#cfe1eb;text-decoration:none;font-weight:750;font-size:12px}.main-nav a.active{background:#00dc91;border-color:#00dc91;color:#03251b}.intro{padding:18px 10px 5px}.eyebrow{color:var(--green);font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.page-title{margin:6px 0 5px;font-size:clamp(25px,3vw,34px);line-height:1.12;letter-spacing:-.04em}.page-title span{color:var(--green)}.page-subtitle{margin:0;color:var(--muted);font-size:13px;line-height:1.6;max-width:850px}.summary-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.summary-pill{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #17394a;border-radius:8px;background:#081a26;color:#c6dbe7;font-size:11px}.summary-pill strong{color:var(--green);font-size:13px}.future-accordion{border-top:1px solid #173747;background:#071923}.future-accordion>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;color:#e6f4fb;font-weight:800;background:#0a202d}.future-accordion>summary::-webkit-details-marker{display:none}.future-accordion>summary:before{content:"＋";display:grid;place-items:center;width:22px;height:22px;border:1px solid #285066;border-radius:6px;color:var(--green)}.future-accordion[open]>summary:before{content:"−"}.future-accordion .future-count{margin-left:auto;color:var(--muted);font-size:11px;font-weight:600}.future-day-label{padding:8px 14px;background:#06151e;border-top:1px solid #102b39;color:#9bb5c7;font-size:11px;font-weight:800;letter-spacing:.04em}.searchbox{height:39px;display:flex;align-items:center;gap:12px;padding:0 14px;background:#0a1e2a;border:1px solid #17394a;border-radius:9px;color:#b8d1e0}
+.main-nav{display:flex;align-items:center;gap:7px;white-space:nowrap}.main-nav a{padding:10px 13px;border:1px solid #17394a;border-radius:8px;color:#cfe1eb;text-decoration:none;font-weight:750;font-size:12px}.main-nav a.active{background:#00dc91;border-color:#00dc91;color:#03251b}.intro{padding:18px 10px 5px}.eyebrow{color:var(--green);font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.page-title{margin:6px 0 5px;font-size:clamp(25px,3vw,34px);line-height:1.12;letter-spacing:-.04em}.page-title span{color:var(--green)}.page-subtitle{margin:0;color:var(--muted);font-size:13px;line-height:1.6;max-width:850px}.summary-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.summary-pill{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #17394a;border-radius:8px;background:#081a26;color:#c6dbe7;font-size:11px}.summary-pill strong{color:var(--green);font-size:13px}.future-accordion{border-top:1px solid #173747;background:#071923}.future-accordion>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;color:#e6f4fb;font-weight:800;background:#0a202d}.future-accordion>summary::-webkit-details-marker{display:none}.future-accordion>summary:before{content:"＋";display:grid;place-items:center;width:22px;height:22px;border:1px solid #285066;border-radius:6px;color:var(--green)}.future-accordion[open]>summary:before{content:"−"}.future-accordion .future-count{margin-left:auto;color:var(--muted);font-size:11px;font-weight:600}.future-accordion{border:1px solid #173747;border-radius:10px;overflow:hidden;margin-top:10px}.future-accordion .match-row:last-child{border-bottom:0}body.light-mode .future-accordion{border-color:#cbd8e3;background:#fff}body.light-mode .future-accordion>summary{background:#e6eef4;color:#19384d}body.light-mode .future-day-label{background:#f2f6f9;color:#526a7c;border-color:#d9e2e9}.future-day-label{padding:8px 14px;background:#06151e;border-top:1px solid #102b39;color:#9bb5c7;font-size:11px;font-weight:800;letter-spacing:.04em}.searchbox{height:39px;display:flex;align-items:center;gap:12px;padding:0 14px;background:#0a1e2a;border:1px solid #17394a;border-radius:9px;color:#b8d1e0}
 .searchbox .glass{font-size:22px;line-height:1}
 .searchbox input{width:100%;min-width:0;border:0;outline:0;color:#fff;background:transparent;font-size:13px}
 .searchbox input::placeholder{color:#b0c4d2}
@@ -283,17 +283,7 @@ body.light-mode .header-status small{color:#526a7c}
  <div class="table-head"><span>Compétition / Heure</span><span>Match</span><span>Score</span><span>Statistiques principales</span><span>Prédiction</span><span>Cotes Unibet</span><span>Forme</span><span>Détails</span></div>
  <div id="match-list"><div class="empty">Chargement des matchs…</div></div>
 </section>
-<footer class="footer">
- <div class="sync-panel" aria-label="État de synchronisation">
-  <div class="sync-heading"><span class="sync-indicator" id="sync-indicator"></span><strong>État de synchronisation</strong><span class="sync-overall" id="sync-overall">Vérification des données…</span></div>
-  <div class="sync-grid">
-   <div class="sync-item"><span class="sync-label">Données des matchs</span><strong id="sync-data-status">En attente</strong><small id="sync-data-time">Dernière génération : —</small></div>
-   <div class="sync-item"><span class="sync-label">Collecte des cotes Unibet</span><strong id="sync-odds-status">À vérifier</strong><small>La disponibilité dépend des marchés retournés par la source.</small></div>
-  
-  </div>
- </div>
- <p>PronoFoot AI · Modèle expérimental. Les probabilités sont des estimations informatives et ne garantissent pas un résultat. Les cotes Unibet sont affichées lorsqu’elles sont disponibles. Les scores, statistiques en direct et formes d’équipe non présents dans les données ne sont pas inventés.</p>
-</footer>
+<footer class="footer">Dernière mise à jour des données : <strong id="footer-data-updated">—</strong> (heure de Paris)</footer>
 </div>
 <script>
 (function(){
@@ -338,7 +328,7 @@ body.light-mode .header-status small{color:#526a7c}
    '</div></div>';
  };
  function render(){
-  const now=new Date(),query=search.value.trim().toLocaleLowerCase('fr'),comp=compFilter.value;
+  const now=new Date(),cutoff=new Date(now.getTime()+48*60*60*1000),query=search.value.trim().toLocaleLowerCase('fr'),comp=compFilter.value;
   let rows=matches.filter(r=>{
    const d=new Date(r.kickoff);if(!r.kickoff||isNaN(d)||d<now)return false;
    if(comp!=='all'&&r.competition_id!==comp)return false;
@@ -348,26 +338,21 @@ body.light-mode .header-status small{color:#526a7c}
   rows.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
   const count=document.getElementById('header-match-count');if(count)count.textContent=rows.length+' match'+(rows.length>1?'s':'')+' à venir';
   if(!rows.length){list.innerHTML='<div class="empty">Aucun match à venir ne correspond à ces filtres.</div>';return;}
-  list.innerHTML=rows.map(row).join('');
+  const immediate=rows.filter(r=>new Date(r.kickoff)<=cutoff);
+  const later=rows.filter(r=>new Date(r.kickoff)>cutoff);
+  let html=immediate.map(row).join('');
+  if(later.length){
+   const label=later.length+' match'+(later.length>1?'s':'')+' au-delà des prochaines 48 h';
+   html+='<details class="future-accordion"><summary>'+esc(label)+'<span class="future-count">À partir du '+esc(dateText(later[0].kickoff).split(' ').slice(0,2).join(' '))+'</span></summary>'+later.map(row).join('')+'</details>';
+  }
+  list.innerHTML=html;
  }
  fetch(new URL('predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
   matches=Array.isArray(data.upcoming)?data.upcoming:[];
-  const syncPanel=document.querySelector('.sync-panel');
   const generated=data.generated_at_utc?new Date(data.generated_at_utc):null;
   const validGenerated=generated&&!Number.isNaN(generated.getTime());
-  const ageHours=validGenerated?(Date.now()-generated.getTime())/3600000:Infinity;
-  const dataStatus=document.getElementById('sync-data-status');
-  const dataTime=document.getElementById('sync-data-time');
-  const overall=document.getElementById('sync-overall');
-  const indicator=document.getElementById('sync-indicator');
-  const oddsStatus=document.getElementById('sync-odds-status');
-  if(dataStatus)dataStatus.textContent=validGenerated?(ageHours<=48?'Données récentes':'Données anciennes'):'Date inconnue';
-  if(dataTime)dataTime.textContent='Dernière génération : '+(validGenerated?new Intl.DateTimeFormat('fr-FR',{dateStyle:'medium',timeStyle:'short',timeZone:'Europe/Paris'}).format(generated)+' (Paris)':'non renseignée');
-  if(overall)overall.textContent=validGenerated?(ageHours<=48?'Fichier de données à jour':'Mise à jour à contrôler'):'État non déterminé';
-  if(oddsStatus)oddsStatus.textContent='Voir le détail des cotes par match';
-  if(syncPanel)syncPanel.classList.toggle('sync-ok',validGenerated&&ageHours<=48);
-  if(syncPanel)syncPanel.classList.toggle('sync-stale',!validGenerated||ageHours>48);
-  if(indicator)indicator.title=validGenerated?'Âge du fichier de prédictions':'Date de génération absente';
+  const footerUpdated=document.getElementById('footer-data-updated');
+  if(footerUpdated)footerUpdated.textContent=validGenerated?new Intl.DateTimeFormat('fr-FR',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Paris'}).format(generated):'date inconnue';
   const comps=new Map();matches.forEach(r=>{if(r.competition_id)comps.set(r.competition_id,r.competition)});
   Array.from(comps.entries()).sort((a,b)=>String(a[1]).localeCompare(String(b[1]),'fr')).forEach(([id,name])=>{const op=document.createElement('option');op.value=id;op.textContent=name;compFilter.appendChild(op)});
   render();
