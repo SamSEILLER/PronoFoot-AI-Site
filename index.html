@@ -6,7 +6,13 @@
 <meta name="theme-color" content="#06131d">
 <meta name="description" content="PronoFoot AI — tableau compact de prédictions football et cotes Unibet.">
 <title>PronoFoot AI — Prédictions football</title>
-<style>
+<style>/* ======================================================================
+   PronoFoot AI — styles de la page des matchs
+   Organisation : fondations, composants, adaptation mobile, thème clair.
+   Sélecteurs conservés pour préserver le rendu et le JavaScript.
+   ====================================================================== */
+
+/* 1. Fondations et composants principaux */
 :root{color-scheme:dark;--bg:#04111a;--panel:#071923;--panel2:#0a202d;--line:#123344;--muted:#9bb5c7;--text:#eff7fc;--green:#00dc91;--green2:#00ad78;--blue:#55b9ff;--red:#ff4c5d}
 *{box-sizing:border-box}
 html{background:var(--bg)}
@@ -120,7 +126,7 @@ button{cursor:pointer}
  .detail-expand{min-width:900px}
 }
 
-/* Responsive final: menu haut conservé, filtres simplifiés, matchs chronologiques */
+/* 2. Mise en page responsive — règles correctives existantes regroupées */
 .tabs-filter{display:flex;justify-content:flex-end;align-items:center;padding:14px 10px;gap:12px}
 .filters{display:flex;gap:9px;align-items:center;width:100%;justify-content:flex-end}
 .filter{min-width:190px}
@@ -175,7 +181,7 @@ button{cursor:pointer}
  .detail-expand{grid-template-columns:1fr}
 }
 
-/* Vrai thème clair : fonds, surfaces, bordures et textes sont tous recolorés */
+/* 3. Thème clair et variantes associées */
 body.light-mode{
  color-scheme:light;
  --bg:#f1f5f9;--panel:#ffffff;--panel2:#e8f0f6;--line:#cbd8e3;--muted:#526a7c;--text:#10283a;
