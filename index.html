@@ -197,10 +197,10 @@ button,input,select{font:inherit}button{cursor:pointer}
  function renderSidebar(rows){
   const counts=new Map();rows.forEach(r=>{const id=r.competition_id||'unknown';const name=r.competition||'Compétition non renseignée';const current=counts.get(id)||{name,count:0};current.count++;counts.set(id,current)});
   const allButton=document.querySelector('.competition-option[data-competition="all"]');
-  if(allButton)allButton.classList.toggle('active',compFilter.value==='all');
+  if(allButton)allButton.classList.toggle('active',!compFilter||compFilter.value==='all');
   const allCount=document.getElementById('sidebar-all-count');if(allCount)allCount.textContent=String(rows.length);
   const total=document.getElementById('sidebar-competition-count');if(total)total.textContent=String(counts.size);
-  competitionSidebar.innerHTML=Array.from(counts.entries()).sort((a,b)=>a[1].name.localeCompare(b[1].name,'fr')).map(([id,item])=>'<button class="competition-option '+(compFilter.value===id?'active':'')+'" data-competition="'+esc(id)+'"><span class="competition-option-icon">'+compCountry(item.name)+'</span><span>'+esc(item.name)+'</span><b>'+item.count+'</b></button>').join('');
+  competitionSidebar.innerHTML=Array.from(counts.entries()).sort((a,b)=>a[1].name.localeCompare(b[1].name,'fr')).map(([id,item])=>'<button class="competition-option '+(compFilter&&compFilter.value===id?'active':'')+'" data-competition="'+esc(id)+'"><span class="competition-option-icon">'+compCountry(item.name)+'</span><span>'+esc(item.name)+'</span><b>'+item.count+'</b></button>').join('');
  }
  function renderSelected(rows){
   const r=rows.find(x=>String(x.id)===String(selectedMatchId))||rows[0];
@@ -258,7 +258,7 @@ button,input,select{font:inherit}button{cursor:pointer}
  if(competitionSidebar)competitionSidebar.addEventListener('click',e=>{const b=e.target.closest('[data-competition]');if(!b)return;if(compFilter)compFilter.value=b.dataset.competition;render()});
  list.addEventListener('click',e=>{
   const rowEl=e.target.closest('.match-row[data-id]');
-  if(rowEl){selectedMatchId=rowEl.dataset.id;renderSelected(matches.filter(r=>{const d=new Date(r.kickoff);return r.kickoff&&!isNaN(d)&&d>=new Date()&&(compFilter.value==='all'||r.competition_id===compFilter.value)&&(!search.value.trim()||(String(r.home)+' '+String(r.away)+' '+String(r.competition)).toLocaleLowerCase('fr').includes(search.value.trim().toLocaleLowerCase('fr')))}));}
+  if(rowEl){selectedMatchId=rowEl.dataset.id;renderSelected(matches.filter(r=>{const d=new Date(r.kickoff);return r.kickoff&&!isNaN(d)&&d>=new Date()&&(!compFilter||compFilter.value==='all'||r.competition_id===compFilter.value)&&(!search.value.trim()||(String(r.home)+' '+String(r.away)+' '+String(r.competition)).toLocaleLowerCase('fr').includes(search.value.trim().toLocaleLowerCase('fr')))}));}
   const b=e.target.closest('[data-details]');if(!b)return;const panel=document.getElementById('detail-'+b.dataset.details);if(!panel)return;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden));b.textContent=panel.hidden?'⌄':'⌃';
  });
 })();
