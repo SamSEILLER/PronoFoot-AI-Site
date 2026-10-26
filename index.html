@@ -352,7 +352,7 @@ body.light-mode .header-status small{color:#526a7c}
   }
   list.innerHTML=html;
  }
- fetch(new URL('predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
+ fetch(new URL('data/predictions-data.json',document.baseURI).href+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data');return r.json()}).then(data=>{
   matches=Array.isArray(data.upcoming)?data.upcoming:[];
   const generated=data.generated_at_utc?new Date(data.generated_at_utc):null;
   const validGenerated=generated&&!Number.isNaN(generated.getTime());
