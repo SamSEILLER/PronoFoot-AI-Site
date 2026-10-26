@@ -8,7 +8,7 @@ Site statique public de **PronoFoot AI**. Le moteur d'analyse et ses pipelines r
 | --- | --- |
 | [Prédictions](index.html) | Rencontres à venir, probabilités 1/N/2 et cotes lorsqu'elles sont disponibles. |
 | [Historique & bilan](predictions.html) | Résultats, prédictions pré-match archivées et suivi descriptif des versions. |
-| [Prototype éditorial](index-alternative.html) | Piste visuelle alternative conservée séparément, hors navigation principale. |
+| [Aperçu alternatif](index-alternative.html) | Présentation éditoriale réunie avec le tableau fonctionnel des prédictions ; page de prévisualisation. |
 
 ## Organisation des fichiers
 
@@ -16,7 +16,7 @@ Site statique public de **PronoFoot AI**. Le moteur d'analyse et ses pipelines r
 
 - `index.html` — interface principale des rencontres : recherche, filtre compétition, détail par match et thème clair/sombre.
 - `predictions.html` — historique et bilan expérimental.
-- `index-alternative.html` — prototype éditorial non relié à la navigation principale.
+- `index-alternative.html` — prévisualisation qui combine la présentation éditoriale et le tableau de matchs fonctionnel. `index.html` reste la page active et la source de référence pour le tableau.
 
 ### Données générées (ne pas modifier manuellement)
 
