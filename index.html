@@ -401,6 +401,97 @@ body.light-mode .footer{color:#64748B}
 @media(max-width:850px){.dashboard-grid{grid-template-columns:1fr;gap:10px}.competition-sidebar{display:block}.competition-sidebar #competition-sidebar-list{display:flex;gap:6px;overflow-x:auto;padding:0 8px 8px}.competition-sidebar .sidebar-heading{padding:10px 12px}.competition-option{width:auto;min-width:max-content;border:1px solid #E2E8F0;border-radius:8px;padding:8px 10px}.competition-option.active{box-shadow:inset 0 -3px #22C55E}.sidebar-note{display:none}.selected-panel{grid-column:1;display:block}.board-heading{padding:12px}.board .table-head{display:none}.board .match-row{min-width:0}.selected-panel{position:static}}
 @media(max-width:520px){.selected-panel{border-radius:10px}.selected-section{padding:11px 12px}.selected-team{font-size:10px}.selected-team img{width:32px;height:32px}.board-heading h2{font-size:15px}}
 
+
+/* Ajustement fidèle à la maquette : proportions, densité, boutons et colonnes */
+:root{--bg:#F8FAFC;--panel:#FFFFFF;--panel2:#E8EFF5;--line:#D6E0E8;--muted:#526579;--text:#1F2937;--green:#22C55E;--green2:#15803D;--blue:#334155}
+body.light-mode{background:#F8FAFC!important;color:#1F2937!important;font-size:12px}
+.shell{width:min(1720px,100%);padding:16px 18px 30px}
+.topbar{grid-template-columns:230px auto minmax(220px,1fr) auto;gap:14px;min-height:64px}
+.brand{font-size:25px;letter-spacing:-1.1px}
+.brand-ball{width:30px;height:30px}
+.main-nav{gap:6px}
+.main-nav a{padding:9px 13px;border-radius:8px;font-size:12px}
+.searchbox{height:38px;border-radius:8px}
+.header-status{min-width:172px;padding:7px 11px}
+.intro{padding:20px 4px 9px}
+.eyebrow{font-size:10px}
+.page-title{font-size:30px;margin:5px 0 4px}
+.page-subtitle{font-size:12px}
+.summary-strip{margin-top:10px}
+.summary-pill{padding:6px 9px;font-size:10px}
+.tabs-filter{display:none!important}
+.dashboard-grid{grid-template-columns:210px minmax(0,1fr) 270px;gap:12px;margin-top:12px}
+.competition-sidebar,.selected-panel,.board{border-radius:12px}
+.competition-sidebar{position:sticky;top:12px}
+.sidebar-heading{padding:13px 13px 11px;font-size:10px}
+.competition-option{min-height:40px;padding:8px 10px;font-size:11px;gap:8px}
+.competition-option-icon{width:23px;height:23px;flex-basis:23px}
+.competition-option b{font-size:10px}
+.sidebar-note{font-size:9px;padding:10px 11px}
+.board-heading{min-height:67px;padding:12px 14px}
+.board-heading h2{font-size:16px}
+.board-live-count{font-size:10px;padding:5px 7px}
+.table-head,.match-row{grid-template-columns:minmax(105px,1.05fr) minmax(145px,1.55fr) 48px minmax(70px,.75fr) minmax(94px,1fr) minmax(102px,1.08fr) minmax(80px,.8fr) 30px}
+.table-head{min-height:35px;padding:0 7px;font-size:9px;letter-spacing:0}
+.table-head span{padding:0 4px}
+.match-row{min-height:62px;cursor:pointer}
+.cell{padding:5px 5px;border-right:1px solid #E8EFF5}
+.competition-label{font-size:9px;gap:4px}
+.competition-flag{font-size:11px}
+.competition-time .kickoff{font-size:9px;gap:4px}
+.competition-time .status.upcoming{font-size:10px}
+.competition-time .status-dot{width:5px;height:5px;flex-basis:5px}
+.fixture{grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr);gap:3px}
+.side{gap:4px}
+.crest,.initial-crest{width:23px;height:23px;flex-basis:23px}
+.initial-crest{font-size:8px}
+.side-name{font-size:10px}
+.score{font-size:11px}
+.metric-placeholder{font-size:10px}
+.stat-pair{gap:1px}
+.stat-pair strong{font-size:10px}
+.stat-pair small{font-size:8px}
+.prediction{gap:5px}
+.prediction-top{gap:2px;font-size:8px}
+.prediction-top b{font-size:10px}
+.prediction-bar{height:6px;gap:1px}
+.odds{gap:3px}
+.odd{min-height:30px;font-size:10px;border-radius:5px}
+.odd small{font-size:8px}
+.odds-missing{min-width:24px;min-height:18px;font-size:8px;padding:1px 3px}
+.form{gap:2px}
+.form-chip{width:15px;height:18px;font-size:8px;border-radius:3px}
+.details{width:26px;height:30px;border-radius:6px;color:#15803D;font-size:18px}
+.details:hover{background:#DDFBE8}
+.detail-expand{padding:10px;gap:8px}
+.detail-card{padding:9px;border-radius:7px}
+.detail-card strong{font-size:10px}
+.detail-line{font-size:10px}
+.selected-panel{top:12px}
+.selected-panel-head{padding:13px}
+.selected-panel-head h2{font-size:14px}
+.selected-panel-subtitle{font-size:10px}
+.selected-teams{padding:13px 9px;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);gap:4px}
+.selected-team{font-size:10px;overflow-wrap:anywhere}
+.selected-team img{width:34px;height:34px;margin-bottom:6px}
+.selected-team .initial-crest{width:30px;height:30px;flex-basis:30px;margin-bottom:6px}
+.selected-section{padding:11px 12px}
+.selected-section h3{font-size:10px;margin-bottom:8px}
+.selected-probability{gap:4px}
+.selected-probability div{padding:8px 2px}
+.selected-probability span{font-size:9px}
+.selected-probability b{font-size:15px}
+.selected-odds-row,.selected-info-row{font-size:10px;padding:6px 0}
+.selected-panel-foot{font-size:9px;padding:10px 12px}
+.selected-empty{padding:26px 15px}
+.selected-empty h2{font-size:13px}
+.selected-empty p{font-size:10px}
+.match-row.is-selected{outline:2px solid #22C55E;outline-offset:-2px;background:#F0FBF5!important}
+@media(max-width:1450px){.dashboard-grid{grid-template-columns:190px minmax(0,1fr) 250px;gap:10px}.shell{padding-left:12px;padding-right:12px}.table-head,.match-row{grid-template-columns:minmax(95px,1fr) minmax(125px,1.35fr) 42px minmax(62px,.65fr) minmax(85px,.9fr) minmax(90px,1fr) minmax(70px,.7fr) 28px}.side-name{font-size:9px}.crest,.initial-crest{width:20px;height:20px;flex-basis:20px}}
+@media(max-width:1150px){.dashboard-grid{grid-template-columns:175px minmax(0,1fr)}.selected-panel{grid-column:2;position:static;display:grid;grid-template-columns:1fr 1fr}.selected-panel-head,.selected-teams,.selected-panel-foot{grid-column:1/-1}.selected-section{border-right:1px solid #E8EFF5}.topbar{grid-template-columns:auto auto minmax(170px,1fr);}.header-status{display:none}.table-head,.match-row{grid-template-columns:minmax(105px,1fr) minmax(145px,1.45fr) 45px minmax(90px,.9fr) minmax(100px,1fr) 28px}.table-head span:nth-child(4),.cell.stats,.table-head span:nth-child(7),.cell.form-cell{display:none}.table-head span:nth-child(5){grid-column:auto}.table-head span:nth-child(6){display:block}}
+@media(max-width:850px){.shell{padding:8px 8px 20px}.topbar{grid-template-columns:1fr auto;gap:9px}.main-nav{grid-column:1/-1;grid-row:2}.searchbox{grid-column:1/-1;grid-row:3}.dashboard-grid{grid-template-columns:minmax(0,1fr);gap:10px}.competition-sidebar{position:static}.competition-sidebar #competition-sidebar-list{display:flex;gap:6px;overflow-x:auto;padding:0 8px 9px}.sidebar-heading{padding:10px 12px}.competition-option{width:auto;min-width:max-content;border:1px solid #E2E8F0;border-radius:8px;min-height:34px;padding:6px 9px}.competition-option.active{box-shadow:inset 0 -3px #22C55E}.sidebar-note{display:none}.board{overflow-x:auto}.board .table-head,.board .match-row{min-width:780px}.board .table-head{display:grid}.selected-panel{grid-column:1;display:block}.selected-section{border-right:0}.selected-panel{position:static}.intro{padding:15px 3px 6px}.page-title{font-size:26px}}
+@media(max-width:520px){.shell{padding:6px 6px 16px}.brand{font-size:22px}.brand-ball{width:27px;height:27px}.main-nav a{padding:8px 9px;font-size:11px}.page-title{font-size:24px}.board-heading{min-height:58px}.board .table-head,.board .match-row{min-width:760px}.selected-teams{grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr)}}
+
 </style>
 </head>
 <body class="light-mode">
