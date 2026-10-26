@@ -95,7 +95,7 @@ button{cursor:pointer}
 .empty{padding:40px 15px;text-align:center;color:#a9bfce}
 .footer{padding:17px 5px 0;color:#7793a5;font-size:11px;line-height:1.6}
 @media(max-width:1250px){
- .topbar{grid-template-columns:auto auto minmax(180px,1fr) auto;gap:12px}.top-action.date{display:none}
+ .topbar{grid-template-columns:auto auto minmax(180px,1fr) auto auto;gap:12px}.top-action.date{display:none}
  .table-head,.match-row{grid-template-columns:minmax(180px,1.2fr) minmax(190px,1.2fr) minmax(105px,.7fr) minmax(150px,1fr) minmax(150px,1fr) 38px}
  .table-head span:nth-child(4),.cell.stats{display:none}
  .table-head span:nth-child(5){grid-column:auto}
@@ -232,7 +232,7 @@ body.light-mode .footer{color:#61798a}
 .odds-missing{display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:22px;padding:2px 5px;border:1px dashed #5a7282;border-radius:4px;color:#afc0cb;font-size:10px;font-weight:800;letter-spacing:.3px}
 body.light-mode .odds-missing{border-color:#a5b5c1;background:#f1f4f6;color:#627786}
 body.light-mode .brand .live{color:#008d60}
-body.light-mode .icon-btn{background:#102b3d;color:#fff;border-color:#102b3d}
+body.light-mode .icon-btn{display:inline-flex;align-items:center;justify-content:center;flex:0 0 42px;background:#e7f0f6;color:#17384d;border:2px solid #8aa4b7;box-shadow:0 2px 8px #17364b20;font-size:22px;line-height:1;position:relative;z-index:2}
 body.light-mode .status.upcoming{color:#314f64}
 body.light-mode .detail-expand{box-shadow:inset 0 1px 0 #d2dee6}
 @media(max-width:850px){body.light-mode .topbar{border-radius:10px;padding:10px;background:#fff}body.light-mode .tabs-filter{padding:12px 3px;background:transparent;border:0}}
@@ -241,7 +241,7 @@ body.light-mode .detail-expand{box-shadow:inset 0 1px 0 #d2dee6}
 .header-status b{display:block;color:#eaf6fc;font-size:12px;white-space:nowrap}
 .header-status small{display:block;color:#91adbf;font-size:10px;margin-top:3px;white-space:nowrap}
 .live-dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#00dc91;box-shadow:0 0 0 4px #00dc9120}
-@media(max-width:1250px){.topbar{grid-template-columns:auto minmax(180px,1fr) auto auto}}
+@media(max-width:1250px){.topbar{grid-template-columns:auto auto minmax(180px,1fr) auto auto}}
 @media(max-width:850px){.topbar{grid-template-columns:1fr auto}.header-status{grid-column:1/-1;grid-row:3;width:max-content}.searchbox{grid-row:2}}
 @media(max-width:520px){.header-status{display:none}}
 body.light-mode .header-status{background:#fff;border-color:#c6d5e1}
