@@ -209,7 +209,7 @@
           return '<article class="version-card"><div class="version-top"><div class="version-name">'+esc(v.version_id)+'</div><span class="pill '+(i===0?'ok':'warn')+'">'+(i===0?'Version la plus récente':'Version antérieure')+'</span></div><div class="version-meta">Première détection : '+esc(fmt(v.first_seen_utc))+' · Dernière évaluation : '+esc(fmt(v.last_evaluated_utc))+'<br>Commit : '+esc(v.source_commit||'—')+' · Début d’évaluation : '+esc(fmt(v.analysis_start_utc))+'</div><div class="version-metrics"><div class="version-metric"><span>Matchs depuis modification</span><strong>'+esc(v.evaluated_matches??0)+'</strong></div><div class="version-metric"><span>Brier de version</span><strong>'+esc(score(v.brier_score))+'</strong></div><div class="version-metric"><span>Écart au précédent</span><strong>'+esc(delta)+'</strong></div></div><div class="version-meta">Référence : '+esc(v.reference_evaluated_matches??0)+' matchs · Brier '+esc(score(v.reference_brier_score))+'. Les écarts restent indicatifs si les échantillons diffèrent.</div></article>';
         }).join('');
       };
-      fetch('predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+      fetch('data/predictions-data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
         const now=new Date(), start=new Date(now.getTime()-7*24*60*60*1000);
         recent=(Array.isArray(d.recent_results)?d.recent_results:[]).filter(r=>r.actual_score&&r.kickoff&&new Date(r.kickoff)>=start&&new Date(r.kickoff)<=now).sort((a,b)=>new Date(b.kickoff)-new Date(a.kickoff));
         document.getElementById('history-period').textContent=fmt(start.toISOString())+' – '+fmt(now.toISOString())+' · '+recent.length+' résultats';
