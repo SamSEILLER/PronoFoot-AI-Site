@@ -219,6 +219,7 @@ button,input,select{font:inherit}button{cursor:pointer}
   const now=new Date(),cutoff=new Date(now.getTime()+48*60*60*1000),query=search.value.trim().toLocaleLowerCase('fr'),comp=compFilter.value;
   let rows=matches.filter(r=>{
    const d=new Date(r.kickoff);if(!r.kickoff||isNaN(d)||d<now)return false;
+   if(dateRange&&dateRange.value!=='all'){const hours=({'24h':24,'48h':48,'7d':168})[dateRange.value]||Infinity;if(d.getTime()>now.getTime()+hours*3600000)return false;}
    if(comp!=='all'&&r.competition_id!==comp)return false;
    if(query&&!(String(r.home)+' '+String(r.away)+' '+String(r.competition)).toLocaleLowerCase('fr').includes(query))return false;
    return true;
