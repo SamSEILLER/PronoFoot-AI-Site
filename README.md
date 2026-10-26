@@ -8,7 +8,6 @@ Site statique public de **PronoFoot AI**. Le moteur d'analyse et ses pipelines r
 | --- | --- |
 | [Prédictions](index.html) | Rencontres à venir, probabilités 1/N/2 et cotes lorsqu'elles sont disponibles. |
 | [Historique & bilan](predictions.html) | Résultats, prédictions pré-match archivées et suivi descriptif des versions. |
-| [Aperçu alternatif](index-alternative.html) | Présentation éditoriale réunie avec le tableau fonctionnel des prédictions ; page de prévisualisation. |
 
 ## Organisation des fichiers
 
@@ -16,14 +15,13 @@ Site statique public de **PronoFoot AI**. Le moteur d'analyse et ses pipelines r
 
 - `index.html` — interface principale des rencontres : recherche, filtre compétition, détail par match et thème clair/sombre.
 - `predictions.html` — historique et bilan expérimental.
-- `index-alternative.html` — prévisualisation qui combine la présentation éditoriale et le tableau de matchs fonctionnel. `index.html` reste la page active et la source de référence pour le tableau.
 
 ### Données générées (ne pas modifier manuellement)
 
-- `predictions-data.json` — données publiques exportées par le moteur privé.
-- `model-history.json` — historique des versions du modèle.
-- `site-status.json` — fraîcheur et contrôles des données (base, statistiques et cotes).
-- `sync-status.json` — dernière synchronisation et commit source.
+- `data/predictions-data.json` — données publiques exportées par le moteur privé.
+- `data/model-history.json` — historique des versions du modèle.
+- `data/site-status.json` — fraîcheur et contrôles des données (base, statistiques et cotes).
+- `data/sync-status.json` — dernière synchronisation et commit source.
 
 Ces JSON sont des artefacts de publication. Leurs valeurs doivent provenir des workflows ou du moteur, jamais d'une saisie manuelle.
 
