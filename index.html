@@ -296,8 +296,7 @@ body.light-mode .header-status small{color:#526a7c}
  const list=document.getElementById('match-list');
  const search=document.getElementById('search');
  const compFilter=document.getElementById('competition-filter');
- const dateRange=document.getElementById('date-range');
- const sortFilter=document.getElementById('sort-filter');
+ // Les filtres date et tri ne sont pas exposés dans l'interface actuelle.
  let matches=[];
  const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const pct=v=>Number.isFinite(Number(v))?Math.round(Number(v)*100)+'%':'—';
