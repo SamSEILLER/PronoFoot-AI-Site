@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T06:09:45.632674+00:00",
+  "generated_at_utc": "2026-10-26T07:55:58.976863+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
@@ -17,13 +17,7 @@
     "detail": "0 anomalie(s) structurelle(s)"
   },
   "odds": {
-    "status": "warning",
-    "label": "À vérifier",
-    "updated_at_utc": "2026-10-26T06:06:14+00:00",
-    "events_with_odds": 0,
-    "errors": 28,
-    "unmatched": 94,
-    "without_markets": 0,
-    "detail": "94 événement(s) non associé(s)"
+    "status": "unavailable",
+    "label": "Indisponible"
   }
 }
