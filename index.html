@@ -295,6 +295,64 @@ body.light-mode .future-accordion{background:#fffdf7!important;border-color:#d2d
 body.light-mode .future-accordion>summary{background:#e8eee6!important;color:#26382e!important}
 body.light-mode .odds-missing{background:#edf0e8!important;border-color:#d2dbd0!important;color:#66766b!important}
 body.light-mode .icon-btn{display:none!important}
+
+/* Identité visuelle validée : ardoise claire + vert vif */
+:root{color-scheme:light;--bg:#F8FAFC;--panel:#FFFFFF;--panel2:#E8EFF5;--line:#D6E0E8;--muted:#526579;--text:#1F2937;--green:#22C55E;--green2:#15803D;--blue:#334155;--red:#DC4B4B}
+body.light-mode{--bg:#F8FAFC;--panel:#FFFFFF;--panel2:#E8EFF5;--line:#D6E0E8;--muted:#526579;--text:#1F2937;background:linear-gradient(180deg,#E8EFF5 0%,#F8FAFC 260px,#F3F6F9 100%);color:#1F2937}
+body.light-mode .topbar{background:#334155;border:1px solid #405366;border-radius:14px;padding:12px 14px;color:#fff;box-shadow:0 8px 24px #1f293714}
+body.light-mode .brand,body.light-mode .brand .live{color:#fff}
+body.light-mode .brand .live:last-child{color:#22C55E}
+body.light-mode .brand-ball{background:#263746;border-color:#22C55E;color:#fff}
+body.light-mode .main-nav a{background:transparent;color:#E8EFF5;border-color:#536579}
+body.light-mode .main-nav a.active{background:#22C55E;border-color:#22C55E;color:#123321}
+body.light-mode .searchbox{background:#405366;border-color:#536579;color:#fff}
+body.light-mode .searchbox input{color:#fff}
+body.light-mode .searchbox input::placeholder{color:#D7E0E8}
+body.light-mode .header-status{background:#263746;border-color:#536579}
+body.light-mode .header-status b{color:#fff}
+body.light-mode .header-status small{color:#D7E0E8}
+body.light-mode .intro{padding-top:22px}
+body.light-mode .eyebrow,body.light-mode .page-title span{color:#15803D}
+body.light-mode .summary-pill{background:#fff;color:#334155;border-color:#D6E0E8}
+body.light-mode .summary-pill strong{color:#15803D}
+body.light-mode .tabs-filter{background:transparent;border:0}
+body.light-mode .filter,body.light-mode .top-action,body.light-mode .icon-btn,body.light-mode .tab{background:#fff;border-color:#D6E0E8;color:#334155}
+body.light-mode .tab.active{background:#22C55E;border-color:#22C55E;color:#123321}
+body.light-mode .board{background:#fff;border:1px solid #D6E0E8;border-radius:14px;box-shadow:0 10px 30px #3341550d;overflow:hidden}
+body.light-mode .table-head{background:#E8EFF5;color:#526579;border-bottom-color:#D6E0E8;font-size:11px;font-weight:850;letter-spacing:.02em}
+body.light-mode .match-row,body.light-mode .match-row:nth-child(even){background:#fff;border-bottom-color:#E8EFF5}
+body.light-mode .match-row:hover{background:#F0FBF5}
+body.light-mode .cell{border-right-color:#E8EFF5}
+body.light-mode .side-name,body.light-mode .score,body.light-mode .metric-labels,body.light-mode .stat-pair strong,body.light-mode .prediction-top,body.light-mode .odd{color:#1F2937}
+body.light-mode .kickoff{color:#526579}
+body.light-mode .status-dot{background:#22C55E}
+body.light-mode .mini-track{background:#E8EFF5}
+body.light-mode .mini-track .g,body.light-mode .prediction-bar .p1{background:#22C55E}
+body.light-mode .mini-track .s,body.light-mode .prediction-bar .px{background:#A8B6C3}
+body.light-mode .mini-track .b,body.light-mode .prediction-bar .p2{background:#64748B}
+body.light-mode .odd{background:#F0F4F8}
+body.light-mode .odd.highlight{background:#DDFBE8;color:#166534}
+body.light-mode .odd small,body.light-mode .stat-pair small{color:#64748B}
+body.light-mode .detail-expand{background:#F3F7FA;border-top-color:#D6E0E8}
+body.light-mode .detail-card{background:#fff;border-color:#D6E0E8}
+body.light-mode .detail-card strong,body.light-mode .detail-line b{color:#1F2937}
+body.light-mode .detail-line{color:#64748B}
+body.light-mode .future-accordion{border-color:#D6E0E8;background:#fff}
+body.light-mode .future-accordion>summary{background:#E8EFF5;color:#334155}
+body.light-mode .future-day-label{background:#F3F7FA;color:#526579;border-color:#D6E0E8}
+.competition-time{display:flex;flex-direction:column;justify-content:center;gap:5px;width:100%;min-width:0}
+.competition-label{display:flex;align-items:center;gap:6px;min-width:0;color:#334155;font-weight:800;font-size:11px;line-height:1.2}
+.competition-flag{flex:0 0 auto;font-size:13px}
+.competition-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.competition-time .kickoff{gap:6px;font-size:11px}
+.competition-time .status.upcoming{font-weight:850;color:#15803D;font-size:12px}
+.competition-time .status-dot{width:6px;height:6px;flex-basis:6px}
+body.light-mode .competition-label{color:#334155}
+body.light-mode .competition-time .status.upcoming{color:#15803D}
+body.light-mode .comp-count{color:#526579}
+body.light-mode .footer{color:#64748B}
+@media(max-width:850px){body.light-mode .topbar{background:#334155} .competition-label{font-size:10px}.competition-time .kickoff{font-size:10px}}
+
 </style>
 </head>
 <body class="light-mode">
@@ -314,7 +372,7 @@ body.light-mode .icon-btn{display:none!important}
  </div>
 </div>
 <section class="board" aria-label="Tableau des matchs">
- <div class="table-head"><span>Compétition / Heure</span><span>Match</span><span>Score</span><span>Statistiques principales</span><span>Prédiction</span><span>Cotes Unibet</span><span>Forme</span><span>Détails</span></div>
+ <div class="table-head"><span>Compétition · Ligue · Heure</span><span>Match</span><span>Score</span><span>Statistiques principales</span><span>Prédiction</span><span>Cotes Unibet</span><span>Forme</span><span>Détails</span></div>
  <div id="match-list"><div class="empty">Chargement des matchs…</div></div>
 </section>
 <footer class="footer">Dernière mise à jour des données : <strong id="footer-data-updated">—</strong> (heure de Paris)</footer>
@@ -346,7 +404,7 @@ body.light-mode .icon-btn{display:none!important}
   const odds=probabilities.map(([k,l])=>'<div class="odd '+(r.predicted_outcome===k?'highlight':'')+'"><small>'+l+'</small>'+((o[k]!==undefined&&o[k]!==null&&o[k]!==''&&Number.isFinite(Number(o[k])))?num(o[k]):'<span class="odds-missing" title="Cote Unibet non disponible pour ce match">N/D</span>')+'</div>').join('');
   const d=new Date(r.kickoff);
   return '<div class="match-row" data-id="'+esc(r.id)+'">'+
-   '<div class="cell"><div class="kickoff"><span class="status upcoming">'+esc(timeText(r.kickoff))+'</span><span class="status-dot" style="background:'+compColor(r.competition)+'"></span><span>'+esc(dateText(r.kickoff).split(' ').slice(0,2).join(' '))+'</span></div></div>'+
+   '<div class="cell"><div class="competition-time"><div class="competition-label"><span class="competition-flag">'+compCountry(r.competition)+'</span><span class="competition-name">'+esc(r.competition||"Compétition non renseignée")+'</span></div><div class="kickoff"><span class="status upcoming">'+esc(timeText(r.kickoff))+'</span><span class="status-dot" style="background:'+compColor(r.competition)+'"></span><span>'+esc(dateText(r.kickoff).split(' ').slice(0,2).join(' '))+'</span></div></div></div>'+
    '<div class="cell"><div class="fixture"><div class="side"><button class="favorite-team" data-favorite="'+esc(r.home)+'" title="Ajouter '+esc(r.home)+' aux favoris" style="display:none"></button>'+crest(r.home)+'<span class="side-name">'+esc(r.home)+'</span></div><div class="score none">vs</div><div class="side away">'+crest(r.away)+'<span class="side-name">'+esc(r.away)+'</span></div></div></div>'+
    '<div class="cell"><div class="metric-placeholder">—</div></div>'+
    '<div class="cell stats"><div class="stat-pair"><div><strong>—</strong><small>Tirs</small></div><div><strong>—</strong><small>Corners</small></div><div><strong>—</strong><small>Fautes</small></div></div></div>'+
