@@ -34,6 +34,20 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 
 /* Marchés de cotes : explications et libellés lisibles */
 .odds-reading-guide{display:flex;flex-direction:column;gap:4px;padding:11px 13px;margin:10px 0 14px;border:1px solid #cfe8dc;border-radius:9px;background:#f0fbf5;color:#244c3d;font-size:12px}.odds-reading-guide strong{font-size:13px}.market-explanation{margin:0;padding:8px 12px 10px;color:#3f5d7e;background:#fbfdff;font-size:12px;line-height:1.5;border-top:1px solid #e5edf7}.market-source{font-size:11px;color:#71839b;padding:0 12px 8px;margin:0;background:#fbfdff}.odds-table th{white-space:normal}.odds-table td:first-child{color:#4f6d99;font-size:12px}.odds-table .odd-value{font-size:14px;color:#123c2a}@media(max-width:650px){.odds-table{font-size:12px}.odds-table th,.odds-table td{padding:8px 7px}.market-explanation{font-size:12px}}
+
+/* Onglet Statistiques : indicateurs calculés uniquement à partir des données présentes */
+.stats-intro{margin:0 4px 12px;color:#587292;font-size:12px;line-height:1.55}
+.stats-kpi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0 13px}
+.stats-kpi{min-width:0;padding:12px;border:1px solid #e2ebf5;border-radius:9px;background:linear-gradient(145deg,#fff,#f6f9fd)}
+.stats-kpi span,.stats-kpi small{display:block;color:#617b9b;font-size:11px}
+.stats-kpi strong{display:block;margin:5px 0;font-size:20px;line-height:1.25;overflow-wrap:anywhere;color:#17345c}
+.stats-kpi small{font-size:10px}
+.stats-section{margin:10px 0;padding:12px}
+.stats-section h3{font-size:15px;margin:0 0 9px}
+.stats-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.stats-form-badges{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.stats-muted{font-size:12px;color:#607895;margin:7px 0 2px;line-height:1.5}
+@media(max-width:560px){.stats-kpi-grid,.stats-team-grid{grid-template-columns:1fr 1fr;gap:7px}.stats-kpi{padding:9px}.stats-kpi strong{font-size:17px}.stats-section{padding:10px}}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -414,8 +428,54 @@ function renderKeyTrends(r){
  const html=items.slice(0,3).map(x=>'<div class="trend"><span class="trend-icon">'+x.icon+'</span><span>'+esc(x.text)+'</span></div>').join("");
  return html+'<p class="trend-disclaimer">Analyse indicative : modèle expérimental non validé. Aucune value n’est affirmée sans cote réelle comparable.</p>';
 }
+function renderStatsDashboard(r){
+ const num=v=>v!==null&&v!==undefined&&v!==""&&Number.isFinite(Number(v));
+ const fmt=v=>num(v)?Number(v).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2}):"Non disponible";
+ const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("fr").replace(/[^a-z0-9]+/g," ").trim();
+ const formData=state.recentForm&&state.recentForm.teams?state.recentForm.teams:{};
+ const findForm=name=>{
+  const key=norm(name);
+  if(!key)return null;
+  if(formData[key])return formData[key];
+  return Object.values(formData).find(t=>norm(t?.name)===key)||null;
+ };
+ const formSummary=name=>{
+  const t=findForm(name),matches=Array.isArray(t?.matches)?t.matches:[];
+  if(!matches.length)return '<p class="stats-muted">Forme récente indisponible.</p>';
+  const wins=matches.filter(m=>m.result==="V").length,draws=matches.filter(m=>m.result==="N").length,losses=matches.filter(m=>m.result==="D").length;
+  const points=wins*3+draws;
+  return '<div class="stats-form-badges">'+matches.map(m=>'<span class="form-result form-'+esc(String(m.result||"").toLowerCase())+'" title="'+esc((m.opponent||"Adversaire")+" · "+(m.date||""))+'">'+esc(m.result||"—")+'</span>').join("")+'</div><p class="stats-muted">'+matches.length+' match(s) · '+wins+' V · '+draws+' N · '+losses+' D · <strong>'+points+' pts</strong></p>';
+ };
+ const eps=detailEntryFor(r).endpoints||{};
+ const endpointNames={detail:"Fiche match",lineups:"Compositions",stats:"Statistiques",shots:"Tirs",events:"Événements"};
+ const available=Object.keys(endpointNames).filter(k=>eps[k]?.status==="available").length;
+ const status=state.data?.publication_approved===false?"Estimation non approuvée":state.data?.status||"Statut inconnu";
+ const history=num(r.history_matches)?Number(r.history_matches):null;
+ const probabilities=validProb(r);
+ const generated=state.data?.generated_at_utc?formatOddsTimestamp(state.data.generated_at_utc):"Non disponible";
+ const metric=(label,value,sub="")=>'<div class="stats-kpi"><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong>'+(sub?'<small>'+esc(sub)+'</small>':"")+'</div>';
+ let html='<h2 class="section-title">'+icon("stats")+'Statistiques du match</h2>';
+ html+='<p class="stats-intro">Indicateurs disponibles pour cette rencontre, à partir des fichiers actuellement chargés. Une donnée absente reste indiquée comme indisponible.</p>';
+ html+='<div class="stats-kpi-grid">'+
+  metric("Historique utilisé",history===null?"Non disponible":history+" matchs","Échantillon indiqué par le modèle")+
+  metric("Buts attendus · domicile",fmt(r.home_expected_goals),r.home||"Équipe à domicile")+
+  metric("Buts attendus · extérieur",fmt(r.away_expected_goals),r.away||"Équipe extérieure")+
+  metric("Sources match disponibles",available+" / 5","Données complémentaires PitchAPI")+
+ '</div>';
+ html+='<div class="info-card stats-section"><h3>Probabilités 1N2</h3>';
+ html+=probabilities?'<div class="big-probs">'+probabilityCells(r,true)+'</div><p class="stats-muted">Probabilités expérimentales fournies par le fichier de pronostics ; elles ne constituent pas une garantie.</p>':'<p class="stats-muted">Les probabilités 1N2 ne sont pas disponibles ou ne sont pas exploitables pour ce match.</p>';
+ html+='</div>';
+ html+='<div class="stats-team-grid"><div class="info-card stats-section"><h3>'+esc(r.home||"Domicile")+' · forme récente</h3>'+formSummary(r.home)+'</div><div class="info-card stats-section"><h3>'+esc(r.away||"Extérieur")+' · forme récente</h3>'+formSummary(r.away)+'</div></div>';
+ html+='<div class="info-card stats-section"><h3>État du calcul</h3>'+
+  '<div class="info-row">'+icon("info","icon small")+'<span class="label">Statut du modèle</span><span>'+esc(status)+'</span></div>'+
+  '<div class="info-row">'+icon("history","icon small")+'<span class="label">Modèle</span><span>'+esc(state.data?.model||"Non précisé")+'</span></div>'+
+  '<div class="info-row">'+icon("clock","icon small")+'<span class="label">Génération des données</span><span>'+esc(generated)+'</span></div>'+
+  '<p class="detail-note">Ces indicateurs décrivent la rencontre et les données disponibles. Ils ne mesurent pas, à eux seuls, la performance historique du modèle. Le taux de réussite, le Brier score, le log loss et le ROI nécessitent un jeu de prédictions horodatées comparé aux résultats réels et ne sont pas inventés ici.</p></div>';
+ html+=supplementaryHTML(r);
+ return html;
+}
 function renderDetail(r){if(!r){$("#detailContent").innerHTML='<div class="empty">Sélectionnez une rencontre.</div>';return}const d=dateOf(r),c=r.competition||"Compétition indisponible";
-const body=state.tab==="odds"?'<h2 class="section-title">'+icon("chart")+'Toutes les cotes disponibles</h2>'+oddsText(r):state.tab==="stats"?'<h2 class="section-title">'+icon("stats")+'Statistiques disponibles</h2><div class="info-card"><h3>État des données</h3><div class="info-row">'+icon("history","icon small")+'<span class="label">Historique utilisé</span><span>'+esc(r.history_matches??"Non disponible")+' matchs</span></div><div class="info-row">'+icon("trend","icon small")+'<span class="label">Buts attendus domicile</span><span>'+esc(r.home_expected_goals??"Non disponible")+'</span></div><div class="info-row">'+icon("trend","icon small")+'<span class="label">Buts attendus extérieur</span><span>'+esc(r.away_expected_goals??"Non disponible")+'</span></div></div>'+supplementaryHTML(r):state.tab==="analysis"?'<h2 class="section-title">'+icon("analysis")+'Analyse du modèle</h2><div class="info-card"><h3>Statut de l’estimation</h3><p>Baseline Poisson expérimentale · statut du jeu de données : '+esc(state.data?.status||"inconnu")+'.</p><p>Cette estimation n’est pas validée pour une recommandation de pari. Aucun indicateur de value n’est calculé sans cote observée et méthode de comparaison validée.</p><p>Matchs d’historique utilisés : <strong>'+esc(r.history_matches??"indisponible")+'</strong></p></div>':'<h2 class="section-title">'+icon("football")+'Probabilités (1X2)</h2><div class="big-probs">'+probabilityCells(r,true)+'</div>'+overviewPitchHTML(r);
+const body=state.tab==="odds"?'<h2 class="section-title">'+icon("chart")+'Toutes les cotes disponibles</h2>'+oddsText(r):state.tab==="stats"?renderStatsDashboard(r):state.tab==="analysis"?'<h2 class="section-title">'+icon("analysis")+'Analyse du modèle</h2><div class="info-card"><h3>Statut de l’estimation</h3><p>Baseline Poisson expérimentale · statut du jeu de données : '+esc(state.data?.status||"inconnu")+'.</p><p>Cette estimation n’est pas validée pour une recommandation de pari. Aucun indicateur de value n’est calculé sans cote observée et méthode de comparaison validée.</p><p>Matchs d’historique utilisés : <strong>'+esc(r.history_matches??"indisponible")+'</strong></p></div>':'<h2 class="section-title">'+icon("football")+'Probabilités (1X2)</h2><div class="big-probs">'+probabilityCells(r,true)+'</div>'+overviewPitchHTML(r);
 $("#detailContent").innerHTML='<div class="detail-meta"><div><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span> <strong>'+esc(c)+'</strong> · <span>'+esc(r.round||r.matchday||"Compétition")+'</span></div><div class="detail-date">'+esc(fmtDate(d))+' · '+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+' '+icon("clock","icon small")+'</div></div><div class="hero-match"><div class="hero-team"><span class="hero-crest team-logo">'+teamImage(r,"home")+'</span><span>'+esc(r.home)+'</span></div><div class="hero-vs">VS</div><div class="hero-team"><span class="hero-crest team-logo">'+teamImage(r,"away")+'</span><span>'+esc(r.away)+'</span></div></div><div class="venue">'+icon("stadium","icon small")+' '+esc(r.venue||"Stade non renseigné")+'</div><div class="tabs"><button class="tab '+(state.tab==="overview"?"active":"")+'" data-tab="overview">'+icon("chart","icon small")+'Vue d’ensemble</button><button class="tab '+(state.tab==="stats"?"active":"")+'" data-tab="stats">'+icon("stats","icon small")+'Statistiques</button><button class="tab '+(state.tab==="analysis"?"active":"")+'" data-tab="analysis">'+icon("analysis","icon small")+'Analyse</button><button class="tab '+(state.tab==="odds"?"active":"")+'" data-tab="odds">'+icon("users","icon small")+'Cotes</button></div>'+body}
 async function load(){try{const res=await fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw new Error("Fichier de données introuvable ("+res.status+")");const data=await res.json();if(!data||!Array.isArray(data.upcoming))throw new Error("Le JSON ne contient pas de liste upcoming exploitable.");state.data=data;try{const formRes=await fetch("./data/recent-form.json?v="+Date.now(),{cache:"no-store"});state.recentForm=formRes.ok?await formRes.json():{teams:{}}}catch(_){state.recentForm={teams:{}}}try{const h2hRes=await fetch("./data/head-to-head.json?v="+Date.now(),{cache:"no-store"});state.headToHead=h2hRes.ok?await h2hRes.json():{pairs:{}}}catch(_){state.headToHead={pairs:{}}}try{const oddsRes=await fetch("./data/odds-data.json?v="+Date.now(),{cache:"no-store"});state.oddsData=oddsRes.ok?await oddsRes.json():{events:{}}}catch(_){state.oddsData={events:{}}}try{const extra=await fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"});if(extra.ok){const raw=await extra.text();const escapedNewline=String.fromCharCode(92)+"n";const cleaned=raw.endsWith(escapedNewline)?raw.slice(0,-2):raw;const parsed=JSON.parse(cleaned);state.details=parsed&&parsed.matches?parsed:{}}else{state.details={}}}catch(_){state.details={}}rebuildTeamLogos();$("#apiStatus").innerHTML='<span class="dot"></span><span>État des données : <strong>En ligne</strong></span>'+icon("info","icon small");$("#dataMeta").textContent="Données générées le "+(data.generated_at_utc?new Date(data.generated_at_utc).toLocaleString("fr-FR"):"date inconnue")+" · "+(data.model||"modèle non précisé")+" · statut "+(data.status||"inconnu")+(data.publication_approved===false?" · estimations non approuvées":"");renderList()}catch(e){$("#apiStatus").innerHTML='<span class="dot" style="background:#f59e0b"></span><span>État des données : <strong>À vérifier</strong></span>'+icon("info","icon small");$("#matchList").innerHTML='<div class="error"><strong>Impossible de charger les rencontres.</strong><br>'+esc(e.message)+'<br>Les fichiers de données sont conservés ; vérifiez <code>data/predictions-data.json</code>.</div>';$("#dataMeta").textContent="Données indisponibles — aucune rencontre n'est inventée."}}
 document.querySelectorAll("[data-range]").forEach(b=>b.addEventListener("click",()=>{state.range=b.dataset.range;document.querySelectorAll("[data-range]").forEach(x=>x.classList.toggle("active",x===b));renderList()}));$("#search").addEventListener("input",e=>{state.search=e.target.value;renderList()});$("#sort").addEventListener("change",e=>{state.sort=e.target.value;renderList()});$("#matchList").addEventListener("click",e=>{const card=e.target.closest("[data-id]");if(card){state.selected=card.dataset.id;state.tab="overview";renderList()}});$("#matchList").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-id]")){e.preventDefault();state.selected=e.target.dataset.id;state.tab="overview";renderList()}});$("#detailContent").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b){state.tab=b.dataset.tab;renderDetail(rowsAll().find(r=>r.id===state.selected))}});load();
