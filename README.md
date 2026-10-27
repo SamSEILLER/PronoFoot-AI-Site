@@ -10,12 +10,18 @@ Cette remise à zéro concerne l'affichage uniquement. Les données récupérée
 
 ## Artefacts de données
 
+Les fichiers JSON sont générés par le moteur privé. Le workflow de synchronisation est exécuté dans le dépôt moteur, pas dans ce dépôt public. La réussite du déploiement Pages ne valide pas le contenu statistique des JSON ; la réussite de la synchronisation ne prouve pas à elle seule que Pages a déployé le dernier commit.
+
 Ces fichiers sont générés par les workflows du moteur privé et ne doivent pas être modifiés manuellement :
 
 - `data/predictions-data.json` — rencontres, résultats et estimations expérimentales exportées.
 - `data/model-history.json` — historique des versions et évaluations disponibles.
 - `data/site-status.json` — état des collectes et contrôles de données.
 - `data/sync-status.json` — statut de synchronisation et commit source.
+- `data/recent-form.json` — forme récente calculée depuis la saison de référence.
+- `data/head-to-head.json` — confrontations directes trouvées dans les archives.
+- `data/odds-data.json` — observations de cotes retournées pour les événements associés.
+- `data/match-details.json` — données complémentaires descriptives de matchs.
 
 La présence de données ne signifie pas que le modèle est validé, que les probabilités sont calibrées ou qu'un pari est recommandé.
 
@@ -31,9 +37,9 @@ La présence de données ne signifie pas que le modèle est validé, que les pro
 
 ## Synchronisation
 
-Le workflow du dépôt privé continue de synchroniser les artefacts de données publics, mais ne copie plus de pages HTML. La synchronisation GitHub et le déploiement web sont distincts. En l'absence de nouvelle page d'accueil, une erreur 404 sur la racine du site est attendue ; elle ne signifie pas nécessairement que la collecte des données a échoué.
+Le workflow du dépôt privé synchronise les artefacts de données publics, mais ne copie pas de pages HTML. La synchronisation GitHub et le déploiement Pages sont distincts : vérifier l'exécution Pages après un nouveau commit public.
 
-## Vérifications avant remise en service complète
+## Vérifications après synchronisation ou modification de l'interface
 
 1. Vérifier le chargement de `data/predictions-data.json` sur l'hébergement public.
 2. Tester les filtres, la recherche, la sélection de match, les onglets et les états vides.
