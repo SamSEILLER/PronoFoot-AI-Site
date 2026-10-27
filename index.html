@@ -113,18 +113,45 @@ function detailEntryFor(r){
  }
  return {};
 }
-function teamImage(r,side){
- const wanted=side==="home"?r.home:r.away;
+function teamCountryFlag(r,side){
  const entry=detailEntryFor(r);
  const sources=[entry?.match,entry?.endpoints?.detail?.data,entry?.endpoints?.lineups?.data];
- let url="";
+ let country="",competitionId=String(r.competition_id||r.competitionId||"");
  for(const source of sources){
   const team=side==="home"?source?.home_team:source?.away_team;
-  if(team?.image_url&&/^https:\/\//i.test(team.image_url)){url=team.image_url;break}
+  if(team){
+   country=String(team.country_code||team.country||team.nationality||"");
+   if(country)break;
+  }
  }
- if(!url)url=teamLogos.get(normalizeTeamName(wanted))||"";
- const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
- return url?'<img src="'+esc(url)+'" alt="'+esc(wanted)+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
+ const key=(country+" "+competitionId+" "+String(r.competition||"")).toLowerCase();
+ if(/france|fra|fr-ligue|ligue.?[12]|coupe de france/.test(key))return "🇫🇷";
+ if(/england|eng|premier league|championship/.test(key))return "🏴";
+ if(/germany|deu|bundesliga/.test(key))return "🇩🇪";
+ if(/spain|esp|la liga/.test(key))return "🇪🇸";
+ if(/italy|ita|serie a/.test(key))return "🇮🇹";
+ if(/belgium|bel|jupiler/.test(key))return "🇧🇪";
+ if(/portugal|prt|primeira/.test(key))return "🇵🇹";
+ if(/netherlands|ned|eredivisie/.test(key))return "🇳🇱";
+ if(/scotland|sco|scottish premiership/.test(key))return "🏴";
+ if(/united states|usa|mls/.test(key))return "🇺🇸";
+ if(/turkey|tur|super lig/.test(key))return "🇹🇷";
+ if(/switzerland|che|swiss super league/.test(key))return "🇨🇭";
+ if(/austria|aut/.test(key))return "🇦🇹";
+ if(/greece|gre|super league gr/.test(key))return "🇬🇷";
+ if(/denmark|dnk|superliga/.test(key))return "🇩🇰";
+ if(/poland|pol|ekstraklasa/.test(key))return "🇵🇱";
+ if(/brazil|bra|serie a br/.test(key))return "🇧🇷";
+ if(/argentina|arg|liga profesional/.test(key))return "🇦🇷";
+ if(/mexico|mex|liga mx/.test(key))return "🇲🇽";
+ if(/japan|jpn|j league/.test(key))return "🇯🇵";
+ if(/saudi|ksa|saudi pro league/.test(key))return "🇸🇦";
+ return "🏳️";
+}
+function teamImage(r,side){
+ const wanted=side==="home"?r.home:r.away;
+ const emoji=teamCountryFlag(r,side);
+ return '<span class="crest-fallback team-country-flag" role="img" aria-label="Drapeau de '+esc(wanted)+'" title="Drapeau de '+esc(wanted)+'">'+emoji+'</span>';
 }
 function supplementaryHTML(r){
  const entry=detailEntryFor(r);
