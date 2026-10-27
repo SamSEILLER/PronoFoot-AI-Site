@@ -248,7 +248,7 @@ function overviewPitchHTML(r){
   '<div class="mini-grid"><div class="mini-card"><h3>'+icon("trend","icon small")+' Forme récente</h3>'+renderRecentForm(r)+'</div><div class="mini-card"><h3>'+icon("users","icon small")+' Confrontations directes</h3>'+renderHeadToHead(r)+'</div><div class="mini-card"><h3>💡 Tendances clés</h3><div class="trend"><span class="trend-icon">●</span>Probabilités du modèle expérimental</div><div class="trend"><span class="trend-icon">ⓘ</span>Pas de value vérifiable sans cote comparable</div><div class="trend"><span class="trend-icon">ⓘ</span>Compositions à confirmer avant le coup d’envoi</div></div></div>';
 }
 function renderHeadToHead(r){
- const norm=s=>String(s||"").toLocaleLowerCase("fr").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+ const norm=s=>String(s||"").toLocaleLowerCase("fr").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
  const home=r.home_team||r.homeTeam||r.home||{},away=r.away_team||r.awayTeam||r.away||{};
  const name=t=>typeof t==="string"?t:(t.name||t.team_name||t.title||"");
  const a=norm(name(home)),b=norm(name(away));
