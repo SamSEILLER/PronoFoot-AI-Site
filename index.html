@@ -255,12 +255,12 @@ function renderHeadToHead(r){
  const comp=r.competition_id||r.competitionId||"";
  const pairs=state.headToHead&&state.headToHead.pairs||{};
  const pair=Object.values(pairs).find(p=>(!comp||p.competition_id===comp)&&((p.team_a===a&&p.team_b===b)||(p.team_a===b&&p.team_b===a)));
- if(!pair||!pair.matches||!pair.matches.length)return '<p class="status-line">Aucune confrontation directe terminée enregistrée pour ces équipes dans la saison en cours.</p>';
+ if(!pair||!pair.matches||!pair.matches.length)return '<p class="status-line">Aucune confrontation directe terminée trouvée dans les archives disponibles pour cette compétition.</p>';
  const matches=pair.matches.slice(0,5);
  const wins=matches.filter(m=>norm(m.home)===a?m.score_home>m.score_away:m.score_away>m.score_home).length;
  const draws=matches.filter(m=>m.score_home===m.score_away).length;
  const losses=matches.length-wins-draws;
- return '<p class="h2h-summary">'+matches.length+' confrontation'+(matches.length>1?'s':'')+' cette saison · '+wins+' V · '+draws+' N · '+losses+' D pour '+esc(name(home))+'</p><div class="h2h-list">'+matches.map(m=>'<div class="h2h-match"><span>'+esc(new Date(m.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"}))+'</span><strong>'+esc(m.home)+' '+m.score_home+'–'+m.score_away+' '+esc(m.away)+'</strong></div>').join('')+'</div>';
+ return '<p class="h2h-summary">'+matches.length+' confrontation'+(matches.length>1?'s':'')+' récente'+(matches.length>1?'s':'')+' dans les archives · '+wins+' V · '+draws+' N · '+losses+' D pour '+esc(name(home))+'</p><div class="h2h-list">'+matches.map(m=>'<div class="h2h-match"><span>'+esc(new Date(m.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"}))+'</span><strong>'+esc(m.home)+' '+m.score_home+'–'+m.score_away+' '+esc(m.away)+'</strong><small>'+esc(m.season||"")+'</small></div>').join('')+'</div>';
 }
 function renderRecentForm(r){
   const data=state.recentForm&&state.recentForm.teams?state.recentForm.teams:{};
