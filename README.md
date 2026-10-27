@@ -4,7 +4,7 @@ Site public destiné à présenter les données produites par le moteur privé [
 
 ## État actuel — 27 octobre 2026
 
-**L'interface a été remise à zéro.** Les anciennes pages `index.html` et `predictions.html` ont été supprimées. Le fichier `index-alternative.html` n'était pas présent dans ce dépôt. Une nouvelle interface doit être conçue avant que le site puisse être considéré comme navigable.
+**La nouvelle page d'accueil `index.html` est créée** sur la base de la maquette fournie le 27 octobre 2026. Les anciennes pages `predictions.html` et `index-alternative.html` ne sont pas utilisées. La page d'accueil charge `data/predictions-data.json` et affiche les informations réellement présentes dans cet export ; elle n'invente pas les cotes, compositions, météo, forme récente ou confrontations directes manquantes. L'affichage est responsive, avec filtres par date, recherche, liste des rencontres et panneau de détail.
 
 Cette remise à zéro concerne l'affichage uniquement. Les données récupérées et les artefacts JSON existants sont conservés comme base de travail ; ils ne doivent pas être supprimés ou remplacés manuellement dans le cadre de la refonte visuelle.
 
@@ -33,10 +33,9 @@ La présence de données ne signifie pas que le modèle est validé, que les pro
 
 Le workflow du dépôt privé continue de synchroniser les artefacts de données publics, mais ne copie plus de pages HTML. La synchronisation GitHub et le déploiement web sont distincts. En l'absence de nouvelle page d'accueil, une erreur 404 sur la racine du site est attendue ; elle ne signifie pas nécessairement que la collecte des données a échoué.
 
-## Étapes avant remise en service
+## Vérifications avant remise en service complète
 
-1. Définir l'architecture et les pages de la nouvelle interface.
-2. Vérifier le contrat réel des JSON avant de développer les composants d'affichage.
-3. Créer la nouvelle page d'accueil et les pages complémentaires nécessaires.
-4. Tester le chargement des données, les états vides, les données manquantes et l'affichage mobile.
-5. Vérifier le déploiement public et le statut des données avant d'annoncer la remise en service.
+1. Vérifier le chargement de `data/predictions-data.json` sur l'hébergement public.
+2. Tester les filtres, la recherche, la sélection de match, les onglets et les états vides.
+3. Tester les vues ordinateur et mobile sur le site déployé.
+4. Vérifier le déploiement web : un commit GitHub ne garantit pas à lui seul que l'hébergeur a publié la page.
