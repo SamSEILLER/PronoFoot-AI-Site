@@ -109,7 +109,7 @@ function teamImage(r,side){
  const lineup=entry.endpoints?.lineups?.data||{};
  const team=side==="home"?(endpoint.home_team||lineup.home_team||entry.match?.home_team):(endpoint.away_team||lineup.away_team||entry.match?.away_team);
  const url=team?.image_url;
- return url&&/^https:\/\//i.test(url)?'<img src="'+esc(url)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'"><span class="crest-fallback" style="display:none">'+esc(initials(side==="home"?r.home:r.away))+'</span>':'<span class="crest-fallback">'+esc(initials(side==="home"?r.home:r.away))+'</span>';
+ return url&&/^https:\/\//i.test(url)?'<img src="'+esc(url)+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'"><span class="crest-fallback" style="display:none">'+esc(initials(side==="home"?r.home:r.away))+'</span>':'<span class="crest-fallback">'+esc(initials(side==="home"?r.home:r.away))+'</span>';
 }
 function supplementaryHTML(r){
  const entry=detailEntryFor(r);
