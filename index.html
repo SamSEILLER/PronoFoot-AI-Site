@@ -108,6 +108,9 @@ const pct=n=>Number.isFinite(Number(n))?Math.round(Number(n)*100)+" %":"—";
 const initials=n=>String(n||"?").trim().split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase();
 const fmtDate=d=>d?new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"2-digit",month:"short",year:"numeric"}).format(d):"Date indisponible";
 const fmtTime=d=>d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false,timeZoneName:"short"}).format(d):"—";
+const parseOddsTimestamp=value=>{if(typeof value!=="string"||!value.trim())return null;const d=new Date(value);return Number.isNaN(d.getTime())?null:d};
+const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Europe/Paris"}).format(d):"horodatage indisponible"};
+const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
 const flag=(n,id="")=>{const s=(String(n||"")+" "+String(id||"")).toLowerCase();return /ligue\s*[12]|france|fr-ligue/.test(s)?"🇫🇷":/premier league|england|epl/.test(s)?"🏴":/bundesliga|germany|allemagne/.test(s)?"🇩🇪":/la liga|spain|espagne/.test(s)?"🇪🇸":/serie a|italy|italie|it-serie-a/.test(s)?"🇮🇹":/champions league/.test(s)?"🏆":/belg|jupiler/.test(s)?"🇧🇪":/primeira|portugal/.test(s)?"🇵🇹":/mls|major league soccer|united states|us-mls/.test(s)?"🇺🇸":'<img src="./assets/football.svg" alt="" aria-hidden="true" width="24" height="24">'};
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
@@ -139,14 +142,20 @@ function oddsText(r){
  const markets=Array.isArray(event?.odds_observations)?event.odds_observations:[];
  if(!markets.length){
   const o=r.odds_1x2;
-  if(o&&["home","draw","away"].every(k=>Number.isFinite(Number(o[k]))))
-   return '<div class="big-probs">'+[["1","home"],["N","draw"],["2","away"]].map(([l,k])=>'<div class="big-prob"><span>'+l+' · '+esc(o.bookmaker||"Bookmaker")+'</span><strong>'+Number(o[k]).toFixed(2)+'</strong></div>').join("")+'</div><p class="status-line">Source : '+esc(o.source||"source non précisée")+' · relevé '+esc(o.fetched_at||"horodatage indisponible")+'</p><p class="status-line">Aucun autre marché Odds-API.io n’est publié pour cette rencontre.</p>';
+  if(o&&["home","draw","away"].every(k=>Number.isFinite(Number(o[k])))){
+   const observedAt=parseOddsTimestamp(o.fetched_at),ageHours=observedAt?(Date.now()-observedAt.getTime())/3600000:Infinity;
+   if(ageHours>36||ageHours< -5)return '<div class="empty">Cotes masquées : le relevé historique est trop ancien (plus de 36 h) ou sa date est invalide. Aucune cote récente vérifiable n’est disponible pour cette rencontre.</div>';
+   return '<div class="big-probs">'+[["1","home"],["N","draw"],["2","away"]].map(([l,k])=>'<div class="big-prob"><span>'+l+' · '+esc(o.bookmaker||"Bookmaker")+'</span><strong>'+Number(o[k]).toFixed(2)+'</strong></div>').join("")+'</div><p class="status-line">Source : '+esc(o.source||"source non précisée")+' · relevé historique du '+esc(formatOddsTimestamp(o.fetched_at))+' (heure de Paris)</p><p class="status-line">Ces cotes proviennent du relevé historique 1N2, pas du snapshot actuel Odds-API.io.</p>';
+  }
   return '<div class="empty">Aucune cote Odds-API.io disponible pour cette rencontre dans le dernier relevé publié.</div>';
  }
  const grouped={};
  for(const m of markets){const name=String(m.market_name||"Marché non précisé");(grouped[name] ||= []).push(m);}
- const stamp=event.collected_at_utc||state.oddsData.generated_at_utc||"horodatage indisponible";
- let out='<p class="status-line">Source : Odds-API.io · '+esc(event.bookmakers_returned?.join(", ")||"bookmaker non précisé")+' · relevé '+esc(stamp)+' · '+markets.length+' lignes de cotes</p>';
+ const stamp=event.collected_at_utc||state.oddsData.generated_at_utc||null;
+ const marketUpdated=latestMarketUpdate(markets);
+ let out='<p class="status-line">Source : Odds-API.io · '+esc(event.bookmakers_returned?.join(", ")||"bookmaker non précisé")+' · '+markets.length+' lignes de cotes</p>';
+ out+='<p class="status-line">Dernière mise à jour des marchés disponible : '+esc(formatOddsTimestamp(marketUpdated))+' (heure de Paris). Les marchés peuvent avoir des heures de mise à jour différentes.</p>';
+ out+='<p class="status-line">Snapshot collecté le : '+esc(formatOddsTimestamp(stamp))+' (heure de Paris).</p>';
  for(const [name,rows] of Object.entries(grouped)){
   out+='<div class="odds-market"><h3>'+esc(oddsMarketLabel(name))+'</h3>'+(oddsMarketLabel(name)!==name?'<p class="status-line">Marché fournisseur : '+esc(name)+'</p>':'')+'<div class="odds-table-wrap"><table class="odds-table"><thead><tr><th>Paramètre</th><th>Issue / sélection</th><th>Cote</th></tr></thead><tbody>';
   for(const m of rows){
