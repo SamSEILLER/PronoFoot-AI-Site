@@ -141,7 +141,7 @@ function teamImage(r,side){
  if(!url)url=teamLogos.get(normalizeTeamName(wanted))||"";
  const fallback='<span class="crest-fallback" style="display:none">'+esc(initials(wanted))+'</span>';
  return url
-  ? '<img src="'+esc(url)+'" alt="Logo de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=\\'none\\';this.nextElementSibling.style.display=\\'grid\\'">'+fallback
+  ? '<img src="'+esc(url)+'" alt="Logo de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
   : '<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
 }
 function supplementaryHTML(r){
