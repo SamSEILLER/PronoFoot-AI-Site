@@ -238,7 +238,7 @@ function overviewPitchHTML(r){
  return '<div class="info-grid"><div class="info-card"><h3>Informations match</h3>'+
   '<div class="info-row">'+icon("trophy","icon small")+'<span class="label">Compétition</span><span>'+esc(detail.league?.name||r.competition||"Non disponible")+'</span></div>'+
   '<div class="info-row">'+icon("calendar","icon small")+'<span class="label">Journée</span><span>'+esc(round)+'</span></div>'+
-  '<div class="info-row season-row"><span class="season-icon">'+icon("history","icon small")+'</span><span class="label">Saison</span><span>'+esc(season)+'</span></div>'+
+  '<div class="info-row"><svg class="icon small"><use href="#i-history"></use></svg><span class="label">Saison</span><span>'+esc(season)+'</span></div>'++
   '<div class="info-row">'+icon("calendar","icon small")+'<span class="label">Date</span><span>'+esc(fmtDate(dateOf(r)))+'</span></div>'+
   '<div class="info-row">'+icon("clock","icon small")+'<span class="label">Heure</span><span>'+esc(fmtTime(dateOf(r)))+'</span></div>'+
   '</div>'+
