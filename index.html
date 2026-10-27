@@ -90,7 +90,7 @@ function detailEntryFor(r){
  const matches=state.details?.matches||{};
  const direct=matches[String(r.id)];
  if(direct)return direct;
- const norm=v=>String(v||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+ const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
  const home=norm(r.home),away=norm(r.away),kickoff=String(r.kickoff||"").slice(0,10);
  for(const entry of Object.values(matches)){
   const m=entry?.match||{};
