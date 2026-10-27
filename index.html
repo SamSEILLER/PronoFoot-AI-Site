@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#243744">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#243744"><link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
 <title>PronoFoot AI — Football Prediction Lab</title>
 <style>
 :root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--green2:#00a85c;--line:#e5edf7;--bg:#f3f8fc;--panel:#ffffffd9;--pale:#f5f8fc;--shadow:0 3px 12px rgba(17,43,72,.035)}
@@ -238,7 +238,7 @@ function overviewPitchHTML(r){
  return '<div class="info-grid"><div class="info-card"><h3>Informations match</h3>'+
   '<div class="info-row">'+icon("trophy","icon small")+'<span class="label">Compétition</span><span>'+esc(detail.league?.name||r.competition||"Non disponible")+'</span></div>'+
   '<div class="info-row">'+icon("calendar","icon small")+'<span class="label">Journée</span><span>'+esc(round)+'</span></div>'+
-  '<div class="info-row"><svg class="icon small"><use href="#i-history"></use></svg><span class="label">Saison</span><span>'+esc(season)+'</span></div>'++
+  '<div class="info-row"><svg class="icon small"><use href="#i-history"></use></svg><span class="label">Saison</span><span>'+esc(season)+'</span></div>'+
   '<div class="info-row">'+icon("calendar","icon small")+'<span class="label">Date</span><span>'+esc(fmtDate(dateOf(r)))+'</span></div>'+
   '<div class="info-row">'+icon("clock","icon small")+'<span class="label">Heure</span><span>'+esc(fmtTime(dateOf(r)))+'</span></div>'+
   '</div>'+
