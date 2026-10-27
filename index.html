@@ -31,6 +31,9 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 
 .recent-form-direction{font-size:.76rem;color:#4f6d99;margin:2px 0 15px 0}.h2h-summary{font-size:.82rem;color:#355273;margin:6px 0 9px}.h2h-list{display:flex;flex-direction:column;gap:7px}.h2h-match{display:grid;grid-template-columns:1fr;gap:7px;font-size:.78rem;padding:10px 11px;background:#f5f8fc;border:1px solid #e1eaf5;border-radius:8px}.h2h-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.75rem;color:#6480a2}.h2h-date{white-space:nowrap}.h2h-competition{font-weight:650;color:#355273}.h2h-scoreline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px;min-width:0}.h2h-team{min-width:0;overflow-wrap:anywhere;color:#355273}.h2h-team:first-child{text-align:right}.h2h-team:last-child{text-align:left}.h2h-winner{display:inline-block;padding:5px 9px;border-radius:7px;background:#16A34A;color:#FFFFFF;font-weight:850}.h2h-score{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:76px;padding:7px 13px;border:1px solid #b9cbe0;border-radius:8px;background:#fff;color:#0a1b46;font-weight:900;font-size:1rem;letter-spacing:.08em;white-space:nowrap}.h2h-match small{color:#6480a2}.recent-team{display:flex;flex-direction:column;gap:7px;margin:20px 0}.recent-team-heading{display:flex;align-items:center;gap:8px;min-width:0}.recent-team-heading strong{font-size:.88rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.recent-team-logo,.recent-team-logo-placeholder{width:36px;height:36px;flex:0 0 36px;object-fit:contain;display:inline-flex;align-items:center;justify-content:center}.recent-team-logo-placeholder{border-radius:50%;background:#edf3f9;color:#355273;font-size:.8rem;font-weight:800}.recent-results{display:flex;gap:7px;flex-wrap:wrap}.form-result{display:inline-flex;align-items:center;justify-content:center;min-width:35px;height:35px;border-radius:8px;font-size:.95rem;font-weight:850}.form-v{background:#16A34A;color:#FFFFFF}.form-n{background:#EAB308;color:#111827}.form-d{background:#DC2626;color:#FFFFFF}
  .h2h-empty{margin:8px 0 4px;padding:0;color:#6480a2;font-size:12px;font-weight:500;line-height:1.45}
+
+/* Marchés de cotes : explications et libellés lisibles */
+.odds-reading-guide{display:flex;flex-direction:column;gap:4px;padding:11px 13px;margin:10px 0 14px;border:1px solid #cfe8dc;border-radius:9px;background:#f0fbf5;color:#244c3d;font-size:12px}.odds-reading-guide strong{font-size:13px}.market-explanation{margin:0;padding:8px 12px 10px;color:#3f5d7e;background:#fbfdff;font-size:12px;line-height:1.5;border-top:1px solid #e5edf7}.market-source{font-size:11px;color:#71839b;padding:0 12px 8px;margin:0;background:#fbfdff}.odds-table th{white-space:normal}.odds-table td:first-child{color:#4f6d99;font-size:12px}.odds-table .odd-value{font-size:14px;color:#123c2a}@media(max-width:650px){.odds-table{font-size:12px}.odds-table th,.odds-table td{padding:8px 7px}.market-explanation{font-size:12px}}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -117,25 +120,57 @@ function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
 function renderList(){const rows=visibleRows();$("#matchCount").textContent=rows.length+" match"+(rows.length>1?"s":"");$("#listTitle").textContent=state.range==="today"?"Matchs du jour":state.range==="tomorrow"?"Matchs de demain":"Matchs à venir";if(!rows.length){$("#matchList").innerHTML='<div class="empty">Aucun match trouvé pour ce filtre. Essayez « Tous les matchs » ou vérifiez la prochaine mise à jour des données.</div>';$("#detailContent").innerHTML='<div class="empty">Aucune rencontre à afficher avec ces filtres.</div>';return}if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
 $("#matchList").innerHTML=rows.map(r=>{const d=dateOf(r),c=r.competition||"Compétition indisponible";return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'"><div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(r.round||r.matchday||r.competition_id||"Compétition")+'</div></div></div><div class="kickoff">'+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+'</div><div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div><div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+'</article>'}).join("");renderDetail(rows.find(r=>r.id===state.selected)||rows[0])}
+function oddsMarketKey(name){return String(name||"").trim().toLocaleLowerCase("fr").replace(/\\s+/g," ").replace(/[–—]/g,"-")}
 function oddsMarketLabel(name){
- const key=String(name||"").trim().toLocaleLowerCase("fr").replace(/\\s+/g," ");
+ const key=oddsMarketKey(name);
  const labels={
-  "ml":"Résultat du match (1N2)","moneyline":"Résultat du match (1N2)",
-  "double chance":"Double chance","draw no bet":"Remboursé si nul",
-  "totals":"Total de buts","total goals":"Total de buts","team total home":"Buts de l’équipe à domicile","team total away":"Buts de l’équipe à l’extérieur",
-  "both teams to score":"Les deux équipes marquent","spread":"Handicap asiatique","european handicap":"Handicap européen",
-  "corners totals":"Total de corners","total corners":"Total de corners","corners totals home":"Corners domicile","corners totals away":"Corners extérieur","corners spread":"Handicap corners",
-  "total shots":"Total de tirs","total shots home":"Tirs domicile","total shots away":"Tirs extérieur",
-  "total shots on target":"Total de tirs cadrés","total shots on target home":"Tirs cadrés domicile","total shots on target away":"Tirs cadrés extérieur",
-  "bookings totals":"Total de cartons","total cards":"Total de cartons","cards totals":"Total de cartons","bookings spread":"Handicap cartons","cards spread":"Handicap cartons",
-  "total fouls":"Total de fautes","fouls totals":"Total de fautes","total fouls home":"Fautes domicile","total fouls away":"Fautes extérieur",
-  "half time / full time":"Mi-temps / fin du match","ml ht":"Résultat à la mi-temps","ml 2h":"Résultat de la seconde mi-temps",
-  "double chance ht":"Double chance — mi-temps","double chance 2h":"Double chance — seconde mi-temps",
-  "draw no bet ht":"Remboursé si nul — mi-temps","draw no bet 2h":"Remboursé si nul — seconde mi-temps",
-  "both teams to score ht":"Les deux équipes marquent — mi-temps","both teams to score 2h":"Les deux équipes marquent — seconde mi-temps",
-  "totals ht":"Total de buts — mi-temps","totals 2h":"Total de buts — seconde mi-temps"
+ "ml":"Résultat du match (1N2)","moneyline":"Résultat du match (1N2)","match winner":"Résultat du match (1N2)","1x2":"Résultat du match (1N2)",
+ "double chance":"Double chance","draw no bet":"Remboursé si nul (DNB)","dnb":"Remboursé si nul (DNB)",
+ "totals":"Total de buts","total goals":"Total de buts","team total home":"Buts de l’équipe à domicile","team total away":"Buts de l’équipe à l’extérieur",
+ "both teams to score":"Les deux équipes marquent (BTTS)","btts":"Les deux équipes marquent (BTTS)","spread":"Handicap asiatique","asian handicap":"Handicap asiatique","european handicap":"Handicap européen",
+ "corners totals":"Total de corners","total corners":"Total de corners","corners totals home":"Corners domicile","corners totals away":"Corners extérieur","corners spread":"Handicap corners",
+ "total shots":"Total de tirs","total shots home":"Tirs domicile","total shots away":"Tirs extérieur","total shots on target":"Total de tirs cadrés","total shots on target home":"Tirs cadrés domicile","total shots on target away":"Tirs cadrés extérieur",
+ "bookings totals":"Total de cartons (bookings)","total cards":"Total de cartons","cards totals":"Total de cartons","bookings spread":"Handicap cartons","cards spread":"Handicap cartons",
+ "total fouls":"Total de fautes","fouls totals":"Total de fautes","total fouls home":"Fautes domicile","total fouls away":"Fautes extérieur",
+ "half time / full time":"Mi-temps / fin du match","ml ht":"Résultat à la mi-temps","ml 2h":"Résultat de la seconde mi-temps",
+ "double chance ht":"Double chance — mi-temps","double chance 2h":"Double chance — seconde mi-temps","draw no bet ht":"Remboursé si nul — mi-temps","draw no bet 2h":"Remboursé si nul — seconde mi-temps",
+ "both teams to score ht":"Les deux équipes marquent — mi-temps","both teams to score 2h":"Les deux équipes marquent — seconde mi-temps","totals ht":"Total de buts — mi-temps","totals 2h":"Total de buts — seconde mi-temps"
  };
  return labels[key]||String(name||"Marché non précisé");
+}
+function oddsMarketDescription(name){
+ const k=oddsMarketKey(name);
+ if(["ml","moneyline","match winner","1x2"].includes(k))return "Résultat du match : domicile, nul ou extérieur.";
+ if(k==="double chance")return "Deux issues sont couvertes : 1X = domicile ou nul ; X2 = extérieur ou nul ; 12 = l’une des équipes gagne.";
+ if(["draw no bet","dnb"].includes(k))return "Victoire de l’équipe choisie ; si le match est nul, la mise est remboursée selon les règles du bookmaker.";
+ if(["totals","total goals","totals ht","totals 2h"].includes(k))return "Total de buts du match ou de la période indiquée. Plus = au-dessus de la ligne ; Moins = en dessous. Une ligne entière peut entraîner un remboursement.";
+ if(["team total home","team total away"].includes(k))return "Total de buts d’une seule équipe : vérifie l’équipe et la ligne affichées.";
+ if(["both teams to score","btts","both teams to score ht","both teams to score 2h"].includes(k))return "Oui = chaque équipe marque au moins un but dans la période concernée ; Non = au moins une équipe ne marque pas.";
+ if(["spread","asian handicap"].includes(k))return "Handicap asiatique : la ligne ajuste le résultat pour l’équipe sélectionnée. Selon la ligne, un pari peut être gagné, perdu ou partiellement remboursé. Vérifie le signe et son application exacte.";
+ if(k==="european handicap")return "Résultat après handicap avec trois issues possibles. Le handicap européen est distinct du handicap asiatique.";
+ if(k.includes("corner")&&k.includes("spread"))return "Handicap appliqué aux corners. Vérifie l’équipe, le signe et la ligne ; les règles de règlement dépendent de la source.";
+ if(k.includes("corner")&&k.includes("total"))return "Nombre total de corners, ou corners de l’équipe nommée, comparé à la ligne.";
+ if(k.includes("shot")&&k.includes("target"))return "Nombre de tirs cadrés du match ou de l’équipe indiquée, comparé à la ligne.";
+ if(k.includes("shot"))return "Nombre de tirs du match ou de l’équipe indiquée, comparé à la ligne.";
+ if(k.includes("booking")||k.includes("card"))return "Marché de cartons. Les conventions de comptage varient parfois selon le bookmaker ; elles ne sont pas déduites de la seule cote.";
+ if(k.includes("foul"))return "Nombre de fautes du match ou de l’équipe indiquée, comparé à la ligne.";
+ if(k.includes("half time / full time"))return "La sélection combine le résultat à la mi-temps et le résultat final.";
+ if(k.includes("ht"))return "Marché limité à la première mi-temps, pas au match entier.";
+ if(k.includes("2h"))return "Marché limité à la seconde mi-temps, pas au match entier.";
+ return "Description fournisseur non normalisée : vérifie le périmètre, la sélection et la ligne. Les règles exactes ne sont pas supposées si la source ne les précise pas.";
+}
+function oddsSelectionLabel(marketName,key,prices){
+ const m=oddsMarketKey(marketName), k=String(key||""), low=k.toLowerCase();
+ if(["draw no bet","dnb"].includes(m)){if(low==="home")return "Victoire domicile (nul = remboursé)";if(low==="away")return "Victoire extérieur (nul = remboursé)";}
+ if(["spread","asian handicap","corners spread","bookings spread","cards spread"].includes(m)){if(low==="home")return "Domicile — handicap";if(low==="away")return "Extérieur — handicap";}
+ if(prices&&prices.label)return String(prices.label);
+ return ({"home":"Domicile","away":"Extérieur","draw":"Match nul","over":"Plus","under":"Moins","yes":"Oui","no":"Non","1x":"1X — domicile ou nul","x2":"X2 — extérieur ou nul","12":"12 — pas de nul"})[low]||k;
+}
+function oddsLineLabel(marketName,line){
+ if(line===undefined||line===null||line==="")return "Ligne non fournie";
+ const k=oddsMarketKey(marketName);
+ if(["spread","asian handicap","european handicap","corners spread","bookings spread","cards spread"].includes(k))return "Handicap : "+line;
+ return "Ligne : "+line;
 }
 function oddsText(r){
  const oddsEvents=state.oddsData?.events||{};
@@ -159,13 +194,15 @@ function oddsText(r){
  let out='<p class="status-line">Source : Odds-API.io · '+esc(event.bookmakers_returned?.join(", ")||"bookmaker non précisé")+' · '+markets.length+' lignes de cotes</p>';
  out+='<p class="status-line">Dernière mise à jour des marchés disponible : '+esc(formatOddsTimestamp(marketUpdated))+' (heure de Paris). Les marchés peuvent avoir des heures de mise à jour différentes.</p>';
  out+='<p class="status-line">Snapshot collecté le : '+esc(formatOddsTimestamp(stamp))+' (heure de Paris).</p>';
+ out+='<div class="odds-reading-guide"><strong>Comment lire les cotes ?</strong><span>Une cote décimale indique le retour brut potentiel par euro misé, mise incluse, si la sélection gagne. Exemple : 2,00 → 2 € retournés pour 1 € misé, soit 1 € de gain net. Ce n’est ni une probabilité garantie ni une recommandation de pari.</span></div>';
  for(const [name,rows] of Object.entries(grouped)){
-  out+='<div class="odds-market"><h3>'+esc(oddsMarketLabel(name))+'</h3>'+(oddsMarketLabel(name)!==name?'<p class="status-line">Marché fournisseur : '+esc(name)+'</p>':'')+'<div class="odds-table-wrap"><table class="odds-table"><thead><tr><th>Paramètre</th><th>Issue / sélection</th><th>Cote</th></tr></thead><tbody>';
+  const label=oddsMarketLabel(name), description=oddsMarketDescription(name);
+  out+='<div class="odds-market"><h3>'+esc(label)+'</h3><p class="market-explanation">'+esc(description)+'</p>'+(label!==name?'<p class="market-source">Nom brut fournisseur : '+esc(name)+'</p>':'')+'<div class="odds-table-wrap"><table class="odds-table"><thead><tr><th>Ligne / paramètre</th><th>Issue / sélection</th><th>Cote décimale</th></tr></thead><tbody>';
   for(const m of rows){
-   const p=m.prices||{}, line=p.hdp!==undefined?'Ligne '+p.hdp:'—';
-   const entries=Object.entries(p).filter(([k,v])=>k!=="hdp"&&v!==null&&v!==""&&Number.isFinite(Number(v)));
-   if(entries.length){for(const [k,v] of entries){const label=p.label||({home:"Domicile",away:"Extérieur",draw:"Nul",over:"Plus",under:"Moins",yes:"Oui",no:"Non","1X":"1N","X2":"N2","12":"12"}[k]||k);out+='<tr><td>'+esc(line)+'</td><td>'+esc(label)+'</td><td class="odd-value">'+Number(v).toFixed(2)+'</td></tr>';}}
-   else if(p.odds!==undefined){out+='<tr><td>'+esc(line)+'</td><td>'+esc(p.label||"Sélection")+'</td><td class="odd-value">'+esc(p.odds)+'</td></tr>';}
+   const p=m.prices||{}, line=p.hdp!==undefined?oddsLineLabel(name,p.hdp):"—";
+   const entries=Object.entries(p).filter(([k,v])=>k!=="hdp"&&k!=="label"&&v!==null&&v!==""&&Number.isFinite(Number(v)));
+   if(entries.length){for(const [k,v] of entries){out+='<tr><td>'+esc(line)+'</td><td>'+esc(oddsSelectionLabel(name,k,p))+'</td><td class="odd-value">'+Number(v).toFixed(2)+'</td></tr>';}}
+   else if(p.odds!==undefined){out+='<tr><td>'+esc(line)+'</td><td>'+esc(oddsSelectionLabel(name,p.label||"selection",p))+'</td><td class="odd-value">'+esc(p.odds)+'</td></tr>';}
   }
   out+='</tbody></table></div></div>';
  }
