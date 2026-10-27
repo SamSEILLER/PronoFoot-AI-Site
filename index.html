@@ -114,6 +114,26 @@ function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
 function renderList(){const rows=visibleRows();$("#matchCount").textContent=rows.length+" match"+(rows.length>1?"s":"");$("#listTitle").textContent=state.range==="today"?"Matchs du jour":state.range==="tomorrow"?"Matchs de demain":"Matchs à venir";if(!rows.length){$("#matchList").innerHTML='<div class="empty">Aucun match trouvé pour ce filtre. Essayez « Tous les matchs » ou vérifiez la prochaine mise à jour des données.</div>';$("#detailContent").innerHTML='<div class="empty">Aucune rencontre à afficher avec ces filtres.</div>';return}if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
 $("#matchList").innerHTML=rows.map(r=>{const d=dateOf(r),c=r.competition||"Compétition indisponible";return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'"><div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(r.round||r.matchday||r.competition_id||"Compétition")+'</div></div></div><div class="kickoff">'+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+'</div><div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div><div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+'</article>'}).join("");renderDetail(rows.find(r=>r.id===state.selected)||rows[0])}
+function oddsMarketLabel(name){
+ const key=String(name||"").trim().toLocaleLowerCase("fr").replace(/\\s+/g," ");
+ const labels={
+  "ml":"Résultat du match (1N2)","moneyline":"Résultat du match (1N2)",
+  "double chance":"Double chance","draw no bet":"Remboursé si nul",
+  "totals":"Total de buts","total goals":"Total de buts","team total home":"Buts de l’équipe à domicile","team total away":"Buts de l’équipe à l’extérieur",
+  "both teams to score":"Les deux équipes marquent","spread":"Handicap asiatique","european handicap":"Handicap européen",
+  "corners totals":"Total de corners","total corners":"Total de corners","corners totals home":"Corners domicile","corners totals away":"Corners extérieur","corners spread":"Handicap corners",
+  "total shots":"Total de tirs","total shots home":"Tirs domicile","total shots away":"Tirs extérieur",
+  "total shots on target":"Total de tirs cadrés","total shots on target home":"Tirs cadrés domicile","total shots on target away":"Tirs cadrés extérieur",
+  "bookings totals":"Total de cartons","total cards":"Total de cartons","cards totals":"Total de cartons","bookings spread":"Handicap cartons","cards spread":"Handicap cartons",
+  "total fouls":"Total de fautes","fouls totals":"Total de fautes","total fouls home":"Fautes domicile","total fouls away":"Fautes extérieur",
+  "half time / full time":"Mi-temps / fin du match","ml ht":"Résultat à la mi-temps","ml 2h":"Résultat de la seconde mi-temps",
+  "double chance ht":"Double chance — mi-temps","double chance 2h":"Double chance — seconde mi-temps",
+  "draw no bet ht":"Remboursé si nul — mi-temps","draw no bet 2h":"Remboursé si nul — seconde mi-temps",
+  "both teams to score ht":"Les deux équipes marquent — mi-temps","both teams to score 2h":"Les deux équipes marquent — seconde mi-temps",
+  "totals ht":"Total de buts — mi-temps","totals 2h":"Total de buts — seconde mi-temps"
+ };
+ return labels[key]||String(name||"Marché non précisé");
+}
 function oddsText(r){
  const event=state.oddsData?.events?.[String(r.id)]||null;
  const markets=Array.isArray(event?.odds_observations)?event.odds_observations:[];
@@ -128,7 +148,7 @@ function oddsText(r){
  const stamp=event.collected_at_utc||state.oddsData.generated_at_utc||"horodatage indisponible";
  let out='<p class="status-line">Source : Odds-API.io · '+esc(event.bookmakers_returned?.join(", ")||"bookmaker non précisé")+' · relevé '+esc(stamp)+' · '+markets.length+' lignes de cotes</p>';
  for(const [name,rows] of Object.entries(grouped)){
-  out+='<div class="odds-market"><h3>'+esc(name)+'</h3><div class="odds-table-wrap"><table class="odds-table"><thead><tr><th>Paramètre</th><th>Issue / sélection</th><th>Cote</th></tr></thead><tbody>';
+  out+='<div class="odds-market"><h3>'+esc(oddsMarketLabel(name))+'</h3>'+(oddsMarketLabel(name)!==name?'<p class="status-line">Marché fournisseur : '+esc(name)+'</p>':'')+'<div class="odds-table-wrap"><table class="odds-table"><thead><tr><th>Paramètre</th><th>Issue / sélection</th><th>Cote</th></tr></thead><tbody>';
   for(const m of rows){
    const p=m.prices||{}, line=p.hdp!==undefined?'Ligne '+p.hdp:'—';
    const entries=Object.entries(p).filter(([k,v])=>k!=="hdp"&&v!==null&&v!==""&&Number.isFinite(Number(v)));
