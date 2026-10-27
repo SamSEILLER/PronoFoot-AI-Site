@@ -1,49 +1,42 @@
 # PronoFoot AI — site public
 
-Site statique public de **PronoFoot AI**. Le moteur d'analyse et ses pipelines restent dans le dépôt privé [PronoFoot-AI](https://github.com/SamSEILLER/PronoFoot-AI).
+Site public destiné à présenter les données produites par le moteur privé [PronoFoot-AI](https://github.com/SamSEILLER/PronoFoot-AI).
 
-## Navigation du site
+## État actuel — 27 octobre 2026
 
-| Page | Rôle |
-| --- | --- |
-| [Prédictions](index.html) | Rencontres à venir, probabilités 1/N/2 et cotes lorsqu'elles sont disponibles. |
-| [Historique & bilan](predictions.html) | Résultats, prédictions pré-match archivées et suivi descriptif des versions. |
+**L'interface a été remise à zéro.** Les anciennes pages `index.html` et `predictions.html` ont été supprimées. Le fichier `index-alternative.html` n'était pas présent dans ce dépôt. Une nouvelle interface doit être conçue avant que le site puisse être considéré comme navigable.
 
-## Organisation des fichiers
+Cette remise à zéro concerne l'affichage uniquement. Les données récupérées et les artefacts JSON existants sont conservés comme base de travail ; ils ne doivent pas être supprimés ou remplacés manuellement dans le cadre de la refonte visuelle.
 
-### Pages
+## Artefacts de données
 
-- `index.html` — interface principale des rencontres : recherche, filtre compétition, détail par match et thème clair/sombre.
-- `predictions.html` — historique et bilan expérimental.
+Ces fichiers sont générés par les workflows du moteur privé et ne doivent pas être modifiés manuellement :
 
-### Données générées (ne pas modifier manuellement)
+- `data/predictions-data.json` — rencontres, résultats et estimations expérimentales exportées.
+- `data/model-history.json` — historique des versions et évaluations disponibles.
+- `data/site-status.json` — état des collectes et contrôles de données.
+- `data/sync-status.json` — statut de synchronisation et commit source.
 
-- `data/predictions-data.json` — données publiques exportées par le moteur privé.
-- `data/model-history.json` — historique des versions du modèle.
-- `data/site-status.json` — fraîcheur et contrôles des données (base, statistiques et cotes).
-- `data/sync-status.json` — dernière synchronisation et commit source.
+La présence de données ne signifie pas que le modèle est validé, que les probabilités sont calibrées ou qu'un pari est recommandé.
 
-Ces JSON sont des artefacts de publication. Leurs valeurs doivent provenir des workflows ou du moteur, jamais d'une saisie manuelle.
+## Principes pour la nouvelle interface
 
-## Statut scientifique du modèle
+- Construire une interface neuve sans dépendre des pages HTML supprimées.
+- Séparer clairement l'affichage de la collecte et du calcul des données.
+- Lire les artefacts JSON générés plutôt que coder en dur les matchs, cotes ou probabilités.
+- Montrer l'horodatage, la couverture et les états d'indisponibilité lorsqu'ils sont fournis.
+- Ne jamais inventer une valeur manquante ni présenter une estimation expérimentale comme un fait confirmé.
+- N'exposer aucun secret, jeton, fichier brut privé ou détail opérationnel du moteur.
+- Conserver les avertissements sur le caractère expérimental des prédictions tant qu'une validation hors échantillon n'a pas été approuvée.
 
-Les estimations reposent sur une baseline Poisson expérimentale. Le backtest chronologique actuel est descriptif : calibration, comparaison à une baseline de marché et validation hors échantillon restent nécessaires. Aucune prédiction n'est déclarée validée et aucune rentabilité n'est garantie.
+## Synchronisation
 
-## Contrat de publication et sécurité
+Le workflow du dépôt privé continue de synchroniser les artefacts de données publics, mais ne copie plus de pages HTML. La synchronisation GitHub et le déploiement web sont distincts. En l'absence de nouvelle page d'accueil, une erreur 404 sur la racine du site est attendue ; elle ne signifie pas nécessairement que la collecte des données a échoué.
 
-- Ne jamais ajouter de secrets, clés API, jetons, identifiants privés ou données brutes confidentielles.
-- Ne publier que des résultats dérivés explicitement exportés par le workflow prévu.
-- N'afficher scores, cotes et probabilités que lorsqu'ils sont présents et valides dans les données.
-- En cas d'absence ou d'incohérence, afficher un état indisponible plutôt que fabriquer un résultat.
-- Conserver la mention du caractère expérimental du modèle.
+## Étapes avant remise en service
 
-## Synchronisation et déploiement
-
-Le dépôt privé synchronise les pages et régénère les données publiques lors des changements pertinents du site, du modèle ou des archives. La synchronisation GitHub et le déploiement sur l'hébergement web sont deux opérations distinctes.
-
-### Vérifications avant publication
-
-1. Les deux pages principales chargent sans erreur les données JSON.
-2. La navigation, les filtres et les détails fonctionnent sur ordinateur et mobile.
-3. Les cotes absentes restent affichées comme indisponibles.
-4. Les statuts de fraîcheur correspondent aux fichiers générés.
+1. Définir l'architecture et les pages de la nouvelle interface.
+2. Vérifier le contrat réel des JSON avant de développer les composants d'affichage.
+3. Créer la nouvelle page d'accueil et les pages complémentaires nécessaires.
+4. Tester le chargement des données, les états vides, les données manquantes et l'affichage mobile.
+5. Vérifier le déploiement public et le statut des données avant d'annoncer la remise en service.
