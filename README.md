@@ -20,7 +20,7 @@ Ces fichiers sont générés par les workflows du moteur privé et ne doivent pa
 - `data/sync-status.json` — statut de synchronisation et commit source.
 - `data/recent-form.json` — forme récente calculée depuis la saison de référence.
 - `data/head-to-head.json` — confrontations directes trouvées dans les archives.
-- `data/odds-data.json` — observations de cotes retournées pour les événements associés.
+- `data/odds-data.json` — observations de cotes retournées pour les événements associés, issues du snapshot de collecte valide le plus récent.
 - `data/match-details.json` — données complémentaires descriptives de matchs.
 
 La présence de données ne signifie pas que le modèle est validé, que les probabilités sont calibrées ou qu'un pari est recommandé.
@@ -35,9 +35,21 @@ La présence de données ne signifie pas que le modèle est validé, que les pro
 - N'exposer aucun secret, jeton, fichier brut privé ou détail opérationnel du moteur.
 - Conserver les avertissements sur le caractère expérimental des prédictions tant qu'une validation hors échantillon n'a pas été approuvée.
 
-## Synchronisation
+## Synchronisation et fraîcheur des cotes
 
 Le workflow du dépôt privé synchronise les artefacts de données publics, mais ne copie pas de pages HTML. La synchronisation GitHub et le déploiement Pages sont distincts : vérifier l'exécution Pages après un nouveau commit public.
+
+La publication de `data/odds-data.json` suit une règle **snapshot le plus récent uniquement** :
+
+- le moteur sélectionne le snapshot JSON valide ayant le `generated_at_utc` le plus récent ;
+- seules les rencontres et les observations présentes dans ce snapshot sont publiées ;
+- les rencontres ou marchés absents ne sont pas complétés par les données d’un snapshot plus ancien ;
+- `snapshot_generated_at_utc` indique la date de collecte retenue, tandis que `updatedAt` dans une observation, s’il est fourni, indique l’horodatage propre au prix ;
+- une collecte plus récente ne signifie pas automatiquement que tous les prix ont été actualisés à cette date.
+
+Cette règle évite d’afficher silencieusement une ancienne cote comme si elle provenait de la collecte courante. Elle peut toutefois réduire le nombre de rencontres ou de marchés affichés si le snapshot récent est moins complet. L’absence d’une cote doit être traitée comme une donnée indisponible, et non comme une invitation à réutiliser une ancienne valeur.
+
+Le correctif correspondant a été commité sur `main` du moteur le 27 octobre 2026 (`d76070e`). Les exécutions de validation et de synchronisation doivent réussir avant de considérer le changement comme vérifié de bout en bout.
 
 ## Vérifications après synchronisation ou modification de l'interface
 
