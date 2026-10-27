@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-26T13:22:44.260387+00:00",
+  "generated_at_utc": "2026-10-27T08:58:01.274059+00:00",
   "model": "poisson_baseline_v1",
   "status": "EXPERIMENTAL",
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
-  "analysis_start_utc": "2026-10-26T13:22:21+00:00",
+  "analysis_start_utc": "2026-10-27T07:22:46+00:00",
   "version_backtest": {
     "method": "walk_forward_chronological_since_analysis_change",
     "evaluated_matches": 0,
@@ -16,177 +16,15 @@
   },
   "backtest": {
     "method": "walk_forward_chronological",
-    "evaluated_matches": 962,
+    "evaluated_matches": 967,
     "skipped_matches": 234,
-    "brier_score": 0.614161558478327,
+    "brier_score": 0.6137705960160322,
     "data_issue_count": 0,
     "data_issue_examples": [],
     "publication_approved": false,
     "note": "Backtest descriptif sur la saison la plus récente de chaque compétition. Comparaison de référence et calibration encore nécessaires."
   },
   "upcoming": [
-    {
-      "id": "pt-primeira-liga:m_3AKDbz",
-      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
-      "competition": "Primeira Liga",
-      "competition_id": "pt-primeira-liga",
-      "kickoff": "2026-10-26T18:45:00Z",
-      "home": "Santa Clara",
-      "away": "Benfica",
-      "predicted_outcome": "away",
-      "predicted_label": "2",
-      "probabilities": {
-        "home": 0.26381215,
-        "draw": 0.26398116,
-        "away": 0.47220669
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 676,
-      "home_expected_goals": 1.0157,
-      "away_expected_goals": 1.4543,
-      "status": "upcoming",
-      "odds_1x2": {
-        "home": 9.5,
-        "draw": 4.9,
-        "away": 1.33,
-        "bookmaker": "Unibet",
-        "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T21:02:04.321Z"
-      },
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
-    },
-    {
-      "id": "fr-ligue-1:m_3DY8iO",
-      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
-      "competition": "Ligue 1",
-      "competition_id": "fr-ligue-1",
-      "kickoff": "2026-10-26T19:30:00Z",
-      "home": "Paris Saint-Germain",
-      "away": "Lyon",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.53596318,
-        "draw": 0.22548992,
-        "away": 0.23854691
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 675,
-      "home_expected_goals": 1.8735,
-      "away_expected_goals": 1.1793,
-      "status": "upcoming",
-      "odds_1x2": {
-        "home": 1.41,
-        "draw": 5.0,
-        "away": 6.1,
-        "bookmaker": "Unibet",
-        "source": "Odds-API.io",
-        "fetched_at": "2026-10-25T04:20:46.369587+00:00",
-        "source_updated_at": "2026-10-25T01:44:40.277Z"
-      },
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
-    },
-    {
-      "id": "fr-ligue-2:m_3I8Ig2",
-      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
-      "competition": "Ligue 2",
-      "competition_id": "fr-ligue-2",
-      "kickoff": "2026-10-26T19:45:00Z",
-      "home": "Montpellier",
-      "away": "Red Star",
-      "predicted_outcome": "away",
-      "predicted_label": "2",
-      "probabilities": {
-        "home": 0.36182731,
-        "draw": 0.26652705,
-        "away": 0.37164565
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 375,
-      "home_expected_goals": 1.2677,
-      "away_expected_goals": 1.2885,
-      "status": "upcoming",
-      "odds_1x2": {
-        "home": 2.43,
-        "draw": 3.35,
-        "away": 2.7,
-        "bookmaker": "Unibet",
-        "source": "Odds-API.io",
-        "fetched_at": "2026-10-25T04:20:46.369587+00:00",
-        "source_updated_at": "2026-10-20T08:32:40.509Z"
-      },
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
-    },
-    {
-      "id": "fr-ligue-2:m_1MHDEI",
-      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
-      "competition": "Ligue 2",
-      "competition_id": "fr-ligue-2",
-      "kickoff": "2026-10-26T19:45:00Z",
-      "home": "Boulogne",
-      "away": "Reims",
-      "predicted_outcome": "away",
-      "predicted_label": "2",
-      "probabilities": {
-        "home": 0.27197285,
-        "draw": 0.24742949,
-        "away": 0.48059766
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 375,
-      "home_expected_goals": 1.1477,
-      "away_expected_goals": 1.6085,
-      "status": "upcoming",
-      "odds_1x2": null,
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
-    },
-    {
-      "id": "es-la-liga:m_1XOUXe",
-      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
-      "competition": "La Liga",
-      "competition_id": "es-la-liga",
-      "kickoff": "2026-10-26T20:00:00Z",
-      "home": "Sevilla",
-      "away": "Osasuna",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.44410955,
-        "draw": 0.26763329,
-        "away": 0.28825715
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 849,
-      "home_expected_goals": 1.3974,
-      "away_expected_goals": 1.0707,
-      "status": "upcoming",
-      "odds_1x2": {
-        "home": 1.83,
-        "draw": 3.45,
-        "away": 4.5,
-        "bookmaker": "Unibet",
-        "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T08:23:48.406175+00:00",
-        "source_updated_at": "2026-10-26T07:54:12.364Z"
-      },
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
-    },
     {
       "id": "it-serie-a:m_0Apv0v",
       "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
@@ -2106,40 +1944,6 @@
       "prediction_model_version": "poisson_baseline_v1-66d5d2662f37"
     },
     {
-      "id": "fr-ligue-1:m_0xOQtL",
-      "prediction_created_at": "2026-10-25T05:40:01.516123+00:00",
-      "competition": "Ligue 1",
-      "competition_id": "fr-ligue-1",
-      "kickoff": "2026-10-31T19:45:00Z",
-      "home": "Lorient",
-      "away": "Brest",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.50855104,
-        "draw": 0.22945356,
-        "away": 0.26199541
-      },
-      "actual_outcome": null,
-      "actual_score": null,
-      "correct": null,
-      "history_matches": 677,
-      "home_expected_goals": 1.8226,
-      "away_expected_goals": 1.2489,
-      "status": "upcoming",
-      "odds_1x2": {
-        "home": 2.55,
-        "draw": 3.35,
-        "away": 2.63,
-        "bookmaker": "Unibet",
-        "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T04:24:30.362740+00:00",
-        "source_updated_at": "2026-10-19T11:04:35.831Z"
-      },
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-66d5d2662f37"
-    },
-    {
       "id": "it-serie-a:m_0D0Nv7",
       "prediction_created_at": "2026-10-25T05:40:01.516123+00:00",
       "competition": "Serie A",
@@ -3134,6 +2938,40 @@
       "prediction_model_version": "poisson_baseline_v1-66d5d2662f37"
     },
     {
+      "id": "fr-ligue-1:m_0xOQtL",
+      "prediction_created_at": "2026-10-25T05:40:01.516123+00:00",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-11-02T19:45:00Z",
+      "home": "Lorient",
+      "away": "Brest",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.50855104,
+        "draw": 0.22945356,
+        "away": 0.26199541
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 677,
+      "home_expected_goals": 1.8226,
+      "away_expected_goals": 1.2489,
+      "status": "upcoming",
+      "odds_1x2": {
+        "home": 2.55,
+        "draw": 3.35,
+        "away": 2.63,
+        "bookmaker": "Unibet",
+        "source": "Odds-API.io",
+        "fetched_at": "2026-10-26T04:24:30.362740+00:00",
+        "source_updated_at": "2026-10-19T11:04:35.831Z"
+      },
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-66d5d2662f37"
+    },
+    {
       "id": "fr-ligue-2:m_2coepq",
       "prediction_created_at": "2026-10-26T05:59:18.920210+00:00",
       "competition": "Ligue 2",
@@ -3184,9 +3022,321 @@
       "odds_1x2": null,
       "prediction_snapshot_available": true,
       "prediction_model_version": "poisson_baseline_v1-66d5d2662f37"
+    },
+    {
+      "id": "es-la-liga:m_2P8d0o",
+      "prediction_created_at": "2026-10-27T08:58:01.274059+00:00",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-11-02T20:00:00Z",
+      "home": "Deportivo A Coruña",
+      "away": "Osasuna",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.50230485,
+        "draw": 0.25917782,
+        "away": 0.23851734
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 859,
+      "home_expected_goals": 1.5135,
+      "away_expected_goals": 0.9555,
+      "status": "upcoming",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-5d2fd6343e18"
+    },
+    {
+      "id": "gb-premier-league:m_0eAA1g",
+      "prediction_created_at": "2026-10-27T08:58:01.274059+00:00",
+      "competition": "Premier League",
+      "competition_id": "gb-premier-league",
+      "kickoff": "2026-11-02T20:00:00Z",
+      "home": "Newcastle United",
+      "away": "Everton",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46417336,
+        "draw": 0.25153168,
+        "away": 0.28429496
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 840,
+      "home_expected_goals": 1.5552,
+      "away_expected_goals": 1.1613,
+      "status": "upcoming",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-5d2fd6343e18"
+    },
+    {
+      "id": "pt-primeira-liga:m_0pzdRJ",
+      "prediction_created_at": "2026-10-27T08:58:01.274059+00:00",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-11-02T20:15:00Z",
+      "home": "Benfica",
+      "away": "Alverca",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.62258313,
+        "draw": 0.20318806,
+        "away": 0.17422881
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 685,
+      "home_expected_goals": 2.0985,
+      "away_expected_goals": 1.015,
+      "status": "upcoming",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-5d2fd6343e18"
+    },
+    {
+      "id": "pt-primeira-liga:m_4GpylY",
+      "prediction_created_at": "2026-10-27T08:58:01.274059+00:00",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-11-02T20:15:00Z",
+      "home": "Gil Vicente",
+      "away": "Vitória de Guimarães",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.46668371,
+        "draw": 0.26899552,
+        "away": 0.26432077
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 685,
+      "home_expected_goals": 1.4104,
+      "away_expected_goals": 0.9899,
+      "status": "upcoming",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-5d2fd6343e18"
+    },
+    {
+      "id": "uefa-champions-league:m_31MYPN",
+      "prediction_created_at": "2026-10-27T08:58:01.274059+00:00",
+      "competition": "Ligue des champions UEFA",
+      "competition_id": "uefa-champions-league",
+      "kickoff": "2026-11-03T17:45:00Z",
+      "home": "Shakhtar Donetsk",
+      "away": "Sporting CP",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.42495938,
+        "draw": 0.23614589,
+        "away": 0.33889473
+      },
+      "actual_outcome": null,
+      "actual_score": null,
+      "correct": null,
+      "history_matches": 432,
+      "home_expected_goals": 1.6629,
+      "away_expected_goals": 1.4632,
+      "status": "upcoming",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-5d2fd6343e18"
     }
   ],
   "recent_results": [
+    {
+      "id": "es-la-liga:m_1XOUXe",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
+      "competition": "La Liga",
+      "competition_id": "es-la-liga",
+      "kickoff": "2026-10-26T20:00:00Z",
+      "home": "Sevilla",
+      "away": "Osasuna",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.44410955,
+        "draw": 0.26763329,
+        "away": 0.28825715
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 849,
+      "home_expected_goals": 1.3974,
+      "away_expected_goals": 1.0707,
+      "status": "finished",
+      "odds_1x2": {
+        "home": 1.83,
+        "draw": 3.45,
+        "away": 4.5,
+        "bookmaker": "Unibet",
+        "source": "Odds-API.io",
+        "fetched_at": "2026-10-26T08:23:48.406175+00:00",
+        "source_updated_at": "2026-10-26T07:54:12.364Z"
+      },
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
+    },
+    {
+      "id": "fr-ligue-2:m_3I8Ig2",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-26T19:45:00Z",
+      "home": "Montpellier",
+      "away": "Red Star",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.36182731,
+        "draw": 0.26652705,
+        "away": 0.37164565
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 1,
+        "display": "2–1"
+      },
+      "correct": false,
+      "history_matches": 375,
+      "home_expected_goals": 1.2677,
+      "away_expected_goals": 1.2885,
+      "status": "finished",
+      "odds_1x2": {
+        "home": 2.43,
+        "draw": 3.35,
+        "away": 2.7,
+        "bookmaker": "Unibet",
+        "source": "Odds-API.io",
+        "fetched_at": "2026-10-25T04:20:46.369587+00:00",
+        "source_updated_at": "2026-10-20T08:32:40.509Z"
+      },
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
+    },
+    {
+      "id": "fr-ligue-2:m_1MHDEI",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
+      "competition": "Ligue 2",
+      "competition_id": "fr-ligue-2",
+      "kickoff": "2026-10-26T19:45:00Z",
+      "home": "Boulogne",
+      "away": "Reims",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.27197285,
+        "draw": 0.24742949,
+        "away": 0.48059766
+      },
+      "actual_outcome": "draw",
+      "actual_score": {
+        "home": 1,
+        "away": 1,
+        "display": "1–1"
+      },
+      "correct": false,
+      "history_matches": 375,
+      "home_expected_goals": 1.1477,
+      "away_expected_goals": 1.6085,
+      "status": "finished",
+      "odds_1x2": null,
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
+    },
+    {
+      "id": "fr-ligue-1:m_3DY8iO",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
+      "competition": "Ligue 1",
+      "competition_id": "fr-ligue-1",
+      "kickoff": "2026-10-26T19:30:00Z",
+      "home": "Paris Saint-Germain",
+      "away": "Lyon",
+      "predicted_outcome": "home",
+      "predicted_label": "1",
+      "probabilities": {
+        "home": 0.53596318,
+        "draw": 0.22548992,
+        "away": 0.23854691
+      },
+      "actual_outcome": "home",
+      "actual_score": {
+        "home": 2,
+        "away": 0,
+        "display": "2–0"
+      },
+      "correct": true,
+      "history_matches": 675,
+      "home_expected_goals": 1.8735,
+      "away_expected_goals": 1.1793,
+      "status": "finished",
+      "odds_1x2": {
+        "home": 1.41,
+        "draw": 5.0,
+        "away": 6.1,
+        "bookmaker": "Unibet",
+        "source": "Odds-API.io",
+        "fetched_at": "2026-10-25T04:20:46.369587+00:00",
+        "source_updated_at": "2026-10-25T01:44:40.277Z"
+      },
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
+    },
+    {
+      "id": "pt-primeira-liga:m_3AKDbz",
+      "prediction_created_at": "2026-10-23T15:31:56.673094+00:00",
+      "competition": "Primeira Liga",
+      "competition_id": "pt-primeira-liga",
+      "kickoff": "2026-10-26T18:45:00Z",
+      "home": "Santa Clara",
+      "away": "Benfica",
+      "predicted_outcome": "away",
+      "predicted_label": "2",
+      "probabilities": {
+        "home": 0.26381215,
+        "draw": 0.26398116,
+        "away": 0.47220669
+      },
+      "actual_outcome": "away",
+      "actual_score": {
+        "home": 1,
+        "away": 2,
+        "display": "1–2"
+      },
+      "correct": true,
+      "history_matches": 676,
+      "home_expected_goals": 1.0157,
+      "away_expected_goals": 1.4543,
+      "status": "finished",
+      "odds_1x2": {
+        "home": 9.5,
+        "draw": 4.9,
+        "away": 1.33,
+        "bookmaker": "Unibet",
+        "source": "Odds-API.io",
+        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
+        "source_updated_at": "2026-10-25T21:02:04.321Z"
+      },
+      "prediction_snapshot_available": true,
+      "prediction_model_version": "poisson_baseline_v1-bb49a8eea007"
+    },
     {
       "id": "us-mls:m_0N9lXC",
       "prediction_created_at": null,
@@ -18460,165 +18610,15 @@
       "odds_1x2": null,
       "prediction_snapshot_available": false,
       "prediction_model_version": null
-    },
-    {
-      "id": "be-first-division-a:m_16fC8r",
-      "prediction_created_at": null,
-      "competition": "Belgian Pro League",
-      "competition_id": "be-first-division-a",
-      "kickoff": "2026-09-02T18:30:00Z",
-      "home": "St.Truiden",
-      "away": "Union St.Gilloise",
-      "predicted_outcome": "away",
-      "predicted_label": "2",
-      "probabilities": {
-        "home": 0.34767373,
-        "draw": 0.26232024,
-        "away": 0.39000603
-      },
-      "actual_outcome": "away",
-      "actual_score": {
-        "home": 0,
-        "away": 3,
-        "display": "0–3"
-      },
-      "correct": true,
-      "history_matches": 658,
-      "home_expected_goals": null,
-      "away_expected_goals": null,
-      "status": "finished",
-      "odds_1x2": null,
-      "prediction_snapshot_available": false,
-      "prediction_model_version": null
-    },
-    {
-      "id": "es-la-liga:m_0eC6YE",
-      "prediction_created_at": null,
-      "competition": "La Liga",
-      "competition_id": "es-la-liga",
-      "kickoff": "2026-08-31T19:30:00Z",
-      "home": "Barcelona",
-      "away": "Rayo Vallecano",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.6379322,
-        "draw": 0.20727186,
-        "away": 0.15479594
-      },
-      "actual_outcome": "home",
-      "actual_score": {
-        "home": 5,
-        "away": 2,
-        "display": "5–2"
-      },
-      "correct": true,
-      "history_matches": 789,
-      "home_expected_goals": null,
-      "away_expected_goals": null,
-      "status": "finished",
-      "odds_1x2": null,
-      "prediction_snapshot_available": false,
-      "prediction_model_version": null
-    },
-    {
-      "id": "pt-primeira-liga:m_4Bivop",
-      "prediction_created_at": null,
-      "competition": "Primeira Liga",
-      "competition_id": "pt-primeira-liga",
-      "kickoff": "2026-08-31T19:15:00Z",
-      "home": "Benfica",
-      "away": "Estoril",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.61665983,
-        "draw": 0.20009553,
-        "away": 0.18324463
-      },
-      "actual_outcome": "home",
-      "actual_score": {
-        "home": 2,
-        "away": 1,
-        "display": "2–1"
-      },
-      "correct": true,
-      "history_matches": 635,
-      "home_expected_goals": null,
-      "away_expected_goals": null,
-      "status": "finished",
-      "odds_1x2": null,
-      "prediction_snapshot_available": false,
-      "prediction_model_version": null
-    },
-    {
-      "id": "pt-primeira-liga:m_05E2w4",
-      "prediction_created_at": null,
-      "competition": "Primeira Liga",
-      "competition_id": "pt-primeira-liga",
-      "kickoff": "2026-08-31T19:15:00Z",
-      "home": "Braga",
-      "away": "Vitória de Guimarães",
-      "predicted_outcome": "home",
-      "predicted_label": "1",
-      "probabilities": {
-        "home": 0.52989653,
-        "draw": 0.23987679,
-        "away": 0.23022668
-      },
-      "actual_outcome": "home",
-      "actual_score": {
-        "home": 1,
-        "away": 0,
-        "display": "1–0"
-      },
-      "correct": true,
-      "history_matches": 635,
-      "home_expected_goals": null,
-      "away_expected_goals": null,
-      "status": "finished",
-      "odds_1x2": null,
-      "prediction_snapshot_available": false,
-      "prediction_model_version": null
-    },
-    {
-      "id": "gb-premier-league:m_12AMnW",
-      "prediction_created_at": null,
-      "competition": "Premier League",
-      "competition_id": "gb-premier-league",
-      "kickoff": "2026-08-31T19:00:00Z",
-      "home": "Aston Villa",
-      "away": "Arsenal",
-      "predicted_outcome": "away",
-      "predicted_label": "2",
-      "probabilities": {
-        "home": 0.35827569,
-        "draw": 0.25721732,
-        "away": 0.38450698
-      },
-      "actual_outcome": "away",
-      "actual_score": {
-        "home": 0,
-        "away": 1,
-        "display": "0–1"
-      },
-      "correct": true,
-      "history_matches": 779,
-      "home_expected_goals": null,
-      "away_expected_goals": null,
-      "status": "finished",
-      "odds_1x2": null,
-      "prediction_snapshot_available": false,
-      "prediction_model_version": null
     }
   ],
   "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives.",
   "analysis_version": "poisson_baseline_v1-5d2fd6343e18",
   "analysis_version_hash": "5d2fd6343e18",
-  "analysis_version_since_utc": "2026-10-26T13:22:21+00:00",
+  "analysis_version_since_utc": "2026-10-27T07:22:46+00:00",
   "first_archived_prediction_at_utc": "2026-10-23T15:31:56.673094+00:00",
-  "latest_archived_prediction_at_utc": "2026-10-26T05:59:18.920210+00:00",
-  "analysis_source_commit": "68e50c43aa5762afdf63cb38639a2f3ac4663f85",
+  "latest_archived_prediction_at_utc": "2026-10-27T08:58:01.274059+00:00",
+  "analysis_source_commit": "a23cb31832836e45d32b8ccaff79a9f19a9f3006",
   "model_history": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
@@ -18655,15 +18655,15 @@
       "model": "poisson_baseline_v1",
       "analysis_version_hash": "5d2fd6343e18",
       "first_seen_utc": "2026-10-26T05:59:42.039130+00:00",
-      "last_evaluated_utc": "2026-10-26T13:22:45.744054+00:00",
-      "source_commit": "68e50c43aa5762afdf63cb38639a2f3ac4663f85",
-      "analysis_start_utc": "2026-10-26T13:22:21+00:00",
+      "last_evaluated_utc": "2026-10-27T08:58:03.016576+00:00",
+      "source_commit": "a23cb31832836e45d32b8ccaff79a9f19a9f3006",
+      "analysis_start_utc": "2026-10-27T07:22:46+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,
       "evaluation_status": "awaiting_matches",
-      "reference_evaluated_matches": 962,
-      "reference_brier_score": 0.614161558478327
+      "reference_evaluated_matches": 967,
+      "reference_brier_score": 0.6137705960160322
     }
   ]
 }
