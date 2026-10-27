@@ -138,7 +138,10 @@ function oddsMarketLabel(name){
  return labels[key]||String(name||"Marché non précisé");
 }
 function oddsText(r){
- const event=state.oddsData?.events?.[String(r.id)]||null;
+ const oddsEvents=state.oddsData?.events||{};
+ const normOddsTeam=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+ const directEvent=oddsEvents[String(r.id)]||null;
+ const event=directEvent||Object.values(oddsEvents).find(e=>normOddsTeam(e.home_team)===normOddsTeam(r.home)&&normOddsTeam(e.away_team)===normOddsTeam(r.away)&&(!e.kickoff_utc||!r.kickoff||String(e.kickoff_utc).slice(0,10)===String(r.kickoff).slice(0,10)))||null;
  const markets=Array.isArray(event?.odds_observations)?event.odds_observations:[];
  if(!markets.length){
   const o=r.odds_1x2;
