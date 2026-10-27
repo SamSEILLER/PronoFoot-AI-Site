@@ -128,7 +128,7 @@ function teamImage(r,side){
  }
  if(!url)url=teamLogos.get(normalizeTeamName(wanted))||"";
  const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
- return url?'<img src="'+esc(url)+'" alt="'+esc(wanted)+'" loading="lazy" onerror="this.style.display=\\'none\\';this.nextElementSibling.style.display=\\'grid\\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
+ return url?'<img src="'+esc(url)+'" alt="'+esc(wanted)+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
 }
 function supplementaryHTML(r){
  const entry=detailEntryFor(r);
