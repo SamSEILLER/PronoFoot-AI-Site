@@ -248,19 +248,18 @@ function overviewPitchHTML(r){
   '<div class="mini-grid"><div class="mini-card"><h3>'+icon("trend","icon small")+' Forme récente</h3>'+renderRecentForm(r)+'</div><div class="mini-card"><h3>'+icon("users","icon small")+' Confrontations directes</h3>'+renderHeadToHead(r)+'</div><div class="mini-card"><h3>💡 Tendances clés</h3><div class="trend"><span class="trend-icon">●</span>Probabilités du modèle expérimental</div><div class="trend"><span class="trend-icon">ⓘ</span>Pas de value vérifiable sans cote comparable</div><div class="trend"><span class="trend-icon">ⓘ</span>Compositions à confirmer avant le coup d’envoi</div></div></div>';
 }
 function renderHeadToHead(r){
- const norm=s=>String(s||"").toLocaleLowerCase("fr").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+ const norm=s=>String(s||"").toLocaleLowerCase("fr").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
  const home=r.home_team||r.homeTeam||r.home||{},away=r.away_team||r.awayTeam||r.away||{};
  const name=t=>typeof t==="string"?t:(t.name||t.team_name||t.title||"");
  const a=norm(name(home)),b=norm(name(away));
- const comp=r.competition_id||r.competitionId||"";
  const pairs=state.headToHead&&state.headToHead.pairs||{};
- const pair=Object.values(pairs).find(p=>(!comp||p.competition_id===comp)&&((p.team_a===a&&p.team_b===b)||(p.team_a===b&&p.team_b===a)));
- if(!pair||!pair.matches||!pair.matches.length)return '<p class="status-line">Aucune confrontation directe terminée trouvée dans les archives disponibles pour cette compétition.</p>';
+ const pair=Object.values(pairs).find(p=>(p.team_a===a&&p.team_b===b)||(p.team_a===b&&p.team_b===a));
+ if(!pair||!Array.isArray(pair.matches)||!pair.matches.length)return '<p class="status-line">Aucune confrontation directe terminée trouvée dans les archives disponibles, toutes compétitions confondues.</p>';
  const matches=pair.matches.slice(0,5);
- const wins=matches.filter(m=>norm(m.home)===a?m.score_home>m.score_away:m.score_away>m.score_home).length;
- const draws=matches.filter(m=>m.score_home===m.score_away).length;
+ const wins=matches.filter(m=>norm(m.home)===a?Number(m.score_home)>Number(m.score_away):Number(m.score_away)>Number(m.score_home)).length;
+ const draws=matches.filter(m=>Number(m.score_home)===Number(m.score_away)).length;
  const losses=matches.length-wins-draws;
- return '<p class="h2h-summary">'+matches.length+' confrontation'+(matches.length>1?'s':'')+' récente'+(matches.length>1?'s':'')+' dans les archives · '+wins+' V · '+draws+' N · '+losses+' D pour '+esc(name(home))+'</p><div class="h2h-list">'+matches.map(m=>'<div class="h2h-match"><span>'+esc(new Date(m.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"}))+'</span><strong>'+esc(m.home)+' '+m.score_home+'–'+m.score_away+' '+esc(m.away)+'</strong><small>'+esc(m.season||"")+'</small></div>').join('')+'</div>';
+ return '<p class="h2h-summary">'+matches.length+' confrontation'+(matches.length>1?'s':'')+' récente'+(matches.length>1?'s':'')+' dans les archives · '+wins+' V · '+draws+' N · '+losses+' D pour '+esc(name(home))+'</p><div class="h2h-list">'+matches.map(m=>'<div class="h2h-match"><span>'+esc(new Date(m.date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"}))+'</span><strong>'+esc(m.home)+' '+m.score_home+'–'+m.score_away+' '+esc(m.away)+'</strong><small>'+esc(m.competition_name||m.competition_id||"")+(m.season?' · '+esc(m.season):'')+'</small></div>').join('')+'</div>';
 }
 function renderRecentForm(r){
   const data=state.recentForm&&state.recentForm.teams?state.recentForm.teams:{};
