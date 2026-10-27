@@ -104,12 +104,22 @@ function detailEntryFor(r){
  return {};
 }
 function teamImage(r,side){
- const entry=detailEntryFor(r);
- const endpoint=entry.endpoints?.detail?.data||{};
- const lineup=entry.endpoints?.lineups?.data||{};
- const team=side==="home"?(endpoint.home_team||lineup.home_team||entry.match?.home_team):(endpoint.away_team||lineup.away_team||entry.match?.away_team);
- const url=team?.image_url;
- return url&&/^https:\/\//i.test(url)?'<img src="'+esc(url)+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'"><span class="crest-fallback" style="display:none">'+esc(initials(side==="home"?r.home:r.away))+'</span>':'<span class="crest-fallback">'+esc(initials(side==="home"?r.home:r.away))+'</span>';
+ const wanted=side==="home"?r.home:r.away;
+ const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+ const key=norm(wanted);
+ const matches=Object.values(state.details?.matches||{});
+ let url="";
+ for(const entry of matches){
+  const sources=[entry?.match,entry?.endpoints?.detail?.data,entry?.endpoints?.lineups?.data];
+  for(const source of sources){
+   const teams=[source?.home_team,source?.away_team];
+   const team=teams.find(t=>norm(t?.name)===key);
+   if(team?.image_url&&/^https:\/\//i.test(team.image_url)){url=team.image_url;break}
+  }
+  if(url)break;
+ }
+ const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
+ return url?'<img src="'+esc(url)+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
 }
 function supplementaryHTML(r){
  const entry=detailEntryFor(r);
