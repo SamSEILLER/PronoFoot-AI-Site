@@ -119,9 +119,16 @@ function detailEntryFor(r){
 }
 function teamImage(r,side){
  const wanted=side==="home"?r.home:r.away;
- const url=teamLogos.get(normalizeTeamName(wanted))||"";
+ const entry=detailEntryFor(r);
+ const sources=[entry?.match,entry?.endpoints?.detail?.data,entry?.endpoints?.lineups?.data];
+ let url="";
+ for(const source of sources){
+  const team=side==="home"?source?.home_team:source?.away_team;
+  if(team?.image_url&&/^https:\/\//i.test(team.image_url)){url=team.image_url;break}
+ }
+ if(!url)url=teamLogos.get(normalizeTeamName(wanted))||"";
  const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
- return url?'<img src="'+esc(url)+'" alt="'+esc(wanted)+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
+ return url?'<img src="'+esc(url)+'" alt="'+esc(wanted)+'" loading="lazy" onerror="this.style.display=\\'none\\';this.nextElementSibling.style.display=\\'grid\\'">'+fallback.replace('crest-fallback','crest-fallback" style="display:none') : fallback;
 }
 function supplementaryHTML(r){
  const entry=detailEntryFor(r);
