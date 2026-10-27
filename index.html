@@ -86,8 +86,25 @@ function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"]
 function renderList(){const rows=visibleRows();$("#matchCount").textContent=rows.length+" match"+(rows.length>1?"s":"");$("#listTitle").textContent=state.range==="today"?"Matchs du jour":state.range==="tomorrow"?"Matchs de demain":"Matchs à venir";if(!rows.length){$("#matchList").innerHTML='<div class="empty">Aucun match trouvé pour ce filtre. Essayez « Tous les matchs » ou vérifiez la prochaine mise à jour des données.</div>';$("#detailContent").innerHTML='<div class="empty">Aucune rencontre à afficher avec ces filtres.</div>';return}if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
 $("#matchList").innerHTML=rows.map(r=>{const d=dateOf(r),c=r.competition||"Compétition indisponible";return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'"><div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(r.round||r.matchday||r.competition_id||"Compétition")+'</div></div></div><div class="kickoff">'+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+'</div><div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div><div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+'</article>'}).join("");renderDetail(rows.find(r=>r.id===state.selected)||rows[0])}
 function oddsText(r){const o=r.odds_1x2;if(!o||!["home","draw","away"].every(k=>Number.isFinite(Number(o[k]))))return '<div class="empty">Cotes 1/N/2 indisponibles dans les données enregistrées pour ce match.</div>';return '<div class="big-probs">'+[["1","home"],["N","draw"],["2","away"]].map(([l,k])=>'<div class="big-prob"><span>'+l+' · '+esc(o.bookmaker||"Bookmaker")+'</span><strong>'+Number(o[k]).toFixed(2)+'</strong></div>').join("")+'</div><p class="status-line">Source : '+esc(o.source||"source non précisée")+' · relevé '+esc(o.fetched_at||"horodatage indisponible")+'</p>'}
+function detailEntryFor(r){
+ const matches=state.details?.matches||{};
+ const direct=matches[String(r.id)];
+ if(direct)return direct;
+ const norm=v=>String(v||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+ const home=norm(r.home),away=norm(r.away),kickoff=String(r.kickoff||"").slice(0,10);
+ for(const entry of Object.values(matches)){
+  const m=entry?.match||{};
+  const eh=norm(m.home_team?.name),ea=norm(m.away_team?.name);
+  if(eh===home&&ea===away&&(!kickoff||String(m.kickoff||"").slice(0,10)===kickoff))return entry;
+ }
+ for(const entry of Object.values(matches)){
+  const m=entry?.match||{};
+  if(norm(m.home_team?.name)===home&&norm(m.away_team?.name)===away)return entry;
+ }
+ return {};
+}
 function teamImage(r,side){
- const entry=state.details?.matches?.[String(r.id)]||{};
+ const entry=detailEntryFor(r);
  const endpoint=entry.endpoints?.detail?.data||{};
  const lineup=entry.endpoints?.lineups?.data||{};
  const team=side==="home"?(endpoint.home_team||lineup.home_team||entry.match?.home_team):(endpoint.away_team||lineup.away_team||entry.match?.away_team);
@@ -95,7 +112,7 @@ function teamImage(r,side){
  return url&&/^https:\/\//i.test(url)?'<img src="'+esc(url)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'"><span class="crest-fallback" style="display:none">'+esc(initials(side==="home"?r.home:r.away))+'</span>':'<span class="crest-fallback">'+esc(initials(side==="home"?r.home:r.away))+'</span>';
 }
 function supplementaryHTML(r){
- const entry=state.details?.matches?.[String(r.id)]||{};
+ const entry=detailEntryFor(r);
  const eps=entry.endpoints||{};
  const payload=k=>eps[k]?.status==="available"?eps[k].data:null;
  const detail=payload("detail")||{},lineups=payload("lineups"),stats=payload("stats"),shots=payload("shots"),events=payload("events");
