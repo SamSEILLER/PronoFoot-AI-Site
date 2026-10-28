@@ -191,6 +191,28 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 }
 @media(max-width:430px){.match-card{grid-template-columns:minmax(65px,76px) 30px minmax(0,1fr) 90px 8px;gap:3px;padding:4px}.round{font-size:8px}.team-name{max-width:43px;font-size:9px}.crest{width:24px;height:24px;flex-basis:24px}.teams{gap:2px}.vs{font-size:11px}.prob{font-size:8px}.prob strong{font-size:8px}}
 
+
+/* Liste des matchs — dimensions alignées sur la maquette fournie */
+.match-list{gap:6px}
+.match-card{grid-template-columns:minmax(105px,122px) 42px minmax(150px,1fr) 126px 12px;gap:6px;min-height:58px;padding:5px 8px;border-radius:8px}
+.league{gap:6px}
+.flag{font-size:17px}
+.flag img{width:19px;height:19px}
+.league-name{font-size:12px;font-weight:800}
+.round{font-size:10px;margin-top:0}
+.kickoff{font-size:12px}
+.teams{gap:5px}
+.team{gap:4px}
+.team-name{font-size:12px}
+.crest{width:31px;height:31px;flex-basis:31px}
+.vs{font-size:11px}
+.prob-row{gap:5px}
+.prob{min-height:36px;padding:3px 1px;border-radius:6px;font-size:11px}
+.prob strong{font-size:10px;margin-bottom:1px}
+@media(max-width:1120px){.match-card{grid-template-columns:minmax(95px,112px) 38px minmax(125px,1fr) 126px 12px;gap:5px;padding:5px 7px;min-height:57px}.crest{width:29px;height:29px;flex-basis:29px}.team-name{font-size:11px}}
+@media(max-width:650px){.match-card{grid-template-columns:minmax(78px,92px) 34px minmax(0,1fr) 105px 10px;grid-template-rows:1fr;gap:4px;min-height:55px;padding:5px}.league{grid-column:auto;grid-row:auto;gap:4px}.flag{font-size:15px}.flag img{width:17px;height:17px}.league-name{font-size:10px}.round{font-size:9px}.kickoff{grid-column:auto;grid-row:auto;font-size:10px}.teams{grid-column:auto;grid-row:auto;gap:3px}.team{gap:3px}.team-name{max-width:54px;font-size:10px}.crest{width:24px;height:24px;flex-basis:24px}.vs{font-size:9px}.prob-row{grid-column:auto;grid-row:auto;max-width:none;gap:2px}.prob{min-height:32px;font-size:9px}.prob strong{font-size:9px}.chevron{grid-column:auto;grid-row:auto;width:11px;height:16px}}
+@media(max-width:430px){.match-card{grid-template-columns:minmax(68px,78px) 30px minmax(0,1fr) 88px 9px;gap:3px;padding:4px}.team-name{max-width:42px;font-size:9px}.crest{width:21px;height:21px;flex-basis:21px}.prob-row{gap:1px}.prob{font-size:8px;padding:2px 0}.prob strong{font-size:8px}}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -271,7 +293,7 @@ const fmtTime=d=>d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-dig
 const parseOddsTimestamp=value=>{if(typeof value!=="string"||!value.trim())return null;const d=new Date(value);return Number.isNaN(d.getTime())?null:d};
 const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Europe/Paris"}).format(d):"horodatage indisponible"};
 const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
-const flag=(n,id="")=>{const s=(String(n||"")+" "+String(id||"")).toLowerCase();return /(^|[^a-z])(fr|france|ligue\s*[12]|fr-ligue)([^a-z]|$)/.test(s)?"🇫🇷":/(^|[^a-z])(gb|eng|england|premier league|epl)([^a-z]|$)/.test(s)?"🏴":/(^|[^a-z])(de|germany|allemagne|bundesliga)([^a-z]|$)/.test(s)?"🇩🇪":/(^|[^a-z])(es|spain|espagne|la liga)([^a-z]|$)/.test(s)?"🇪🇸":/(^|[^a-z])(it|italy|italie|serie a)([^a-z]|$)/.test(s)?"🇮🇹":/(^|[^a-z])(be|belg|jupiler)([^a-z]|$)/.test(s)?"🇧🇪":/(^|[^a-z])(pt|portugal|primeira)([^a-z]|$)/.test(s)?"🇵🇹":/(^|[^a-z])(us|mls|united states)([^a-z]|$)/.test(s)?"🇺🇸":/champions league/.test(s)?"🇪🇺":'<img src="./assets/football.svg" alt="" aria-hidden="true" width="24" height="24">'};return /ligue\s*[12]|france|fr-ligue/.test(s)?"🇫🇷":/premier league|england|epl/.test(s)?"🏴":/bundesliga|germany|allemagne/.test(s)?"🇩🇪":/la liga|spain|espagne/.test(s)?"🇪🇸":/serie a|italy|italie|it-serie-a/.test(s)?"🇮🇹":/champions league/.test(s)?"🏆":/belg|jupiler/.test(s)?"🇧🇪":/primeira|portugal/.test(s)?"🇵🇹":/mls|major league soccer|united states|us-mls/.test(s)?"🇺🇸":'<img src="./assets/football.svg" alt="" aria-hidden="true" width="24" height="24">'};
+const flag=(n,id="")=>{const s=(String(n||"")+" "+String(id||"")).toLowerCase();return /(^|[^a-z])(fr|france|ligue\\s*[12]|fr-ligue)([^a-z]|$)/.test(s)?"🇫🇷":/(^|[^a-z])(gb|eng|england|premier league|epl)([^a-z]|$)/.test(s)?"🏴":/(^|[^a-z])(de|germany|allemagne|bundesliga)([^a-z]|$)/.test(s)?"🇩🇪":/(^|[^a-z])(es|spain|espagne|la liga)([^a-z]|$)/.test(s)?"🇪🇸":/(^|[^a-z])(it|italy|italie|serie a)([^a-z]|$)/.test(s)?"🇮🇹":/(^|[^a-z])(be|belg|jupiler)([^a-z]|$)/.test(s)?"🇧🇪":/(^|[^a-z])(pt|portugal|primeira)([^a-z]|$)/.test(s)?"🇵🇹":/(^|[^a-z])(us|mls|united states)([^a-z]|$)/.test(s)?"🇺🇸":/champions league/.test(s)?"🇪🇺":'<img src="./assets/football.svg" alt="" aria-hidden="true" width="24" height="24">'};
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
