@@ -319,6 +319,30 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .league-name{font-size:9px}.round{font-size:8px}
 }
 
+
+/* Liste des matchs : compétition sur la première ligne, date/heure dessous */
+.match-card{grid-template-columns:minmax(145px,190px) minmax(0,1fr) 126px 13px;gap:8px;min-height:62px;padding:6px 9px}
+.league{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:4px;min-width:0}
+.league-top{display:flex;align-items:center;justify-content:flex-start;gap:7px;min-width:0}
+.league-top .flag{width:20px;height:15px;flex:0 0 20px}
+.league-top .flag img{display:block;width:20px;height:14px;object-fit:cover;border-radius:1px}
+.league-name{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-date{display:flex;align-items:center;gap:4px;margin:0;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap}
+.match-date .icon{width:12px;height:12px;flex:0 0 12px}
+.match-date-separator{color:#8aa0bb}
+.round,.league-meta,.kickoff{display:none!important}
+.teams{justify-content:space-between;gap:7px}
+@media(max-width:1120px){.match-card{grid-template-columns:minmax(130px,165px) minmax(0,1fr) 120px 12px;gap:6px}.match-date{font-size:10px}}
+@media(max-width:650px){
+ .match-card{grid-template-columns:minmax(112px,140px) minmax(0,1fr) 100px 10px;gap:5px;padding:6px;min-height:58px}
+ .league{gap:4px}.league-top{gap:5px}.league-name{font-size:10px}
+ .match-date{font-size:8px;gap:2px}.match-date .icon{width:10px;height:10px;flex-basis:10px}
+ .flag,.league-top .flag{width:17px;height:13px;flex-basis:17px}.league-top .flag img{width:17px;height:11px}
+ .crest{width:27px;height:27px;flex-basis:27px}.team{gap:3px}.team-name{font-size:10px}
+ .prob-row{gap:3px}.prob{font-size:9px;padding:3px 1px}.prob strong{font-size:9px}
+}
+@media(max-width:430px){.match-card{grid-template-columns:minmax(100px,118px) minmax(0,1fr) 90px 9px;gap:4px}.match-date{font-size:7px}.team-name{font-size:9px}.crest{width:23px;height:23px;flex-basis:23px}}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -400,17 +424,17 @@ const parseOddsTimestamp=value=>{if(typeof value!=="string"||!value.trim())retur
 const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Europe/Paris"}).format(d):"horodatage indisponible"};
 const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
 const flag=(n,id="")=>{
- const s=(String(n||"")+" "+String(id||"")).toLowerCase();
+ const s=(String(n||"")+" "+String(id||"")).toLowerCase().replace(/[_-]+/g," ");
  const country=/ligue\s*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
+  :/serie\s*a|italy|italie|(^|[^a-z])it([^a-z]|$)/.test(s)?"it"
   :/premier league|england|(^|[^a-z])(gb|eng|epl)([^a-z]|$)/.test(s)?"gb"
   :/bundesliga|germany|allemagne|(^|[^a-z])de([^a-z]|$)/.test(s)?"de"
   :/la liga|spain|espagne|(^|[^a-z])es([^a-z]|$)/.test(s)?"es"
-  :/serie a|italy|italie|(^|[^a-z])it([^a-z]|$)/.test(s)?"it"
   :/belg|jupiler|(^|[^a-z])be([^a-z]|$)/.test(s)?"be"
   :/portugal|primeira|(^|[^a-z])pt([^a-z]|$)/.test(s)?"pt"
   :/mls|united states|(^|[^a-z])us([^a-z]|$)/.test(s)?"us"
-  :/champions league/.test(s)?"eu":"unknown";
- return '<img src="./assets/flags/'+country+'.svg" alt="" aria-hidden="true" width="20" height="14">';
+  :/champions league|europa league|conference league/.test(s)?"eu":"";
+ return country?'<img src="./assets/flags/'+country+'.svg" alt="" aria-hidden="true" width="20" height="14">':"";
 };
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
@@ -429,13 +453,10 @@ function renderList(){
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const dateText=d?new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"numeric",month:"short",year:"numeric"}).format(d):"Date indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
-  const entry=detailEntryFor(r)||{};
-  const detail=entry.match||entry.endpoints?.detail?.data||{};
-  const roundText=r.round||r.matchday||r.round_name||detail.round_name||detail.matchday||"Journée non renseignée";
   return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
    '<div class="league">'+
-    '<div class="league-top"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="match-date"><span class="match-date-day">'+esc(dateText)+'</span><span class="match-date-separator">·</span><span class="match-date-time">'+esc(timeText)+'</span>'+icon("clock","icon small")+'</div></div>'+
-    '<div class="league-meta"><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(String(roundText).match(/^journée/i)?roundText:"Journée "+roundText)+'</div></div>'+
+    '<div class="league-top"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-name">'+esc(c)+'</div></div>'+
+    '<div class="match-date"><span class="match-date-day">'+esc(dateText)+'</span><span class="match-date-separator">·</span><span class="match-date-time">'+esc(timeText)+'</span>'+icon("clock","icon small")+'</div>'+
    '</div>'+
    '<div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+
