@@ -350,7 +350,7 @@ const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new
 const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
 const flag=(n,id="")=>{
  const s=(String(n||"")+" "+String(id||"")).toLowerCase();
- const country=/ligue\\s*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
+ const country=/ligue\s*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
   :/premier league|england|(^|[^a-z])(gb|eng|epl)([^a-z]|$)/.test(s)?"gb"
   :/bundesliga|germany|allemagne|(^|[^a-z])de([^a-z]|$)/.test(s)?"de"
   :/la liga|spain|espagne|(^|[^a-z])es([^a-z]|$)/.test(s)?"es"
