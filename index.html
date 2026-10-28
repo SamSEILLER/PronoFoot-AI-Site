@@ -390,10 +390,28 @@ function renderRecentForm(r){
     if(exact)return data[exact];
     const aliases={"us sassuolo calcio":"sassuolo","sassuolo calcio":"sassuolo","sassuolo":"sassuolo","fc internazionale milano":"inter","inter milan":"inter","inter milano":"inter","internazionale milano":"inter","internazionale":"inter","ac milan":"milan","paris saint germain":"paris saint germain","psg":"paris saint germain"};
     if(aliases[key]&&data[aliases[key]])return data[aliases[key]];
-    const close=keys.find(k=>{const n=norm(data[k].name||k);return n.length>4  const targetCompetition=String(r.competition_id||r.competitionId||"").trim().toLowerCase();
-  const competitionLabel=id=>String(id||"").replace(/-/g," ").replace(/\\b\\w/g,s=>s.toUpperCase());
-  const row=(team,t,fallback)=>{const label=(typeof team==="string"?team:(team.name||team.team_name||team.title||""))||fallback;const logo=(typeof team==="object"&&team.image_url)||teamLogos.get(normalizeTeamName(label))||"";const logoHTML=logo&&/^https:\/\//i.test(logo)?'<img class="recent-team-logo" src="'+esc(logo)+'" alt="" loading="lazy">':'<span class="recent-team-logo-placeholder">'+esc(label.slice(0,1).toUpperCase())+'</span>';const vals=t&&Array.isArray(t.matches)?t.matches:[];const results=vals.length?vals.map(x=>{const matchCompetition=String(x.competition_id||"").trim().toLowerCase();const otherCompetition=Boolean(targetCompetition&&matchCompetition&&targetCompetition!==matchCompetition);const cls='form-result form-'+String(x.result||"").toLowerCase()+(otherCompetition?' form-other-competition':"");const tooltip=(x.opponent||"Adversaire")+" · "+(x.date||"")+(otherCompetition?" · Autre compétition : "+competitionLabel(x.competition_id):"");return '<span class="'+cls+'" title="'+esc(tooltip)+'"'+(otherCompetition?' aria-label="'+esc((x.result||"")+" — autre compétition : "+competitionLabel(x.competition_id))+'"':"")+'>'+esc(x.result||"")+'</span>'}).join(''):'<span class="status-line">Aucun résultat disponible pour cette saison</span>';return '<div class="recent-team"><div class="recent-team-heading">'+logoHTML+'<strong>'+esc(label)+'</strong></div><div class="recent-results">'+results+'</div></div>'};eam-heading">'+logoHTML+'<strong>'+esc(label)+'</strong></div><div class="recent-results">'+results+'</div></div>'};
-  return '<div class="recent-form-direction">Du plus ancien au plus récent →</div>'+row(home,a,"Équipe à domicile")+row(away,b,"Équipe à l’extérieur")
+    const close=keys.find(k=>{const n=norm(data[k].name||k);return n.length>4&&(n.includes(key)||key.includes(n));});
+    return close?data[close]:null;
+  };
+  const a=find(home),b=find(away);
+  const targetCompetition=String(r.competition_id||r.competitionId||"").trim().toLowerCase();
+  const competitionLabel=id=>String(id||"").replace(/-/g," ").replace(/\b\w/g,s=>s.toUpperCase());
+  const row=(team,t,fallback)=>{
+    const label=(typeof team==="string"?team:(team.name||team.team_name||team.title||""))||fallback;
+    const logo=(typeof team==="object"&&team.image_url)||teamLogos.get(normalizeTeamName(label))||"";
+    const logoHTML=logo&&/^https:\/\//i.test(logo)?'<img class="recent-team-logo" src="'+esc(logo)+'" alt="" loading="lazy">':'<span class="recent-team-logo-placeholder">'+esc(label.slice(0,1).toUpperCase())+'</span>';
+    const vals=t&&Array.isArray(t.matches)?t.matches:[];
+    const results=vals.length?vals.map(x=>{
+      const matchCompetition=String(x.competition_id||"").trim().toLowerCase();
+      const otherCompetition=Boolean(targetCompetition&&matchCompetition&&targetCompetition!==matchCompetition);
+      const cls="form-result form-"+String(x.result||"").toLowerCase()+(otherCompetition?" form-other-competition":"");
+      const tooltip=(x.opponent||"Adversaire")+" · "+(x.date||"")+(otherCompetition?" · Autre compétition : "+competitionLabel(x.competition_id):"");
+      const aria=otherCompetition?' aria-label="'+esc((x.result||"")+" — autre compétition : "+competitionLabel(x.competition_id))+'"':"";
+      return '<span class="'+cls+'" title="'+esc(tooltip)+'"'+aria+'>'+esc(x.result||"")+'</span>';
+    }).join(""):'<span class="status-line">Aucun résultat disponible pour cette saison</span>';
+    return '<div class="recent-team"><div class="recent-team-heading">'+logoHTML+'<strong>'+esc(label)+'</strong></div><div class="recent-results">'+results+'</div></div>';
+  };
+  return '<div class="recent-form-direction">Du plus ancien au plus récent →</div>'+row(home,a,"Équipe à domicile")+row(away,b,"Équipe à l’extérieur");
 }
 function renderKeyTrends(r){
  const items=[];
