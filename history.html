@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#243744">
+<link rel="icon" type="image/svg+xml" href="./assets/football-ai-circuit.svg">
+<title>Historique des rencontres — PronoFoot AI</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--line:#e5edf7;--bg:#f3f8fc;--panel:#ffffffd9}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.45;background:linear-gradient(180deg,#f5f9fd 0,#eef5fa 100%);min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}.icon{width:21px;height:21px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.topbar{min-height:86px;padding:12px 20px;display:flex;align-items:center;gap:25px;color:#f9fbff;background:linear-gradient(110deg,#1c2c38,#293b48 57%,#1b303e);box-shadow:0 2px 8px #172e3b18}.brand{display:flex;align-items:center;gap:12px;min-width:270px;text-decoration:none;color:#fff}.brand-logo{width:52px;height:52px}.brand-name{font-size:30px;line-height:1;font-weight:800;letter-spacing:-1px;white-space:nowrap}.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:11px;letter-spacing:1.2px}.nav{display:flex;align-items:center;gap:5px;flex:1}.nav a{padding:13px 14px;display:flex;align-items:center;gap:8px;border-radius:9px;text-decoration:none;color:#f1f5f9;white-space:nowrap}.nav a.active{background:#ffffff0d;color:#91edc1;position:relative}.nav a.active:after{content:"";height:4px;position:absolute;bottom:0;left:14px;right:14px;background:#08c977;border-radius:5px}.api-status{border:1px solid #087f55;border-radius:28px;padding:9px 14px;background:#006a4626;color:#c7f7dd;font-size:12px;white-space:nowrap}.api-status strong{color:#14df80}main{max-width:1500px;margin:auto;padding:22px 18px 40px}.page-title{display:flex;align-items:center;gap:12px;margin:0 0 5px;font-size:30px;letter-spacing:-.7px}.intro{color:var(--muted);margin:0 0 20px}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.kpi,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 12px #112b4808}.kpi{padding:14px 16px}.kpi span{display:block;color:var(--muted);font-size:12px;font-weight:650}.kpi strong{display:block;font-size:25px;margin-top:3px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:13px;margin-bottom:14px}.field{height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 12px;color:var(--ink);min-width:150px}.search{flex:1;min-width:200px}.panel{overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;border-bottom:1px solid var(--line)}.panel-head h2{margin:0;font-size:18px}.panel-head span{font-size:12px;color:var(--muted)}.match-list{display:flex;flex-direction:column}.match{padding:15px 18px;border-bottom:1px solid #eaf0f7}.match:last-child{border-bottom:0}.match-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px;margin-bottom:10px}.match-teams{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center}.team{display:flex;align-items:center;gap:10px;min-width:0;font-weight:750}.team:last-child{justify-content:flex-end;text-align:right}.crest{width:32px;height:32px;object-fit:contain;flex:0 0 32px}.score{font-size:21px;font-weight:850;background:#f0f5fa;border-radius:8px;padding:5px 13px;white-space:nowrap}.vs{color:#7d91aa;font-size:12px;font-weight:800}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.detail-box{background:#f6f9fd;border:1px solid #e8eff7;border-radius:9px;padding:10px 12px;min-width:0}.detail-box h3{font-size:12px;color:var(--muted);margin:0 0 8px}.prob-row{display:grid;grid-template-columns:minmax(0,1fr) 42px;align-items:center;gap:8px;margin:7px 0;font-size:12px}.track{height:7px;background:#e3ebf5;border-radius:99px;overflow:hidden;margin-top:4px}.fill{height:100%;background:linear-gradient(90deg,#08b968,#21868b);border-radius:99px}.prob-value{text-align:right;font-weight:800}.badge{display:inline-block;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:750;background:#edf3f9;color:#516b8b}.badge.good{background:#e2f9ec;color:#087c49}.badge.bad{background:#fff0ef;color:#b73e3e}.notice,.empty{padding:24px;text-align:center;color:var(--muted);background:#f7faff;border:1px dashed #d8e4f2;border-radius:10px;margin:14px}.notice{text-align:left;line-height:1.6}.footer-note{font-size:12px;color:#70839c;padding:14px 18px;border-top:1px solid var(--line)}.hidden{display:none!important}
+@media(max-width:760px){.topbar{flex-wrap:wrap;gap:8px;padding:12px}.brand{min-width:0;flex:1}.brand-name{font-size:25px}.nav{order:3;flex-basis:100%}.nav a{padding:10px}.api-status{font-size:11px;padding:8px}main{padding:16px 9px 28px}.page-title{font-size:25px}.summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.kpi{padding:11px}.kpi strong{font-size:21px}.toolbar{padding:9px}.field,.search{width:100%;min-width:0}.match{padding:13px 11px}.match-teams{gap:6px}.team{gap:6px;font-size:12px}.crest{width:26px;height:26px;flex-basis:26px}.score{font-size:18px;padding:5px 8px}.detail-grid{grid-template-columns:1fr}.match-top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="./index.html"><img class="brand-logo" src="./assets/football-ai-circuit.svg" alt=""><span><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span></a>
+<nav class="nav" aria-label="Navigation principale">
+<a href="./index.html"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Matchs à venir</a>
+<a class="active" href="./history.html"><svg class="icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></svg>Historique</a>
+</nav>
+<div class="api-status" id="status">Données : <strong>Chargement…</strong></div>
+</header>
+<main>
+<h1 class="page-title">Historique des rencontres</h1>
+<p class="intro">Compare les prévisions enregistrées avant le coup d’envoi aux scores réels et consulte la performance du modèle.</p>
+<div class="summary">
+<div class="kpi"><span>Rencontres terminées</span><strong id="kpiTotal">—</strong></div>
+<div class="kpi"><span>Pronostics archivés</span><strong id="kpiPredicted">—</strong></div>
+<div class="kpi"><span>Résultat 1N2 correct</span><strong id="kpiCorrect">—</strong></div>
+<div class="kpi"><span>Précision 1N2</span><strong id="kpiAccuracy">—</strong></div>
+</div>
+<section class="panel toolbar" aria-label="Filtres de l’historique">
+<input id="search" class="field search" type="search" placeholder="Rechercher une équipe ou une compétition…">
+<select id="competition" class="field"><option value="">Toutes les compétitions</option></select>
+<select id="predictionFilter" class="field"><option value="">Tous les statuts</option><option value="correct">Pronostic correct</option><option value="incorrect">Pronostic incorrect</option><option value="missing">Sans pronostic archivé</option></select>
+<select id="period" class="field"><option value="all">Toutes les dates</option><option value="30">30 derniers jours</option><option value="90">90 derniers jours</option><option value="365">12 derniers mois</option></select>
+</section>
+<section class="panel">
+<div class="panel-head"><h2>Résultats et prévisions</h2><span id="count">Chargement…</span></div>
+<div id="matchList" class="match-list"><div class="empty">Chargement des résultats disponibles…</div></div>
+<div class="footer-note">Une prévision n’est affichée que si elle est présente dans une archive identifiable. Les probabilités actuelles ne sont pas réutilisées rétroactivement pour noter un ancien match.</div>
+</section>
+<div id="notice" class="notice hidden"></div>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const state={matches:[],filtered:[]};
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct=n=>Number.isFinite(Number(n))?Math.round(Number(n)*100)+" %":"—";
+const dateOf=m=>{const d=new Date(m.kickoff||m.date||m.date_utc||m.start_time||"");return Number.isNaN(d.getTime())?null:d};
+const finished=s=>/finished|complete|completed|full.?time|ft|after.?extra|ended|played/i.test(String(s||""));
+const scoreOf=m=>{
+ const h=m.score_home??m.home_score??m.goals_home??m.home_goals??m.score?.home??m.result?.home;
+ const a=m.score_away??m.away_score??m.goals_away??m.away_goals??m.score?.away??m.result?.away;
+ return h!==null&&h!==undefined&&a!==null&&a!==undefined&&Number.isFinite(Number(h))&&Number.isFinite(Number(a))?{home:Number(h),away:Number(a)}:null;
+};
+const outcome=s=>s.home>s.away?"home":s.home<s.away?"away":"draw";
+const probsOf=m=>m.probabilities||m.prediction?.probabilities||m.predicted_probabilities||m.model_prediction?.probabilities||null;
+const predictedOutcome=p=>p&&["home","draw","away"].every(k=>Number.isFinite(Number(p[k])))?["home","draw","away"].sort((a,b)=>Number(p[b])-Number(p[a]))[0]:null;
+function collectPredictions(data){
+ const found=[];
+ const containers=[data?.history,data?.results,data?.completed,data?.matches,data?.predictions,data?.upcoming];
+ for(const list of containers)if(Array.isArray(list))for(const m of list)found.push(m);
+ for(const list of [data?.history?.matches,data?.results?.matches,data?.archive?.matches])if(Array.isArray(list))found.push(...list);
+ return found;
+}
+function normalizeMatch(m,actualOnly=false){
+ const home=m.home||m.home_team?.name||m.homeTeam?.name||m.teams?.home?.name;
+ const away=m.away||m.away_team?.name||m.awayTeam?.name||m.teams?.away?.name;
+ const score=scoreOf(m);
+ if(!home||!away||!score)return null;
+ const p=probsOf(m);
+ return {id:String(m.id||m.match_id||m.fixture_id||[home,away,dateOf(m)?.toISOString()].join("_")),home,away,competition:m.competition||m.competition_name||m.league?.name||m.competition?.name||"Compétition inconnue",kickoff:dateOf(m)?.toISOString()||"",score,probabilities:p,model:m.model||m.model_version||m.prediction?.model||"",source:actualOnly?"result":"mixed"};
+}
+function fromDetails(data){
+ const out=[];
+ for(const [id,entry] of Object.entries(data?.matches||{})){
+  const m=entry.match||{},detail=entry.endpoints?.detail?.data||{},stats=entry.endpoints?.stats?.data||{};
+  const status=m.status||detail.status||stats.status;
+  const home=m.home_team?.name||detail.home_team?.name,away=m.away_team?.name||detail.away_team?.name;
+  const sh=detail.score_home??detail.home_score??stats.score_home??stats.home_score;
+  const sa=detail.score_away??detail.away_score??stats.score_away??stats.away_score;
+  const score=sh!=null&&sa!=null?{home:Number(sh),away:Number(sa)}:null;
+  if(!home||!away||!score||!finished(status))continue;
+  out.push({id,home,away,competition:detail.league?.name||m.competition_id||"Compétition inconnue",kickoff:m.kickoff||detail.date||"",score,probabilities:null,model:"",source:"result"});
+ }
+ return out;
+}
+function mergeMatches(predictions,results){
+ const map=new Map();
+ for(const raw of predictions){const m=normalizeMatch(raw);if(!m)continue;const k=norm(m.home)+"_"+norm(m.away)+"_"+(m.kickoff||"").slice(0,10);map.set(k,{...(map.get(k)||{}),...m,probabilities:m.probabilities||map.get(k)?.probabilities});}
+ for(const r of results){const k=norm(r.home)+"_"+norm(r.away)+"_"+(r.kickoff||"").slice(0,10);const existing=map.get(k)||Array.from(map.values()).find(m=>norm(m.home)===norm(r.home)&&norm(m.away)===norm(r.away)&&(!m.kickoff||!r.kickoff||m.kickoff.slice(0,10)===r.kickoff.slice(0,10)));if(existing){existing.score=r.score;existing.competition=r.competition||existing.competition;existing.kickoff=r.kickoff||existing.kickoff;}else map.set(k,r);}
+ return Array.from(map.values()).filter(m=>m.score).sort((a,b)=>(dateOf(b)?.getTime()||0)-(dateOf(a)?.getTime()||0));
+}
+function probBars(p){
+ if(!p||!["home","draw","away"].every(k=>Number.isFinite(Number(p[k]))))return '<p class="muted">Aucune probabilité 1N2 archivée pour ce match.</p>';
+ const max=Math.max(...["home","draw","away"].map(k=>Number(p[k])));
+ return [["home","Victoire "+p._home],["draw","Match nul"],["away","Victoire "+p._away]].map(([k,label])=>{const v=Number(p[k]);return '<div class="prob-row"><div><div>'+esc(label||({"home":"Victoire domicile","draw":"Match nul","away":"Victoire extérieur"}[k]))+'</div><div class="track"><div class="fill" style="width:'+Math.max(0,Math.min(100,v*100))+'%"></div></div></div><div class="prob-value">'+pct(v)+'</div></div>';}).join("");
+}
+function render(){
+ const q=norm($("search").value),comp=$("competition").value,pf=$("predictionFilter").value,days=$("period").value,now=Date.now();
+ const filtered=state.matches.filter(m=>{
+  const text=norm(m.home+" "+m.away+" "+m.competition),date=dateOf(m),pred=predictedOutcome(m.probabilities),actual=outcome(m.score);
+  if(q&&!text.includes(q))return false;if(comp&&m.competition!==comp)return false;
+  if(pf==="missing"&&pred)return false;if(pf==="correct"&&(!pred||pred!==actual))return false;if(pf==="incorrect"&&(!pred||pred===actual))return false;
+  if(days!=="all"&&(!date||now-date.getTime()>Number(days)*86400000||date.getTime()>now))return false;
+  return true;
+ });
+ state.filtered=filtered;
+ const scored=state.matches.filter(m=>predictedOutcome(m.probabilities));
+ const correct=scored.filter(m=>predictedOutcome(m.probabilities)===outcome(m.score)).length;
+ $("kpiTotal").textContent=state.matches.length;$("kpiPredicted").textContent=scored.length;$("kpiCorrect").textContent=scored.length?correct:"—";$("kpiAccuracy").textContent=scored.length?Math.round(correct/scored.length*100)+" %":"—";
+ $("count").textContent=filtered.length+" rencontre"+(filtered.length>1?"s":"");
+ if(!filtered.length){$("matchList").innerHTML='<div class="empty">Aucun résultat historique correspondant aux filtres. Si aucune prévision n’a été archivée avant le coup d’envoi, elle ne peut pas être reconstruite honnêtement après le match.</div>';return;}
+ $("matchList").innerHTML=filtered.map(m=>{
+  const date=dateOf(m),p=predictedOutcome(m.probabilities),actual=outcome(m.score),hasPred=!!p,correctPred=hasPred&&p===actual;
+  const resultLabel=actual==="home"?"Victoire domicile":actual==="away"?"Victoire extérieur":"Match nul";
+  const predictionLabel=!hasPred?"Pronostic non archivé":p==="home"?"Victoire domicile":p==="away"?"Victoire extérieur":"Match nul";
+  return '<article class="match"><div class="match-top"><span>'+esc(m.competition)+' · '+esc(date?new Intl.DateTimeFormat("fr-FR",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Paris"}).format(date):"Date inconnue")+'</span><span class="badge '+(hasPred?(correctPred?"good":"bad"):"")+'">'+esc(hasPred?(correctPred?"1N2 correct":"1N2 incorrect"):"Résultat réel disponible")+'</span></div><div class="match-teams"><div class="team"><span>'+esc(m.home)+'</span></div><span class="score">'+m.score.home+' – '+m.score.away+'</span><div class="team"><span>'+esc(m.away)+'</span></div></div><div class="detail-grid"><div class="detail-box"><h3>Résultat réel</h3><strong>'+esc(resultLabel)+'</strong><p style="margin:5px 0 0;font-size:12px;color:#607895">Score final : '+m.score.home+'–'+m.score.away+'</p></div><div class="detail-box"><h3>Prévision avant match</h3><strong>'+esc(predictionLabel)+'</strong>'+(hasPred?probBars({...m.probabilities,_home:m.home}):'<p style="font-size:12px;color:#607895;margin:6px 0 0">Pas de probabilité sauvegardée pour cette rencontre.</p>')+'</div></div></article>';
+ }).join("");
+}
+async function load(){
+ try{
+  $("status").innerHTML='Données : <strong>Chargement…</strong>';
+  const [predRes,detailsRes,modelRes]=await Promise.all([fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/model-history.json?v="+Date.now(),{cache:"no-store"})]);
+  const pred=predRes.ok?await predRes.json():{},details=detailsRes.ok?await detailsRes.json():{},model= modelRes.ok?await modelRes.json():{};
+  const predictions=collectPredictions(pred);
+  const results=fromDetails(details);
+  state.matches=mergeMatches(predictions,results);
+  const comps=[...new Set(state.matches.map(m=>m.competition))].sort((a,b)=>a.localeCompare(b,"fr"));
+  $("competition").innerHTML='<option value="">Toutes les compétitions</option>'+comps.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join("");
+  const evaluated=Array.isArray(model.versions)?model.versions.reduce((n,v)=>n+(Number(v.evaluated_matches)||0),0):0;
+  $("status").innerHTML='Données : <strong>'+((predRes.ok&&detailsRes.ok)?"Sources chargées":"Sources partielles")+'</strong>';
+  if(evaluated===0){$("notice").classList.remove("hidden");$("notice").innerHTML='<strong>Limite actuelle des archives de prédictions.</strong><br>Le registre du modèle indique qu’aucune rencontre n’a encore été évaluée dans les archives de versions. Cette page affiche donc les résultats réellement disponibles et n’invente pas de prévisions passées. Pour comparer les deux de façon fiable, le pipeline doit enregistrer les probabilités horodatées avant le coup d’envoi puis les associer au score final.';}
+  render();
+ }catch(e){$("status").innerHTML='Données : <strong>Erreur de chargement</strong>';$("matchList").innerHTML='<div class="empty">Impossible de charger les fichiers de données. Vérifiez le déploiement et les fichiers JSON.</div>';}
+}
+["search","competition","predictionFilter","period"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+load();
+</script>
+</body>
+</html>
