@@ -504,6 +504,12 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 .stats-team-grid h4{font-size:12px;line-height:1.35;overflow-wrap:anywhere;margin:0 0 8px}
 .stats-disclaimer{margin:10px 2px 0}
 @media(max-width:650px){.stats-prob-grid{grid-template-columns:1fr}.stats-prob-grid .stats-team-grid{grid-template-columns:1fr 1fr;gap:8px}}
+/* Ordre des éléments dans la liste : nom A, logo A, VS, logo B, nom B */
+.match-card .teams .team:first-child{justify-content:flex-end}
+.match-card .teams .team:first-child .team-name{text-align:right;order:0}
+.match-card .teams .team:first-child .team-logo{order:1}
+.match-card .teams .team.away .team-logo{order:0}
+.match-card .teams .team.away .team-name{text-align:left;order:1}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -620,7 +626,7 @@ function renderList(){
     '<div class="match-date">'+icon("calendar","icon small")+'<span class="match-date-day">'+esc("Journée "+roundText)+'</span></div>'+
    '</div>'+
    '<div class="kickoff">'+icon("clock","icon small")+'<span>'+esc(timeText)+'</span></div>'+
-   '<div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">VS</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div>'+
+   '<div class="teams"><div class="team"><span class="team-name">'+esc(r.home)+'</span><span class="crest team-logo">'+teamImage(r,"home")+'</span></div><span class="vs">VS</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+
   '</article>';
  }).join("");
