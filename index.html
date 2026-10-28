@@ -1002,8 +1002,8 @@ function probabilityBar(label,value,detail=""){
  const p=Number(value),valid=Number.isFinite(p)&&p>=0&&p<=1;
  return '<div class="prob-chart-row"><div class="prob-chart-label"><span>'+esc(label)+'</span><strong>'+(valid?pct(p):"—")+'</strong></div><div class="prob-chart-track"><span class="prob-chart-fill" style="width:'+(valid?Math.round(p*100):0)+'%"></span></div>'+(detail?'<div class="prob-chart-detail">'+esc(detail)+'</div>':'')+'</div>';
 }
-function poissonDistribution(lambda,maxGoals=12){
- const l=Number(lambda);if(!Number.isFinite(l)||l<0||l>12)return null;
+function poissonDistribution(lambda,maxGoals=40){
+ const l=Number(lambda);if(!Number.isFinite(l)||l<0||l>30)return null;
  const out=[Math.exp(-l)];for(let k=1;k<=maxGoals;k++)out[k]=out[k-1]*l/k;return out;
 }
 function statsProbabilityHTML(r){
