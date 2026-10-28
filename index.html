@@ -388,7 +388,7 @@ function renderRecentForm(r){
     const keys=Object.keys(data);
     const exact=keys.find(k=>norm(data[k].name)===key);
     if(exact)return data[exact];
-    const aliases={"us sassuolo calcio":"sassuolo","sassuolo calcio":"sassuolo","sassuolo":"sassuolo","fc internazionale milano":"inter","inter milan":"inter","internazionale":"inter","ac milan":"milan","paris saint germain":"paris saint germain","psg":"paris saint germain"};
+    const aliases={"us sassuolo calcio":"sassuolo","sassuolo calcio":"sassuolo","sassuolo":"sassuolo","fc internazionale milano":"inter","inter milan":"inter","inter milano":"inter","internazionale milano":"inter","internazionale":"inter","ac milan":"milan","paris saint germain":"paris saint germain","psg":"paris saint germain"};
     if(aliases[key]&&data[aliases[key]])return data[aliases[key]];
     const close=keys.find(k=>{const n=norm(data[k].name||k);return n.length>4&&(n.includes(key)||key.includes(n));});
     return close?data[close]:null;
@@ -441,8 +441,10 @@ function renderStatsDashboard(r){
  const findForm=name=>{
   const key=norm(name);
   if(!key)return null;
-  if(formData[key])return formData[key];
-  return Object.values(formData).find(t=>norm(t?.name)===key)||null;
+  const aliases={"inter milan":"inter","inter milano":"inter","internazionale":"inter","internazionale milano":"inter","fc internazionale milano":"inter","inter":"inter"};
+  const canonical=aliases[key]||key;
+  if(formData[canonical])return formData[canonical];
+  return Object.values(formData).find(t=>norm(t?.name)===canonical||norm(t?.name)===key)||null;
  };
  const formSummary=name=>{
   const t=findForm(name),matches=Array.isArray(t?.matches)?t.matches:[];
