@@ -477,6 +477,12 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .odds-table th,.odds-table td{padding:7px}
 }
 
+
+/* Les deux blocs équipe restent groupés près du VS, sans étirer le nom */
+.match-card .teams .team-name{flex:0 1 auto;width:auto;max-width:calc(100% - 42px);min-width:0}
+.match-card .teams .team:first-child .team-name{text-align:right}
+.match-card .teams .team.away .team-name{text-align:left}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
