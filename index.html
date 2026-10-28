@@ -213,6 +213,24 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 @media(max-width:650px){.match-card{grid-template-columns:minmax(78px,92px) 34px minmax(0,1fr) 105px 10px;grid-template-rows:1fr;gap:4px;min-height:55px;padding:5px}.league{grid-column:auto;grid-row:auto;gap:4px}.flag{font-size:15px}.flag img{width:17px;height:17px}.league-name{font-size:10px}.round{font-size:9px}.kickoff{grid-column:auto;grid-row:auto;font-size:10px}.teams{grid-column:auto;grid-row:auto;gap:3px}.team{gap:3px}.team-name{max-width:54px;font-size:10px}.crest{width:24px;height:24px;flex-basis:24px}.vs{font-size:9px}.prob-row{grid-column:auto;grid-row:auto;max-width:none;gap:2px}.prob{min-height:32px;font-size:9px}.prob strong{font-size:9px}.chevron{grid-column:auto;grid-row:auto;width:11px;height:16px}}
 @media(max-width:430px){.match-card{grid-template-columns:minmax(68px,78px) 30px minmax(0,1fr) 88px 9px;gap:3px;padding:4px}.team-name{max-width:42px;font-size:9px}.crest{width:21px;height:21px;flex-basis:21px}.prob-row{gap:1px}.prob{font-size:8px;padding:2px 0}.prob strong{font-size:8px}}
 
+
+/* Drapeaux de compétition : rendu CSS fiable, sans dépendre des emojis système */
+.flag{display:flex;align-items:center;justify-content:center;width:20px;height:20px;flex:0 0 20px;font-size:0;line-height:1}
+.flag img{display:block;width:20px;height:20px;object-fit:contain}
+.country-flag{width:18px;height:18px;display:inline-flex;overflow:hidden;border-radius:2px;box-shadow:0 0 0 1px #0a1b4614;flex:0 0 18px}
+.country-flag i{display:block;flex:1;height:100%}
+.country-flag-fr i:nth-child(1),.country-flag-it i:nth-child(1){background:#1746a2}
+.country-flag-fr i:nth-child(2),.country-flag-it i:nth-child(2){background:#fff}
+.country-flag-fr i:nth-child(3){background:#ed2939}
+.country-flag-it i:nth-child(3){background:#009246}
+.country-flag-be i:nth-child(1){background:#111}.country-flag-be i:nth-child(2){background:#fae042}.country-flag-be i:nth-child(3){background:#ed2939}
+.country-flag-de{flex-direction:column}.country-flag-de i{width:100%;height:33.333%}.country-flag-de i:nth-child(1){background:#111}.country-flag-de i:nth-child(2){background:#d00}.country-flag-de i:nth-child(3){background:#ffce00}
+.country-flag-es{flex-direction:column}.country-flag-es i{width:100%;height:25%}.country-flag-es i:nth-child(1),.country-flag-es i:nth-child(3){background:#aa151b}.country-flag-es i:nth-child(2){flex:2;background:#f1bf00}
+.country-flag-gb{background:#234078}.country-flag-gb i{display:none}
+.country-flag-pt{background:linear-gradient(90deg,#046a38 40%,#da291c 40%)}
+.country-flag-us{background:repeating-linear-gradient(to bottom,#b22234 0 2px,#fff 2px 4px)}
+.country-flag-eu{background:#1746a2}.country-flag-eu i{display:none}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -293,7 +311,20 @@ const fmtTime=d=>d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-dig
 const parseOddsTimestamp=value=>{if(typeof value!=="string"||!value.trim())return null;const d=new Date(value);return Number.isNaN(d.getTime())?null:d};
 const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Europe/Paris"}).format(d):"horodatage indisponible"};
 const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
-const flag=(n,id="")=>{const s=(String(n||"")+" "+String(id||"")).toLowerCase();return /(^|[^a-z])(fr|france|ligue[ ]*[12]|fr-ligue)([^a-z]|$)/.test(s)?"🇫🇷":/(^|[^a-z])(gb|eng|england|premier league|epl)([^a-z]|$)/.test(s)?"🏴":/(^|[^a-z])(de|germany|allemagne|bundesliga)([^a-z]|$)/.test(s)?"🇩🇪":/(^|[^a-z])(es|spain|espagne|la liga)([^a-z]|$)/.test(s)?"🇪🇸":/(^|[^a-z])(it|italy|italie|serie a)([^a-z]|$)/.test(s)?"🇮🇹":/(^|[^a-z])(be|belg|jupiler)([^a-z]|$)/.test(s)?"🇧🇪":/(^|[^a-z])(pt|portugal|primeira)([^a-z]|$)/.test(s)?"🇵🇹":/(^|[^a-z])(us|mls|united states)([^a-z]|$)/.test(s)?"🇺🇸":/champions league/.test(s)?"🇪🇺":'<img src="./assets/football.svg" alt="" aria-hidden="true" width="24" height="24">'};
+const flag=(n,id="")=>{
+ const s=(String(n||"")+" "+String(id||"")).toLowerCase();
+ const country=/ligue[ ]*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
+  :/premier league|england|(^|[^a-z])(gb|eng|epl)([^a-z]|$)/.test(s)?"gb"
+  :/bundesliga|germany|allemagne|(^|[^a-z])de([^a-z]|$)/.test(s)?"de"
+  :/la liga|spain|espagne|(^|[^a-z])es([^a-z]|$)/.test(s)?"es"
+  :/serie a|italy|italie|(^|[^a-z])it([^a-z]|$)/.test(s)?"it"
+  :/belg|jupiler|(^|[^a-z])be([^a-z]|$)/.test(s)?"be"
+  :/portugal|primeira|(^|[^a-z])pt([^a-z]|$)/.test(s)?"pt"
+  :/mls|united states|(^|[^a-z])us([^a-z]|$)/.test(s)?"us"
+  :/champions league/.test(s)?"eu":"";
+ if(!country)return '<img src="./assets/football.svg" alt="" aria-hidden="true" width="20" height="20">';
+ return '<span class="country-flag country-flag-'+country+'" aria-label="Drapeau '+country.toUpperCase()+'" role="img"><i></i><i></i><i></i></span>';
+};
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
