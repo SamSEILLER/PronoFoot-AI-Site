@@ -323,11 +323,11 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 /* Liste des matchs : compétition + journée, avec l'heure dans sa propre colonne */
 .match-card{grid-template-columns:minmax(145px,190px) minmax(0,1fr) 66px 126px 13px;gap:8px;min-height:62px;padding:6px 9px}
 .league{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:4px;min-width:0}
-.league-top{display:flex;align-items:center;justify-content:flex-start;gap:7px;min-width:0}
-.league-top .flag{width:20px;height:15px;flex:0 0 20px}
+.league-top{display:flex;align-items:center;justify-content:flex-start;gap:5px;min-width:0}
+.league-top .flag{width:20px;height:15px;flex:0 0 20px;margin-right:5px;align-self:center}
 .league-top .flag img{display:block;width:20px;height:14px;object-fit:cover;border-radius:1px}
-.league-name{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.match-date{display:flex;align-items:center;gap:4px;margin:0;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap;padding-left:27px}
+.league-name{font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-date{display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0;color:var(--muted);font-size:12px!important;line-height:1.2;white-space:nowrap;padding-left:25px}
 .kickoff{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:750;color:var(--ink);white-space:nowrap}
 .kickoff .icon{width:12px;height:12px;flex:0 0 12px}
 .round,.league-meta{display:none!important}
