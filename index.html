@@ -358,7 +358,7 @@ function overviewPitchHTML(r){
   '<div class="info-row">'+icon("clock","icon small")+'<span class="label">Heure</span><span>'+esc(fmtTime(dateOf(r)))+'</span></div>'+
   '</div>'+
   '<div class="info-card conditions"><h3>Informations complémentaires</h3><div class="condition-line">'+icon("whistle","icon large")+'<span><strong>Arbitre</strong><br>'+esc(referee)+'</span></div>'+(stadium?'<div class="complement-item"><span class="complement-icon">'+icon("stadium","icon small")+'</span><span class="complement-label">Stade</span><strong class="complement-value">'+esc(stadium)+'</strong></div>':"")+(status?'<div class="complement-item"><span class="complement-icon">'+icon("info","icon small")+'</span><span class="complement-label">Statut du match</span><strong class="complement-value status-value">'+esc(status)+'</strong></div>':"")+'<p class="detail-note">Dernière collecte PitchAPI : '+esc(collected)+'</p></div></div>'+
-  '<div class="mini-grid"><div class="mini-card"><h3>'+icon("trend","icon small")+' Forme récente</h3>'+renderRecentForm(r)+'</div><div class="mini-card"><h3>'+icon("users","icon small")+' Confrontations directes</h3>'+renderHeadToHead(r)+'</div><div class="mini-card"><h3>💡 Tendances clés</h3>'+renderKeyTrends(r)+'</div></div>';
+  '<div class="mini-grid"><div class="mini-card"><h3>'+icon("trend","icon small")+' Forme récente</h3>'+renderRecentForm(r)+'</div><div class="mini-card"><h3>'+icon("users","icon small")+' Confrontations directes</h3>'+renderHeadToHead(r)+'</div>';
 }
 function renderHeadToHead(r){
  const norm=s=>String(s||"").toLocaleLowerCase("fr").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
