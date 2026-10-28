@@ -186,12 +186,17 @@ function oddsLineLabel(marketName,line){
  if(["spread","asian handicap","european handicap","corners spread","bookings spread","cards spread"].includes(k))return "Handicap : "+line;
  return "Ligne : "+line;
 }
-function oddsText(r){
+function oddsText(r, marketFilter=null){
  const oddsEvents=state.oddsData?.events||{};
  const normOddsTeam=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
  const directEvent=oddsEvents[String(r.id)]||null;
  const event=directEvent||Object.values(oddsEvents).find(e=>normOddsTeam(e.home_team)===normOddsTeam(r.home)&&normOddsTeam(e.away_team)===normOddsTeam(r.away)&&(!e.kickoff_utc||!r.kickoff||String(e.kickoff_utc).slice(0,10)===String(r.kickoff).slice(0,10)))||null;
- const markets=Array.isArray(event?.odds_observations)?event.odds_observations:[];
+ const allMarkets=Array.isArray(event?.odds_observations)?event.odds_observations:[];
+ const allowed=marketFilter?new Set(marketFilter.map(oddsMarketKey)):null;
+ const markets=allowed?allMarkets.filter(m=>allowed.has(oddsMarketKey(m.market_name))):allMarkets;
+ if(!markets.length&&marketFilter){
+  return '<div class="empty">Aucun des marchés sélectionnés n’est disponible dans le snapshot de cotes pour cette rencontre. La disponibilité varie selon le match et le bookmaker.</div>';
+ }
  if(!markets.length){
   const o=r.odds_1x2;
   if(o&&["home","draw","away"].every(k=>Number.isFinite(Number(o[k])))){
@@ -466,6 +471,8 @@ function renderStatsDashboard(r){
  html+=probabilities?'<div class="big-probs">'+probabilityCells(r,true)+'</div><p class="stats-muted">Probabilités expérimentales fournies par le fichier de pronostics ; elles ne constituent pas une garantie.</p>':'<p class="stats-muted">Les probabilités 1N2 ne sont pas disponibles ou ne sont pas exploitables pour ce match.</p>';
  html+='</div>';
  html+='<div class="stats-team-grid"><div class="info-card stats-section"><h3>'+esc(r.home||"Domicile")+' · forme récente</h3>'+formSummary(r.home)+'</div><div class="info-card stats-section"><h3>'+esc(r.away||"Extérieur")+' · forme récente</h3>'+formSummary(r.away)+'</div></div>';
+ const statsMarkets=["ML","ML HT","Double Chance","Double Chance HT","Draw No Bet","Spread","Totals","Totals HT","Team Total Home","Team Total Away","Both Teams To Score","Both Teams To Score HT","To Score 2+ Goals","Corners Totals","Total Shots","Total Shots Home","Total Shots on Target Away"];
+ html+='<div class="info-card stats-section"><h3>Marchés de paris disponibles</h3><p class="stats-muted">Cotes observées dans le dernier snapshot publié pour cette rencontre. Seuls les marchés demandés sont affichés ; une absence signifie qu’aucune ligne correspondante n’est disponible dans ce snapshot.</p>'+oddsText(r,statsMarkets)+'</div>';
  html+='<div class="info-card stats-section"><h3>État du calcul</h3>'+
   '<div class="info-row">'+icon("info","icon small")+'<span class="label">Statut du modèle</span><span>'+esc(status)+'</span></div>'+
   '<div class="info-row">'+icon("history","icon small")+'<span class="label">Modèle</span><span>'+esc(state.data?.model||"Non précisé")+'</span></div>'+
