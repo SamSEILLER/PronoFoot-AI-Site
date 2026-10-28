@@ -405,7 +405,7 @@ function renderRecentForm(r){
       const matchCompetition=String(x.competition_id||"").trim().toLowerCase();
       const otherCompetition=Boolean(targetCompetition&&matchCompetition&&targetCompetition!==matchCompetition);
       const cls="form-result form-"+String(x.result||"").toLowerCase()+(otherCompetition?" form-other-competition":"");
-      const tooltip=(x.opponent||"Adversaire")+" · "+(x.date||"")+(otherCompetition?" · Autre compétition : "+competitionLabel(x.competition_id):"");
+      const tooltip=(x.opponent||"Adversaire")+" · "+(x.date||"")+(otherCompetition?" · "+competitionLabel(x.competition_id):"");
       const aria=otherCompetition?' aria-label="'+esc((x.result||"")+" — "+competitionLabel(x.competition_id))+'"':"";
       return '<span class="'+cls+'" title="'+esc(tooltip)+'"'+(otherCompetition?' data-tooltip="'+esc(competitionLabel(x.competition_id))+'"':"")+aria+'>'+esc(x.result||"")+'</span>';
     }).join(""):'<span class="status-line">Aucun résultat disponible pour cette saison</span>';
