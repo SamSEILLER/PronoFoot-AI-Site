@@ -240,7 +240,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 .flag img{display:block;width:22px;height:15px;object-fit:cover;border-radius:1px;box-shadow:0 0 0 1px #0a1b4618}
 .league-meta{min-width:0}.league-name{font-size:12px;font-weight:800}
 .match-date{display:flex;align-items:center;gap:4px;margin-top:2px;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap}
-.match-date .icon{margin-left:5px;width:12px;height:12px;flex:0 0 12px}
+.match-date .icon{margin-right:5px;width:12px;height:12px;flex:0 0 12px}
 .teams{display:flex;align-items:center;justify-content:center;gap:12px;min-width:0}
 .team{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
 .team:first-child{justify-content:flex-end;text-align:right}.team.away{justify-content:flex-start;text-align:left}
@@ -256,14 +256,14 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .sort-wrap{gap:4px;font-size:9px;white-space:nowrap}.sort-select{height:26px;font-size:10px;padding:0 5px}.match-list{gap:5px}
  .match-card{grid-template-columns:minmax(104px,125px) minmax(0,1fr) 108px 9px;gap:5px;min-height:55px;padding:5px 6px}
  .league{gap:5px}.flag{width:18px;height:18px;flex-basis:18px}.flag img{width:18px;height:12px}
- .league-name{font-size:10px;line-height:1.2}.match-date{font-size:9px;gap:3px;white-space:normal;line-height:1.2}.match-date .icon{margin-left:5px;width:10px;height:10px;flex-basis:10px}
+ .league-name{font-size:10px;line-height:1.2}.match-date{font-size:9px;gap:3px;white-space:normal;line-height:1.2}.match-date .icon{margin-right:5px;width:10px;height:10px;flex-basis:10px}
  .teams{gap:3px}.team{gap:3px}.crest{width:25px;height:25px;flex-basis:25px}.team-name{font-size:10px;line-height:1.15}.vs{font-size:9px}
  .prob-row{gap:2px}.prob{min-height:32px;font-size:9px;padding:3px 1px}.prob strong{font-size:9px}.chevron{width:10px;height:16px}
 }
 @media(max-width:430px){
  .match-card{grid-template-columns:minmax(90px,105px) minmax(0,1fr) 91px 8px;gap:3px;padding:4px}
  .league{gap:4px}.flag{width:16px;height:16px;flex-basis:16px}.flag img{width:16px;height:11px}
- .league-name{font-size:9px}.match-date{font-size:8px;gap:2px}.match-date .icon{margin-left:5px;width:9px;height:9px;flex-basis:9px}
+ .league-name{font-size:9px}.match-date{font-size:8px;gap:2px}.match-date .icon{margin-right:5px;width:9px;height:9px;flex-basis:9px}
  .crest{width:21px;height:21px;flex-basis:21px}.team{gap:2px}.team-name{font-size:9px}.vs{font-size:8px}
  .prob-row{gap:1px}.prob{font-size:8px;padding:2px 0}.prob strong{font-size:8px}
 }
@@ -274,7 +274,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 .match-date{display:flex;align-items:center;gap:4px;white-space:nowrap;font-size:10px}
 .match-date-day,.match-date-time{display:inline-block}
 .match-date-separator{color:#8aa0bb;padding:0 1px}
-.match-date .icon{margin-left:5px;order:4;width:12px;height:12px;flex:0 0 12px}
+.match-date .icon{margin-right:5px;order:0;width:12px;height:12px;flex:0 0 12px}
 .crest{width:44px;height:44px;flex-basis:44px}
 @media(max-width:1120px){
  .match-card{grid-template-columns:minmax(130px,165px) minmax(150px,1fr) 120px 12px}
@@ -283,7 +283,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 @media(max-width:650px){
  .match-card{grid-template-columns:minmax(104px,125px) minmax(0,1fr) 108px 9px}
  .match-date{gap:2px;white-space:normal;font-size:9px;flex-wrap:wrap}
- .match-date .icon{margin-left:5px;width:10px;height:10px;flex-basis:10px}
+ .match-date .icon{margin-right:5px;width:10px;height:10px;flex-basis:10px}
  .crest{width:44px;height:44px;flex-basis:44px}
  .team{gap:3px}
  .team-name{font-size:10px}
@@ -291,7 +291,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 @media(max-width:430px){
  .match-card{grid-template-columns:minmax(90px,105px) minmax(0,1fr) 91px 8px}
  .match-date{font-size:8px;gap:2px}
- .match-date .icon{margin-left:5px;width:9px;height:9px;flex-basis:9px}
+ .match-date .icon{margin-right:5px;width:9px;height:9px;flex-basis:9px}
  .crest{width:44px;height:44px;flex-basis:44px}
 }
 
@@ -305,17 +305,17 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 .league-name{overflow:hidden;text-overflow:ellipsis}
 .round{margin:0;flex:0 0 auto}
 .match-date{margin:0;justify-content:flex-end;font-size:11px;gap:3px}
-.match-date .icon{margin-left:5px;width:12px;height:12px;flex:0 0 12px}
+.match-date .icon{margin-right:5px;width:12px;height:12px;flex:0 0 12px}
 @media(max-width:1120px){.match-card{grid-template-columns:minmax(170px,210px) minmax(145px,1fr) 120px 12px}.match-date{font-size:10px}}
 @media(max-width:650px){
  .match-card{grid-template-columns:minmax(142px,175px) minmax(0,1fr) 108px 9px}
  .league{gap:3px}.league-top{gap:4px}.league-top .flag{width:18px;height:18px;flex-basis:18px}
- .flag img{width:18px;height:12px}.match-date{font-size:8px;gap:2px}.match-date .icon{margin-left:5px;width:9px;height:9px;flex-basis:9px}
+ .flag img{width:18px;height:12px}.match-date{font-size:8px;gap:2px}.match-date .icon{margin-right:5px;width:9px;height:9px;flex-basis:9px}
  .league-meta{gap:3px}.league-name{font-size:10px}.round{font-size:9px}
 }
 @media(max-width:430px){
  .match-card{grid-template-columns:minmax(124px,145px) minmax(0,1fr) 91px 8px}
- .match-date{font-size:7px;gap:1px}.match-date .icon{margin-left:5px;width:8px;height:8px;flex-basis:8px}
+ .match-date{font-size:7px;gap:1px}.match-date .icon{margin-right:5px;width:8px;height:8px;flex-basis:8px}
  .league-name{font-size:9px}.round{font-size:8px}
 }
 
