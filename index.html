@@ -320,28 +320,29 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 }
 
 
-/* Liste des matchs : compétition sur la première ligne, date/heure dessous */
-.match-card{grid-template-columns:minmax(145px,190px) minmax(0,1fr) 126px 13px;gap:8px;min-height:62px;padding:6px 9px}
+/* Liste des matchs : compétition + journée, avec l'heure dans sa propre colonne */
+.match-card{grid-template-columns:minmax(145px,190px) minmax(0,1fr) 66px 126px 13px;gap:8px;min-height:62px;padding:6px 9px}
 .league{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:4px;min-width:0}
 .league-top{display:flex;align-items:center;justify-content:flex-start;gap:7px;min-width:0}
 .league-top .flag{width:20px;height:15px;flex:0 0 20px}
 .league-top .flag img{display:block;width:20px;height:14px;object-fit:cover;border-radius:1px}
 .league-name{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.match-date{display:flex;align-items:center;gap:4px;margin:0;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap}
-.match-date .icon{width:12px;height:12px;flex:0 0 12px}
-.match-date-separator{color:#8aa0bb}
-.round,.league-meta,.kickoff{display:none!important}
+.match-date{display:flex;align-items:center;gap:4px;margin:0;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap;padding-left:27px}
+.kickoff{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:750;color:var(--ink);white-space:nowrap}
+.kickoff .icon{width:12px;height:12px;flex:0 0 12px}
+.round,.league-meta{display:none!important}
 .teams{justify-content:space-between;gap:7px}
-@media(max-width:1120px){.match-card{grid-template-columns:minmax(130px,165px) minmax(0,1fr) 120px 12px;gap:6px}.match-date{font-size:10px}}
+@media(max-width:1120px){.match-card{grid-template-columns:minmax(125px,160px) minmax(0,1fr) 58px 112px 12px;gap:6px}.match-date{font-size:10px}.kickoff{font-size:10px}}
 @media(max-width:650px){
- .match-card{grid-template-columns:minmax(112px,140px) minmax(0,1fr) 100px 10px;gap:5px;padding:6px;min-height:58px}
+ .match-card{grid-template-columns:minmax(100px,125px) minmax(0,1fr) 48px 88px 10px;gap:5px;padding:6px;min-height:58px}
  .league{gap:4px}.league-top{gap:5px}.league-name{font-size:10px}
- .match-date{font-size:8px;gap:2px}.match-date .icon{width:10px;height:10px;flex-basis:10px}
+ .match-date{font-size:8px;gap:2px;padding-left:22px}
+ .kickoff{font-size:9px;gap:2px}.kickoff .icon{width:10px;height:10px;flex-basis:10px}
  .flag,.league-top .flag{width:17px;height:13px;flex-basis:17px}.league-top .flag img{width:17px;height:11px}
  .crest{width:27px;height:27px;flex-basis:27px}.team{gap:3px}.team-name{font-size:10px}
  .prob-row{gap:3px}.prob{font-size:9px;padding:3px 1px}.prob strong{font-size:9px}
 }
-@media(max-width:430px){.match-card{grid-template-columns:minmax(100px,118px) minmax(0,1fr) 90px 9px;gap:4px}.match-date{font-size:7px}.team-name{font-size:9px}.crest{width:23px;height:23px;flex-basis:23px}}
+@media(max-width:430px){.match-card{grid-template-columns:minmax(88px,105px) minmax(0,1fr) 42px 76px 9px;gap:4px}.match-date{font-size:7px;padding-left:20px}.kickoff{font-size:8px}.kickoff .icon{display:none}.team-name{font-size:9px}.crest{width:23px;height:23px;flex-basis:23px}}
 
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
@@ -451,14 +452,15 @@ function renderList(){
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
  $("#matchList").innerHTML=rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
-  const dateText=d?new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"numeric",month:"short",year:"numeric"}).format(d):"Date indisponible";
+  const roundText=matchdayLabel(r);
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
   return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
    '<div class="league">'+
     '<div class="league-top"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-name">'+esc(c)+'</div></div>'+
-    '<div class="match-date"><span class="match-date-day">'+esc(dateText)+'</span><span class="match-date-separator">·</span><span class="match-date-time">'+esc(timeText)+'</span>'+icon("clock","icon small")+'</div>'+
+    '<div class="match-date">'+icon("calendar","icon small")+'<span class="match-date-day">'+esc("Journée "+roundText)+'</span></div>'+
    '</div>'+
    '<div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div>'+
+   '<div class="kickoff">'+icon("clock","icon small")+'<span>'+esc(timeText)+'</span></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+
   '</article>';
  }).join("");
