@@ -406,8 +406,8 @@ function renderRecentForm(r){
       const otherCompetition=Boolean(targetCompetition&&matchCompetition&&targetCompetition!==matchCompetition);
       const cls="form-result form-"+String(x.result||"").toLowerCase()+(otherCompetition?" form-other-competition":"");
       const tooltip=(x.opponent||"Adversaire")+" · "+(x.date||"")+(otherCompetition?" · Autre compétition : "+competitionLabel(x.competition_id):"");
-      const aria=otherCompetition?' aria-label="'+esc((x.result||"")+" — autre compétition : "+competitionLabel(x.competition_id))+'"':"";
-      return '<span class="'+cls+'" title="'+esc(tooltip)+'"'+(otherCompetition?' data-tooltip="'+esc("Autre compétition : "+competitionLabel(x.competition_id))+'"':"")+aria+'>'+esc(x.result||"")+'</span>';
+      const aria=otherCompetition?' aria-label="'+esc((x.result||"")+" — "+competitionLabel(x.competition_id))+'"':"";
+      return '<span class="'+cls+'" title="'+esc(tooltip)+'"'+(otherCompetition?' data-tooltip="'+esc(competitionLabel(x.competition_id))+'"':"")+aria+'>'+esc(x.result||"")+'</span>';
     }).join(""):'<span class="status-line">Aucun résultat disponible pour cette saison</span>';
     return '<div class="recent-team"><div class="recent-team-heading">'+logoHTML+'<strong>'+esc(label)+'</strong></div><div class="recent-results">'+results+'</div></div>';
   };
