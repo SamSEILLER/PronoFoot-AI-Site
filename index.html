@@ -231,6 +231,43 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 .country-flag-us{background:repeating-linear-gradient(to bottom,#b22234 0 2px,#fff 2px 4px)}
 .country-flag-eu{background:#1746a2}.country-flag-eu i{display:none}
 
+
+/* Structure de la liste : compétition + date/heure, duel, probabilités, ouverture */
+.match-list{gap:6px}
+.match-card{display:grid;grid-template-columns:minmax(145px,190px) minmax(170px,1fr) 126px 13px;gap:9px;min-height:62px;padding:6px 9px;border-radius:8px}
+.league{display:flex;align-items:center;gap:8px;min-width:0}
+.flag{display:flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px;font-size:0}
+.flag img{display:block;width:22px;height:15px;object-fit:cover;border-radius:1px;box-shadow:0 0 0 1px #0a1b4618}
+.league-meta{min-width:0}.league-name{font-size:12px;font-weight:800}
+.match-date{display:flex;align-items:center;gap:4px;margin-top:2px;color:var(--muted);font-size:10px;line-height:1.2;white-space:nowrap}
+.match-date .icon{width:12px;height:12px;flex:0 0 12px}
+.teams{display:flex;align-items:center;justify-content:center;gap:12px;min-width:0}
+.team{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
+.team:first-child{justify-content:flex-end;text-align:right}.team.away{justify-content:flex-start;text-align:left}
+.crest{width:36px;height:36px;flex:0 0 36px}.team-name{font-size:12px}
+.vs{font-size:11px;font-weight:700;flex:0 0 auto}
+.prob-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.prob{min-height:38px;padding:4px 2px 3px;border-radius:6px;font-size:11px}.prob strong{font-size:10px;margin-bottom:1px}
+.chevron{width:14px;height:20px}
+@media(max-width:1120px){.match-card{grid-template-columns:minmax(130px,165px) minmax(150px,1fr) 120px 12px;gap:6px;padding:5px 7px}.teams{gap:6px}.crest{width:30px;height:30px;flex-basis:30px}.team-name{font-size:11px}.prob-row{gap:3px}}
+@media(max-width:650px){
+ .matches-panel{padding:8px 7px}.panel-heading{height:30px;min-height:30px;flex-wrap:nowrap;gap:7px;padding:0 3px;margin-bottom:8px}
+ .panel-heading h1{font-size:17px;line-height:1;white-space:nowrap;letter-spacing:-.4px}.count{font-size:9px;padding:3px 6px;border-radius:5px}
+ .sort-wrap{gap:4px;font-size:9px;white-space:nowrap}.sort-select{height:26px;font-size:10px;padding:0 5px}.match-list{gap:5px}
+ .match-card{grid-template-columns:minmax(104px,125px) minmax(0,1fr) 108px 9px;gap:5px;min-height:55px;padding:5px 6px}
+ .league{gap:5px}.flag{width:18px;height:18px;flex-basis:18px}.flag img{width:18px;height:12px}
+ .league-name{font-size:10px;line-height:1.2}.match-date{font-size:9px;gap:3px;white-space:normal;line-height:1.2}.match-date .icon{width:10px;height:10px;flex-basis:10px}
+ .teams{gap:3px}.team{gap:3px}.crest{width:25px;height:25px;flex-basis:25px}.team-name{font-size:10px;line-height:1.15}.vs{font-size:9px}
+ .prob-row{gap:2px}.prob{min-height:32px;font-size:9px;padding:3px 1px}.prob strong{font-size:9px}.chevron{width:10px;height:16px}
+}
+@media(max-width:430px){
+ .match-card{grid-template-columns:minmax(90px,105px) minmax(0,1fr) 91px 8px;gap:3px;padding:4px}
+ .league{gap:4px}.flag{width:16px;height:16px;flex-basis:16px}.flag img{width:16px;height:11px}
+ .league-name{font-size:9px}.match-date{font-size:8px;gap:2px}.match-date .icon{width:9px;height:9px;flex-basis:9px}
+ .crest{width:21px;height:21px;flex-basis:21px}.team{gap:2px}.team-name{font-size:9px}.vs{font-size:8px}
+ .prob-row{gap:1px}.prob{font-size:8px;padding:2px 0}.prob strong{font-size:8px}
+}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -313,7 +350,7 @@ const formatOddsTimestamp=value=>{const d=parseOddsTimestamp(value);return d?new
 const latestMarketUpdate=markets=>{const times=markets.map(m=>parseOddsTimestamp(m?.market_fields?.updatedAt)).filter(Boolean);return times.length?new Date(Math.max(...times.map(d=>d.getTime()))).toISOString():null};
 const flag=(n,id="")=>{
  const s=(String(n||"")+" "+String(id||"")).toLowerCase();
- const country=/ligue[ ]*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
+ const country=/ligue\\s*[12]|france|(^|[^a-z])fr([^a-z]|$)/.test(s)?"fr"
   :/premier league|england|(^|[^a-z])(gb|eng|epl)([^a-z]|$)/.test(s)?"gb"
   :/bundesliga|germany|allemagne|(^|[^a-z])de([^a-z]|$)/.test(s)?"de"
   :/la liga|spain|espagne|(^|[^a-z])es([^a-z]|$)/.test(s)?"es"
@@ -321,15 +358,14 @@ const flag=(n,id="")=>{
   :/belg|jupiler|(^|[^a-z])be([^a-z]|$)/.test(s)?"be"
   :/portugal|primeira|(^|[^a-z])pt([^a-z]|$)/.test(s)?"pt"
   :/mls|united states|(^|[^a-z])us([^a-z]|$)/.test(s)?"us"
-  :/champions league/.test(s)?"eu":"";
- if(!country)return '<img src="./assets/football.svg" alt="" aria-hidden="true" width="20" height="20">';
- return '<span class="country-flag country-flag-'+country+'" aria-label="Drapeau '+country.toUpperCase()+'" role="img"><i></i><i></i><i></i></span>';
+  :/champions league/.test(s)?"eu":"unknown";
+ return '<img src="./assets/flags/'+country+'.svg" alt="" aria-hidden="true" width="20" height="14">';
 };
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
 function renderList(){const rows=visibleRows();$("#matchCount").textContent=rows.length+" match"+(rows.length>1?"s":"");$("#listTitle").textContent=state.range==="today"?"Matchs du jour":state.range==="tomorrow"?"Matchs de demain":"Matchs à venir";if(!rows.length){$("#matchList").innerHTML='<div class="empty">Aucun match trouvé pour ce filtre. Essayez « Tous les matchs » ou vérifiez la prochaine mise à jour des données.</div>';$("#detailContent").innerHTML='<div class="empty">Aucune rencontre à afficher avec ces filtres.</div>';return}if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
-$("#matchList").innerHTML=rows.map(r=>{const d=dateOf(r),c=r.competition||"Compétition indisponible";return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'"><div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(r.round||r.matchday||"Journée non renseignée")+'</div></div></div><div class="kickoff">'+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+'</div><div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div><div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+'</article>'}).join("");renderDetail(rows.find(r=>r.id===state.selected)||rows[0])}
+$("#matchList").innerHTML=rows.map(r=>{const d=dateOf(r),c=r.competition||"Compétition indisponible";const dateTime=d?new Intl.DateTimeFormat("fr-FR",{weekday:"short",day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"Date indisponible";return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'"><div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-meta"><div class="league-name">'+esc(c)+'</div><div class="match-date">'+icon("clock","icon small")+esc(dateTime)+'</div></div></div><div class="teams"><div class="team"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-name">'+esc(r.home)+'</span></div><span class="vs">vs</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div><div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+'</article>'}).join("");renderDetail(rows.find(r=>r.id===state.selected)||rows[0])}
 function oddsMarketKey(name){return String(name||"").trim().toLocaleLowerCase("fr").replace(/\s+/g," ").replace(/[–—]/g,"-")}
 function oddsMarketLabel(name){
  const key=oddsMarketKey(name);
