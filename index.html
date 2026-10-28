@@ -113,6 +113,58 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
   .prob{font-size:9px}
 }
 
+
+/* Alignement fidèle à la maquette : une seule rangée, même sur petit écran */
+@media(max-width:650px){
+  .matches-panel{padding:8px 7px}
+  .panel-heading{
+    height:30px;min-height:30px;flex-wrap:nowrap;gap:7px;
+    padding:0 3px;margin-bottom:8px;
+  }
+  .panel-heading h1{font-size:17px;line-height:1;white-space:nowrap;letter-spacing:-.4px}
+  .count{font-size:9px;padding:3px 6px;border-radius:5px}
+  .sort-wrap{gap:4px;font-size:9px;white-space:nowrap}
+  .sort-select{height:26px;font-size:10px;padding:0 5px}
+  .match-list{gap:5px}
+  .match-card{
+    display:grid;
+    grid-template-columns:minmax(75px,86px) 32px minmax(0,1fr) 112px 9px;
+    grid-template-rows:minmax(48px,auto);
+    align-items:center;gap:4px;
+    min-height:54px;padding:4px 5px;border-radius:7px;
+  }
+  .league{grid-column:auto;grid-row:auto;gap:4px;min-width:0}
+  .flag{font-size:15px}
+  .flag img{width:17px;height:17px}
+  .league-name{font-size:10px;line-height:1.2}
+  .round{font-size:8px;line-height:1.2}
+  .kickoff{grid-column:auto;grid-row:auto;font-size:10px}
+  .teams{grid-column:auto;grid-row:auto;display:flex;align-items:center;justify-content:space-between;gap:2px;min-width:0}
+  .team{gap:3px;flex:1;min-width:0}
+  .team.away{justify-content:flex-start}
+  .team-name{max-width:none;min-width:0;font-size:9px;line-height:1.15}
+  .crest{width:24px;height:24px;flex:0 0 24px;font-size:8px}
+  .vs{font-size:8px}
+  .prob-row{grid-column:auto;grid-row:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;max-width:none;min-width:0}
+  .prob{min-height:32px;padding:3px 1px 2px;font-size:9px;line-height:1.1;border-radius:5px}
+  .prob strong{font-size:9px;line-height:1.1;margin-bottom:2px}
+  .prob.best{padding:2px 0 1px}
+  .chevron{grid-column:auto;grid-row:auto;width:10px;height:16px}
+}
+@media(max-width:430px){
+  .matches-panel{padding-left:5px;padding-right:5px}
+  .match-card{grid-template-columns:68px 29px minmax(0,1fr) 96px 8px;gap:3px;padding:4px}
+  .panel-heading h1{font-size:15px}
+  .sort-wrap{font-size:8px}
+  .sort-select{font-size:9px}
+  .league-name{font-size:9px}
+  .round{font-size:7px}
+  .team-name{font-size:8px}
+  .crest{width:21px;height:21px;flex-basis:21px}
+  .prob{font-size:8px}
+  .prob strong{font-size:8px}
+}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
