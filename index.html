@@ -568,98 +568,98 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
   }
 }
  
-/* Liste des matchs — structure et grille unifiées */
+/* Listing reconstruit : classes dédiées, grille et alignements indépendants */
 #matchList.match-list{
- display:flex;flex-direction:column;gap:0;overflow:hidden;
- border:1px solid #e2eaf2;border-radius:12px;background:#fff;
+ display:flex;flex-direction:column;gap:0;min-width:0;overflow:hidden;
+ border:1px solid #e4ebf2;border-radius:12px;background:#fff;
 }
-#matchList .match-list-header,
-#matchList .match-card{
+#matchList .fixture-head,
+#matchList .fixture-row{
  display:grid;
- grid-template-columns:76px minmax(145px,1.05fr) minmax(220px,1.25fr) 34px minmax(220px,1.25fr) minmax(190px,1.05fr);
- column-gap:12px;align-items:center;
+ grid-template-columns:72px minmax(150px,1.05fr) minmax(230px,1.2fr) 34px minmax(230px,1.2fr) minmax(190px,1fr);
+ column-gap:14px;align-items:center;
 }
-#matchList .match-list-header{
- min-height:44px;padding:0 16px;background:#f7f9fc;border-bottom:1px solid #e6edf4;
- color:#536780;font-size:11px;font-weight:800;
+#matchList .fixture-head{
+ min-height:44px;padding:0 16px;background:#f7f9fc;border-bottom:1px solid #e7edf3;
+ color:#52657c;font-size:11px;font-weight:800;letter-spacing:.01em;
 }
-#matchList .match-list-header span:nth-child(1),
-#matchList .match-list-header span:nth-child(2){text-align:left}
-#matchList .match-list-header span:nth-child(3),
-#matchList .match-list-header span:nth-child(4),
-#matchList .match-list-header span:nth-child(5),
-#matchList .match-list-header span:nth-child(6){text-align:center}
-#matchList .match-card{
- min-height:72px;padding:8px 16px;border:0;border-bottom:1px solid #eaf0f5;
- border-radius:0;background:#fff;cursor:pointer;transition:background .15s ease,box-shadow .15s ease;
+#matchList .fixture-head span:nth-child(1),
+#matchList .fixture-head span:nth-child(2){text-align:left}
+#matchList .fixture-head span:nth-child(n+3){text-align:center}
+#matchList .fixture-row{
+ min-height:76px;padding:9px 16px;border:0;border-bottom:1px solid #edf1f5;
+ border-radius:0;background:#fff;cursor:pointer;outline:none;
+ transition:background-color .15s ease,box-shadow .15s ease;
 }
-#matchList .match-card:last-child{border-bottom:0}
-#matchList .match-card:hover{background:#f8fbff}
-#matchList .match-card.selected{background:#f0f7ff;box-shadow:inset 3px 0 #1683f8}
-#matchList .kickoff{font-size:13px;font-weight:800;color:#24374e;font-variant-numeric:tabular-nums;white-space:nowrap}
-#matchList .league{display:flex;align-items:center;gap:9px;min-width:0;margin:0;padding:0;background:transparent}
-#matchList .league .flag{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px}
-#matchList .league .flag img{display:block;width:32px;height:32px;object-fit:contain}
-#matchList .league-text{display:flex;flex-direction:column;gap:4px;min-width:0}
-#matchList .league-name{color:#253950;font-size:12px;font-weight:800;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
-#matchList .round{color:#77879b;font-size:10px;line-height:1.2}
-#matchList .team{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:9px;min-width:0;margin:0;padding:0}
-#matchList .team-home{justify-content:flex-end}
-#matchList .team-away{justify-content:flex-start}
-#matchList .team-logo{display:flex;align-items:center;justify-content:center;flex:0 0 46px;width:46px;height:46px;overflow:visible}
-#matchList .team-logo img{display:block;width:auto!important;height:auto!important;max-width:44px!important;max-height:44px!important;object-fit:contain;object-position:center}
-#matchList .team-rank{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;min-width:30px;padding:5px 6px;border-radius:8px;background:#eef2f6;color:#4c6078;font-size:12px;font-weight:850;line-height:1;white-space:nowrap}
-#matchList .team-rank sup{font-size:8px;margin-left:1px}
-#matchList .team-rank.unavailable{background:#f4f6f8;color:#9aa6b4}
-#matchList .team-name{display:block;min-width:0;max-width:100%;color:#1e2e43;font-size:13px;font-weight:800;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
-#matchList .team-home .team-name{text-align:right}
-#matchList .team-away .team-name{text-align:left}
-#matchList .vs{display:flex;align-items:center;justify-content:center;color:#7b8ba0;font-size:11px;font-weight:850;text-align:center}
-#matchList .prob-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0;width:100%;margin:0;padding:0}
-#matchList .prob{display:flex;align-items:center;justify-content:center;min-width:0;min-height:40px;padding:5px 3px;border:0;border-radius:7px;background:#eef2f6;color:#60728a;font-size:12px;font-weight:850;font-variant-numeric:tabular-nums}
-#matchList .prob strong{display:none}
-#matchList .prob.best{background:#e3f7eb;color:#13a15d}
-#matchList .prob:nth-child(3){background:#fff0f1;color:#df4652}
-#matchList .prob.no-bet{grid-column:1/-1;background:#f1f4f7;color:#748297}
+#matchList .fixture-row:last-child{border-bottom:0}
+#matchList .fixture-row:hover{background:#f8fbff}
+#matchList .fixture-row:focus-visible{box-shadow:inset 0 0 0 2px #5ba6ff}
+#matchList .fixture-row.is-selected{background:#f0f7ff;box-shadow:inset 3px 0 #1683f8}
+#matchList .fixture-time{color:#26384e;font-size:13px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
+#matchList .fixture-league{display:flex;align-items:center;gap:9px;min-width:0}
+#matchList .fixture-flag{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px}
+#matchList .fixture-flag img{display:block;width:32px;height:32px;object-fit:contain}
+#matchList .fixture-league-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+#matchList .fixture-league-name{color:#273a50;font-size:12px;font-weight:800;line-height:1.25;overflow-wrap:anywhere}
+#matchList .fixture-round{color:#7b899b;font-size:10px;line-height:1.2}
+#matchList .fixture-team{display:flex;align-items:center;gap:9px;min-width:0;margin:0}
+#matchList .fixture-home{justify-content:flex-end}
+#matchList .fixture-away{justify-content:flex-start}
+#matchList .fixture-crest{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px}
+#matchList .fixture-crest img{display:block;width:auto!important;height:auto!important;max-width:42px!important;max-height:42px!important;object-fit:contain;object-position:center}
+#matchList .fixture-team .team-rank{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:29px;padding:5px 6px;border-radius:7px;background:#eef2f6;color:#52647a;font-size:11px;font-weight:850;line-height:1;white-space:nowrap}
+#matchList .fixture-team .team-rank sup{margin-left:1px;font-size:8px}
+#matchList .fixture-team .team-rank.unavailable{background:#f3f5f7;color:#a0aab6}
+#matchList .fixture-team-name{display:block;min-width:0;color:#1d2e43;font-size:13px;font-weight:800;line-height:1.2;overflow-wrap:anywhere}
+#matchList .fixture-home .fixture-team-name{text-align:right}
+#matchList .fixture-away .fixture-team-name{text-align:left}
+#matchList .fixture-vs{justify-self:center;color:#8391a3;font-size:11px;font-weight:850;text-align:center}
+#matchList .fixture-probabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0}
+#matchList .fixture-probabilities .prob{display:flex;align-items:center;justify-content:center;min-width:0;min-height:40px;padding:5px 3px;border:0;border-radius:7px;background:#eef2f6;color:#61728a;font-size:12px;font-weight:850;font-variant-numeric:tabular-nums}
+#matchList .fixture-probabilities .prob strong{display:none}
+#matchList .fixture-probabilities .prob.best{background:#e3f7eb;color:#13a15d}
+#matchList .fixture-probabilities .prob:nth-child(3){background:#fff0f1;color:#df4652}
+#matchList .fixture-probabilities .prob.no-data{grid-column:1/-1;background:#f1f4f7;color:#748297}
 @media(max-width:1250px){
- #matchList .match-list-header{display:none}
- #matchList .match-card{grid-template-columns:62px minmax(130px,.9fr) minmax(180px,1fr) 26px minmax(180px,1fr) minmax(160px,.9fr);column-gap:8px;padding:10px 12px}
- #matchList .team{gap:6px}
- #matchList .team-logo{flex-basis:38px;width:38px;height:38px}
- #matchList .team-logo img{max-width:37px!important;max-height:37px!important}
- #matchList .team-rank{min-width:26px;padding:4px 5px;font-size:11px}
- #matchList .team-name{font-size:12px}
+ #matchList .fixture-head{display:none}
+ #matchList .fixture-row{grid-template-columns:62px minmax(130px,.9fr) minmax(170px,1fr) 24px minmax(170px,1fr) minmax(150px,.9fr);column-gap:8px;padding:10px 12px}
+ #matchList .fixture-team{gap:6px}
+ #matchList .fixture-crest{flex-basis:38px;width:38px;height:38px}
+ #matchList .fixture-crest img{max-width:37px!important;max-height:37px!important}
+ #matchList .fixture-team .team-rank{min-width:25px;padding:4px 5px}
+ #matchList .fixture-team-name{font-size:12px}
 }
 @media(max-width:900px){
- #matchList .match-card{grid-template-columns:56px minmax(0,1fr) 24px minmax(0,1fr);grid-template-rows:auto auto auto;gap:9px 10px;padding:12px}
- #matchList .kickoff{grid-column:1;grid-row:1;align-self:center}
- #matchList .league{grid-column:2/5;grid-row:1}
- #matchList .team-home{grid-column:1/3;grid-row:2;justify-content:center}
- #matchList .vs{grid-column:3;grid-row:2}
- #matchList .team-away{grid-column:3/5;grid-row:2;justify-content:center}
- #matchList .team-home .team-name,#matchList .team-away .team-name{text-align:center}
- #matchList .prob-row{grid-column:1/5;grid-row:3}
- #matchList .team-logo{flex-basis:42px;width:42px;height:42px}
- #matchList .team-logo img{max-width:40px!important;max-height:40px!important}
+ #matchList .fixture-row{grid-template-columns:52px minmax(0,1fr) 22px minmax(0,1fr);grid-template-rows:auto auto auto;gap:9px 10px;padding:12px}
+ #matchList .fixture-time{grid-column:1;grid-row:1;align-self:center}
+ #matchList .fixture-league{grid-column:2/5;grid-row:1}
+ #matchList .fixture-home{grid-column:1/3;grid-row:2;justify-content:center}
+ #matchList .fixture-vs{grid-column:3;grid-row:2}
+ #matchList .fixture-away{grid-column:3/5;grid-row:2;justify-content:center}
+ #matchList .fixture-home .fixture-team-name,
+ #matchList .fixture-away .fixture-team-name{text-align:center}
+ #matchList .fixture-probabilities{grid-column:1/5;grid-row:3}
+ #matchList .fixture-crest{flex-basis:40px;width:40px;height:40px}
+ #matchList .fixture-crest img{max-width:38px!important;max-height:38px!important}
 }
 @media(max-width:520px){
  #matchList.match-list{border-radius:10px}
- #matchList .match-card{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);grid-template-rows:auto auto auto;gap:8px 5px;padding:10px 8px}
- #matchList .kickoff{grid-column:1;grid-row:1;font-size:11px}
- #matchList .league{grid-column:2/4;grid-row:1;gap:6px}
- #matchList .league .flag{flex-basis:24px;width:24px;height:24px}
- #matchList .league .flag img{width:22px;height:22px}
- #matchList .league-name{font-size:11px}
- #matchList .round{font-size:9px}
- #matchList .team-home{grid-column:1;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
- #matchList .vs{grid-column:2;grid-row:2}
- #matchList .team-away{grid-column:3;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
- #matchList .team-logo{flex-basis:34px;width:34px;height:34px}
- #matchList .team-logo img{max-width:33px!important;max-height:33px!important}
- #matchList .team-rank{min-width:24px;padding:3px 5px;font-size:10px}
- #matchList .team-name{font-size:10px;line-height:1.2;text-align:center!important}
- #matchList .prob-row{grid-column:1/4;grid-row:3;gap:4px}
- #matchList .prob{min-height:34px;font-size:11px}
+ #matchList .fixture-row{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);grid-template-rows:auto auto auto;gap:8px 5px;padding:10px 8px}
+ #matchList .fixture-time{grid-column:1;grid-row:1;font-size:11px}
+ #matchList .fixture-league{grid-column:2/4;grid-row:1;gap:6px}
+ #matchList .fixture-flag{flex-basis:24px;width:24px;height:24px}
+ #matchList .fixture-flag img{width:22px;height:22px}
+ #matchList .fixture-league-name{font-size:11px}
+ #matchList .fixture-round{font-size:9px}
+ #matchList .fixture-home{grid-column:1;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
+ #matchList .fixture-vs{grid-column:2;grid-row:2}
+ #matchList .fixture-away{grid-column:3;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
+ #matchList .fixture-crest{flex-basis:34px;width:34px;height:34px}
+ #matchList .fixture-crest img{max-width:33px!important;max-height:33px!important}
+ #matchList .fixture-team .team-rank{min-width:24px;padding:3px 5px;font-size:10px}
+ #matchList .fixture-team-name{font-size:10px;line-height:1.2;text-align:center!important}
+ #matchList .fixture-probabilities{grid-column:1/4;grid-row:3;gap:4px}
+ #matchList .fixture-probabilities .prob{min-height:34px;font-size:11px}
 }
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
@@ -783,7 +783,7 @@ function confidenceMarkup(row){
  return '<div class="confidence"><strong>'+Math.round(value)+'%</strong><span class="confidence-track"><i class="'+color+'" style="width:'+Math.round(value)+'%"></i></span></div>';
 }
 function recordCoverage(rows){
- const rendered=$("#matchList").querySelectorAll(".match-card").length;
+ const rendered=$("#matchList").querySelectorAll(".fixture-row").length;
  const feed=Array.isArray(state.data?.upcoming)?state.data.upcoming:[];
  window.__PRONOFOOT_COVERAGE__={
   ready:Boolean(state.data),feedCount:feed.length,validFeedCount:rowsAll().length,
@@ -801,17 +801,18 @@ function renderList(){
   recordCoverage(rows);return;
  }
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
- $("#matchList").innerHTML='<div class="match-list-header" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span>VS</span><span>Équipe B</span><span>Probabilités 1X2</span></div>'+rows.map(r=>{
+ const header='<div class="fixture-head" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span></span><span>Équipe B</span><span>Probabilités 1X2</span></div>';
+ $("#matchList").innerHTML=header+rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
   const roundText=matchdayLabel(r);
-  return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
-   '<div class="kickoff">'+esc(timeText)+'</div>'+
-   '<div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-text"><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(roundText||"Journée indisponible")+'</div></div></div>'+
-   '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span>'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></div>'+
-   '<span class="vs">VS</span>'+
-   '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span>'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></div>'+
-   '<div class="prob-row">'+probabilityCells(r)+'</div>'+
+  return '<article class="fixture-row '+(r.id===state.selected?"is-selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
+   '<div class="fixture-time">'+esc(timeText)+'</div>'+
+   '<div class="fixture-league"><span class="fixture-flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><span class="fixture-league-copy"><span class="fixture-league-name">'+esc(c)+'</span><span class="fixture-round">'+esc(roundText||"Journée indisponible")+'</span></span></div>'+
+   '<div class="fixture-team fixture-home"><span class="fixture-crest">'+teamImage(r,"home")+'</span>'+compactRank(r,r.home)+'<span class="fixture-team-name">'+esc(r.home)+'</span></div>'+
+   '<span class="fixture-vs">VS</span>'+
+   '<div class="fixture-team fixture-away"><span class="fixture-crest">'+teamImage(r,"away")+'</span>'+compactRank(r,r.away)+'<span class="fixture-team-name">'+esc(r.away)+'</span></div>'+
+   '<div class="fixture-probabilities">'+probabilityCells(r)+'</div>'+
   '</article>';
  }).join("");
  recordCoverage(rows);
