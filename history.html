@@ -53,8 +53,8 @@ const pct=n=>Number.isFinite(Number(n))?Math.round(Number(n)*100)+" %":"—";
 const dateOf=m=>{const d=new Date(m.kickoff||m.date||m.date_utc||m.start_time||"");return Number.isNaN(d.getTime())?null:d};
 const finished=s=>/finished|complete|completed|full.?time|ft|after.?extra|ended|played/i.test(String(s||""));
 const scoreOf=m=>{
- const h=m.score_home??m.home_score??m.goals_home??m.home_goals??m.score?.home??m.result?.home;
- const a=m.score_away??m.away_score??m.goals_away??m.away_goals??m.score?.away??m.result?.away;
+ const h=m.score_home??m.home_score??m.goals_home??m.home_goals??m.score?.home??m.result?.home??m.actual_score?.home;
+ const a=m.score_away??m.away_score??m.goals_away??m.away_goals??m.score?.away??m.result?.away??m.actual_score?.away;
  return h!==null&&h!==undefined&&a!==null&&a!==undefined&&Number.isFinite(Number(h))&&Number.isFinite(Number(a))?{home:Number(h),away:Number(a)}:null;
 };
 const outcome=s=>s.home>s.away?"home":s.home<s.away?"away":"draw";
@@ -62,7 +62,7 @@ const probsOf=m=>m.probabilities||m.prediction?.probabilities||m.predicted_proba
 const predictedOutcome=p=>p&&["home","draw","away"].every(k=>Number.isFinite(Number(p[k])))?["home","draw","away"].sort((a,b)=>Number(p[b])-Number(p[a]))[0]:null;
 function collectPredictions(data){
  const found=[];
- const containers=[data?.history,data?.results,data?.completed,data?.matches,data?.predictions,data?.upcoming];
+ const containers=[data?.history,data?.results,data?.completed,data?.matches,data?.predictions,data?.upcoming,data?.recent_results];
  for(const list of containers)if(Array.isArray(list))for(const m of list)found.push(m);
  for(const list of [data?.history?.matches,data?.results?.matches,data?.archive?.matches])if(Array.isArray(list))found.push(...list);
  return found;
