@@ -790,6 +790,28 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .match-card .team-name{font-size:8px}
 }
 
+
+/* Derniers ajustements : clubs et écussons plus visibles, sans drapeaux de compétition */
+.match-card .league .flag{display:none!important}
+.match-card .team-logo{width:54px!important;height:54px!important;flex:0 0 54px!important}
+.match-card .team-logo img{width:auto!important;height:50px!important;max-width:52px!important;max-height:52px!important;object-fit:contain}
+.match-card .team-name{font-size:14px!important;font-weight:800;line-height:1.2}
+.match-card .team-rank{display:inline-flex!important;font-size:21px!important}
+.match-card .team-rank.unavailable{font-size:18px!important}
+@media(max-width:650px){
+ .match-card .team-logo{width:42px!important;height:42px!important;flex:0 0 42px!important}
+ .match-card .team-logo img{height:40px!important;max-width:40px!important;max-height:40px!important}
+ .match-card .team-name{font-size:12px!important;white-space:normal;overflow-wrap:anywhere}
+ .match-card .team-rank{font-size:17px!important}
+ .match-card .team-rank.unavailable{font-size:15px!important}
+}
+@media(max-width:430px){
+ .match-card .team-logo{width:36px!important;height:36px!important;flex:0 0 36px!important}
+ .match-card .team-logo img{height:34px!important;max-width:34px!important;max-height:34px!important}
+ .match-card .team-name{font-size:10px!important}
+ .match-card .team-rank{font-size:15px!important}
+}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
