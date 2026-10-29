@@ -749,7 +749,8 @@ const CLUB_BADGES={
  espanyol:"https://crests.football-data.org/80.png",
  lille:"https://crests.football-data.org/521.png",
  lens:"https://crests.football-data.org/546.png",
- sportingcp:"https://crests.football-data.org/498.png"
+ sportingcp:"https://crests.football-data.org/498.png",
+ casapia:"https://www.footylogos.com/downloads/logo/casa-pia-logo-footylogos.svg"
 };
 function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
@@ -758,7 +759,8 @@ function clubBadgeUrl(name){
   [/^(espanyol|rcdespanyol|rcdespanyoldelbarcelona)$/,"espanyol"],
   [/^(lille|losc|losclille)$/,"lille"],
   [/^(lens|rclens|racingclublens)$/,"lens"],
-  [/^(sportingcp|sportingclubeportugal|sportinglisbon)$/,"sportingcp"]
+  [/^(sportingcp|sportingclubeportugal|sportinglisbon)$/,"sportingcp"],
+  [/^(casapia|casapiaac|casapiaatleticoclube|casapiaatleticoclube)$/,"casapia"]
  ];
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
