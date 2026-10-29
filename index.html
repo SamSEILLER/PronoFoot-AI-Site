@@ -870,6 +870,8 @@ const CLUB_BADGES={
  sassuolo:"assets/crests/sassuolo.svg", grenoble:"assets/crests/grenoble.svg", dunkerque:"assets/crests/dunkerque.svg", boulogne:"assets/crests/boulogne.svg", dijon:"assets/crests/dijon.svg", redstar:"assets/crests/redstar.svg"
 };function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
+ // Exact local slug lookup first: prevents initials when a crest exists but has no alias rule.
+ if(CLUB_BADGES[key])return CLUB_BADGES[key];
  const aliases=[
   [/^(villarreal|villarrealcf)$/,"villarreal"],
   [/^(espanyol|rcdespanyol|rcdespanyoldelbarcelona)$/,"espanyol"],
@@ -1057,10 +1059,8 @@ function teamImage(r,side){
   }
  }
  const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
- const isCasaPia=normalizeTeamName(wanted).startsWith("casapia");
- const imageStyle=isCasaPia?' style="width:84%;height:84%"':"";
  return url
-  ? '<img src="'+esc(url)+'" alt="Logo de '+esc(wanted)+'"'+imageStyle+' loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
+  ? '<img src="'+esc(url)+'" alt="Écusson de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
   : fallback;
 }
 function pitchLabel(key){
