@@ -808,7 +808,25 @@ const CLUB_BADGES={
  lorient:"https://crests.football-data.org/525.png",
  brest:"https://crests.football-data.org/512.png",
  angers:"https://crests.football-data.org/532.png",
- auxerre:"https://crests.football-data.org/519.png"
+ auxerre:"https://crests.football-data.org/519.png",
+ anderlecht:"https://crests.football-data.org/58.png",
+ salzburg:"https://crests.football-data.org/5710.png",
+ celtic:"https://crests.football-data.org/228.png",
+ besiktas:"https://crests.football-data.org/305.png",
+ unionsg:"https://crests.football-data.org/726.png",
+ reims:"https://crests.football-data.org/540.png",
+ montpellier:"https://crests.football-data.org/518.png",
+ saintetienne:"https://crests.football-data.org/527.png",
+ guingamp:"https://crests.football-data.org/538.png",
+ porto:"https://crests.football-data.org/503.png",
+ benfica:"https://crests.football-data.org/1903.png",
+ braga:"https://crests.football-data.org/5613.png",
+ gilvicente:"https://crests.football-data.org/5531.png",
+ vitoriaguimaraes:"https://crests.football-data.org/5614.png",
+ estoril:"https://crests.football-data.org/5615.png",
+ nacional:"https://crests.football-data.org/5529.png",
+ famalicao:"https://crests.football-data.org/5530.png",
+ moreirense:"https://crests.football-data.org/5532.png"
 };
 function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
@@ -876,7 +894,25 @@ function clubBadgeUrl(name){
   [/^(lorient|fclorient)$/,"lorient"],
   [/^(brest|stadebrestois|stadebrestois29)$/,"brest"],
   [/^(angers|angerssco)$/,"angers"],
-  [/^(auxerre|ajauxerre)$/,"auxerre"]
+  [/^(auxerre|ajauxerre)$/,"auxerre"],
+  [/^(anderlecht|rscanderlecht)$/,"anderlecht"],
+  [/^(salzburg|redbullsalzburg|fcredbullsalzburg)$/,"salzburg"],
+  [/^(celtic|celticfc)$/,"celtic"],
+  [/^(besiktas|besiktasjk|besiktasjimnastikkulubu)$/,"besiktas"],
+  [/^(unionsg|unionsaintgilloise|royalunionsaintgilloise|rusg)$/,"unionsg"],
+  [/^(reims|stadedereims|stadeofreims)$/,"reims"],
+  [/^(montpellier|montpellierherault|mhsc)$/,"montpellier"],
+  [/^(saintetienne|asse|as saintetienne)$/,"saintetienne"],
+  [/^(guingamp|eaguingamp|ea guingamp)$/,"guingamp"],
+  [/^(porto|fcporto|futebolclubeporto)$/,"porto"],
+  [/^(benfica|slbenfica)$/,"benfica"],
+  [/^(braga|scbraga|sportingclubedebraga)$/,"braga"],
+  [/^(gilvicente|gilvicentefc)$/,"gilvicente"],
+  [/^(vitoriaguimaraes|vitoriadeguimaraes|vitoriasc|vitoriasportclube)$/,"vitoriaguimaraes"],
+  [/^(estoril|estorilpraia|gdestorilpraia)$/,"estoril"],
+  [/^(nacional|cdnacional|nacionaldamadeira)$/,"nacional"],
+  [/^(famalicao|fcfamalicao|futebolclubefamalicao)$/,"famalicao"],
+  [/^(moreirense|moreirensefc)$/,"moreirense"]
  ];
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
