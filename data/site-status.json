@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-28T10:31:31.574954+00:00",
+  "generated_at_utc": "2026-10-29T05:45:16.820761+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
@@ -27,5 +27,13 @@
     "unmatched": 2,
     "without_markets": 0,
     "detail": "2 événement(s) non associé(s)"
+  },
+  "match_details": {
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-28T11:24:31.507814+00:00",
+    "matches_processed": 30,
+    "errors": 0,
+    "detail": "Collecte PitchAPI sans erreur détectée"
   }
 }
