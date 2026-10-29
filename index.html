@@ -568,98 +568,97 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
   }
 }
  
-/* Listing reconstruit : classes dédiées, grille et alignements indépendants */
+/* Listing des matchs — maquette simple, resserrée et alignée */
 #matchList.match-list{
  display:flex;flex-direction:column;gap:0;min-width:0;overflow:hidden;
- border:1px solid #e4ebf2;border-radius:12px;background:#fff;
+ border:1px solid #e4ebf2;border-radius:10px;background:#fff;
 }
 #matchList .fixture-head,
 #matchList .fixture-row{
  display:grid;
- grid-template-columns:72px minmax(150px,1.05fr) minmax(230px,1.2fr) 34px minmax(230px,1.2fr) minmax(190px,1fr);
- column-gap:14px;align-items:center;
+ grid-template-columns:54px minmax(105px,.82fr) minmax(0,1.2fr) 22px minmax(0,1.2fr) minmax(132px,1fr);
+ column-gap:8px;align-items:center;
 }
 #matchList .fixture-head{
- min-height:44px;padding:0 16px;background:#f7f9fc;border-bottom:1px solid #e7edf3;
- color:#52657c;font-size:11px;font-weight:800;letter-spacing:.01em;
+ min-height:36px;padding:0 10px;background:#f6f8fb;border-bottom:1px solid #e7edf3;
+ color:#61738a;font-size:10px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;
 }
 #matchList .fixture-head span:nth-child(1),
 #matchList .fixture-head span:nth-child(2){text-align:left}
 #matchList .fixture-head span:nth-child(n+3){text-align:center}
 #matchList .fixture-row{
- min-height:76px;padding:9px 16px;border:0;border-bottom:1px solid #edf1f5;
+ min-height:62px;padding:6px 10px;border:0;border-bottom:1px solid #edf1f5;
  border-radius:0;background:#fff;cursor:pointer;outline:none;
- transition:background-color .15s ease,box-shadow .15s ease;
+ transition:background-color .14s ease,box-shadow .14s ease;
 }
 #matchList .fixture-row:last-child{border-bottom:0}
 #matchList .fixture-row:hover{background:#f8fbff}
 #matchList .fixture-row:focus-visible{box-shadow:inset 0 0 0 2px #5ba6ff}
-#matchList .fixture-row.is-selected{background:#f0f7ff;box-shadow:inset 3px 0 #1683f8}
-#matchList .fixture-time{color:#26384e;font-size:13px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
-#matchList .fixture-league{display:flex;align-items:center;gap:9px;min-width:0}
-#matchList .fixture-flag{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px}
-#matchList .fixture-flag img{display:block;width:32px;height:32px;object-fit:contain}
-#matchList .fixture-league-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
-#matchList .fixture-league-name{color:#273a50;font-size:12px;font-weight:800;line-height:1.25;overflow-wrap:anywhere}
-#matchList .fixture-round{color:#7b899b;font-size:10px;line-height:1.2}
-#matchList .fixture-team{display:flex;align-items:center;gap:9px;min-width:0;margin:0}
-#matchList .fixture-home{justify-content:flex-end}
-#matchList .fixture-away{justify-content:flex-start}
-#matchList .fixture-crest{display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;height:44px}
-#matchList .fixture-crest img{display:block;width:auto!important;height:auto!important;max-width:42px!important;max-height:42px!important;object-fit:contain;object-position:center}
-#matchList .fixture-team .team-rank{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:29px;padding:5px 6px;border-radius:7px;background:#eef2f6;color:#52647a;font-size:11px;font-weight:850;line-height:1;white-space:nowrap}
-#matchList .fixture-team .team-rank sup{margin-left:1px;font-size:8px}
+#matchList .fixture-row.is-selected{background:#eef6ff;box-shadow:inset 3px 0 #1683f8}
+#matchList .fixture-time{color:#24364d;font-size:12px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
+#matchList .fixture-league{display:flex;align-items:center;gap:7px;min-width:0}
+#matchList .fixture-flag{display:flex;align-items:center;justify-content:center;flex:0 0 27px;width:27px;height:27px}
+#matchList .fixture-flag img{display:block;width:25px;height:25px;object-fit:contain}
+#matchList .fixture-league-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+#matchList .fixture-league-name{color:#263950;font-size:11px;font-weight:800;line-height:1.15;overflow-wrap:anywhere}
+#matchList .fixture-round{color:#7b899b;font-size:9px;line-height:1.15}
+#matchList .fixture-team{display:grid;grid-template-columns:34px 26px minmax(0,1fr);align-items:center;column-gap:5px;min-width:0;margin:0}
+#matchList .fixture-home{justify-content:stretch}
+#matchList .fixture-away{justify-content:stretch}
+#matchList .fixture-crest{display:flex;align-items:center;justify-content:center;grid-column:1;width:34px;height:34px}
+#matchList .fixture-crest img{display:block;width:auto!important;height:auto!important;max-width:32px!important;max-height:32px!important;object-fit:contain;object-position:center}
+#matchList .fixture-team .team-rank{display:inline-flex;grid-column:2;align-items:center;justify-content:center;min-width:25px;max-width:26px;padding:4px 3px;border-radius:6px;background:#eef2f6;color:#52647a;font-size:10px;font-weight:850;line-height:1;white-space:nowrap}
+#matchList .fixture-team .team-rank sup{margin-left:1px;font-size:7px}
 #matchList .fixture-team .team-rank.unavailable{background:#f3f5f7;color:#a0aab6}
-#matchList .fixture-team-name{display:block;min-width:0;color:#1d2e43;font-size:13px;font-weight:800;line-height:1.2;overflow-wrap:anywhere}
-#matchList .fixture-home .fixture-team-name{text-align:right}
+#matchList .fixture-team-name{display:block;grid-column:3;min-width:0;color:#1d2e43;font-size:11px;font-weight:800;line-height:1.15;overflow-wrap:anywhere}
+#matchList .fixture-home .fixture-team-name{text-align:left}
 #matchList .fixture-away .fixture-team-name{text-align:left}
-#matchList .fixture-vs{justify-self:center;color:#8391a3;font-size:11px;font-weight:850;text-align:center}
-#matchList .fixture-probabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0}
-#matchList .fixture-probabilities .prob{display:flex;align-items:center;justify-content:center;min-width:0;min-height:40px;padding:5px 3px;border:0;border-radius:7px;background:#eef2f6;color:#61728a;font-size:12px;font-weight:850;font-variant-numeric:tabular-nums}
+#matchList .fixture-vs{justify-self:center;color:#7f8da0;font-size:10px;font-weight:850;text-align:center}
+#matchList .fixture-probabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;min-width:0}
+#matchList .fixture-probabilities .prob{display:flex;align-items:center;justify-content:center;min-width:0;min-height:34px;padding:4px 2px;border:0;border-radius:6px;background:#eef2f6;color:#61728a;font-size:11px;font-weight:850;font-variant-numeric:tabular-nums}
 #matchList .fixture-probabilities .prob strong{display:none}
 #matchList .fixture-probabilities .prob.best{background:#e3f7eb;color:#13a15d}
 #matchList .fixture-probabilities .prob:nth-child(3){background:#fff0f1;color:#df4652}
 #matchList .fixture-probabilities .prob.no-data{grid-column:1/-1;background:#f1f4f7;color:#748297}
 @media(max-width:1250px){
  #matchList .fixture-head{display:none}
- #matchList .fixture-row{grid-template-columns:62px minmax(130px,.9fr) minmax(170px,1fr) 24px minmax(170px,1fr) minmax(150px,.9fr);column-gap:8px;padding:10px 12px}
- #matchList .fixture-team{gap:6px}
- #matchList .fixture-crest{flex-basis:38px;width:38px;height:38px}
- #matchList .fixture-crest img{max-width:37px!important;max-height:37px!important}
- #matchList .fixture-team .team-rank{min-width:25px;padding:4px 5px}
- #matchList .fixture-team-name{font-size:12px}
+ #matchList .fixture-row{grid-template-columns:48px minmax(100px,.8fr) minmax(0,1fr) 18px minmax(0,1fr) minmax(118px,.95fr);column-gap:6px;padding:7px 8px}
+ #matchList .fixture-team{grid-template-columns:30px 24px minmax(0,1fr);column-gap:4px}
+ #matchList .fixture-crest{width:30px;height:30px}
+ #matchList .fixture-crest img{max-width:29px!important;max-height:29px!important}
+ #matchList .fixture-team .team-rank{min-width:23px;max-width:24px;font-size:9px}
+ #matchList .fixture-team-name{font-size:10px}
+ #matchList .fixture-probabilities .prob{min-height:31px;font-size:10px}
 }
 @media(max-width:900px){
- #matchList .fixture-row{grid-template-columns:52px minmax(0,1fr) 22px minmax(0,1fr);grid-template-rows:auto auto auto;gap:9px 10px;padding:12px}
+ #matchList .fixture-row{grid-template-columns:46px minmax(0,1fr) 18px minmax(0,1fr);grid-template-rows:auto auto auto;gap:7px 8px;padding:9px}
  #matchList .fixture-time{grid-column:1;grid-row:1;align-self:center}
  #matchList .fixture-league{grid-column:2/5;grid-row:1}
- #matchList .fixture-home{grid-column:1/3;grid-row:2;justify-content:center}
+ #matchList .fixture-home{grid-column:1/3;grid-row:2}
  #matchList .fixture-vs{grid-column:3;grid-row:2}
- #matchList .fixture-away{grid-column:3/5;grid-row:2;justify-content:center}
- #matchList .fixture-home .fixture-team-name,
- #matchList .fixture-away .fixture-team-name{text-align:center}
+ #matchList .fixture-away{grid-column:3/5;grid-row:2}
  #matchList .fixture-probabilities{grid-column:1/5;grid-row:3}
- #matchList .fixture-crest{flex-basis:40px;width:40px;height:40px}
- #matchList .fixture-crest img{max-width:38px!important;max-height:38px!important}
+ #matchList .fixture-team{grid-template-columns:30px 24px minmax(0,1fr)}
+ #matchList .fixture-team-name{font-size:10px}
 }
 @media(max-width:520px){
- #matchList.match-list{border-radius:10px}
- #matchList .fixture-row{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);grid-template-rows:auto auto auto;gap:8px 5px;padding:10px 8px}
- #matchList .fixture-time{grid-column:1;grid-row:1;font-size:11px}
- #matchList .fixture-league{grid-column:2/4;grid-row:1;gap:6px}
- #matchList .fixture-flag{flex-basis:24px;width:24px;height:24px}
- #matchList .fixture-flag img{width:22px;height:22px}
- #matchList .fixture-league-name{font-size:11px}
- #matchList .fixture-round{font-size:9px}
- #matchList .fixture-home{grid-column:1;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
+ #matchList.match-list{border-radius:9px}
+ #matchList .fixture-row{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);grid-template-rows:auto auto auto;gap:7px 4px;padding:9px 7px}
+ #matchList .fixture-time{grid-column:1;grid-row:1;font-size:10px}
+ #matchList .fixture-league{grid-column:2/4;grid-row:1;gap:5px}
+ #matchList .fixture-flag{flex-basis:22px;width:22px;height:22px}
+ #matchList .fixture-flag img{width:20px;height:20px}
+ #matchList .fixture-league-name{font-size:10px}
+ #matchList .fixture-round{font-size:8px}
+ #matchList .fixture-home{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:3px;justify-content:center}
  #matchList .fixture-vs{grid-column:2;grid-row:2}
- #matchList .fixture-away{grid-column:3;grid-row:2;flex-direction:column;gap:5px;justify-content:center}
- #matchList .fixture-crest{flex-basis:34px;width:34px;height:34px}
- #matchList .fixture-crest img{max-width:33px!important;max-height:33px!important}
- #matchList .fixture-team .team-rank{min-width:24px;padding:3px 5px;font-size:10px}
- #matchList .fixture-team-name{font-size:10px;line-height:1.2;text-align:center!important}
+ #matchList .fixture-away{grid-column:3;grid-row:2;display:flex;flex-direction:column;gap:3px;justify-content:center}
+ #matchList .fixture-crest{width:30px;height:30px}
+ #matchList .fixture-crest img{max-width:29px!important;max-height:29px!important}
+ #matchList .fixture-team .team-rank{min-width:23px;max-width:none;padding:3px 5px;font-size:9px}
+ #matchList .fixture-team-name{font-size:10px;line-height:1.15;text-align:center}
  #matchList .fixture-probabilities{grid-column:1/4;grid-row:3;gap:4px}
- #matchList .fixture-probabilities .prob{min-height:34px;font-size:11px}
+ #matchList .fixture-probabilities .prob{min-height:30px;font-size:10px}
 }
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
