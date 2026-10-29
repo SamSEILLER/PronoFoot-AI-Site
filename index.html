@@ -800,7 +800,7 @@ function renderList(){
    '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span>'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+
    confidenceMarkup(r)+
-   '<button type="button" class="match-action" data-action="details" aria-label="Voir les statistiques détaillées de '+esc(r.home)+' contre '+esc(r.away)+'" title="Statistiques détaillées">'+icon("chart-no-axes-column","icon action-stats")+icon("chevron-right","icon action-chevron")+'</button>'+
+   '<button type="button" class="match-action" data-action="details" aria-label="Voir les statistiques détaillées de '+esc(r.home)+' contre '+esc(r.away)+'" title="Statistiques détaillées">'+icon("stats","icon action-stats")+icon("chevron","icon action-chevron")+'</button>'+
   '</article>';
  }).join("");
  recordCoverage(rows);
