@@ -674,6 +674,27 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 @media(max-width:520px){
  #matchList .fixture-team .team-rank{min-width:24px;max-width:none;padding:3px 5px;font-size:10px}
 }
+
+
+/* Dernier ajustement : écussons et noms plus lisibles, libellé de journée explicite */
+#matchList .fixture-crest{width:38px;height:38px}
+#matchList .fixture-crest img{max-width:36px!important;max-height:36px!important}
+#matchList .fixture-team{grid-template-columns:38px 30px minmax(0,1fr);column-gap:6px}
+#matchList .fixture-team-name{font-size:12px;font-weight:800;line-height:1.2}
+#matchList .fixture-team .team-rank{min-width:29px;max-width:30px;font-size:12px;padding:5px 4px}
+#matchList .fixture-round{font-size:9px}
+@media(max-width:1250px){
+ #matchList .fixture-team{grid-template-columns:34px 28px minmax(0,1fr);column-gap:5px}
+ #matchList .fixture-crest{width:34px;height:34px}
+ #matchList .fixture-crest img{max-width:32px!important;max-height:32px!important}
+ #matchList .fixture-team-name{font-size:11px}
+}
+@media(max-width:520px){
+ #matchList .fixture-team{grid-template-columns:32px 26px minmax(0,1fr)}
+ #matchList .fixture-crest{width:32px;height:32px}
+ #matchList .fixture-crest img{max-width:30px!important;max-height:30px!important}
+ #matchList .fixture-team-name{font-size:10px}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -818,7 +839,8 @@ function renderList(){
  $("#matchList").innerHTML=header+rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
-  const roundText=matchdayLabel(r);
+  const rawRound=String(matchdayLabel(r)||"").trim();
+  const roundText=rawRound?( /^journée\\b/i.test(rawRound)?rawRound:"Journée "+rawRound ):"Journée indisponible";
   return '<article class="fixture-row '+(r.id===state.selected?"is-selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
    '<div class="fixture-time">'+esc(timeText)+'</div>'+
    '<div class="fixture-league"><span class="fixture-flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><span class="fixture-league-copy"><span class="fixture-league-name">'+esc(c)+'</span><span class="fixture-round">'+esc(roundText||"Journée indisponible")+'</span></span></div>'+
