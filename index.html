@@ -866,7 +866,8 @@ const CLUB_BADGES={
  psg:"assets/crests/psg.svg",
  clubbrugge:"assets/crests/clubbrugge.svg", fiorentina:"assets/crests/fiorentina.svg", parma:"assets/crests/parma.svg", atalanta:"assets/crests/atalanta.svg",
  deportivocoruna:"assets/crests/deportivocoruna.svg", lecce:"assets/crests/lecce.svg", genoa:"assets/crests/genoa.svg", elche:"assets/crests/elche.svg", venezia:"assets/crests/venezia.svg", como:"assets/crests/como.svg",
- austinfc:"assets/crests/austinfc.svg", realsaltlake:"assets/crests/realsaltlake.svg", coloradorapids:"assets/crests/coloradorapids.svg", chicagofire:"assets/crests/chicagofire.svg", sanjoseearthquakes:"assets/crests/sanjoseearthquakes.svg", houstondynamo:"assets/crests/houstondynamo.svg", portlandtimbers:"assets/crests/portlandtimbers.svg", lafc:"assets/crests/lafc.svg", minnesotaunited:"assets/crests/minnesotaunited.svg", charlottefc:"assets/crests/charlottefc.svg", orlandocity:"assets/crests/orlandocity.svg", columbuscrew:"assets/crests/columbuscrew.svg", dcunited:"assets/crests/dcunited.svg", nycfc:"assets/crests/nycfc.svg", cfmontreal:"assets/crests/cfmontreal.svg", cincinnati:"assets/crests/cincinnati.svg", philadelphiaunion:"assets/crests/philadelphiaunion.svg", stlcity:"assets/crests/stlcity.svg", sandiegofc:"assets/crests/sandiegofc.svg", sportingkansascity:"assets/crests/sportingkansascity.svg", fcdallas:"assets/crests/fcdallas.svg", intermiami:"assets/crests/intermiami.svg", nashville:"assets/crests/nashville.svg", newenglandrevolution:"assets/crests/newenglandrevolution.svg", newyorkredbulls:"assets/crests/newyorkredbulls.svg", atlantaunited:"assets/crests/atlantaunited.svg", torontofc:"assets/crests/torontofc.svg", vancouverwhitecaps:"assets/crests/vancouverwhitecaps.svg", seattlesounders:"assets/crests/seattlesounders.svg"
+ austinfc:"assets/crests/austinfc.svg", realsaltlake:"assets/crests/realsaltlake.svg", coloradorapids:"assets/crests/coloradorapids.svg", chicagofire:"assets/crests/chicagofire.svg", sanjoseearthquakes:"assets/crests/sanjoseearthquakes.svg", houstondynamo:"assets/crests/houstondynamo.svg", portlandtimbers:"assets/crests/portlandtimbers.svg", lafc:"assets/crests/lafc.svg", minnesotaunited:"assets/crests/minnesotaunited.svg", charlottefc:"assets/crests/charlottefc.svg", orlandocity:"assets/crests/orlandocity.svg", columbuscrew:"assets/crests/columbuscrew.svg", dcunited:"assets/crests/dcunited.svg", nycfc:"assets/crests/nycfc.svg", cfmontreal:"assets/crests/cfmontreal.svg", cincinnati:"assets/crests/cincinnati.svg", philadelphiaunion:"assets/crests/philadelphiaunion.svg", stlcity:"assets/crests/stlcity.svg", sandiegofc:"assets/crests/sandiegofc.svg", sportingkansascity:"assets/crests/sportingkansascity.svg", fcdallas:"assets/crests/fcdallas.svg", intermiami:"assets/crests/intermiami.svg", nashville:"assets/crests/nashville.svg", newenglandrevolution:"assets/crests/newenglandrevolution.svg", newyorkredbulls:"assets/crests/newyorkredbulls.svg", atlantaunited:"assets/crests/atlantaunited.svg", torontofc:"assets/crests/torontofc.svg", vancouverwhitecaps:"assets/crests/vancouverwhitecaps.svg", seattlesounders:"assets/crests/seattlesounders.svg",
+ sassuolo:"assets/crests/sassuolo.svg", grenoble:"assets/crests/grenoble.svg", dunkerque:"assets/crests/dunkerque.svg", boulogne:"assets/crests/boulogne.svg", dijon:"assets/crests/dijon.svg", redstar:"assets/crests/redstar.svg"
 };function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
  const aliases=[
@@ -1031,6 +1032,14 @@ const CLUB_BADGES={
   [/^(torontofc|toronto)$/,"torontofc"],
   [/^(vancouverwhitecaps|vancouverwhitecapsfc)$/,"vancouverwhitecaps"],
   [/^(seattlesounders|seattlesoundersfc)$/,"seattlesounders"]
+ );
+ aliases.push(
+  [/^(sassuolo|ussassuolo|sassuolocalcio)$/,"sassuolo"],
+  [/^(grenoble|grenoblefoot38|gf38)$/,"grenoble"],
+  [/^(dunkerque|usldunkerque|usl)$/,"dunkerque"],
+  [/^(boulogne|usboulogne|usboulogneco)$/,"boulogne"],
+  [/^(dijon|dijonfco|dfco)$/,"dijon"],
+  [/^(redstar|redstarfc|redstarparis)$/,"redstar"]
  );
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
