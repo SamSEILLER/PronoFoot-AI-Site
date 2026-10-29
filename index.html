@@ -750,7 +750,30 @@ const CLUB_BADGES={
  lille:"https://crests.football-data.org/521.png",
  lens:"https://crests.football-data.org/546.png",
  sportingcp:"https://crests.football-data.org/498.png",
- casapia:"https://www.footylogos.com/downloads/logo/casa-pia-logo-footylogos.svg"
+ casapia:"https://www.footylogos.com/downloads/logo/casa-pia-logo-footylogos.svg",
+ chelsea:"https://crests.football-data.org/61.png",
+ manchesterunited:"https://crests.football-data.org/66.png",
+ atletico:"https://crests.football-data.org/78.png",
+ levante:"https://crests.football-data.org/88.png",
+ bayerleverkusen:"https://crests.football-data.org/3.png",
+ stuttgart:"https://crests.football-data.org/10.png",
+ werderbremen:"https://crests.football-data.org/12.png",
+ hoffenheim:"https://crests.football-data.org/2.png",
+ augsburg:"https://crests.football-data.org/16.png",
+ freiburg:"https://crests.football-data.org/17.png",
+ manchestercity:"https://crests.football-data.org/65.png",
+ celtavigo:"https://crests.football-data.org/558.png",
+ rayovallecano:"https://crests.football-data.org/87.png",
+ udinese:"https://crests.football-data.org/586.png",
+ roma:"https://crests.football-data.org/100.png",
+ bologna:"https://crests.football-data.org/103.png",
+ monza:"https://crests.football-data.org/5911.png",
+ lazio:"https://crests.football-data.org/110.png",
+ cagliari:"https://crests.football-data.org/104.png",
+ juventus:"https://crests.football-data.org/109.png",
+ napoli:"https://crests.football-data.org/113.png",
+ milan:"https://crests.football-data.org/98.png",
+ inter:"https://crests.football-data.org/108.png"
 };
 function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
@@ -760,7 +783,30 @@ function clubBadgeUrl(name){
   [/^(lille|losc|losclille)$/,"lille"],
   [/^(lens|rclens|racingclublens)$/,"lens"],
   [/^(sportingcp|sportingclubeportugal|sportinglisbon)$/,"sportingcp"],
-  [/^(casapia|casapiaac|casapiaatleticoclube|casapiaatleticoclube)$/,"casapia"]
+  [/^(casapia|casapiaac|casapiaatleticoclube)$/,"casapia"],
+  [/^chelsea(fc)?$/,"chelsea"],
+  [/^(manchesterunited|manutd|manunited|manchesterunitedfc)$/,"manchesterunited"],
+  [/^(atleticomadrid|atleticodemadrid|atleticoclubdemadrid)$/,"atletico"],
+  [/^(levante|levanteud)$/,"levante"],
+  [/^(bayerleverkusen|bayer04leverkusen|leverkusen)$/,"bayerleverkusen"],
+  [/^(vfbstuttgart|stuttgart)$/,"stuttgart"],
+  [/^(werderbremen|svwerderbremen)$/,"werderbremen"],
+  [/^(hoffenheim|tsghoffenheim|1899hoffenheim)$/,"hoffenheim"],
+  [/^(augsburg|fcaugsburg)$/,"augsburg"],
+  [/^(freiburg|scfreiburg)$/,"freiburg"],
+  [/^(manchestercity|mancity|manchestercityfc)$/,"manchestercity"],
+  [/^(celtavigo|rcceltadevigo)$/,"celtavigo"],
+  [/^(rayovallecano|rayo)$/,"rayovallecano"],
+  [/^(udinese|udinesecalcio)$/,"udinese"],
+  [/^(roma|asroma|asroma1927)$/,"roma"],
+  [/^(bologna|bolognafc1909)$/,"bologna"],
+  [/^(monza|acmonza|monza1912)$/,"monza"],
+  [/^(lazio|sslazio)$/,"lazio"],
+  [/^(cagliari|cagliaricalcio)$/,"cagliari"],
+  [/^(juventus|juventusfc|juve)$/,"juventus"],
+  [/^(napoli|sscnapoli)$/,"napoli"],
+  [/^(milan|acmilan)$/,"milan"],
+  [/^(inter|intermilan|internazionale|fcinternazionale)$/,"inter"]
  ];
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
@@ -776,8 +822,10 @@ function teamImage(r,side){
  }
  if(!url)url=teamLogos.get(normalizeTeamName(wanted))||clubBadgeUrl(wanted)||"";
  const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
+ const isCasaPia=normalizeTeamName(wanted).startsWith("casapia");
+ const imageStyle=isCasaPia?' style="width:84%;height:84%"':"";
  return url
-  ? '<img src="'+esc(url)+'" alt="Logo de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
+  ? '<img src="'+esc(url)+'" alt="Logo de '+esc(wanted)+'"'+imageStyle+' loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
   : fallback;
 }
 function pitchLabel(key){
