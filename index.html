@@ -768,6 +768,28 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .match-card.selected{padding:8px}
 }
 
+
+/* Classement plus visible, nom du club sur la ligne du dessous */
+.match-card .team{display:flex;align-items:center;gap:8px;min-width:0}
+.match-card .team-info{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-width:0;flex:1}
+.match-card .team-home .team-info{align-items:flex-end;text-align:right}
+.match-card .team-away .team-info{align-items:flex-start;text-align:left}
+.match-card .team-rank{font-size:20px;font-weight:900;line-height:1.05;min-width:0;padding:0;background:transparent;color:#087647;border-radius:0;letter-spacing:-.5px}
+.match-card .team-rank sup{font-size:10px;vertical-align:super;margin-left:1px}
+.match-card .team-rank.unavailable{font-size:18px;color:#8795a8}
+.match-card .team-name{display:block;width:100%;font-size:11px;font-weight:750;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;flex:none}
+@media(max-width:650px){
+ .match-card .team{gap:4px}
+ .match-card .team-info{gap:1px}
+ .match-card .team-rank{font-size:16px}
+ .match-card .team-rank sup{font-size:8px}
+ .match-card .team-name{font-size:9px}
+}
+@media(max-width:430px){
+ .match-card .team-rank{font-size:14px}
+ .match-card .team-name{font-size:8px}
+}
+
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -915,9 +937,9 @@ function renderList(){
   return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
    '<div class="kickoff">'+esc(timeText)+'</div>'+
    '<div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-text"><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(roundText||"Journée indisponible")+'</div></div></div>'+
-   '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span>'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></div>'+
+   '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-info">'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></span></div>'+
    '<span class="vs">VS</span>'+
-   '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span>'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></div>'+
+   '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-info">'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></span></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+
    
   '</article>';
