@@ -826,7 +826,21 @@ const CLUB_BADGES={
  estoril:"https://crests.football-data.org/5615.png",
  nacional:"https://crests.football-data.org/5529.png",
  famalicao:"https://crests.football-data.org/5530.png",
- moreirense:"https://crests.football-data.org/5532.png"
+ moreirense:"https://crests.football-data.org/5532.png",
+ annecy:"https://upload.wikimedia.org/wikipedia/en/7/7e/FC_Annecy_logo.svg",
+ kvmechelen:"https://upload.wikimedia.org/wikipedia/en/8/8d/KV_Mechelen_logo.svg",
+ genk:"https://upload.wikimedia.org/wikipedia/en/6/6c/KRC_Genk_logo.svg",
+ brentford:"https://crests.football-data.org/402.png",
+ nottinghamforest:"https://crests.football-data.org/351.png",
+ estreladaamadora:"https://upload.wikimedia.org/wikipedia/commons/4/4e/S%C3%ADmbolo_Estrela_da_Amadora.svg",
+ standardliege:"https://upload.wikimedia.org/wikipedia/en/8/8c/Standard_Li%C3%A8ge_logo.svg",
+ kortrijk:"https://upload.wikimedia.org/wikipedia/en/3/3a/KV_Kortrijk_logo.svg",
+ malaga:"https://upload.wikimedia.org/wikipedia/en/6/6a/M%C3%A1laga_CF_logo.svg",
+ westerlo:"https://upload.wikimedia.org/wikipedia/en/7/7a/KVC_Westerlo_logo.svg",
+ la galaxy:"https://upload.wikimedia.org/wikipedia/en/7/70/LA_Galaxy_logo.svg",
+ lagalaxy:"https://upload.wikimedia.org/wikipedia/en/7/70/LA_Galaxy_logo.svg",
+ cerclebrugge:"https://upload.wikimedia.org/wikipedia/en/7/7d/Cercle_Brugge_KSV_logo.svg",
+ royalantwerp:"https://upload.wikimedia.org/wikipedia/en/7/7b/Royal_Antwerp_FC_logo.svg"
 };
 function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
@@ -912,7 +926,21 @@ function clubBadgeUrl(name){
   [/^(estoril|estorilpraia|gdestorilpraia)$/,"estoril"],
   [/^(nacional|cdnacional|nacionaldamadeira)$/,"nacional"],
   [/^(famalicao|fcfamalicao|futebolclubefamalicao)$/,"famalicao"],
-  [/^(moreirense|moreirensefc)$/,"moreirense"]
+  [/^(moreirense|moreirensefc)$/,"moreirense"],
+  [/^(annecy|annecyfc|fc annecy|footballclubdannecy)$/,"annecy"],
+  [/^(kvmechelen|mechelen|yellowredkvmechelen)$/,"kvmechelen"],
+  [/^(genk|krcgenk|koninklijkeracingclubgenk)$/,"genk"],
+  [/^(brentford|brentfordfc)$/,"brentford"],
+  [/^(nottinghamforest|nottinghamforestfc|nottmforest|forest)$/,"nottinghamforest"],
+  [/^(brighton|brightonandhovealbion|brightonandhovealbionfc)$/,"brighton"],
+  [/^(estreladaamadora|estrelaamadora|cfestreladaamadora|clubfootballestreladaamadora)$/,"estreladaamadora"],
+  [/^(standardliege|standardliegefc|standarddeliege|standardde liege)$/,"standardliege"],
+  [/^(kortrijk|kvkortrijk|koninklijkekortrijkspor t)$/,"kortrijk"],
+  [/^(malaga|malagacf|malagaclubdefutbol)$/,"malaga"],
+  [/^(westerlo|kvcwesterlo)$/,"westerlo"],
+  [/^(lagalaxy|losangelesgalaxy|losangelesgalaxyfc)$/,"lagalaxy"],
+  [/^(cerclebrugge|cerclebruggeksv)$/,"cerclebrugge"],
+  [/^(royalantwerp|royalantwerpfc|antwerpfc|royalantwerpfootballclub)$/,"royalantwerp"]
  ];
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
