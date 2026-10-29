@@ -1051,9 +1051,16 @@ async function renderDataStatus(status){
  const hasError=sources.some(x=>x.item&&(x.item.status==="error"||Number(x.item.errors||0)>0||Number(x.item.issues||0)>0));
  const missing=sources.some(x=>!x.item||!x.item.updated_at_utc||x.item.status==="unavailable");
  const stale=sources.some(x=>{const t=Date.parse(x.item?.updated_at_utc||"");return !Number.isFinite(t)||(now-t)>24*3600000});
+ const utcNow=new Date(now), todayUtc=utcNow.toISOString().slice(0,10);
+ const dbTime=Date.parse(status?.database?.updated_at_utc||"");
+ const detailsTime=Date.parse(status?.match_details?.updated_at_utc||"");
+ const afterHistoricalDeadline=utcNow.getUTCHours()*60+utcNow.getUTCMinutes()>=197; // 03:17 UTC + 2 h grace
+ const afterDetailsDeadline=utcNow.getUTCHours()*60+utcNow.getUTCMinutes()>=383; // 06:23 UTC + 2 h grace
+ const historicalMissed=afterHistoricalDeadline&&(!Number.isFinite(dbTime)||new Date(dbTime).toISOString().slice(0,10)!==todayUtc);
+ const detailsMissed=afterDetailsDeadline&&(!Number.isFinite(detailsTime)||new Date(detailsTime).toISOString().slice(0,10)!==todayUtc);
  let level="ok",label="En ligne",detail="Les collectes suivies sont récentes.";
  if(hasError||oldestHours>=48){level="error";label="Erreur";detail=hasError?"Une erreur de collecte ou de qualité est signalée.":"Aucune collecte suivie depuis au moins 48 h."}
- else if(missing||stale||sources.some(x=>x.item&&x.item.status!=="ok")){level="warning";label="À surveiller";detail="Une collecte est absente ou date de plus de 24 h."}
+ else if(missing||stale||historicalMissed||detailsMissed||sources.some(x=>x.item&&x.item.status!=="ok")){level="warning";label="À surveiller";detail=historicalMissed||detailsMissed?"Une collecte attendue ce matin n’a pas encore publié de données.":"Une collecte est absente ou date de plus de 24 h."}
  el.className="api-status"+(level==="warning"?" status-warning":level==="error"?" status-error":"");
  el.title=detail;
  el.innerHTML='<span class="dot"></span><span>État des données : <strong>'+label+'</strong></span>'+icon("info","icon small");
