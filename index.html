@@ -840,7 +840,7 @@ function renderList(){
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
   const rawRound=String(matchdayLabel(r)||"").trim();
-  const roundText=rawRound?( /^journée\\b/i.test(rawRound)?rawRound:"Journée "+rawRound ):"Journée indisponible";
+  const roundText=rawRound?( /^journée\b/i.test(rawRound)?rawRound:"Journée "+rawRound ):"Journée indisponible";
   return '<article class="fixture-row '+(r.id===state.selected?"is-selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
    '<div class="fixture-time">'+esc(timeText)+'</div>'+
    '<div class="fixture-league"><span class="fixture-flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><span class="fixture-league-copy"><span class="fixture-league-name">'+esc(c)+'</span><span class="fixture-round">'+esc(roundText||"Journée indisponible")+'</span></span></div>'+
