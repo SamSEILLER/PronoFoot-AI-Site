@@ -863,7 +863,10 @@ const CLUB_BADGES={
  slaviaprague:"assets/crests/slaviaprague.svg",
  sttruiden:"assets/crests/sttruiden.svg",
  ohleuven:"assets/crests/ohleuven.svg",
- psg:"assets/crests/psg.svg"
+ psg:"assets/crests/psg.svg",
+ clubbrugge:"assets/crests/clubbrugge.svg", fiorentina:"assets/crests/fiorentina.svg", parma:"assets/crests/parma.svg", atalanta:"assets/crests/atalanta.svg",
+ deportivocoruna:"assets/crests/deportivocoruna.svg", lecce:"assets/crests/lecce.svg", genoa:"assets/crests/genoa.svg", elche:"assets/crests/elche.svg", venezia:"assets/crests/venezia.svg", como:"assets/crests/como.svg",
+ austinfc:"assets/crests/austinfc.svg", realsaltlake:"assets/crests/realsaltlake.svg", coloradorapids:"assets/crests/coloradorapids.svg", chicagofire:"assets/crests/chicagofire.svg", sanjoseearthquakes:"assets/crests/sanjoseearthquakes.svg", houstondynamo:"assets/crests/houstondynamo.svg", portlandtimbers:"assets/crests/portlandtimbers.svg", lafc:"assets/crests/lafc.svg", minnesotaunited:"assets/crests/minnesotaunited.svg", charlottefc:"assets/crests/charlottefc.svg", orlandocity:"assets/crests/orlandocity.svg", columbuscrew:"assets/crests/columbuscrew.svg", dcunited:"assets/crests/dcunited.svg", nycfc:"assets/crests/nycfc.svg", cfmontreal:"assets/crests/cfmontreal.svg", cincinnati:"assets/crests/cincinnati.svg", philadelphiaunion:"assets/crests/philadelphiaunion.svg", stlcity:"assets/crests/stlcity.svg", sandiegofc:"assets/crests/sandiegofc.svg", sportingkansascity:"assets/crests/sportingkansascity.svg", fcdallas:"assets/crests/fcdallas.svg", intermiami:"assets/crests/intermiami.svg", nashville:"assets/crests/nashville.svg", newenglandrevolution:"assets/crests/newenglandrevolution.svg", newyorkredbulls:"assets/crests/newyorkredbulls.svg", atlantaunited:"assets/crests/atlantaunited.svg", torontofc:"assets/crests/torontofc.svg", vancouverwhitecaps:"assets/crests/vancouverwhitecaps.svg", seattlesounders:"assets/crests/seattlesounders.svg"
 };function clubBadgeUrl(name){
  const key=normalizeTeamName(name);
  const aliases=[
@@ -988,6 +991,47 @@ const CLUB_BADGES={
   [/^(cerclebrugge|cerclebruggeksv)$/,"cerclebrugge"],
   [/^(royalantwerp|royalantwerpfc|antwerpfc|royalantwerpfootballclub)$/,"royalantwerp"]
  ];
+ aliases.push(
+  [/^(clubbrugge|clubbruggekv|clubbruggeksv)$/,"clubbrugge"],
+  [/^(fiorentina|acffiorentina)$/,"fiorentina"],
+  [/^(parma|parmacalcio|parmacalcio1913)$/,"parma"],
+  [/^(atalanta|atalantabc|atalantabergamasca)$/,"atalanta"],
+  [/^(deportivoacoruna|deportivolacoruna|rcdeportivodelacoruna|depor)$/,"deportivocoruna"],
+  [/^(lecce|uslecce|unionesportivalecce)$/,"lecce"],
+  [/^(genoa|genoacfc|genoacfc1893)$/,"genoa"],
+  [/^(elche|elchecf|elcheclubdefutbol)$/,"elche"],
+  [/^(venezia|veneziafc|veneziafc1907)$/,"venezia"],
+  [/^(como|como1907|comofootballclub)$/,"como"],
+  [/^(austinfc|austin)$/,"austinfc"],
+  [/^(realsaltlake|rsl)$/,"realsaltlake"],
+  [/^(coloradorapids|colorado)$/,"coloradorapids"],
+  [/^(chicagofire|chicagofirefc)$/,"chicagofire"],
+  [/^(sanjoseearthquakes|sjearthquakes|earthquakes)$/,"sanjoseearthquakes"],
+  [/^(houstondynamo|houstondynamofc)$/,"houstondynamo"],
+  [/^(portlandtimbers|portland)$/,"portlandtimbers"],
+  [/^(lafc|losangelesfc|losangelesfootballclub)$/,"lafc"],
+  [/^(minnesotaunited|minnesotaunitedfc)$/,"minnesotaunited"],
+  [/^(charlottefc|charlotte)$/,"charlottefc"],
+  [/^(orlandocity|orlandocitysc)$/,"orlandocity"],
+  [/^(columbuscrew)$/,"columbuscrew"],
+  [/^(dcunited|dcunitedfc)$/,"dcunited"],
+  [/^(nycfc|newyorkcityfc|newyorkcityfootballclub)$/,"nycfc"],
+  [/^(cfmontreal|montreal|impactmontreal)$/,"cfmontreal"],
+  [/^(fccincinnati|cincinnati)$/,"cincinnati"],
+  [/^(philadelphiaunion|phillyunion)$/,"philadelphiaunion"],
+  [/^(stlcity|stlouiscity|stlouiscitysc)$/,"stlcity"],
+  [/^(sandiegofc|sandiegofootballclub)$/,"sandiegofc"],
+  [/^(sportingkansascity|skc)$/,"sportingkansascity"],
+  [/^(fcdallas|dallas)$/,"fcdallas"],
+  [/^(intermiami|intermiamicf)$/,"intermiami"],
+  [/^(nashville|nashvillesc)$/,"nashville"],
+  [/^(newenglandrevolution|nerevolution)$/,"newenglandrevolution"],
+  [/^(newyorkredbulls|nyredbulls|nyrb)$/,"newyorkredbulls"],
+  [/^(atlantaunited|atlutd)$/,"atlantaunited"],
+  [/^(torontofc|toronto)$/,"torontofc"],
+  [/^(vancouverwhitecaps|vancouverwhitecapsfc)$/,"vancouverwhitecaps"],
+  [/^(seattlesounders|seattlesoundersfc)$/,"seattlesounders"]
+ );
  for(const [pattern,id] of aliases){if(pattern.test(key)&&CLUB_BADGES[id])return CLUB_BADGES[id]}
  return "";
 }
