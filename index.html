@@ -1206,6 +1206,8 @@ function supplementaryHTML(r){
  const detail=payload("detail")||{},lineups=payload("lineups"),stats=payload("stats"),shots=payload("shots"),events=payload("events");
  const rows=[];
  const add=(label,value)=>{if(value!==null&&value!==undefined&&value!=="")rows.push('<div class="info-row"><span class="label">'+esc(label)+'</span><span>'+esc(value)+'</span></div>')};
+ add("Version du moteur",r.engine_version||state.data?.engine_version||"Version non archivée");
+ add("Modèle technique",r.model||state.data?.model||"Non précisé");
  add("Ligue source",detail.league?.name);
  add("Saison",detail.season);
  add("Journée source",detail.round_name);
