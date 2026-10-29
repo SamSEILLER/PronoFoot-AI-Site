@@ -964,6 +964,65 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  #matchList .competition-group .prob-row{gap:4px;padding:4px;border-radius:9px}
  #matchList .competition-group .prob{min-height:32px;font-size:10px;border-radius:6px}
 }
+
+
+/* Retour à la liste simple : drapeau et nom de compétition sur chaque match */
+#matchList.match-list{display:flex;flex-direction:column;gap:0;overflow:hidden;border:1px solid #e5ebf0;border-radius:14px;background:#fff}
+#matchList .match-card{
+ display:grid;grid-template-columns:56px minmax(115px,1.05fr) minmax(115px,1fr) 28px minmax(115px,1fr) minmax(132px,.72fr);
+ align-items:center;gap:10px;min-height:116px;padding:12px 14px;border:0;border-bottom:1px solid #edf1f4;border-radius:0;background:#fff;
+}
+#matchList .match-card:last-child{border-bottom:0}
+#matchList .match-card:hover{background:#f8fbf9}
+#matchList .match-card.selected{background:#f0faf4;box-shadow:inset 4px 0 #159568}
+#matchList .kickoff{align-self:start;margin-top:2px;padding:5px 7px;border:1px solid #e7edf2;border-radius:7px;background:#f7f9fb;color:#526579;font-size:12px;font-weight:850;font-variant-numeric:tabular-nums}
+#matchList .league{display:flex;align-items:center;gap:7px;min-width:0;padding:0;border:0;border-radius:0;background:transparent}
+#matchList .league .flag{display:flex!important;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px}
+#matchList .league .flag img{display:block;width:26px;height:26px;object-fit:contain}
+#matchList .league-text{display:flex;flex-direction:column;gap:4px;min-width:0}
+#matchList .league-name{color:#2c4054;font-size:12px;font-weight:800;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+#matchList .round{color:#8592a0;font-size:10px;font-weight:650;white-space:normal}
+#matchList .team{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;margin:0}
+#matchList .team-info{display:flex;flex-direction:column;align-items:center!important;justify-content:center;gap:4px;width:100%;min-width:0;text-align:center!important}
+#matchList .team-logo{display:flex;align-items:center;justify-content:center;width:54px!important;height:48px!important;flex:0 0 48px!important}
+#matchList .team-logo img{display:block;width:auto!important;height:auto!important;max-width:52px!important;max-height:46px!important;object-fit:contain}
+#matchList .team-rank{display:inline-flex!important;align-items:center;justify-content:center;min-width:25px;padding:2px 6px;border:1px solid #d8eee1;border-radius:6px;background:#edf8f1;color:#168052;font-size:12px!important;font-weight:900;line-height:1.15}
+#matchList .team-rank.unavailable{border-color:#e8edf1;background:#f5f7f9;color:#9aa6b2;font-size:11px!important}
+#matchList .team-name{display:block;width:100%;min-width:0;flex:none;margin:0;color:#26384a;font-size:12px!important;font-weight:800;line-height:1.25;text-align:center!important;white-space:normal;overflow-wrap:anywhere}
+#matchList .vs{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid #e9eef2;border-radius:50%;background:#f8fafb;color:#9aa6b2;font-size:8px;font-weight:900}
+#matchList .prob-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;min-width:0;padding:5px;border:1px solid #edf1f4;border-radius:9px;background:#f8fafb}
+#matchList .prob{min-height:34px;padding:4px 2px;border-radius:6px;background:#edf1f5;color:#607186;font-size:11px;font-weight:850}
+#matchList .prob.best{background:#e4f7ec;color:#13804e}
+#matchList .prob:nth-child(3){background:#fff0f0;color:#d94b55}
+@media(max-width:1000px){
+ #matchList .match-card{grid-template-columns:48px minmax(0,1fr) 22px minmax(0,1fr);grid-template-rows:auto auto;gap:8px 10px;padding:12px}
+ #matchList .kickoff{grid-column:1;grid-row:1}
+ #matchList .league{grid-column:2/5;grid-row:1}
+ #matchList .team-home{grid-column:1/3;grid-row:2}
+ #matchList .vs{grid-column:3;grid-row:2}
+ #matchList .team-away{grid-column:3/5;grid-row:2}
+ #matchList .prob-row{grid-column:1/5;grid-row:3}
+ #matchList .league .flag{flex-basis:24px;width:24px;height:24px}
+ #matchList .league .flag img{width:22px;height:22px}
+}
+@media(max-width:520px){
+ #matchList.match-list{border-radius:12px}
+ #matchList .match-card{grid-template-columns:42px minmax(0,1fr) minmax(0,1fr);gap:7px;padding:10px 8px}
+ #matchList .kickoff{grid-column:1;grid-row:1;font-size:10px;padding:4px}
+ #matchList .league{grid-column:2/4;grid-row:1;gap:6px}
+ #matchList .league .flag{flex-basis:22px;width:22px;height:22px}
+ #matchList .league .flag img{width:20px;height:20px}
+ #matchList .league-name{font-size:11px}
+ #matchList .round{font-size:9px}
+ #matchList .team-home{grid-column:1;grid-row:2}
+ #matchList .vs{display:none}
+ #matchList .team-away{grid-column:2/4;grid-row:2}
+ #matchList .team-logo{width:40px!important;height:36px!important;flex-basis:36px!important}
+ #matchList .team-logo img{max-width:38px!important;max-height:34px!important}
+ #matchList .team-rank{font-size:11px!important;padding:2px 5px}
+ #matchList .team-name{font-size:10px!important}
+ #matchList .prob-row{grid-column:1/4;grid-row:3}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -1104,23 +1163,19 @@ function renderList(){
   recordCoverage(rows);return;
  }
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
- const groups=new Map();
- rows.forEach(r=>{const name=r.competition||"Compétition indisponible";if(!groups.has(name))groups.set(name,[]);groups.get(name).push(r)});
- $("#matchList").innerHTML=Array.from(groups.entries()).map(([competition,matches])=>
-  '<section class="competition-group" aria-label="'+esc(competition)+'">'+
-   '<header class="competition-group-header"><span class="competition-group-mark" aria-hidden="true"></span><span class="competition-group-name">'+esc(competition)+'</span><span class="competition-group-count">'+matches.length+' match'+(matches.length>1?'s':'')+'</span></header>'+
-   '<div class="competition-group-matches">'+matches.map(r=>{
-    const d=dateOf(r);
-    const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
-    return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
-     '<div class="kickoff">'+esc(timeText)+'</div>'+
-     '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-info">'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></span></div>'+
-     '<span class="vs">VS</span>'+
-     '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-info">'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></span></div>'+
-     '<div class="prob-row">'+probabilityCells(r)+'</div>'+
-    '</article>';
-   }).join("")+'</div></section>'
- ).join("");
+ $("#matchList").innerHTML=rows.map(r=>{
+  const d=dateOf(r),c=r.competition||"Compétition indisponible";
+  const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
+  const roundText=matchdayLabel(r);
+  return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" aria-pressed="'+(r.id===state.selected)+'" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
+   '<div class="kickoff">'+esc(timeText)+'</div>'+
+   '<div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-text"><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(roundText||"Journée indisponible")+'</div></div></div>'+
+   '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span><span class="team-info">'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></span></div>'+
+   '<span class="vs">VS</span>'+
+   '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-info">'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></span></div>'+
+   '<div class="prob-row">'+probabilityCells(r)+'</div>'+
+  '</article>';
+ }).join("");
  recordCoverage(rows);
  renderDetail(rows.find(r=>r.id===state.selected)||rows[0]);
 }
