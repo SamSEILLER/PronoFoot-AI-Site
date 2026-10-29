@@ -1023,6 +1023,85 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  #matchList .team-name{font-size:10px!important}
  #matchList .prob-row{grid-column:1/4;grid-row:3}
 }
+
+
+/* Alignement sur la maquette fournie : tableau de matchs sans colonne Action */
+#matchList.match-list{display:flex;flex-direction:column;gap:0;overflow:hidden;border:1px solid #e5ebf0;border-radius:12px;background:#fff}
+#matchList .match-list-header,#matchList .match-card{
+ display:grid;grid-template-columns:64px minmax(115px,1.05fr) minmax(110px,1fr) 28px minmax(110px,1fr) minmax(170px,1.3fr) minmax(145px,1.1fr);
+ align-items:center;gap:10px;
+}
+#matchList .match-list-header{min-height:42px;padding:0 14px;background:#f7f9fc;border-bottom:1px solid #e7edf3;color:#52657c;font-size:11px;font-weight:800}
+#matchList .match-card{min-height:70px;padding:7px 14px;border:0;border-bottom:1px solid #e9eef4;border-radius:0;background:#fff}
+#matchList .match-card:last-child{border-bottom:0}
+#matchList .match-card:hover{background:#f8fbff}
+#matchList .match-card.selected{background:#f1f8ff;box-shadow:inset 3px 0 #1683f8}
+#matchList .kickoff{padding:0;border:0;background:transparent;color:#25364b;font-size:13px;font-weight:800}
+#matchList .league{display:flex;align-items:center;gap:9px;min-width:0;padding:0;border:0;border-radius:0;background:transparent}
+#matchList .league .flag{display:flex!important;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px}
+#matchList .league .flag img{display:block;width:30px;height:30px;object-fit:contain}
+#matchList .league-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+#matchList .league-name{color:#26384f;font-size:12px;font-weight:800;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+#matchList .round{color:#718096;font-size:10px;line-height:1.2}
+#matchList .team{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:8px;min-width:0;margin:0}
+#matchList .team-info{display:flex;flex-direction:column;align-items:flex-start!important;justify-content:center;gap:4px;width:auto;min-width:0;flex:1;text-align:left!important}
+#matchList .team-home .team-info{align-items:flex-start!important;text-align:left!important}
+#matchList .team-away .team-info{align-items:flex-start!important;text-align:left!important}
+#matchList .team-logo{display:flex;align-items:center;justify-content:center;width:52px!important;height:46px!important;flex:0 0 46px!important}
+#matchList .team-logo img{display:block;width:auto!important;height:auto!important;max-width:50px!important;max-height:44px!important;object-fit:contain}
+#matchList .team-rank{display:inline-flex!important;align-items:center;justify-content:center;align-self:flex-start;min-width:28px;padding:4px 7px;border:0;border-radius:8px;background:#eff3f7;color:#465b73;font-size:12px!important;font-weight:850;line-height:1.1}
+#matchList .team-rank sup{font-size:8px}
+#matchList .team-rank.unavailable{background:#f2f5f8;color:#8a98a8;font-size:11px!important}
+#matchList .team-name{display:block;width:100%;min-width:0;flex:none;margin:0;color:#1c2c42;font-size:13px!important;font-weight:800;line-height:1.2;text-align:left!important;white-space:normal;overflow-wrap:anywhere}
+#matchList .vs{display:flex;align-items:center;justify-content:center;width:auto;height:auto;border:0;border-radius:0;background:transparent;color:#73849a;font-size:12px;font-weight:850}
+#matchList .prob-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0;padding:0;border:0;border-radius:0;background:transparent}
+#matchList .prob{display:flex;align-items:center;justify-content:center;min-height:40px;padding:5px 3px;border:0;border-radius:7px;background:#eef2f6;color:#5d7088;font-size:12px;font-weight:850}
+#matchList .prob.best{background:#e2f7eb;color:#16a05f}
+#matchList .prob:nth-child(3){background:#fff0f1;color:#e44a54}
+#matchList .confidence-cell{min-width:0}
+#matchList .confidence{display:flex;align-items:center;gap:9px;min-width:0}
+#matchList .confidence strong,.match-card .confidence-value{font-size:13px;font-weight:850;color:#192d46;white-space:nowrap;font-variant-numeric:tabular-nums}
+#matchList .confidence-track{height:9px;flex:1;min-width:24px;border-radius:99px;background:#e9eef4;overflow:hidden}
+#matchList .confidence-track i{display:block;height:100%;border-radius:99px;background:#14b86b}
+#matchList .confidence-track i.medium{background:#2687f5}
+#matchList .confidence-track i.low{background:#f4ae18}
+#matchList .confidence-value.unavailable{color:#8492a6}
+@media(max-width:1100px){
+ #matchList .match-list-header{display:none}
+ #matchList .match-card{grid-template-columns:50px minmax(0,1fr) 20px minmax(0,1fr);grid-template-rows:auto auto auto;gap:8px 10px;padding:12px}
+ #matchList .kickoff{grid-column:1;grid-row:1}
+ #matchList .league{grid-column:2/5;grid-row:1}
+ #matchList .team-home{grid-column:1/3;grid-row:2}
+ #matchList .vs{grid-column:3;grid-row:2}
+ #matchList .team-away{grid-column:3/5;grid-row:2}
+ #matchList .prob-row{grid-column:1/3;grid-row:3}
+ #matchList .confidence-cell{grid-column:3/5;grid-row:3}
+ #matchList .team-logo{width:42px!important;height:38px!important;flex-basis:38px!important}
+ #matchList .team-logo img{max-width:40px!important;max-height:36px!important}
+}
+@media(max-width:520px){
+ #matchList.match-list{border-radius:10px}
+ #matchList .match-card{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:7px;padding:10px 8px}
+ #matchList .kickoff{grid-column:1;grid-row:1;font-size:11px}
+ #matchList .league{grid-column:2/4;grid-row:1;gap:6px}
+ #matchList .league .flag{flex-basis:24px;width:24px;height:24px}
+ #matchList .league .flag img{width:22px;height:22px}
+ #matchList .league-name{font-size:11px}
+ #matchList .round{font-size:9px}
+ #matchList .team-home{grid-column:1;grid-row:2}
+ #matchList .vs{grid-column:2;grid-row:2}
+ #matchList .team-away{grid-column:3;grid-row:2}
+ #matchList .team{flex-direction:column;gap:4px}
+ #matchList .team-info{align-items:center!important;flex:none;width:100%;text-align:center!important}
+ #matchList .team-name{font-size:10px!important;text-align:center!important}
+ #matchList .team-logo{width:36px!important;height:32px!important;flex-basis:32px!important}
+ #matchList .team-logo img{max-width:35px!important;max-height:30px!important}
+ #matchList .team-rank{align-self:center;font-size:10px!important;padding:3px 5px}
+ #matchList .prob-row{grid-column:1/4;grid-row:3}
+ #matchList .confidence-cell{grid-column:1/4;grid-row:4}
+ #matchList .confidence{max-width:100%}
+ #matchList .confidence-track{height:7px}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -1163,7 +1242,7 @@ function renderList(){
   recordCoverage(rows);return;
  }
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
- $("#matchList").innerHTML=rows.map(r=>{
+ $("#matchList").innerHTML='<div class="match-list-header" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span>VS</span><span>Équipe B</span><span>Probabilités 1X2</span><span>Confiance</span></div>'+rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
   const roundText=matchdayLabel(r);
@@ -1174,6 +1253,7 @@ function renderList(){
    '<span class="vs">VS</span>'+
    '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-info">'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></span></div>'+
    '<div class="prob-row">'+probabilityCells(r)+'</div>'+
+   '<div class="confidence-cell">'+confidenceMarkup(r)+'</div>'+
   '</article>';
  }).join("");
  recordCoverage(rows);
