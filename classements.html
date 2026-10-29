@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#243744">
+<title>Classements — PronoFoot AI</title>
+<style>
+:root{color-scheme:light;--ink:#0a1b46;--muted:#4f6d99;--green:#08b968;--line:#e5edf7;--bg:#f3f8fc;--panel:#fff}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font:14px/1.45 Inter,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f5f9fd,#eef5fa);min-height:100vh}
+.topbar{min-height:86px;padding:12px 20px;display:flex;align-items:center;gap:24px;color:#f9fbff;background:linear-gradient(110deg,#1c2c38,#293b48 57%,#1b303e);box-shadow:0 2px 8px #172e3b18}.brand{display:flex;align-items:center;gap:12px;min-width:250px;text-decoration:none;color:#fff}.brand-logo{width:52px;height:52px}.brand-name{font-size:30px;line-height:1;font-weight:800;letter-spacing:-1px;white-space:nowrap}.brand-name em{font-style:normal;color:#05c77b}.brand-sub{font-size:11px;letter-spacing:1.2px}.nav{display:flex;align-items:center;gap:5px;flex:1;overflow-x:auto}.nav a{padding:13px 14px;border-radius:9px;text-decoration:none;color:#f1f5f9;white-space:nowrap}.nav a.active{background:#ffffff0d;color:#91edc1}.nav a:hover{background:#ffffff12}
+main{max-width:1500px;margin:auto;padding:24px 18px 40px}.heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.heading h1{font-size:30px;letter-spacing:-.7px;margin:0}.muted{color:var(--muted)}.toolbar,.panel,.notice{background:#ffffffd9;border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 12px #112b4808}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:14px;margin:18px 0 12px}.field{height:42px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 12px;color:var(--ink);min-width:220px;max-width:100%;font:inherit}.notice{padding:13px 16px;margin:12px 0;color:#46658d;line-height:1.6}.panel{overflow:hidden}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:700px}th,td{padding:10px 12px;border-bottom:1px solid #eaf0f7;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}th{font-size:11px;text-transform:uppercase;letter-spacing:.35px;color:#567197;background:#f5f8fc}th:nth-child(2),td:nth-child(2){text-align:left}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f7fbff}.team{display:flex;align-items:center;gap:9px;text-align:left;font-weight:700}.crest{width:27px;height:27px;object-fit:contain;flex:0 0 27px}.rank{font-weight:850;color:#24466d}.points{font-weight:850;color:#087c49}.empty{padding:25px;text-align:center;color:var(--muted)}.footer{font-size:12px;color:#70839c;margin:16px 2px}
+@media(max-width:760px){.topbar{padding:12px;gap:8px;flex-wrap:wrap}.brand{min-width:0;flex:1}.brand-name{font-size:25px}.nav{flex-basis:100%;order:3}.nav a{padding:10px;font-size:12px}main{padding:17px 9px 28px}.heading h1{font-size:25px}.toolbar{padding:10px}.field{width:100%;min-width:0}th,td{padding:9px 10px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="./index.html"><img class="brand-logo" src="./assets/football-ai-circuit.svg" alt=""><span><span class="brand-name">PronoFoot <em>AI</em></span><br><span class="brand-sub">FOOTBALL PREDICTION LAB</span></span></a>
+<nav class="nav" aria-label="Navigation principale"><a href="./index.html">Matchs à venir</a><a href="./history.html">Historique</a><a class="active" href="./classements.html" aria-current="page">Classements</a></nav>
+</header>
+<main>
+<div class="heading"><h1>Classements des équipes</h1><span class="muted" id="generated">Chargement des données…</span></div>
+<p class="muted">Classements provisoires calculés à partir des matchs terminés et des scores présents dans les archives de Football Prediction Lab.</p>
+<div class="toolbar"><label for="competition">Compétition</label><select class="field" id="competition"><option value="">Chargement…</option></select></div>
+<div class="notice" id="notice">Chargement du classement…</div>
+<section class="panel"><div class="table-wrap" id="table"><div class="empty">Chargement…</div></div></section>
+<p class="footer">Données dérivées des archives de matchs, pas d’un flux officiel de classement. Le nombre de matchs joués est affiché pour rendre visible une éventuelle couverture partielle. Tri : points, différence de buts, buts marqués, victoires, puis nom. Les critères officiels de départage peuvent différer selon la compétition. Les compétitions de coupe sans classement de championnat ne sont pas artificiellement classées.</p>
+</main>
+<script>
+(()=>{"use strict";
+const $=s=>document.querySelector(s),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let data=null;
+function show(){
+ const c=(data?.competitions||[]).find(x=>x.competition_id===$("#competition").value);
+ if(!c){$("#table").innerHTML='<div class="empty">Aucune donnée de classement disponible.</div>';$("#notice").textContent="Aucune compétition sélectionnée.";return}
+ const season=c.season?" · Saison "+c.season:"";
+ if(c.status!=="available"){
+  $("#notice").textContent=c.competition+season+" : "+(c.reason||"Classement indisponible.");
+  $("#table").innerHTML='<div class="empty">Aucun classement calculable à afficher pour cette compétition.</div>';return;
+ }
+ $("#notice").textContent=c.competition+season+" · "+c.matches_counted+" matchs terminés avec score valide pris en compte. Classement provisoire, non certifié officiellement.";
+ const rows=c.teams||[];
+ $("#table").innerHTML='<table><thead><tr><th>Rang</th><th>Équipe</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th><th>Diff.</th><th>Pts</th></tr></thead><tbody>'+rows.map(t=>'<tr><td class="rank">'+t.rank+'</td><td><div class="team">'+(t.image_url&&/^https:\/\//i.test(t.image_url)?'<img class="crest" loading="lazy" src="'+esc(t.image_url)+'" alt="">':'<span class="crest"></span>')+'<span>'+esc(t.team)+'</span></div></td><td>'+t.played+'</td><td>'+t.wins+'</td><td>'+t.draws+'</td><td>'+t.losses+'</td><td>'+t.goals_for+'</td><td>'+t.goals_against+'</td><td>'+(t.goal_difference>0?"+":"")+t.goal_difference+'</td><td class="points">'+t.points+'</td></tr>').join("")+'</tbody></table>';
+}
+async function load(){try{const r=await fetch("./data/standings.json?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("Fichier de classement introuvable ("+r.status+"). La prochaine synchronisation doit publier data/standings.json.");data=await r.json();const comps=data.competitions||[];$("#generated").textContent="Généré le "+(data.generated_at_utc?new Date(data.generated_at_utc).toLocaleString("fr-FR"):"date inconnue");$("#competition").innerHTML=comps.map(c=>'<option value="'+esc(c.competition_id)+'">'+esc(c.competition)+'</option>').join("");const first=comps.find(c=>c.status==="available");if(first)$("#competition").value=first.competition_id;show()}catch(e){$("#notice").textContent=e.message;$("#table").innerHTML='<div class="empty">Le fichier de classement est indisponible. Vérifiez la prochaine synchronisation des données.</div>';}}
+$("#competition").addEventListener("change",show);load();
+})();
+</script>
+</body></html>
