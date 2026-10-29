@@ -101,6 +101,10 @@ const scoreOf=m=>{
 };
 const outcome=s=>s.home>s.away?"home":s.home<s.away?"away":"draw";
 const probsOf=m=>m.probabilities||m.prediction?.probabilities||m.predicted_probabilities||m.model_prediction?.probabilities||null;
+const expectedGoalsOf=m=>({
+ home:m.home_expected_goals??m.expected_goals?.home??m.expectedGoals?.home??m.prediction?.home_expected_goals??m.prediction?.expected_goals?.home??m.model_prediction?.home_expected_goals??null,
+ away:m.away_expected_goals??m.expected_goals?.away??m.expectedGoals?.away??m.prediction?.away_expected_goals??m.prediction?.expected_goals?.away??m.model_prediction?.away_expected_goals??null
+});
 const predictedOutcome=p=>p&&["home","draw","away"].every(k=>Number.isFinite(Number(p[k])))?["home","draw","away"].sort((a,b)=>Number(p[b])-Number(p[a]))[0]:null;
 function collectPredictions(data){
  const found=[];
@@ -115,7 +119,7 @@ function normalizeMatch(m,actualOnly=false){
  const score=scoreOf(m);
  if(!home||!away||!score)return null;
  const p=probsOf(m);
- return {id:String(m.id||m.match_id||m.fixture_id||[home,away,dateOf(m)?.toISOString()].join("_")),home,away,competition:m.competition||m.competition_name||m.league?.name||m.competition?.name||"Compétition inconnue",kickoff:dateOf(m)?.toISOString()||"",score,probabilities:p,model:m.model||m.model_version||m.prediction?.model||"",source:actualOnly?"result":"mixed"};
+ const eg=expectedGoalsOf(m);return {id:String(m.id||m.match_id||m.fixture_id||[home,away,dateOf(m)?.toISOString()].join("_")),home,away,competition:m.competition||m.competition_name||m.league?.name||m.competition?.name||"Compétition inconnue",kickoff:dateOf(m)?.toISOString()||"",score,probabilities:p,home_expected_goals:eg.home,away_expected_goals:eg.away,model:m.model||m.model_version||m.prediction?.model||"",source:actualOnly?"result":"mixed"};
 }
 function fromDetails(data){
  const out=[];
@@ -161,13 +165,27 @@ function render(){
   const date=dateOf(m),p=predictedOutcome(m.probabilities),actual=outcome(m.score),hasPred=!!p,correctPred=hasPred&&p===actual;
   const resultLabel=actual==="home"?"Victoire domicile":actual==="away"?"Victoire extérieur":"Match nul";
   const predictionLabel=!hasPred?"Pronostic non archivé":p==="home"?"Victoire domicile":p==="away"?"Victoire extérieur":"Match nul";
-  return '<article class="match"><div class="match-top"><span>'+esc(m.competition)+' · '+esc(date?new Intl.DateTimeFormat("fr-FR",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Paris"}).format(date):"Date inconnue")+'</span><span class="badge '+(hasPred?(correctPred?"good":"bad"):"")+'">'+esc(hasPred?(correctPred?"1N2 correct":"1N2 incorrect"):"Résultat réel disponible")+'</span></div><div class="match-teams"><div class="team"><span>'+esc(m.home)+'</span></div><span class="score">'+m.score.home+' – '+m.score.away+'</span><div class="team"><span>'+esc(m.away)+'</span></div></div><div class="detail-grid"><div class="detail-box"><h3>Résultat réel</h3><strong>'+esc(resultLabel)+'</strong><p style="margin:5px 0 0;font-size:12px;color:#607895">Score final : '+m.score.home+'–'+m.score.away+'</p></div><div class="detail-box"><h3>Prévision avant match</h3><strong>'+esc(predictionLabel)+'</strong>'+(hasPred?probBars({...m.probabilities,_home:m.home}):'<p style="font-size:12px;color:#607895;margin:6px 0 0">Pas de probabilité sauvegardée pour cette rencontre.</p>')+'</div></div></article>';
+  const hg=Number(m.home_expected_goals),ag=Number(m.away_expected_goals),hasXg=m.home_expected_goals!==null&&m.home_expected_goals!==undefined&&m.home_expected_goals!==""&&m.away_expected_goals!==null&&m.away_expected_goals!==undefined&&m.away_expected_goals!==""&&Number.isFinite(hg)&&Number.isFinite(ag)&&hg>=0&&ag>=0&&hg<=12&&ag<=12;return '<article class="match"><div class="match-top"><span>'+esc(m.competition)+' · '+esc(date?new Intl.DateTimeFormat("fr-FR",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Paris"}).format(date):"Date inconnue")+'</span><span class="badge '+(hasPred?(correctPred?"good":"bad"):"")+'">'+esc(hasPred?(correctPred?"1N2 correct":"1N2 incorrect"):"Résultat réel disponible")+'</span></div><div class="match-teams"><div class="team"><span>'+esc(m.home)+'</span></div><span class="score">'+m.score.home+' – '+m.score.away+'</span><div class="team"><span>'+esc(m.away)+'</span></div></div><div class="detail-grid"><div class="detail-box"><h3>Résultat réel</h3><strong>'+esc(resultLabel)+'</strong><p style="margin:5px 0 0;font-size:12px;color:#607895">Score final : '+m.score.home+'–'+m.score.away+'</p></div><div class="detail-box"><h3>Prévision avant match · 1X2</h3><strong>'+esc(predictionLabel)+'</strong>'+(hasPred?probBars({...m.probabilities,_home:m.home}):'<p style="font-size:12px;color:#607895;margin:6px 0 0">Pas de probabilité sauvegardée pour cette rencontre.</p>')+'</div></div><div class="detail-grid"><div class="detail-box"><h3>Buts attendus avant match</h3>'+(hasXg?'<strong>'+esc(m.home)+' : '+hg.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+' · '+esc(m.away)+' : '+ag.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><p style="margin:5px 0 0;font-size:12px;color:#607895">Total attendu : '+(hg+ag).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+' buts</p>':'<p style="font-size:12px;color:#607895;margin:0">Buts attendus non archivés pour cette rencontre.</p>')+'</div><div class="detail-box"><h3>Écart buts attendus / réels</h3>'+(hasXg?'<strong>Domicile : '+(m.score.home-hg>=0?"+":"")+(m.score.home-hg).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+' · Extérieur : '+(m.score.away-ag>=0?"+":"")+(m.score.away-ag).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong><p style="margin:5px 0 0;font-size:12px;color:#607895">Écart descriptif, pas une mesure de qualité du modèle à lui seul.</p>':'<p style="font-size:12px;color:#607895;margin:0">Impossible à calculer sans xG archivés.</p>')+'</div></div></article>';
  }).join("");
+}
+async function renderDataStatus(status){
+ const el=$("status"),keys=["database","odds","match_details"],now=Date.now(),thresholds={database:36,odds:48,match_details:36};
+ const sources=keys.map(key=>({key,item:status&&status[key]}));
+ const ages=sources.map(x=>{const t=Date.parse(x.item?.updated_at_utc||"");return {key:x.key,item:x.item,age:Number.isFinite(t)?(now-t)/3600000:Infinity}});
+ const hasError=sources.some(x=>x.item&&(x.item.status==="error"||Number(x.item.errors||0)>0||Number(x.item.issues||0)>0));
+ const missing=sources.some(x=>!x.item||!x.item.updated_at_utc||x.item.status==="unavailable");
+ const stale=ages.some(x=>x.age>thresholds[x.key]),oldSources=ages.filter(x=>x.age>thresholds[x.key]).map(x=>x.key);
+ let level="ok",label="En ligne",detail="Les collectes suivies sont récentes.";
+ if(hasError){level="error";label="Erreur";detail="Une erreur de collecte ou de qualité est signalée."}
+ else if(ages.some(x=>x.age>=72)){level="error";label="Erreur";detail="Une source suivie n’a pas été actualisée depuis au moins 72 h."}
+ else if(missing||stale||sources.some(x=>x.item&&x.item.status!=="ok")){level="warning";label="À surveiller";detail=missing?"Une source de données est absente ou indisponible.":stale?"Une collecte dépasse son seuil de fraîcheur : "+oldSources.join(", ")+".":"Une source signale un état à vérifier."}
+ el.className="api-status"+(level==="warning"?" status-warning":level==="error"?" status-error":"");el.title=detail;
+ el.innerHTML='<span class="dot"></span><span>État des données : <strong>'+label+'</strong></span><svg class="icon small"><use href="#i-info"/></svg>';
 }
 async function load(){
  try{
   $("status").innerHTML='Données : <strong>Chargement…</strong>';
-  const [predRes,detailsRes,modelRes]=await Promise.all([fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/model-history.json?v="+Date.now(),{cache:"no-store"})]);
+  const [predRes,detailsRes,modelRes,statusRes]=await Promise.all([fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/model-history.json?v="+Date.now(),{cache:"no-store"}),fetch("./data/site-status.json?v="+Date.now(),{cache:"no-store"})]);
   const pred=predRes.ok?await predRes.json():{},details=detailsRes.ok?await detailsRes.json():{},model= modelRes.ok?await modelRes.json():{};
   const predictions=collectPredictions(pred);
   const results=fromDetails(details);
@@ -175,7 +193,7 @@ async function load(){
   const comps=[...new Set(state.matches.map(m=>m.competition))].sort((a,b)=>a.localeCompare(b,"fr"));
   $("competition").innerHTML='<option value="">Toutes les compétitions</option>'+comps.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join("");
   const evaluated=Array.isArray(model.versions)?model.versions.reduce((n,v)=>n+(Number(v.evaluated_matches)||0),0):0;
-  $("status").innerHTML='Données : <strong>'+((predRes.ok&&detailsRes.ok)?"Sources chargées":"Sources partielles")+'</strong>';
+  const siteStatus=statusRes.ok?await statusRes.json():null;renderDataStatus(siteStatus);
   if(evaluated===0){$("notice").classList.remove("hidden");$("notice").innerHTML='<strong>Limite actuelle des archives de prédictions.</strong><br>Le registre du modèle indique qu’aucune rencontre n’a encore été évaluée dans les archives de versions. Cette page affiche donc les résultats réellement disponibles et n’invente pas de prévisions passées. Pour comparer les deux de façon fiable, le pipeline doit enregistrer les probabilités horodatées avant le coup d’envoi puis les associer au score final.';}
   render();
  }catch(e){$("status").innerHTML='Données : <strong>Erreur de chargement</strong>';$("matchList").innerHTML='<div class="empty">Impossible de charger les fichiers de données. Vérifiez le déploiement et les fichiers JSON.</div>';}
