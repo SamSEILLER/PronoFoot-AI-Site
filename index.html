@@ -660,6 +660,20 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  #matchList .fixture-probabilities{grid-column:1/4;grid-row:3;gap:4px}
  #matchList .fixture-probabilities .prob{min-height:30px;font-size:10px}
 }
+
+
+/* Finitions : classement plus lisible et initiales uniquement en remplacement d'un écusson absent */
+#matchList .fixture-team .team-rank{min-width:29px;max-width:30px;padding:5px 5px;font-size:12px;font-weight:900;border-radius:6px}
+#matchList .fixture-team .team-rank sup{font-size:8px}
+#matchList .fixture-crest{position:relative;overflow:hidden;border-radius:5px}
+#matchList .fixture-crest .crest-fallback{display:none;place-items:center;width:100%;height:100%;border-radius:5px;background:#edf3fa;color:#385775;font-size:10px;font-weight:850;letter-spacing:.2px}
+#matchList .fixture-crest .crest-fallback.is-visible{display:grid}
+@media(max-width:1250px){
+ #matchList .fixture-team .team-rank{min-width:27px;max-width:28px;padding:4px;font-size:11px}
+}
+@media(max-width:520px){
+ #matchList .fixture-team .team-rank{min-width:24px;max-width:none;padding:3px 5px;font-size:10px}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -1281,9 +1295,9 @@ function teamImage(r,side){
    if(team?.image_url&&/^https:\/\//i.test(team.image_url)){url=team.image_url;break}
   }
  }
- const fallback='<span class="crest-fallback">'+esc(initials(wanted))+'</span>';
+ const fallback='<span class="crest-fallback is-visible">'+esc(initials(wanted))+'</span>';
  return url
-  ? '<img src="'+esc(url)+'" alt="Écusson de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.style.display=&quot;grid&quot;">'+fallback
+  ? '<img src="'+esc(url)+'" alt="Écusson de '+esc(wanted)+'" loading="lazy" onerror="this.style.display=&quot;none&quot;;this.nextElementSibling.classList.add(&quot;is-visible&quot;)"><span class="crest-fallback">'+esc(initials(wanted))+'</span>'
   : fallback;
 }
 function pitchLabel(key){
