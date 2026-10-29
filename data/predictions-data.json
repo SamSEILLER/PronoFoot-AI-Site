@@ -1,11 +1,13 @@
 {
-  "generated_at_utc": "2026-10-29T14:06:16.154240+00:00",
+  "generated_at_utc": "2026-10-29T14:29:25.846222+00:00",
   "model": "poisson_baseline_v1",
+  "engine_version": "V1.1",
+  "engine_version_notes": "Seuil minimal abaissé à 1 match d’historique exploitable par équipe ; baseline Poisson expérimentale avec régularisation.",
   "status": "EXPERIMENTAL",
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
-  "analysis_start_utc": "2026-10-29T14:03:48+00:00",
+  "analysis_start_utc": "2026-10-29T14:28:54+00:00",
   "version_backtest": {
     "method": "walk_forward_chronological_since_analysis_change",
     "evaluated_matches": 0,
@@ -40,6 +42,7 @@
         "draw": 0.2544591,
         "away": 0.25581722
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -69,6 +72,7 @@
         "draw": 0.26192465,
         "away": 0.42256368
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -3344,6 +3348,7 @@
         "draw": 0.21999532,
         "away": 0.56876895
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -6281,6 +6286,7 @@
         "draw": 0.22949541,
         "away": 0.29806993
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -8971,6 +8977,7 @@
         "draw": 0.28857495,
         "away": 0.39787719
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -9945,6 +9952,7 @@
         "draw": 0.27945744,
         "away": 0.35246481
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -10997,6 +11005,7 @@
         "draw": 0.24965779,
         "away": 0.3669146
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -12075,6 +12084,7 @@
         "draw": 0.25171735,
         "away": 0.36498818
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -13114,6 +13124,7 @@
         "draw": 0.23053105,
         "away": 0.30145444
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -14140,6 +14151,7 @@
         "draw": 0.22042148,
         "away": 0.375008
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -17064,6 +17076,7 @@
         "draw": 0.25001112,
         "away": 0.42023493
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -19078,6 +19091,7 @@
         "draw": 0.22207097,
         "away": 0.2252655
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -22431,6 +22445,7 @@
         "draw": 0.25575938,
         "away": 0.34310402
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -25095,6 +25110,7 @@
         "draw": 0.21742716,
         "away": 0.59437418
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -26537,6 +26553,7 @@
         "draw": 0.24944528,
         "away": 0.31281255
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -28629,6 +28646,7 @@
         "draw": 0.25017022,
         "away": 0.38486502
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -30747,6 +30765,7 @@
         "draw": 0.29464996,
         "away": 0.32769213
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -30776,6 +30795,7 @@
         "draw": 0.24223771,
         "away": 0.23957716
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -30805,6 +30825,7 @@
         "draw": 0.21811344,
         "away": 0.3036383
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -33638,6 +33659,7 @@
         "draw": 0.23452512,
         "away": 0.37552387
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -36406,6 +36428,7 @@
         "draw": 0.26303012,
         "away": 0.31654566
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -39122,6 +39145,7 @@
         "draw": 0.24698355,
         "away": 0.30211189
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -41812,6 +41836,7 @@
         "draw": 0.23735503,
         "away": 0.31772513
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -44554,6 +44579,7 @@
         "draw": 0.2408178,
         "away": 0.35229523
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -44583,6 +44609,7 @@
         "draw": 0.25926018,
         "away": 0.2581707
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -46675,6 +46702,7 @@
         "draw": 0.23309042,
         "away": 0.33113575
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -48767,6 +48795,7 @@
         "draw": 0.25322086,
         "away": 0.34206542
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -50794,6 +50823,7 @@
         "draw": 0.23878862,
         "away": 0.26048827
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -52769,6 +52799,7 @@
         "draw": 0.22309692,
         "away": 0.26545726
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -54913,6 +54944,7 @@
         "draw": 0.26706563,
         "away": 0.32940647
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -56940,6 +56972,7 @@
         "draw": 0.26086947,
         "away": 0.27640737
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -58109,6 +58142,7 @@
         "draw": 0.27777892,
         "away": 0.42240684
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -58138,6 +58172,7 @@
         "draw": 0.22161935,
         "away": 0.26674132
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -60100,6 +60135,7 @@
         "draw": 0.26244634,
         "away": 0.24637418
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -61828,6 +61864,7 @@
         "draw": 0.18290264,
         "away": 0.1932735
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -64596,6 +64633,7 @@
         "draw": 0.23938115,
         "away": 0.20692927
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -66779,6 +66817,7 @@
         "draw": 0.24580589,
         "away": 0.3723195
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -68832,6 +68871,7 @@
         "draw": 0.223779,
         "away": 0.24480827
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -70768,6 +70808,7 @@
         "draw": 0.21748058,
         "away": 0.24117683
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -72548,6 +72589,7 @@
         "draw": 0.22984362,
         "away": 0.36160956
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -74471,6 +74513,7 @@
         "draw": 0.26491172,
         "away": 0.38543088
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -74500,6 +74543,7 @@
         "draw": 0.22644278,
         "away": 0.38443312
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -76397,6 +76441,7 @@
         "draw": 0.23142142,
         "away": 0.35761455
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -78320,6 +78365,7 @@
         "draw": 0.23997716,
         "away": 0.27555694
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -80087,6 +80133,7 @@
         "draw": 0.26771553,
         "away": 0.35797127
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -81802,6 +81849,7 @@
         "draw": 0.23744799,
         "away": 0.40655408
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -84349,6 +84397,7 @@
         "draw": 0.2541071,
         "away": 0.43841722
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -84378,6 +84427,7 @@
         "draw": 0.19337055,
         "away": 0.1578864
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -86587,6 +86637,7 @@
         "draw": 0.25378489,
         "away": 0.28254739
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -88679,6 +88730,7 @@
         "draw": 0.22056878,
         "away": 0.18913057
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -88708,6 +88760,7 @@
         "draw": 0.22718869,
         "away": 0.25073522
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -88737,6 +88790,7 @@
         "draw": 0.23446627,
         "away": 0.34068097
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -90660,6 +90714,7 @@
         "draw": 0.22828629,
         "away": 0.324735
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -92440,6 +92495,7 @@
         "draw": 0.24123935,
         "away": 0.21237011
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -92469,6 +92525,7 @@
         "draw": 0.26599448,
         "away": 0.37134912
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -94288,6 +94345,7 @@
         "draw": 0.27085201,
         "away": 0.30532423
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -96185,6 +96243,7 @@
         "draw": 0.22772941,
         "away": 0.25279345
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -96214,6 +96273,7 @@
         "draw": 0.25166024,
         "away": 0.27541622
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -96243,6 +96303,7 @@
         "draw": 0.24500097,
         "away": 0.27384686
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -96272,6 +96333,7 @@
         "draw": 0.24068135,
         "away": 0.296442
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -98728,6 +98790,7 @@
         "draw": 0.24752741,
         "away": 0.25356856
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -98757,6 +98820,7 @@
         "draw": 0.24325035,
         "away": 0.3848644
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -101070,6 +101134,7 @@
         "draw": 0.27002258,
         "away": 0.28919866
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -101099,6 +101164,7 @@
         "draw": 0.23760893,
         "away": 0.21515064
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -101128,6 +101194,7 @@
         "draw": 0.23760818,
         "away": 0.33897454
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -103532,6 +103599,7 @@
         "draw": 0.21882785,
         "away": 0.23714796
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -106157,6 +106225,7 @@
         "draw": 0.25809548,
         "away": 0.34882209
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -108223,6 +108292,7 @@
         "draw": 0.28511238,
         "away": 0.3983342
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -108252,6 +108322,7 @@
         "draw": 0.26395988,
         "away": 0.26256469
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -108281,6 +108352,7 @@
         "draw": 0.24901102,
         "away": 0.2722253
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -110230,6 +110302,7 @@
         "draw": 0.25916178,
         "away": 0.29619393
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -111633,6 +111706,7 @@
         "draw": 0.26604563,
         "away": 0.39059894
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -112776,6 +112850,7 @@
         "draw": 0.24429186,
         "away": 0.23915904
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -114543,6 +114618,7 @@
         "draw": 0.22732393,
         "away": 0.29074874
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -117207,6 +117283,7 @@
         "draw": 0.27369158,
         "away": 0.32574137
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -117236,6 +117313,7 @@
         "draw": 0.25798466,
         "away": 0.25703564
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -119328,6 +119406,7 @@
         "draw": 0.2519084,
         "away": 0.29674971
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -120549,6 +120628,7 @@
         "draw": 0.23940045,
         "away": 0.31417562
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -120578,6 +120658,7 @@
         "draw": 0.23056192,
         "away": 0.23422074
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -120607,6 +120688,7 @@
         "draw": 0.23349887,
         "away": 0.26447318
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122569,6 +122651,7 @@
         "draw": 0.23083574,
         "away": 0.42577729
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122598,6 +122681,7 @@
         "draw": 0.23095307,
         "away": 0.27232122
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122627,6 +122711,7 @@
         "draw": 0.2324839,
         "away": 0.32830188
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122656,6 +122741,7 @@
         "draw": 0.25114713,
         "away": 0.36370838
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122685,6 +122771,7 @@
         "draw": 0.22946106,
         "away": 0.26178442
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122714,6 +122801,7 @@
         "draw": 0.26095524,
         "away": 0.28093734
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122743,6 +122831,7 @@
         "draw": 0.26912935,
         "away": 0.36584009
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122772,6 +122861,7 @@
         "draw": 0.25742119,
         "away": 0.23972694
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122801,6 +122891,7 @@
         "draw": 0.25917782,
         "away": 0.23851734
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122830,6 +122921,7 @@
         "draw": 0.25153168,
         "away": 0.28429496
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122859,6 +122951,7 @@
         "draw": 0.20318806,
         "away": 0.17422881
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122888,6 +122981,7 @@
         "draw": 0.26899552,
         "away": 0.26432077
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122917,6 +123011,7 @@
         "draw": 0.23614589,
         "away": 0.33889473
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122946,6 +123041,7 @@
         "draw": 0.22410709,
         "away": 0.31121966
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -122975,6 +123071,7 @@
         "draw": 0.23453652,
         "away": 0.36982317
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123004,6 +123101,7 @@
         "draw": 0.22309609,
         "away": 0.25816867
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123033,6 +123131,7 @@
         "draw": 0.22337257,
         "away": 0.4631283
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123062,6 +123161,7 @@
         "draw": 0.19254213,
         "away": 0.23243565
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123091,6 +123191,7 @@
         "draw": 0.18307662,
         "away": 0.23321233
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123120,6 +123221,7 @@
         "draw": 0.20942948,
         "away": 0.33004991
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123149,6 +123251,7 @@
         "draw": 0.21064026,
         "away": 0.2362752
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123178,6 +123281,7 @@
         "draw": 0.26613772,
         "away": 0.26990042
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123207,6 +123311,7 @@
         "draw": 0.22466213,
         "away": 0.32604571
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123236,6 +123341,7 @@
         "draw": 0.23410852,
         "away": 0.39470972
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123265,6 +123371,7 @@
         "draw": 0.25915377,
         "away": 0.34997066
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123294,6 +123401,7 @@
         "draw": 0.20210442,
         "away": 0.29357541
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123323,6 +123431,7 @@
         "draw": 0.20102881,
         "away": 0.24754574
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123352,6 +123461,7 @@
         "draw": 0.2216049,
         "away": 0.51612353
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123381,6 +123491,7 @@
         "draw": 0.22450601,
         "away": 0.32072913
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123410,6 +123521,7 @@
         "draw": 0.220541,
         "away": 0.31582861
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123439,6 +123551,7 @@
         "draw": 0.22276465,
         "away": 0.26056501
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123468,6 +123581,7 @@
         "draw": 0.20609599,
         "away": 0.25547745
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123497,6 +123611,7 @@
         "draw": 0.25126298,
         "away": 0.32509711
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123526,6 +123641,7 @@
         "draw": 0.24013069,
         "away": 0.29411633
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123555,6 +123671,7 @@
         "draw": 0.22880419,
         "away": 0.28290966
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123584,6 +123701,7 @@
         "draw": 0.21749279,
         "away": 0.20564377
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123613,6 +123731,7 @@
         "draw": 0.25405917,
         "away": 0.30403936
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123642,6 +123761,7 @@
         "draw": 0.23790163,
         "away": 0.44379327
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123671,6 +123791,7 @@
         "draw": 0.25286541,
         "away": 0.36201466
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123700,6 +123821,7 @@
         "draw": 0.23528343,
         "away": 0.34947506
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123729,6 +123851,7 @@
         "draw": 0.23980689,
         "away": 0.29562352
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123758,6 +123881,7 @@
         "draw": 0.23823806,
         "away": 0.26677264
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123787,6 +123911,7 @@
         "draw": 0.2469277,
         "away": 0.26376344
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123816,6 +123941,7 @@
         "draw": 0.27429476,
         "away": 0.24264388
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123845,6 +123971,7 @@
         "draw": 0.25644535,
         "away": 0.28276536
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123874,6 +124001,7 @@
         "draw": 0.2388058,
         "away": 0.3736173
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123903,6 +124031,7 @@
         "draw": 0.25674009,
         "away": 0.34888237
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123932,6 +124061,7 @@
         "draw": 0.21379798,
         "away": 0.2078686
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123961,6 +124091,7 @@
         "draw": 0.23385846,
         "away": 0.22082377
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -123990,6 +124121,7 @@
         "draw": 0.28200271,
         "away": 0.38915384
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124019,6 +124151,7 @@
         "draw": 0.2881895,
         "away": 0.41419545
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124048,6 +124181,7 @@
         "draw": 0.26491414,
         "away": 0.32794729
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124077,6 +124211,7 @@
         "draw": 0.24978237,
         "away": 0.43620076
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124106,6 +124241,7 @@
         "draw": 0.24429563,
         "away": 0.41768602
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124135,6 +124271,7 @@
         "draw": 0.2384792,
         "away": 0.31008375
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124164,6 +124301,7 @@
         "draw": 0.2491553,
         "away": 0.24987509
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124193,6 +124331,7 @@
         "draw": 0.24787987,
         "away": 0.36118587
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124222,6 +124361,7 @@
         "draw": 0.2693471,
         "away": 0.38046341
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124251,6 +124391,7 @@
         "draw": 0.26493732,
         "away": 0.32287548
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124280,6 +124421,7 @@
         "draw": 0.25727934,
         "away": 0.28392497
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124309,6 +124451,7 @@
         "draw": 0.25620647,
         "away": 0.24352213
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124338,6 +124481,7 @@
         "draw": 0.25520561,
         "away": 0.31584675
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124367,6 +124511,7 @@
         "draw": 0.22235879,
         "away": 0.2550318
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124396,6 +124541,7 @@
         "draw": 0.26795592,
         "away": 0.35763392
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124425,6 +124571,7 @@
         "draw": 0.26611305,
         "away": 0.27325859
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124454,6 +124601,7 @@
         "draw": 0.25114835,
         "away": 0.38286284
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124483,6 +124631,7 @@
         "draw": 0.2775604,
         "away": 0.31393082
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124512,6 +124661,7 @@
         "draw": 0.20634381,
         "away": 0.2135559
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124541,6 +124691,7 @@
         "draw": 0.20632773,
         "away": 0.20052926
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124570,6 +124721,7 @@
         "draw": 0.21341065,
         "away": 0.55969759
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124599,6 +124751,7 @@
         "draw": 0.23607048,
         "away": 0.34141558
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124628,6 +124781,7 @@
         "draw": 0.24617641,
         "away": 0.33862481
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124657,6 +124811,7 @@
         "draw": 0.24165236,
         "away": 0.21848778
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124686,6 +124841,7 @@
         "draw": 0.25376581,
         "away": 0.33183568
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124715,6 +124871,7 @@
         "draw": 0.26202009,
         "away": 0.33356904
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124744,6 +124901,7 @@
         "draw": 0.25533663,
         "away": 0.42758549
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124773,6 +124931,7 @@
         "draw": 0.27231893,
         "away": 0.30755297
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124802,6 +124961,7 @@
         "draw": 0.2636366,
         "away": 0.41434406
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124831,6 +124991,7 @@
         "draw": 0.26261889,
         "away": 0.30578643
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124860,6 +125021,7 @@
         "draw": 0.22584329,
         "away": 0.29571499
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124889,6 +125051,7 @@
         "draw": 0.25790285,
         "away": 0.28876208
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124918,6 +125081,7 @@
         "draw": 0.27082674,
         "away": 0.41293609
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124947,6 +125111,7 @@
         "draw": 0.27185187,
         "away": 0.31310599
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -124976,6 +125141,7 @@
         "draw": 0.25768601,
         "away": 0.35858442
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125005,6 +125171,7 @@
         "draw": 0.23159693,
         "away": 0.19435171
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125034,6 +125201,7 @@
         "draw": 0.24158417,
         "away": 0.33338355
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125063,6 +125231,7 @@
         "draw": 0.25767746,
         "away": 0.32081768
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125092,6 +125261,7 @@
         "draw": 0.21804928,
         "away": 0.17617302
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125121,6 +125291,7 @@
         "draw": 0.24197646,
         "away": 0.21186185
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125150,6 +125321,7 @@
         "draw": 0.26007001,
         "away": 0.42415073
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125179,6 +125351,7 @@
         "draw": 0.20552219,
         "away": 0.17117585
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125208,6 +125381,7 @@
         "draw": 0.25026925,
         "away": 0.4233288
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125237,6 +125411,7 @@
         "draw": 0.235649,
         "away": 0.38861601
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125266,6 +125441,7 @@
         "draw": 0.24948291,
         "away": 0.43658409
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125295,6 +125471,7 @@
         "draw": 0.24451074,
         "away": 0.30186116
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125324,6 +125501,7 @@
         "draw": 0.22555337,
         "away": 0.26539772
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125353,6 +125531,7 @@
         "draw": 0.23819388,
         "away": 0.23708908
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125382,6 +125561,7 @@
         "draw": 0.23764792,
         "away": 0.27030514
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125411,6 +125591,7 @@
         "draw": 0.20771799,
         "away": 0.24910908
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125440,6 +125621,7 @@
         "draw": 0.24128454,
         "away": 0.32416637
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125469,6 +125651,7 @@
         "draw": 0.22694127,
         "away": 0.27371045
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125498,6 +125681,7 @@
         "draw": 0.23089126,
         "away": 0.29408365
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125527,6 +125711,7 @@
         "draw": 0.2453199,
         "away": 0.31154407
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125556,6 +125741,7 @@
         "draw": 0.22377288,
         "away": 0.26878268
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125585,6 +125771,7 @@
         "draw": 0.24503441,
         "away": 0.31104874
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125614,6 +125801,7 @@
         "draw": 0.2090635,
         "away": 0.22014193
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125643,6 +125831,7 @@
         "draw": 0.27134939,
         "away": 0.30447597
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125672,6 +125861,7 @@
         "draw": 0.21705998,
         "away": 0.20884187
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125701,6 +125891,7 @@
         "draw": 0.25190532,
         "away": 0.32465943
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125730,6 +125921,7 @@
         "draw": 0.25901821,
         "away": 0.32144469
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125759,6 +125951,7 @@
         "draw": 0.24939565,
         "away": 0.29578771
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125788,6 +125981,7 @@
         "draw": 0.26171419,
         "away": 0.37392915
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125817,6 +126011,7 @@
         "draw": 0.24256487,
         "away": 0.44209227
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125846,6 +126041,7 @@
         "draw": 0.22917349,
         "away": 0.48895979
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125875,6 +126071,7 @@
         "draw": 0.2631575,
         "away": 0.43876814
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125904,6 +126101,7 @@
         "draw": 0.2455919,
         "away": 0.51697985
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125933,6 +126131,7 @@
         "draw": 0.22620388,
         "away": 0.40364313
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125962,6 +126161,7 @@
         "draw": 0.23427709,
         "away": 0.22975992
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -125991,6 +126191,7 @@
         "draw": 0.25968365,
         "away": 0.29557738
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126020,6 +126221,7 @@
         "draw": 0.28307332,
         "away": 0.28939342
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126049,6 +126251,7 @@
         "draw": 0.24050014,
         "away": 0.29304344
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126078,6 +126281,7 @@
         "draw": 0.24550463,
         "away": 0.33358374
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126107,6 +126311,7 @@
         "draw": 0.25065611,
         "away": 0.37640321
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126136,6 +126341,7 @@
         "draw": 0.26717446,
         "away": 0.3919308
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126165,6 +126371,7 @@
         "draw": 0.23887911,
         "away": 0.3760015
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126194,6 +126401,7 @@
         "draw": 0.21895381,
         "away": 0.23493297
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126223,6 +126431,7 @@
         "draw": 0.24634393,
         "away": 0.32216251
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126252,6 +126461,7 @@
         "draw": 0.23640186,
         "away": 0.27362891
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126281,6 +126491,7 @@
         "draw": 0.22870868,
         "away": 0.21419809
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126310,6 +126521,7 @@
         "draw": 0.2468883,
         "away": 0.26255927
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126339,6 +126551,7 @@
         "draw": 0.23494769,
         "away": 0.21850894
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126368,6 +126581,7 @@
         "draw": 0.25968491,
         "away": 0.40249779
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126397,6 +126611,7 @@
         "draw": 0.24325689,
         "away": 0.30880008
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126426,6 +126641,7 @@
         "draw": 0.23281396,
         "away": 0.3271231
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126455,6 +126671,7 @@
         "draw": 0.24702919,
         "away": 0.32999806
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126484,6 +126701,7 @@
         "draw": 0.27322075,
         "away": 0.37765912
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126513,6 +126731,7 @@
         "draw": 0.2314089,
         "away": 0.38272318
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126542,6 +126761,7 @@
         "draw": 0.25327161,
         "away": 0.4789802
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126571,6 +126791,7 @@
         "draw": 0.23925456,
         "away": 0.53377863
       },
+      "engine_version": "V1.1",
       "prediction_status": "ESTIMATE_ONLY",
       "prediction_reason": null,
       "actual_outcome": null,
@@ -126602,6 +126823,7 @@
         "draw": 0.22172278,
         "away": 0.29571938
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -128906,6 +129128,7 @@
         "draw": 0.22494023,
         "away": 0.30889845
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -131054,6 +131277,7 @@
         "draw": 0.24184929,
         "away": 0.29479622
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -133228,6 +133452,7 @@
         "draw": 0.22023835,
         "away": 0.23424498
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -135506,6 +135731,7 @@
         "draw": 0.23552298,
         "away": 0.29017554
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -137719,6 +137945,7 @@
         "draw": 0.22270894,
         "away": 0.30083743
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -139893,6 +140120,7 @@
         "draw": 0.23161174,
         "away": 0.34645881
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -142158,6 +142386,7 @@
         "draw": 0.22441418,
         "away": 0.344267
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -144436,6 +144665,7 @@
         "draw": 0.24953955,
         "away": 0.31355116
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -146532,6 +146762,7 @@
         "draw": 0.2209569,
         "away": 0.21444811
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -148810,6 +149041,7 @@
         "draw": 0.23983904,
         "away": 0.25750731
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -150919,6 +151151,7 @@
         "draw": 0.25502052,
         "away": 0.33247912
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -153132,6 +153365,7 @@
         "draw": 0.20287179,
         "away": 0.26305407
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -155488,6 +155722,7 @@
         "draw": 0.23122286,
         "away": 0.3182286
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -157714,6 +157949,7 @@
         "draw": 0.26709853,
         "away": 0.47572753
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -160993,6 +161229,7 @@
         "draw": 0.26936959,
         "away": 0.43313086
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -164233,6 +164470,7 @@
         "draw": 0.24780121,
         "away": 0.53396327
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -167694,6 +167932,7 @@
         "draw": 0.26081017,
         "away": 0.37339929
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -170778,6 +171017,7 @@
         "draw": 0.26246284,
         "away": 0.31214376
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -173966,6 +174206,7 @@
         "draw": 0.24271612,
         "away": 0.18609909
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -177414,6 +177655,7 @@
         "draw": 0.26928619,
         "away": 0.40976643
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -180667,6 +180909,7 @@
         "draw": 0.27318929,
         "away": 0.38275109
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -184115,6 +184358,7 @@
         "draw": 0.26765573,
         "away": 0.28828129
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -187303,6 +187547,7 @@
         "draw": 0.26659078,
         "away": 0.37194491
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -188359,6 +188604,7 @@
         "draw": 0.2474374,
         "away": 0.48092279
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -188392,6 +188638,7 @@
         "draw": 0.22549933,
         "away": 0.23846704
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -191879,6 +192126,7 @@
         "draw": 0.26394068,
         "away": 0.47249821
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -193338,6 +193586,7 @@
         "draw": 0.22283385,
         "away": 0.23245161
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -193371,6 +193620,7 @@
         "draw": 0.22875541,
         "away": 0.22648252
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -194817,6 +195067,7 @@
         "draw": 0.21811499,
         "away": 0.23813307
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -198681,6 +198932,7 @@
         "draw": 0.26667934,
         "away": 0.44444746
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -201908,6 +202160,7 @@
         "draw": 0.22606123,
         "away": 0.17921315
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -204069,6 +204322,7 @@
         "draw": 0.25697257,
         "away": 0.45304841
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -204102,6 +204356,7 @@
         "draw": 0.25702679,
         "away": 0.40271394
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -205327,6 +205582,7 @@
         "draw": 0.2589631,
         "away": 0.31851462
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -205360,6 +205616,7 @@
         "draw": 0.25081028,
         "away": 0.28391251
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -208691,6 +208948,7 @@
         "draw": 0.26788746,
         "away": 0.48859334
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -208724,6 +208982,7 @@
         "draw": 0.21540923,
         "away": 0.48650906
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -212263,6 +212522,7 @@
         "draw": 0.26012926,
         "away": 0.28756648
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -215321,6 +215581,7 @@
         "draw": 0.25574879,
         "away": 0.31302638
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -218119,6 +218380,7 @@
         "draw": 0.264012,
         "away": 0.3725412
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -218152,6 +218414,7 @@
         "draw": 0.21748336,
         "away": 0.22955756
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -221028,6 +221291,7 @@
         "draw": 0.24891652,
         "away": 0.2876667
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -221061,6 +221325,7 @@
         "draw": 0.24056069,
         "away": 0.29820829
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -221094,6 +221359,7 @@
         "draw": 0.25039199,
         "away": 0.30550215
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -221127,6 +221393,7 @@
         "draw": 0.24613331,
         "away": 0.31191342
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -224419,6 +224686,7 @@
         "draw": 0.2103088,
         "away": 0.21911342
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -224452,6 +224720,7 @@
         "draw": 0.22257678,
         "away": 0.41844737
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -227588,6 +227857,7 @@
         "draw": 0.24618717,
         "away": 0.3108259
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -230542,6 +230812,7 @@
         "draw": 0.23341192,
         "away": 0.33901432
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -233847,6 +234118,7 @@
         "draw": 0.25997033,
         "away": 0.31059469
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -237178,6 +237450,7 @@
         "draw": 0.23737585,
         "away": 0.30061604
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -240743,6 +241016,7 @@
         "draw": 0.26112051,
         "away": 0.35662407
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -244035,6 +244309,7 @@
         "draw": 0.25899852,
         "away": 0.29240439
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -244068,6 +244343,7 @@
         "draw": 0.2595384,
         "away": 0.297376
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -244101,6 +244377,7 @@
         "draw": 0.28179464,
         "away": 0.24859781
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -247380,6 +247657,7 @@
         "draw": 0.25844295,
         "away": 0.25045578
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -247413,6 +247691,7 @@
         "draw": 0.22220985,
         "away": 0.22940492
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -247446,6 +247725,7 @@
         "draw": 0.24408864,
         "away": 0.30813458
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -249620,6 +249900,7 @@
         "draw": 0.23010989,
         "away": 0.30868749
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -251911,6 +252192,7 @@
         "draw": 0.22586238,
         "away": 0.30461669
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -251944,6 +252226,7 @@
         "draw": 0.24738242,
         "away": 0.35277088
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -254053,6 +254336,7 @@
         "draw": 0.2336299,
         "away": 0.33019316
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -254086,6 +254370,7 @@
         "draw": 0.22768547,
         "away": 0.28005109
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -256195,6 +256480,7 @@
         "draw": 0.2465461,
         "away": 0.35811077
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -256228,6 +256514,7 @@
         "draw": 0.22400861,
         "away": 0.38137382
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -258363,6 +258650,7 @@
         "draw": 0.22673012,
         "away": 0.25154891
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -260628,6 +260916,7 @@
         "draw": 0.23056124,
         "away": 0.41991663
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -262815,6 +263104,7 @@
         "draw": 0.24684254,
         "away": 0.28902827
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -265067,6 +265357,7 @@
         "draw": 0.22245786,
         "away": 0.39937766
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -267371,6 +267662,7 @@
         "draw": 0.26429435,
         "away": 0.43203552
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -268804,6 +269096,7 @@
         "draw": 0.23876767,
         "away": 0.23824622
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -271043,6 +271336,7 @@
         "draw": 0.22607664,
         "away": 0.23271598
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -274296,6 +274590,7 @@
         "draw": 0.25933603,
         "away": 0.35256646
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -276301,6 +276596,7 @@
         "draw": 0.22217447,
         "away": 0.22434056
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -278397,6 +278693,7 @@
         "draw": 0.25721482,
         "away": 0.2815322
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -281143,6 +281440,7 @@
         "draw": 0.22593485,
         "away": 0.24041507
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -282199,6 +282497,7 @@
         "draw": 0.25916238,
         "away": 0.27052399
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -285465,6 +285764,7 @@
         "draw": 0.25578624,
         "away": 0.35929349
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -287561,6 +287861,7 @@
         "draw": 0.25616552,
         "away": 0.31177202
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -288916,6 +289217,7 @@
         "draw": 0.2066085,
         "away": 0.24474101
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -292377,6 +292679,7 @@
         "draw": 0.26291326,
         "away": 0.35473302
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -295604,6 +295907,7 @@
         "draw": 0.24505439,
         "away": 0.30697721
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -298987,6 +299291,7 @@
         "draw": 0.26109585,
         "away": 0.32177863
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -301031,6 +301336,7 @@
         "draw": 0.27287331,
         "away": 0.28930324
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -304180,6 +304486,7 @@
         "draw": 0.26533058,
         "away": 0.31295318
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -305613,6 +305920,7 @@
         "draw": 0.23719966,
         "away": 0.27683441
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -308918,6 +309226,7 @@
         "draw": 0.25573595,
         "away": 0.36960561
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -310962,6 +311271,7 @@
         "draw": 0.25015048,
         "away": 0.36805821
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -314163,6 +314473,7 @@
         "draw": 0.25257272,
         "away": 0.21557711
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -317416,6 +317727,7 @@
         "draw": 0.22085031,
         "away": 0.2584409
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -320500,6 +320812,7 @@
         "draw": 0.24110003,
         "away": 0.28001467
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -323597,6 +323910,7 @@
         "draw": 0.23667169,
         "away": 0.26936215
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -326434,6 +326748,7 @@
         "draw": 0.22583517,
         "away": 0.32880731
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -329414,6 +329729,7 @@
         "draw": 0.24141517,
         "away": 0.34334262
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -332251,6 +332567,7 @@
         "draw": 0.25518429,
         "away": 0.28028688
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -335816,6 +336133,7 @@
         "draw": 0.26500527,
         "away": 0.37959846
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -338822,6 +339140,7 @@
         "draw": 0.25227909,
         "away": 0.26808833
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -342101,6 +342420,7 @@
         "draw": 0.23760094,
         "away": 0.34528471
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -343157,6 +343477,7 @@
         "draw": 0.25343787,
         "away": 0.37801837
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -346501,6 +346822,7 @@
         "draw": 0.25211961,
         "away": 0.28188051
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -347973,6 +348295,7 @@
         "draw": 0.26506889,
         "away": 0.23981298
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -351213,6 +351536,7 @@
         "draw": 0.2319299,
         "away": 0.49983002
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -354466,6 +354790,7 @@
         "draw": 0.23446642,
         "away": 0.28246406
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -357173,6 +357498,7 @@
         "draw": 0.25103161,
         "away": 0.26409221
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -360296,6 +360622,7 @@
         "draw": 0.22466015,
         "away": 0.2553395
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -363380,6 +363707,7 @@
         "draw": 0.27100264,
         "away": 0.33128239
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -364436,6 +364764,7 @@
         "draw": 0.27148124,
         "away": 0.2970252
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -365557,6 +365886,7 @@
         "draw": 0.27573217,
         "away": 0.35786809
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -366613,6 +366943,7 @@
         "draw": 0.26109506,
         "away": 0.35255607
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -367643,6 +367974,7 @@
         "draw": 0.2750939,
         "away": 0.31802903
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -368647,6 +368979,7 @@
         "draw": 0.26065738,
         "away": 0.31408362
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -370873,6 +371206,7 @@
         "draw": 0.24339275,
         "away": 0.32557528
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -374347,6 +374681,7 @@
         "draw": 0.22116971,
         "away": 0.28775546
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -377821,6 +378156,7 @@
         "draw": 0.23845525,
         "away": 0.41465133
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -381061,6 +381397,7 @@
         "draw": 0.23375677,
         "away": 0.43846879
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -384548,6 +384885,7 @@
         "draw": 0.24027465,
         "away": 0.24636582
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -386696,6 +387034,7 @@
         "draw": 0.24217424,
         "away": 0.30717592
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -389715,6 +390054,7 @@
         "draw": 0.24723053,
         "away": 0.30739713
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -391954,6 +392294,7 @@
         "draw": 0.24410571,
         "away": 0.29725191
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -394141,6 +394482,7 @@
         "draw": 0.26701684,
         "away": 0.28659815
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -396341,6 +396683,7 @@
         "draw": 0.22298195,
         "away": 0.25684424
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -398567,6 +398910,7 @@
         "draw": 0.23412113,
         "away": 0.3211633
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -400858,6 +401202,7 @@
         "draw": 0.25851666,
         "away": 0.29241993
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -403123,6 +403468,7 @@
         "draw": 0.25424485,
         "away": 0.2418239
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -406155,6 +406501,7 @@
         "draw": 0.24897603,
         "away": 0.33926781
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -409265,6 +409612,7 @@
         "draw": 0.24553605,
         "away": 0.39687818
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -412115,6 +412463,7 @@
         "draw": 0.23459944,
         "away": 0.21689938
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -415550,6 +415899,7 @@
         "draw": 0.23975603,
         "away": 0.26459959
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417737,6 +418087,7 @@
         "draw": 0.22724943,
         "away": 0.27868883
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417770,6 +418121,7 @@
         "draw": 0.22176506,
         "away": 0.24570912
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417803,6 +418155,7 @@
         "draw": 0.21811157,
         "away": 0.34854703
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417836,6 +418189,7 @@
         "draw": 0.22401843,
         "away": 0.30405849
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -417869,6 +418223,7 @@
         "draw": 0.19228318,
         "away": 0.18337251
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417902,6 +418257,7 @@
         "draw": 0.19739847,
         "away": 0.26771054
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417935,6 +418291,7 @@
         "draw": 0.19558194,
         "away": 0.18933679
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -417968,6 +418325,7 @@
         "draw": 0.21622308,
         "away": 0.24057011
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418001,6 +418359,7 @@
         "draw": 0.25024544,
         "away": 0.34233801
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418034,6 +418393,7 @@
         "draw": 0.20522083,
         "away": 0.22653107
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418067,6 +418427,7 @@
         "draw": 0.19890964,
         "away": 0.22085724
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418100,6 +418461,7 @@
         "draw": 0.21686868,
         "away": 0.24711116
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418133,6 +418495,7 @@
         "draw": 0.21524087,
         "away": 0.34402924
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -418166,6 +418529,7 @@
         "draw": 0.23525811,
         "away": 0.3293934
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418199,6 +418563,7 @@
         "draw": 0.19444792,
         "away": 0.28543424
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418232,6 +418597,7 @@
         "draw": 0.19603497,
         "away": 0.16375893
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418265,6 +418631,7 @@
         "draw": 0.18508056,
         "away": 0.22077384
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418298,6 +418665,7 @@
         "draw": 0.20834153,
         "away": 0.25470276
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418331,6 +418699,7 @@
         "draw": 0.21450291,
         "away": 0.2060487
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -418364,6 +418733,7 @@
         "draw": 0.21230441,
         "away": 0.2755058
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418397,6 +418767,7 @@
         "draw": 0.24729444,
         "away": 0.24796227
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418430,6 +418801,7 @@
         "draw": 0.2937679,
         "away": 0.28627526
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -418463,6 +418835,7 @@
         "draw": 0.25377205,
         "away": 0.3428888
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418496,6 +418869,7 @@
         "draw": 0.2960335,
         "away": 0.34109671
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418529,6 +418903,7 @@
         "draw": 0.26717414,
         "away": 0.33736592
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418562,6 +418937,7 @@
         "draw": 0.27383814,
         "away": 0.38697459
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418595,6 +418971,7 @@
         "draw": 0.23096516,
         "away": 0.34072496
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418628,6 +419005,7 @@
         "draw": 0.21193836,
         "away": 0.20131388
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418661,6 +419039,7 @@
         "draw": 0.22714004,
         "away": 0.24783636
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418694,6 +419073,7 @@
         "draw": 0.27605703,
         "away": 0.27624528
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418727,6 +419107,7 @@
         "draw": 0.26807994,
         "away": 0.3100693
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418760,6 +419141,7 @@
         "draw": 0.26686151,
         "away": 0.38423778
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418793,6 +419175,7 @@
         "draw": 0.22794505,
         "away": 0.33791432
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418826,6 +419209,7 @@
         "draw": 0.27539356,
         "away": 0.42546887
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418859,6 +419243,7 @@
         "draw": 0.23734743,
         "away": 0.34038445
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418892,6 +419277,7 @@
         "draw": 0.22932353,
         "away": 0.31842763
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418925,6 +419311,7 @@
         "draw": 0.24731329,
         "away": 0.36082032
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -418958,6 +419345,7 @@
         "draw": 0.24778562,
         "away": 0.28439109
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -418991,6 +419379,7 @@
         "draw": 0.21723817,
         "away": 0.21710796
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419024,6 +419413,7 @@
         "draw": 0.25148268,
         "away": 0.4285281
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419057,6 +419447,7 @@
         "draw": 0.2523681,
         "away": 0.30444811
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419090,6 +419481,7 @@
         "draw": 0.26022876,
         "away": 0.26364727
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419123,6 +419515,7 @@
         "draw": 0.25660642,
         "away": 0.31045415
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419156,6 +419549,7 @@
         "draw": 0.27298849,
         "away": 0.36726642
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419189,6 +419583,7 @@
         "draw": 0.20661028,
         "away": 0.1997534
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419222,6 +419617,7 @@
         "draw": 0.28557008,
         "away": 0.31033664
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419255,6 +419651,7 @@
         "draw": 0.2144941,
         "away": 0.26403818
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419288,6 +419685,7 @@
         "draw": 0.2167745,
         "away": 0.22074031
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419321,6 +419719,7 @@
         "draw": 0.24099617,
         "away": 0.34689816
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419354,6 +419753,7 @@
         "draw": 0.22601164,
         "away": 0.33619581
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419387,6 +419787,7 @@
         "draw": 0.25510771,
         "away": 0.39439385
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419420,6 +419821,7 @@
         "draw": 0.24846774,
         "away": 0.33366443
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419453,6 +419855,7 @@
         "draw": 0.23268671,
         "away": 0.35054427
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419486,6 +419889,7 @@
         "draw": 0.2273409,
         "away": 0.26136496
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419519,6 +419923,7 @@
         "draw": 0.23522064,
         "away": 0.27135531
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419552,6 +419957,7 @@
         "draw": 0.22195063,
         "away": 0.4263766
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419585,6 +419991,7 @@
         "draw": 0.23585113,
         "away": 0.34808032
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419618,6 +420025,7 @@
         "draw": 0.23219635,
         "away": 0.3829008
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419651,6 +420059,7 @@
         "draw": 0.23528732,
         "away": 0.30122766
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419684,6 +420093,7 @@
         "draw": 0.26602969,
         "away": 0.32373965
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419717,6 +420127,7 @@
         "draw": 0.23151899,
         "away": 0.22768577
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419750,6 +420161,7 @@
         "draw": 0.24034406,
         "away": 0.47264642
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419783,6 +420195,7 @@
         "draw": 0.25333981,
         "away": 0.19935483
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419816,6 +420229,7 @@
         "draw": 0.23857144,
         "away": 0.27196848
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -419849,6 +420263,7 @@
         "draw": 0.26649256,
         "away": 0.37113194
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419882,6 +420297,7 @@
         "draw": 0.17446602,
         "away": 0.16139925
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -419915,6 +420331,7 @@
         "draw": 0.23487368,
         "away": 0.43118423
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419948,6 +420365,7 @@
         "draw": 0.23414215,
         "away": 0.28402198
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -419981,6 +420399,7 @@
         "draw": 0.25509477,
         "away": 0.46191828
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420014,6 +420433,7 @@
         "draw": 0.23567622,
         "away": 0.42404717
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420047,6 +420467,7 @@
         "draw": 0.21070962,
         "away": 0.2164755
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420080,6 +420501,7 @@
         "draw": 0.20483934,
         "away": 0.19731258
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420113,6 +420535,7 @@
         "draw": 0.25024165,
         "away": 0.34603042
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420146,6 +420569,7 @@
         "draw": 0.23012749,
         "away": 0.3688858
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420179,6 +420603,7 @@
         "draw": 0.22852742,
         "away": 0.40065488
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420212,6 +420637,7 @@
         "draw": 0.22615797,
         "away": 0.29881898
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420245,6 +420671,7 @@
         "draw": 0.24178009,
         "away": 0.40654655
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420278,6 +420705,7 @@
         "draw": 0.25275436,
         "away": 0.36700468
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420311,6 +420739,7 @@
         "draw": 0.24905981,
         "away": 0.33996601
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420344,6 +420773,7 @@
         "draw": 0.27672879,
         "away": 0.46292715
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420377,6 +420807,7 @@
         "draw": 0.27262809,
         "away": 0.37966661
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420410,6 +420841,7 @@
         "draw": 0.27206881,
         "away": 0.30351856
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420443,6 +420875,7 @@
         "draw": 0.24957531,
         "away": 0.38880583
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420476,6 +420909,7 @@
         "draw": 0.25062275,
         "away": 0.37215052
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420509,6 +420943,7 @@
         "draw": 0.25546922,
         "away": 0.25672046
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420542,6 +420977,7 @@
         "draw": 0.24382472,
         "away": 0.34738471
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420575,6 +421011,7 @@
         "draw": 0.26461168,
         "away": 0.30388171
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420608,6 +421045,7 @@
         "draw": 0.21710766,
         "away": 0.25949414
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420641,6 +421079,7 @@
         "draw": 0.24828902,
         "away": 0.34791211
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420674,6 +421113,7 @@
         "draw": 0.32918875,
         "away": 0.31893806
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420707,6 +421147,7 @@
         "draw": 0.2651162,
         "away": 0.36956445
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420740,6 +421181,7 @@
         "draw": 0.25942799,
         "away": 0.31136476
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420773,6 +421215,7 @@
         "draw": 0.2656348,
         "away": 0.29540109
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420806,6 +421249,7 @@
         "draw": 0.23831972,
         "away": 0.32826327
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420839,6 +421283,7 @@
         "draw": 0.24316984,
         "away": 0.26764545
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420872,6 +421317,7 @@
         "draw": 0.24814048,
         "away": 0.25115498
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -420905,6 +421351,7 @@
         "draw": 0.25002294,
         "away": 0.2885282
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -420938,6 +421385,7 @@
         "draw": 0.22824728,
         "away": 0.20080289
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -420971,6 +421419,7 @@
         "draw": 0.22495219,
         "away": 0.27257891
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421004,6 +421453,7 @@
         "draw": 0.23927125,
         "away": 0.30700715
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421037,6 +421487,7 @@
         "draw": 0.23361765,
         "away": 0.31912903
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421070,6 +421521,7 @@
         "draw": 0.22511907,
         "away": 0.28014213
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421103,6 +421555,7 @@
         "draw": 0.20119852,
         "away": 0.19163589
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421136,6 +421589,7 @@
         "draw": 0.24440119,
         "away": 0.37857083
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421169,6 +421623,7 @@
         "draw": 0.23173927,
         "away": 0.39286151
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421202,6 +421657,7 @@
         "draw": 0.2448615,
         "away": 0.33541238
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421235,6 +421691,7 @@
         "draw": 0.22703991,
         "away": 0.27570605
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421268,6 +421725,7 @@
         "draw": 0.21688793,
         "away": 0.25582463
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421301,6 +421759,7 @@
         "draw": 0.25543225,
         "away": 0.3099189
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421334,6 +421793,7 @@
         "draw": 0.23913226,
         "away": 0.28120561
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421367,6 +421827,7 @@
         "draw": 0.22327583,
         "away": 0.34808827
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421400,6 +421861,7 @@
         "draw": 0.24860151,
         "away": 0.40112582
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421433,6 +421895,7 @@
         "draw": 0.23213751,
         "away": 0.37345938
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421466,6 +421929,7 @@
         "draw": 0.20727281,
         "away": 0.29132412
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421499,6 +421963,7 @@
         "draw": 0.2148715,
         "away": 0.41401412
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421532,6 +421997,7 @@
         "draw": 0.22598762,
         "away": 0.21299298
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421565,6 +422031,7 @@
         "draw": 0.21556034,
         "away": 0.31629102
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421598,6 +422065,7 @@
         "draw": 0.21818758,
         "away": 0.28697997
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421631,6 +422099,7 @@
         "draw": 0.22834649,
         "away": 0.34034344
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421664,6 +422133,7 @@
         "draw": 0.20977531,
         "away": 0.21995986
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421697,6 +422167,7 @@
         "draw": 0.25996227,
         "away": 0.23973926
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -421730,6 +422201,7 @@
         "draw": 0.24098055,
         "away": 0.33084515
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421763,6 +422235,7 @@
         "draw": 0.25255049,
         "away": 0.43223456
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421796,6 +422269,7 @@
         "draw": 0.27216025,
         "away": 0.34749763
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421829,6 +422303,7 @@
         "draw": 0.26228609,
         "away": 0.35254242
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421862,6 +422337,7 @@
         "draw": 0.24455095,
         "away": 0.21930673
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421895,6 +422371,7 @@
         "draw": 0.23529131,
         "away": 0.31457974
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421928,6 +422405,7 @@
         "draw": 0.25347471,
         "away": 0.27929526
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -421961,6 +422439,7 @@
         "draw": 0.23468127,
         "away": 0.25109471
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -421994,6 +422473,7 @@
         "draw": 0.2377926,
         "away": 0.42329262
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422027,6 +422507,7 @@
         "draw": 0.27095076,
         "away": 0.41438566
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422060,6 +422541,7 @@
         "draw": 0.24256986,
         "away": 0.329021
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422093,6 +422575,7 @@
         "draw": 0.20440892,
         "away": 0.1535413
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422126,6 +422609,7 @@
         "draw": 0.25996381,
         "away": 0.33121474
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422159,6 +422643,7 @@
         "draw": 0.24785496,
         "away": 0.21041715
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422192,6 +422677,7 @@
         "draw": 0.25719774,
         "away": 0.41010334
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422225,6 +422711,7 @@
         "draw": 0.22155083,
         "away": 0.28761217
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422258,6 +422745,7 @@
         "draw": 0.25036925,
         "away": 0.32704722
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422291,6 +422779,7 @@
         "draw": 0.23480493,
         "away": 0.24460889
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422324,6 +422813,7 @@
         "draw": 0.27065372,
         "away": 0.33538614
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422357,6 +422847,7 @@
         "draw": 0.2530389,
         "away": 0.34682819
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422390,6 +422881,7 @@
         "draw": 0.21458038,
         "away": 0.13069078
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422423,6 +422915,7 @@
         "draw": 0.22673481,
         "away": 0.31147462
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422456,6 +422949,7 @@
         "draw": 0.24151113,
         "away": 0.32429643
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422489,6 +422983,7 @@
         "draw": 0.28393379,
         "away": 0.28238356
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422522,6 +423017,7 @@
         "draw": 0.25031311,
         "away": 0.4023219
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422555,6 +423051,7 @@
         "draw": 0.2359181,
         "away": 0.24289276
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422588,6 +423085,7 @@
         "draw": 0.26650653,
         "away": 0.44800306
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422621,6 +423119,7 @@
         "draw": 0.25344219,
         "away": 0.33158006
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422654,6 +423153,7 @@
         "draw": 0.28913758,
         "away": 0.3553743
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422687,6 +423187,7 @@
         "draw": 0.26759712,
         "away": 0.32719122
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422720,6 +423221,7 @@
         "draw": 0.24569511,
         "away": 0.30018542
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422753,6 +423255,7 @@
         "draw": 0.22593397,
         "away": 0.28146218
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422786,6 +423289,7 @@
         "draw": 0.23132284,
         "away": 0.34798847
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422819,6 +423323,7 @@
         "draw": 0.2494996,
         "away": 0.32851576
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -422852,6 +423357,7 @@
         "draw": 0.25968804,
         "away": 0.30397977
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422885,6 +423391,7 @@
         "draw": 0.20097855,
         "away": 0.23580223
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422918,6 +423425,7 @@
         "draw": 0.22674577,
         "away": 0.35132867
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -422951,6 +423459,7 @@
         "draw": 0.23794413,
         "away": 0.27476836
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -422984,6 +423493,7 @@
         "draw": 0.22858064,
         "away": 0.37168711
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423017,6 +423527,7 @@
         "draw": 0.23535911,
         "away": 0.25090149
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423050,6 +423561,7 @@
         "draw": 0.25586582,
         "away": 0.35912936
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423083,6 +423595,7 @@
         "draw": 0.2338646,
         "away": 0.3245438
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423116,6 +423629,7 @@
         "draw": 0.25195227,
         "away": 0.35666665
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423149,6 +423663,7 @@
         "draw": 0.27332153,
         "away": 0.3825198
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423182,6 +423697,7 @@
         "draw": 0.22485957,
         "away": 0.23208408
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423215,6 +423731,7 @@
         "draw": 0.22893368,
         "away": 0.1977619
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423248,6 +423765,7 @@
         "draw": 0.24843136,
         "away": 0.26932467
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423281,6 +423799,7 @@
         "draw": 0.21118428,
         "away": 0.20604295
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423314,6 +423833,7 @@
         "draw": 0.25510453,
         "away": 0.26526148
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423347,6 +423867,7 @@
         "draw": 0.24626769,
         "away": 0.32616301
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423380,6 +423901,7 @@
         "draw": 0.23985527,
         "away": 0.28623642
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -423413,6 +423935,7 @@
         "draw": 0.26764611,
         "away": 0.31527552
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423446,6 +423969,7 @@
         "draw": 0.25378274,
         "away": 0.35635914
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423479,6 +424003,7 @@
         "draw": 0.22627866,
         "away": 0.24991878
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423512,6 +424037,7 @@
         "draw": 0.2427341,
         "away": 0.50118499
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423545,6 +424071,7 @@
         "draw": 0.22601044,
         "away": 0.29270146
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423578,6 +424105,7 @@
         "draw": 0.21587941,
         "away": 0.28894615
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423611,6 +424139,7 @@
         "draw": 0.20552038,
         "away": 0.15061863
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423644,6 +424173,7 @@
         "draw": 0.24454875,
         "away": 0.33334325
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -423677,6 +424207,7 @@
         "draw": 0.2590758,
         "away": 0.45117947
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423710,6 +424241,7 @@
         "draw": 0.22352935,
         "away": 0.18926587
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423743,6 +424275,7 @@
         "draw": 0.24494019,
         "away": 0.25376068
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423776,6 +424309,7 @@
         "draw": 0.27822486,
         "away": 0.36725349
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423809,6 +424343,7 @@
         "draw": 0.25486938,
         "away": 0.37233794
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423842,6 +424377,7 @@
         "draw": 0.24846772,
         "away": 0.47381804
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423875,6 +424411,7 @@
         "draw": 0.23692202,
         "away": 0.32864411
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -423908,6 +424445,7 @@
         "draw": 0.25326714,
         "away": 0.35657968
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -423941,6 +424479,7 @@
         "draw": 0.25171473,
         "away": 0.30079619
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -423974,6 +424513,7 @@
         "draw": 0.23786105,
         "away": 0.38566378
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424007,6 +424547,7 @@
         "draw": 0.22494162,
         "away": 0.26466791
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424040,6 +424581,7 @@
         "draw": 0.22656322,
         "away": 0.36371833
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424073,6 +424615,7 @@
         "draw": 0.21303823,
         "away": 0.56342679
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424106,6 +424649,7 @@
         "draw": 0.24090527,
         "away": 0.41507589
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424139,6 +424683,7 @@
         "draw": 0.2626717,
         "away": 0.38305162
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424172,6 +424717,7 @@
         "draw": 0.24813627,
         "away": 0.44374631
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424205,6 +424751,7 @@
         "draw": 0.28365853,
         "away": 0.40451298
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424238,6 +424785,7 @@
         "draw": 0.22751255,
         "away": 0.19251081
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424271,6 +424819,7 @@
         "draw": 0.23616179,
         "away": 0.45764768
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424304,6 +424853,7 @@
         "draw": 0.26442463,
         "away": 0.30629478
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424337,6 +424887,7 @@
         "draw": 0.23895455,
         "away": 0.19263662
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424370,6 +424921,7 @@
         "draw": 0.25341849,
         "away": 0.32355635
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424403,6 +424955,7 @@
         "draw": 0.20920507,
         "away": 0.2243791
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424436,6 +424989,7 @@
         "draw": 0.2624269,
         "away": 0.29650959
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424469,6 +425023,7 @@
         "draw": 0.31162034,
         "away": 0.27795388
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424502,6 +425057,7 @@
         "draw": 0.26224516,
         "away": 0.33134675
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424535,6 +425091,7 @@
         "draw": 0.25818311,
         "away": 0.40199507
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424568,6 +425125,7 @@
         "draw": 0.2673421,
         "away": 0.31896806
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424601,6 +425159,7 @@
         "draw": 0.24531818,
         "away": 0.41678872
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424634,6 +425193,7 @@
         "draw": 0.21250404,
         "away": 0.20886674
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424667,6 +425227,7 @@
         "draw": 0.22407407,
         "away": 0.29654866
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424700,6 +425261,7 @@
         "draw": 0.2288175,
         "away": 0.36239948
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424733,6 +425295,7 @@
         "draw": 0.23276489,
         "away": 0.33762447
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424766,6 +425329,7 @@
         "draw": 0.21690379,
         "away": 0.22905254
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424799,6 +425363,7 @@
         "draw": 0.21676736,
         "away": 0.25113673
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424832,6 +425397,7 @@
         "draw": 0.22852049,
         "away": 0.27067267
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424865,6 +425431,7 @@
         "draw": 0.23138585,
         "away": 0.24270243
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -424898,6 +425465,7 @@
         "draw": 0.24631522,
         "away": 0.37904796
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -424931,6 +425499,7 @@
         "draw": 0.23424586,
         "away": 0.30912372
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424964,6 +425533,7 @@
         "draw": 0.22634742,
         "away": 0.21720716
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -424997,6 +425567,7 @@
         "draw": 0.23344107,
         "away": 0.36682213
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425030,6 +425601,7 @@
         "draw": 0.22953361,
         "away": 0.29885542
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425063,6 +425635,7 @@
         "draw": 0.22275039,
         "away": 0.27809249
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425096,6 +425669,7 @@
         "draw": 0.23727687,
         "away": 0.37885681
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425129,6 +425703,7 @@
         "draw": 0.24748721,
         "away": 0.35536108
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425162,6 +425737,7 @@
         "draw": 0.23653968,
         "away": 0.26128316
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425195,6 +425771,7 @@
         "draw": 0.2106046,
         "away": 0.29899142
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425228,6 +425805,7 @@
         "draw": 0.25549073,
         "away": 0.34285818
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425261,6 +425839,7 @@
         "draw": 0.26387087,
         "away": 0.2918352
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425294,6 +425873,7 @@
         "draw": 0.22383145,
         "away": 0.38570329
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425327,6 +425907,7 @@
         "draw": 0.2728988,
         "away": 0.24236336
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425360,6 +425941,7 @@
         "draw": 0.23658615,
         "away": 0.33706606
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425393,6 +425975,7 @@
         "draw": 0.2413754,
         "away": 0.27701688
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425426,6 +426009,7 @@
         "draw": 0.28479184,
         "away": 0.39352502
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425459,6 +426043,7 @@
         "draw": 0.25534364,
         "away": 0.28401502
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425492,6 +426077,7 @@
         "draw": 0.21805058,
         "away": 0.24764963
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425525,6 +426111,7 @@
         "draw": 0.21975565,
         "away": 0.21797274
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425558,6 +426145,7 @@
         "draw": 0.2540392,
         "away": 0.30514279
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425591,6 +426179,7 @@
         "draw": 0.26391383,
         "away": 0.35661594
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425624,6 +426213,7 @@
         "draw": 0.23084124,
         "away": 0.35522246
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425657,6 +426247,7 @@
         "draw": 0.25098246,
         "away": 0.3494557
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425690,6 +426281,7 @@
         "draw": 0.25908364,
         "away": 0.35946539
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425723,6 +426315,7 @@
         "draw": 0.24868169,
         "away": 0.25359754
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425756,6 +426349,7 @@
         "draw": 0.26322502,
         "away": 0.38438939
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425789,6 +426383,7 @@
         "draw": 0.2465481,
         "away": 0.30194371
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425822,6 +426417,7 @@
         "draw": 0.24188498,
         "away": 0.31305077
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425855,6 +426451,7 @@
         "draw": 0.22502535,
         "away": 0.26135028
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425888,6 +426485,7 @@
         "draw": 0.24709805,
         "away": 0.25764125
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -425921,6 +426519,7 @@
         "draw": 0.24862063,
         "away": 0.37323926
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -425954,6 +426553,7 @@
         "draw": 0.25283815,
         "away": 0.30576322
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -425987,6 +426587,7 @@
         "draw": 0.22676599,
         "away": 0.20020157
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426020,6 +426621,7 @@
         "draw": 0.28168657,
         "away": 0.34974851
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426053,6 +426655,7 @@
         "draw": 0.26558896,
         "away": 0.39503606
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426086,6 +426689,7 @@
         "draw": 0.27385228,
         "away": 0.24062879
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426119,6 +426723,7 @@
         "draw": 0.25410092,
         "away": 0.42966082
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426152,6 +426757,7 @@
         "draw": 0.27746953,
         "away": 0.38804628
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426185,6 +426791,7 @@
         "draw": 0.22804401,
         "away": 0.25502858
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426218,6 +426825,7 @@
         "draw": 0.25167208,
         "away": 0.29984052
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426251,6 +426859,7 @@
         "draw": 0.21822478,
         "away": 0.29753234
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426284,6 +426893,7 @@
         "draw": 0.24484936,
         "away": 0.34554095
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426317,6 +426927,7 @@
         "draw": 0.2388232,
         "away": 0.29537569
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426350,6 +426961,7 @@
         "draw": 0.2482735,
         "away": 0.28686717
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426383,6 +426995,7 @@
         "draw": 0.23085282,
         "away": 0.27279115
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426416,6 +427029,7 @@
         "draw": 0.24507764,
         "away": 0.33425586
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426449,6 +427063,7 @@
         "draw": 0.22495835,
         "away": 0.41860796
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426482,6 +427097,7 @@
         "draw": 0.23216544,
         "away": 0.34901567
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426515,6 +427131,7 @@
         "draw": 0.23100143,
         "away": 0.41131143
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426548,6 +427165,7 @@
         "draw": 0.24213502,
         "away": 0.41289572
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426581,6 +427199,7 @@
         "draw": 0.23915355,
         "away": 0.39831063
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426614,6 +427233,7 @@
         "draw": 0.19520368,
         "away": 0.15327465
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426647,6 +427267,7 @@
         "draw": 0.23148694,
         "away": 0.52210272
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426680,6 +427301,7 @@
         "draw": 0.24315789,
         "away": 0.28795638
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426713,6 +427335,7 @@
         "draw": 0.25326832,
         "away": 0.26019943
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426746,6 +427369,7 @@
         "draw": 0.24860824,
         "away": 0.30923311
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426779,6 +427403,7 @@
         "draw": 0.25739055,
         "away": 0.38419223
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426812,6 +427437,7 @@
         "draw": 0.25682141,
         "away": 0.3202071
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426845,6 +427471,7 @@
         "draw": 0.22334764,
         "away": 0.27838152
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426878,6 +427505,7 @@
         "draw": 0.28742529,
         "away": 0.41202011
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -426911,6 +427539,7 @@
         "draw": 0.25685835,
         "away": 0.31112174
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -426944,6 +427573,7 @@
         "draw": 0.26052015,
         "away": 0.30624616
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -426977,6 +427607,7 @@
         "draw": 0.23179674,
         "away": 0.33184369
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427010,6 +427641,7 @@
         "draw": 0.22126524,
         "away": 0.24855576
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427043,6 +427675,7 @@
         "draw": 0.26754556,
         "away": 0.26189391
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427076,6 +427709,7 @@
         "draw": 0.25227226,
         "away": 0.28411633
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427109,6 +427743,7 @@
         "draw": 0.25871351,
         "away": 0.36015813
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427142,6 +427777,7 @@
         "draw": 0.23840193,
         "away": 0.35014321
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427175,6 +427811,7 @@
         "draw": 0.26005116,
         "away": 0.35992677
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427208,6 +427845,7 @@
         "draw": 0.25637481,
         "away": 0.29060836
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427241,6 +427879,7 @@
         "draw": 0.2561111,
         "away": 0.25759879
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427274,6 +427913,7 @@
         "draw": 0.26034155,
         "away": 0.28531741
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427307,6 +427947,7 @@
         "draw": 0.2365509,
         "away": 0.29019057
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427340,6 +427981,7 @@
         "draw": 0.23919745,
         "away": 0.31534732
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427373,6 +428015,7 @@
         "draw": 0.25883778,
         "away": 0.40669769
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427406,6 +428049,7 @@
         "draw": 0.22500964,
         "away": 0.26408685
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427439,6 +428083,7 @@
         "draw": 0.23518508,
         "away": 0.29931484
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427472,6 +428117,7 @@
         "draw": 0.24276069,
         "away": 0.34654546
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427505,6 +428151,7 @@
         "draw": 0.23519202,
         "away": 0.38599239
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427538,6 +428185,7 @@
         "draw": 0.2769095,
         "away": 0.32335382
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427571,6 +428219,7 @@
         "draw": 0.26169159,
         "away": 0.28262094
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427604,6 +428253,7 @@
         "draw": 0.25710815,
         "away": 0.26848458
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -427637,6 +428287,7 @@
         "draw": 0.26939231,
         "away": 0.41112886
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427670,6 +428321,7 @@
         "draw": 0.2487237,
         "away": 0.39779729
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427703,6 +428355,7 @@
         "draw": 0.24634294,
         "away": 0.36457612
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427736,6 +428389,7 @@
         "draw": 0.23946336,
         "away": 0.28390499
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427769,6 +428423,7 @@
         "draw": 0.25286694,
         "away": 0.27087141
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -427802,6 +428457,7 @@
         "draw": 0.23576293,
         "away": 0.35124174
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427835,6 +428491,7 @@
         "draw": 0.2647061,
         "away": 0.31138202
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427868,6 +428525,7 @@
         "draw": 0.24135221,
         "away": 0.31588903
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427901,6 +428559,7 @@
         "draw": 0.26840063,
         "away": 0.43283655
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427934,6 +428593,7 @@
         "draw": 0.16460451,
         "away": 0.1353054
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -427967,6 +428627,7 @@
         "draw": 0.27165938,
         "away": 0.29120471
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428000,6 +428661,7 @@
         "draw": 0.24487046,
         "away": 0.4091984
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428033,6 +428695,7 @@
         "draw": 0.28188987,
         "away": 0.29907679
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -428066,6 +428729,7 @@
         "draw": 0.29049499,
         "away": 0.39823131
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -428099,6 +428763,7 @@
         "draw": 0.28669795,
         "away": 0.30910908
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -428132,6 +428797,7 @@
         "draw": 0.27870776,
         "away": 0.30893444
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428165,6 +428831,7 @@
         "draw": 0.27134338,
         "away": 0.32757446
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428198,6 +428865,7 @@
         "draw": 0.27221093,
         "away": 0.25798687
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428231,6 +428899,7 @@
         "draw": 0.23005443,
         "away": 0.30969737
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428264,6 +428933,7 @@
         "draw": 0.26754365,
         "away": 0.24651722
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428297,6 +428967,7 @@
         "draw": 0.19242139,
         "away": 0.15510229
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428330,6 +429001,7 @@
         "draw": 0.22714112,
         "away": 0.41507906
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428363,6 +429035,7 @@
         "draw": 0.24102877,
         "away": 0.26994408
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428396,6 +429069,7 @@
         "draw": 0.22907497,
         "away": 0.1773213
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428429,6 +429103,7 @@
         "draw": 0.25575133,
         "away": 0.40613365
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428462,6 +429137,7 @@
         "draw": 0.26249164,
         "away": 0.26481926
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428495,6 +429171,7 @@
         "draw": 0.26180413,
         "away": 0.28113496
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428528,6 +429205,7 @@
         "draw": 0.2296348,
         "away": 0.2584807
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428561,6 +429239,7 @@
         "draw": 0.26161068,
         "away": 0.35712041
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428594,6 +429273,7 @@
         "draw": 0.22156401,
         "away": 0.25209716
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428627,6 +429307,7 @@
         "draw": 0.26093243,
         "away": 0.31204214
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428660,6 +429341,7 @@
         "draw": 0.28102124,
         "away": 0.3621394
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428693,6 +429375,7 @@
         "draw": 0.22434089,
         "away": 0.22735144
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428726,6 +429409,7 @@
         "draw": 0.25879574,
         "away": 0.31568429
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -428759,6 +429443,7 @@
         "draw": 0.26187247,
         "away": 0.24590204
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -428792,6 +429477,7 @@
         "draw": 0.27756586,
         "away": 0.39132074
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428825,6 +429511,7 @@
         "draw": 0.22892847,
         "away": 0.31130468
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428858,6 +429545,7 @@
         "draw": 0.21552145,
         "away": 0.20206314
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428891,6 +429579,7 @@
         "draw": 0.23536852,
         "away": 0.3175388
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428924,6 +429613,7 @@
         "draw": 0.24978161,
         "away": 0.48687773
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -428957,6 +429647,7 @@
         "draw": 0.26265456,
         "away": 0.35642587
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -428990,6 +429681,7 @@
         "draw": 0.23101811,
         "away": 0.45141099
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429023,6 +429715,7 @@
         "draw": 0.26773806,
         "away": 0.40515458
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429056,6 +429749,7 @@
         "draw": 0.25720483,
         "away": 0.27812482
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429089,6 +429783,7 @@
         "draw": 0.21102277,
         "away": 0.16632512
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429122,6 +429817,7 @@
         "draw": 0.27077396,
         "away": 0.33713578
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429155,6 +429851,7 @@
         "draw": 0.25760034,
         "away": 0.30929024
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429188,6 +429885,7 @@
         "draw": 0.27683355,
         "away": 0.34429771
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429221,6 +429919,7 @@
         "draw": 0.25690798,
         "away": 0.28434948
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429254,6 +429953,7 @@
         "draw": 0.20867889,
         "away": 0.52133079
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429287,6 +429987,7 @@
         "draw": 0.24630881,
         "away": 0.39477299
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429320,6 +430021,7 @@
         "draw": 0.24677644,
         "away": 0.38584677
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429353,6 +430055,7 @@
         "draw": 0.22557185,
         "away": 0.49483966
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429386,6 +430089,7 @@
         "draw": 0.24483864,
         "away": 0.23707954
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429419,6 +430123,7 @@
         "draw": 0.21554163,
         "away": 0.20943921
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429452,6 +430157,7 @@
         "draw": 0.24905008,
         "away": 0.30805785
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429485,6 +430191,7 @@
         "draw": 0.25087184,
         "away": 0.36719969
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429518,6 +430225,7 @@
         "draw": 0.26899672,
         "away": 0.33181369
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429551,6 +430259,7 @@
         "draw": 0.23599061,
         "away": 0.23010037
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429584,6 +430293,7 @@
         "draw": 0.23472696,
         "away": 0.21661035
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429617,6 +430327,7 @@
         "draw": 0.24102357,
         "away": 0.30622947
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429650,6 +430361,7 @@
         "draw": 0.23582227,
         "away": 0.38556627
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429683,6 +430395,7 @@
         "draw": 0.21858056,
         "away": 0.23526842
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429716,6 +430429,7 @@
         "draw": 0.2476995,
         "away": 0.28620094
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
@@ -429749,6 +430463,7 @@
         "draw": 0.23891409,
         "away": 0.36442479
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429782,6 +430497,7 @@
         "draw": 0.23023941,
         "away": 0.43079748
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429815,6 +430531,7 @@
         "draw": 0.23042355,
         "away": 0.29747527
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429848,6 +430565,7 @@
         "draw": 0.2110678,
         "away": 0.23196723
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429881,6 +430599,7 @@
         "draw": 0.24238084,
         "away": 0.25845328
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
@@ -429914,6 +430633,7 @@
         "draw": 0.24811117,
         "away": 0.35752444
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429947,6 +430667,7 @@
         "draw": 0.23998535,
         "away": 0.29965738
       },
+      "engine_version": "V1.1",
       "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
@@ -429967,12 +430688,12 @@
     }
   ],
   "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives.",
-  "analysis_version": "poisson_baseline_v1-617d458edd7b",
-  "analysis_version_hash": "617d458edd7b",
-  "analysis_version_since_utc": "2026-10-29T14:03:48+00:00",
+  "analysis_version": "poisson_baseline_v1-4a32d3a4e189",
+  "analysis_version_hash": "4a32d3a4e189",
+  "analysis_version_since_utc": "2026-10-29T14:28:54+00:00",
   "first_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
   "latest_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
-  "analysis_source_commit": "2d794de9e03557b2d3985dec9fb7fd127c681840",
+  "analysis_source_commit": "4091211edd047e528c073d3e281bea5e3809398f",
   "model_history": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
@@ -430072,6 +430793,21 @@
       "last_evaluated_utc": "2026-10-29T14:06:41.575835+00:00",
       "source_commit": "2d794de9e03557b2d3985dec9fb7fd127c681840",
       "analysis_start_utc": "2026-10-29T14:03:48+00:00",
+      "evaluated_matches": 0,
+      "skipped_matches": 0,
+      "brier_score": null,
+      "evaluation_status": "awaiting_matches",
+      "reference_evaluated_matches": 1141,
+      "reference_brier_score": 0.613535488114293
+    },
+    {
+      "version_id": "poisson_baseline_v1-4a32d3a4e189",
+      "model": "poisson_baseline_v1",
+      "analysis_version_hash": "4a32d3a4e189",
+      "first_seen_utc": "2026-10-29T14:29:59.508597+00:00",
+      "last_evaluated_utc": "2026-10-29T14:29:59.508597+00:00",
+      "source_commit": "4091211edd047e528c073d3e281bea5e3809398f",
+      "analysis_start_utc": "2026-10-29T14:28:54+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,
