@@ -671,6 +671,46 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  .match-card .confidence-track{height:5px;min-width:14px}
  .match-card .match-action{height:31px;width:44px}
 }
+/* Ajustements compacts du listing */
+.match-card .flag img{
+  display:block;
+  width:auto;
+  height:15px;
+  max-width:22px;
+  border-radius:0;
+  box-shadow:none;
+  object-fit:contain;
+}
+.match-card .confidence{gap:5px}
+.match-card .confidence strong,.match-card .confidence-value{font-size:12px}
+.match-card .confidence-track{height:6px;min-width:18px}
+.match-card .match-action{height:34px;width:58px}
+.match-card .match-action .action-stats{width:15px;height:15px}
+.match-card .match-action .action-chevron{width:13px;height:15px}
+@media(max-width:1250px){
+ .match-card .confidence{gap:4px}
+ .match-card .confidence strong,.match-card .confidence-value{font-size:11px}
+ .match-card .confidence-track{height:5px;min-width:14px}
+ .match-card .match-action{height:31px;width:44px}
+}
+
+/* Bouton d'action encore plus compact */
+.match-card .match-action{
+  width:34px;
+  height:30px;
+  gap:0;
+  border-radius:7px;
+  padding:0;
+}
+.match-card .match-action .action-stats{width:14px;height:14px}
+.match-card .match-action .action-chevron{display:none}
+@media(max-width:1250px){
+ .match-card .match-action{width:30px;height:28px}
+ .match-card .match-action .action-stats{width:13px;height:13px}
+}
+@media(max-width:900px){
+ .match-card .match-action{width:30px;height:28px}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
