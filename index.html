@@ -699,7 +699,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 </section>
 <section class="panel detail-panel" id="detail" aria-live="polite"><div id="detailContent"><div class="empty">Sélectionnez une rencontre pour afficher son analyse.</div></div></section>
 </div>
-<p class="footer-note" id="about">Les probabilités affichées sont des estimations expérimentales non validées. Les cotes ne sont affichées que si elles sont présentes dans les données source. Aucun pari n'est garanti.</p>
+<p class="footer-note" id="about">Les probabilités affichées sont des estimations expérimentales non validées. La confiance affichée dans le listing est un indicateur visuel basé sur la probabilité 1X2 la plus élevée, pas une mesure de calibration indépendante. Les cotes ne sont affichées que si elles sont présentes dans les données source. Aucun pari n'est garanti.</p>
 </main>
 <script>
 (()=>{"use strict";
@@ -788,7 +788,7 @@ function renderList(){
   recordCoverage(rows);return;
  }
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
- $("#matchList").innerHTML='<div class="match-list-header" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span>VS</span><span>Équipe B</span><span>Probabilités 1X2</span><span>Confiance*</span><span>Actions</span></div>'+rows.map(r=>{
+ $("#matchList").innerHTML='<div class="match-list-header" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span>VS</span><span>Équipe B</span><span>Probabilités 1X2</span><span title="Indicateur provisoire égal à la probabilité 1X2 la plus élevée">Confiance*</span><span>Actions</span></div>'+rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
   const roundText=matchdayLabel(r);
