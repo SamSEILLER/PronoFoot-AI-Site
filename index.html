@@ -661,6 +661,41 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  #matchList .fixture-probabilities{grid-column:1/4;grid-row:3;gap:4px}
  #matchList .fixture-probabilities .prob{min-height:34px;font-size:11px}
 }
+
+
+/* Ajustement après contrôle de la capture réelle : listing pleine largeur */
+.workspace{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:14px;align-items:start}
+.matches-panel{width:100%;min-width:0}
+.detail-panel{width:100%;min-height:0}
+#matchList .fixture-head,#matchList .fixture-row{
+ grid-template-columns:minmax(72px,.42fr) minmax(170px,1.05fr) minmax(245px,1.25fr) 36px minmax(245px,1.25fr) minmax(205px,1fr);
+ column-gap:16px;
+}
+#matchList .fixture-head{padding-left:18px;padding-right:18px}
+#matchList .fixture-row{min-height:76px;padding:9px 18px}
+#matchList .fixture-home{justify-content:flex-end;display:grid;grid-template-columns:minmax(0,1fr) 44px 30px;column-gap:9px}
+#matchList .fixture-home .fixture-crest{grid-column:2;grid-row:1}
+#matchList .fixture-home .team-rank{grid-column:3;grid-row:1;justify-self:center}
+#matchList .fixture-home .fixture-team-name{grid-column:1;grid-row:1;text-align:right}
+#matchList .fixture-away{justify-content:flex-start;display:grid;grid-template-columns:44px 30px minmax(0,1fr);column-gap:9px}
+#matchList .fixture-away .fixture-crest{grid-column:1;grid-row:1}
+#matchList .fixture-away .team-rank{grid-column:2;grid-row:1;justify-self:center}
+#matchList .fixture-away .fixture-team-name{grid-column:3;grid-row:1;text-align:left}
+#matchList .fixture-probabilities{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#matchList .fixture-probabilities .prob{min-height:42px;font-size:13px}
+@media(max-width:1250px){
+ #matchList .fixture-head{display:none}
+ #matchList .fixture-row{grid-template-columns:64px minmax(145px,1fr) minmax(210px,1.1fr) 28px minmax(210px,1.1fr) minmax(175px,.95fr);column-gap:10px}
+ #matchList .fixture-home{grid-template-columns:minmax(0,1fr) 38px 27px;column-gap:6px}
+ #matchList .fixture-away{grid-template-columns:38px 27px minmax(0,1fr);column-gap:6px}
+}
+@media(max-width:900px){
+ #matchList .fixture-row{grid-template-columns:52px minmax(0,1fr) 22px minmax(0,1fr);grid-template-rows:auto auto auto;gap:9px 10px;padding:12px}
+ #matchList .fixture-home,#matchList .fixture-away{display:flex;flex-direction:column;gap:5px;justify-content:center}
+ #matchList .fixture-home .fixture-crest,#matchList .fixture-home .team-rank,#matchList .fixture-home .fixture-team-name,
+ #matchList .fixture-away .fixture-crest,#matchList .fixture-away .team-rank,#matchList .fixture-away .fixture-team-name{grid-column:auto;grid-row:auto}
+ #matchList .fixture-home .fixture-team-name,#matchList .fixture-away .fixture-team-name{text-align:center}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
