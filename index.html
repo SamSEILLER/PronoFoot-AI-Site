@@ -567,6 +567,87 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
     height: 60px !important;
   }
 }
+ 
+/* Listing compact conforme à la maquette : classement intégré et action unique */
+.match-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+.match-list-header,.match-card{
+ display:grid;grid-template-columns:64px minmax(115px,1.05fr) minmax(150px,1.3fr) 24px minmax(150px,1.3fr) minmax(180px,1.15fr) minmax(112px,.9fr) 74px;
+ align-items:center;gap:9px;
+}
+.match-list-header{min-height:42px;padding:0 12px;background:#f5f8fc;border-bottom:1px solid var(--line);font-size:11px;font-weight:750;color:#526b8b}
+.match-card{min-height:68px;padding:7px 12px;border:0;border-bottom:1px solid #e8eff8;border-radius:0;background:#fff;cursor:pointer}
+.match-card:last-child{border-bottom:0}
+.match-card:hover,.match-card.selected{background:#f7fbff}
+.match-card.selected{box-shadow:inset 3px 0 #1683f8}
+.match-card .kickoff{font-size:13px;text-align:left;font-variant-numeric:tabular-nums}
+.match-card .league{min-width:0;gap:8px}
+.match-card .flag{display:flex;align-items:center;flex:0 0 22px}
+.match-card .flag img{width:22px;height:22px;object-fit:contain}
+.match-card .league-text{min-width:0}
+.match-card .league-name{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-card .round{font-size:10px;color:var(--muted);white-space:nowrap}
+.match-card .team{display:flex;align-items:center;gap:7px;min-width:0;margin:0;justify-content:flex-start}
+.match-card .team-home{justify-content:flex-start}
+.match-card .team-away{justify-content:flex-start}
+.match-card .team-logo{width:34px;height:34px;flex:0 0 34px}
+.match-card .team-logo img{height:32px!important;width:auto!important;max-width:34px;object-fit:contain}
+.match-card .team-rank{flex:0 0 auto;display:inline-flex;align-items:baseline;justify-content:center;min-width:31px;padding:5px 4px;border-radius:7px;background:#edf2f7;color:#244466;font-size:11px;font-weight:800;white-space:nowrap}
+.match-card .team-rank sup{font-size:8px}
+.match-card .team-rank[title*="points"]{cursor:help}
+.match-card .team-rank.unavailable{color:#8291a5;background:#f2f5f8}
+.match-card .team-name{font-size:12px;font-weight:750;min-width:0;flex:1;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-card .vs{font-size:11px;text-align:center;font-weight:850;color:#5d7291}
+.match-card .prob-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;min-width:0}
+.match-card .prob{display:flex;align-items:center;justify-content:center;min-height:42px;padding:5px 3px;border:0;border-radius:7px;background:#eef2f7;color:#415875;font-size:13px;font-weight:800}
+.match-card .prob strong{display:none}
+.match-card .prob.best{background:#e2f7eb;color:#16804b;border:0}
+.match-card .prob:nth-child(3){background:#fff0f1;color:#df333c}
+.match-card .prob.no-bet{grid-column:1/-1;background:#f2f5f8;color:#64748b;font-size:11px}
+.match-card .confidence{display:flex;align-items:center;gap:8px;min-width:0}
+.match-card .confidence strong,.match-card .confidence-value{font-size:14px;font-weight:850;white-space:nowrap;font-variant-numeric:tabular-nums}
+.confidence-track{height:9px;flex:1;min-width:28px;border-radius:99px;background:#e8edf3;overflow:hidden}
+.confidence-track i{display:block;height:100%;border-radius:99px;background:#13b76b}
+.confidence-track i.medium{background:#2587f7}.confidence-track i.low{background:#f5ad20}
+.confidence-value.unavailable{color:#8492a6}
+.match-action{height:39px;width:70px;display:flex;align-items:center;justify-content:center;gap:0;padding:0;border:1px solid #e0e8f2;border-radius:10px;background:#fff;color:#10294d;box-shadow:0 1px 3px #112b4808}
+.match-action:hover{background:#eef6ff;border-color:#b8d9ff}
+.match-action .action-stats{width:17px;height:17px}
+.match-action .action-chevron{width:15px;height:17px}
+@media(max-width:1250px){
+ .match-list-header,.match-card{grid-template-columns:55px minmax(100px,1fr) minmax(125px,1.2fr) 18px minmax(125px,1.2fr) minmax(145px,1fr) minmax(96px,.8fr) 48px;gap:6px;padding-left:8px;padding-right:8px}
+ .match-card .team-logo{width:28px;height:28px;flex-basis:28px}
+ .match-card .team-logo img{height:27px!important;max-width:28px}
+ .match-card .team-rank{min-width:25px;padding:4px 3px;font-size:10px}
+ .match-card .team-name{font-size:11px}
+ .match-action{width:46px}
+ .match-action .action-chevron{display:none}
+}
+@media(max-width:900px){
+ .match-list-header{display:none}
+ .match-card{grid-template-columns:52px minmax(0,1fr) 22px minmax(0,1fr) 42px;grid-template-rows:auto auto;gap:6px 8px;padding:9px}
+ .match-card .kickoff{grid-column:1;grid-row:1}
+ .match-card .league{grid-column:2/6;grid-row:1}
+ .match-card .team-home{grid-column:1/3;grid-row:2}
+ .match-card .vs{grid-column:3;grid-row:2}
+ .match-card .team-away{grid-column:4/6;grid-row:2}
+ .match-card .prob-row{grid-column:1/4;grid-row:3}
+ .match-card .confidence{grid-column:4/6;grid-row:3}
+ .match-card .match-action{grid-column:5;grid-row:1;width:40px;height:32px;justify-self:end}
+ .match-card .team-name{font-size:12px}
+}
+@media(max-width:520px){
+ .match-card{grid-template-columns:44px minmax(0,1fr) 18px minmax(0,1fr);gap:6px;padding:8px}
+ .match-card .league{grid-column:2/5}
+ .match-card .team-home{grid-column:1/3}
+ .match-card .team-away{grid-column:3/5}
+ .match-card .team-logo{width:24px;height:24px;flex-basis:24px}
+ .match-card .team-logo img{height:23px!important;max-width:24px}
+ .match-card .team-rank{min-width:22px;padding:3px;font-size:9px}
+ .match-card .team-name{font-size:11px}
+ .match-card .prob-row{grid-column:1/3;grid-row:3}
+ .match-card .confidence{grid-column:3/5;grid-row:3}
+ .match-card .match-action{grid-column:4;grid-row:1;width:32px}
+}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -622,7 +703,7 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
 </main>
 <script>
 (()=>{"use strict";
-const $=s=>document.querySelector(s),state={data:null,details:{},recentForm:{teams:{}},headToHead:{pairs:{}},oddsData:{events:{}},range:"today",selected:null,search:"",sort:"time",tab:"overview"};
+const $=s=>document.querySelector(s),state={data:null,standings:null,details:{},recentForm:{teams:{}},headToHead:{pairs:{}},oddsData:{events:{}},range:"today",selected:null,search:"",sort:"time",tab:"overview"};
 const teamLogos=new Map();
 function normalizeTeamName(value){return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"")}
 function rebuildTeamLogos(){
@@ -664,6 +745,30 @@ const flag=(n,id="")=>{
 const rowsAll=()=>Array.isArray(state.data?.upcoming)?state.data.upcoming.filter(r=>r&&r.home&&r.away&&r.kickoff):[];
 function visibleRows(){const now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tomorrow=new Date(+today+86400000);let rows=rowsAll().filter(r=>{const d=dateOf(r);if(!d)return false;if(state.range==="today")return d>=today&&d<tomorrow;if(state.range==="tomorrow")return d>=tomorrow&&d<new Date(+tomorrow+86400000);return true});if(state.search){const q=state.search.toLocaleLowerCase("fr");rows=rows.filter(r=>[r.home,r.away,r.competition].some(x=>String(x||"").toLocaleLowerCase("fr").includes(q)))}rows.sort((a,b)=>state.sort==="competition"?String(a.competition).localeCompare(String(b.competition),"fr"):state.sort==="home"?String(a.home).localeCompare(String(b.home),"fr"):(dateOf(a)||0)-(dateOf(b)||0));return rows}
 function probabilityCells(row,large=false){const keys=[["home","1"],["draw","N"],["away","2"]];if(row?.prediction_status==="NO BET"&&!validProb(row)&&!large)return '<div class="prob no-data no-bet">NO BET · estimation indisponible</div>';if(!validProb(row))return keys.map(([k,l])=>large?'<div class="big-prob"><span>'+l+'</span><strong>—</strong></div>':'<div class="prob no-data"><strong>'+l+'</strong>—</div>').join("");const max=Math.max(...keys.map(([k])=>Number(row.probabilities[k])));return keys.map(([k,l])=>large?'<div class="big-prob '+(Number(row.probabilities[k])===max?"best":"")+'"><span>'+l+'</span><strong>'+pct(row.probabilities[k])+'</strong></div>':'<div class="prob '+(Number(row.probabilities[k])===max?"best":"")+'"><strong>'+l+'</strong>'+pct(row.probabilities[k])+'</div>').join("")}
+function normalizeStandingName(value){return String(value||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"")}
+function standingsForMatch(row){
+ const list=Array.isArray(state.standings?.competitions)?state.standings.competitions:[];
+ const id=String(row.competition_id||row.competitionId||"").toLowerCase();
+ const name=normalizeStandingName(row.competition||"");
+ return list.find(c=>c.status==="available"&&id&&String(c.competition_id||"").toLowerCase()===id)
+  ||list.find(c=>c.status==="available"&&name&&normalizeStandingName(c.competition)===name)
+  ||null;
+}
+function teamStanding(row,name){
+ const comp=standingsForMatch(row);if(!comp||!Array.isArray(comp.teams))return null;
+ const key=normalizeStandingName(name);
+ return comp.teams.find(t=>normalizeStandingName(t.team)===key)||null;
+}
+function compactRank(row,name){
+ const t=teamStanding(row,name);
+ return t&&Number.isFinite(Number(t.rank))?'<span class="team-rank" title="'+esc(String(t.points??"—")+' points')+'">'+esc(t.rank)+'<sup>e</sup></span>':'<span class="team-rank unavailable" title="Classement indisponible">—</span>';
+}
+function confidenceMarkup(row){
+ if(!validProb(row))return '<div class="confidence-value unavailable">—</div>';
+ const value=Math.max(...["home","draw","away"].map(k=>Number(row.probabilities[k])))*100;
+ const color=value>=65?"high":value>=50?"medium":"low";
+ return '<div class="confidence"><strong>'+Math.round(value)+'%</strong><span class="confidence-track"><i class="'+color+'" style="width:'+Math.round(value)+'%"></i></span></div>';
+}
 function recordCoverage(rows){
  const rendered=$("#matchList").querySelectorAll(".match-card").length;
  const feed=Array.isArray(state.data?.upcoming)?state.data.upcoming:[];
@@ -680,22 +785,22 @@ function renderList(){
  if(!rows.length){
   $("#matchList").innerHTML='<div class="empty">Aucun match trouvé pour ce filtre. Essayez « Tous les matchs » ou vérifiez la prochaine mise à jour des données.</div>';
   $("#detailContent").innerHTML='<div class="empty">Aucune rencontre à afficher avec ces filtres.</div>';
-  recordCoverage(rows);
-  return;
+  recordCoverage(rows);return;
  }
  if(!rows.some(r=>r.id===state.selected))state.selected=rows[0].id;
- $("#matchList").innerHTML=rows.map(r=>{
+ $("#matchList").innerHTML='<div class="match-list-header" aria-hidden="true"><span>Heure</span><span>Compétition</span><span>Équipe A</span><span>VS</span><span>Équipe B</span><span>Probabilités 1X2</span><span>Confiance*</span><span>Actions</span></div>'+rows.map(r=>{
   const d=dateOf(r),c=r.competition||"Compétition indisponible";
-  const roundText=matchdayLabel(r);
   const timeText=d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—";
+  const roundText=matchdayLabel(r);
   return '<article class="match-card '+(r.id===state.selected?"selected":"")+'" tabindex="0" role="button" data-id="'+esc(r.id)+'" aria-label="Analyser '+esc(r.home)+" contre "+esc(r.away)+'">'+
-   '<div class="league">'+
-    '<div class="league-top"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-name">'+esc(c)+'</div></div>'+
-    '<div class="match-date">'+icon("calendar","icon small")+'<span class="match-date-day">'+esc(matchdayOrDate(r,d))+'</span></div>'+
-   '</div>'+
-   '<div class="kickoff">'+icon("clock","icon small")+'<span>'+esc(timeText)+'</span></div>'+
-   '<div class="teams"><div class="team"><span class="team-name">'+esc(r.home)+'</span><span class="crest team-logo">'+teamImage(r,"home")+'</span></div><span class="vs">VS</span><div class="team away"><span class="crest team-logo">'+teamImage(r,"away")+'</span><span class="team-name">'+esc(r.away)+'</span></div></div>'+
-   '<div class="prob-row">'+probabilityCells(r)+'</div>'+icon("chevron","icon chevron")+
+   '<div class="kickoff">'+esc(timeText)+'</div>'+
+   '<div class="league"><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span><div class="league-text"><div class="league-name">'+esc(c)+'</div><div class="round">'+esc(roundText||"Journée indisponible")+'</div></div></div>'+
+   '<div class="team team-home"><span class="crest team-logo">'+teamImage(r,"home")+'</span>'+compactRank(r,r.home)+'<span class="team-name">'+esc(r.home)+'</span></div>'+
+   '<span class="vs">VS</span>'+
+   '<div class="team team-away"><span class="crest team-logo">'+teamImage(r,"away")+'</span>'+compactRank(r,r.away)+'<span class="team-name">'+esc(r.away)+'</span></div>'+
+   '<div class="prob-row">'+probabilityCells(r)+'</div>'+
+   confidenceMarkup(r)+
+   '<button type="button" class="match-action" data-action="details" aria-label="Voir les statistiques détaillées de '+esc(r.home)+' contre '+esc(r.away)+'" title="Statistiques détaillées">'+icon("chart-no-axes-column","icon action-stats")+icon("chevron-right","icon action-chevron")+'</button>'+
   '</article>';
  }).join("");
  recordCoverage(rows);
@@ -1473,7 +1578,7 @@ async function renderDataStatus(status){
  el.title=detail;
  el.innerHTML='<span class="dot"></span><span>État des données : <strong>'+label+'</strong></span>'+icon("info","icon small");
 }
-async function load(){try{const res=await fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw new Error("Fichier de données introuvable ("+res.status+")");const data=await res.json();if(!data||!Array.isArray(data.upcoming))throw new Error("Le JSON ne contient pas de liste upcoming exploitable.");state.data=data;try{const formRes=await fetch("./data/recent-form.json?v="+Date.now(),{cache:"no-store"});state.recentForm=formRes.ok?await formRes.json():{teams:{}}}catch(_){state.recentForm={teams:{}}}try{const h2hRes=await fetch("./data/head-to-head.json?v="+Date.now(),{cache:"no-store"});state.headToHead=h2hRes.ok?await h2hRes.json():{pairs:{}}}catch(_){state.headToHead={pairs:{}}}try{const oddsRes=await fetch("./data/odds-data.json?v="+Date.now(),{cache:"no-store"});state.oddsData=oddsRes.ok?await oddsRes.json():{events:{}}}catch(_){state.oddsData={events:{}}}try{const extra=await fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"});if(extra.ok){const raw=await extra.text();const escapedNewline=String.fromCharCode(92)+"n";const cleaned=raw.endsWith(escapedNewline)?raw.slice(0,-2):raw;const parsed=JSON.parse(cleaned);state.details=parsed&&parsed.matches?parsed:{}}else{state.details={}}}catch(_){state.details={}}try{const statusRes=await fetch("./data/site-status.json?v="+Date.now(),{cache:"no-store"});state.siteStatus=statusRes.ok?await statusRes.json():null}catch(_){state.siteStatus=null}rebuildTeamLogos();renderDataStatus(state.siteStatus);$("#dataMeta").textContent="Données générées le "+(data.generated_at_utc?new Date(data.generated_at_utc).toLocaleString("fr-FR"):"date inconnue")+" · "+(data.engine_version||"version moteur inconnue")+" · "+(data.model||"modèle non précisé")+" · statut "+(data.status||"inconnu")+(data.publication_approved===false?" · estimations non approuvées":"");renderList()}catch(e){$("#apiStatus").innerHTML='<span class="dot" style="background:#f59e0b"></span><span>État des données : <strong>À vérifier</strong></span>'+icon("info","icon small");$("#matchList").innerHTML='<div class="error"><strong>Impossible de charger les rencontres.</strong><br>'+esc(e.message)+'<br>Les fichiers de données sont conservés ; vérifiez <code>data/predictions-data.json</code>.</div>';$("#dataMeta").textContent="Données indisponibles — aucune rencontre n'est inventée."}}
+async function load(){try{const res=await fetch("./data/predictions-data.json?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw new Error("Fichier de données introuvable ("+res.status+")");const data=await res.json();if(!data||!Array.isArray(data.upcoming))throw new Error("Le JSON ne contient pas de liste upcoming exploitable.");state.data=data;try{const standingsRes=await fetch("./data/standings.json?v="+Date.now(),{cache:"no-store"});state.standings=standingsRes.ok?await standingsRes.json():null}catch(_){state.standings=null}try{const formRes=await fetch("./data/recent-form.json?v="+Date.now(),{cache:"no-store"});state.recentForm=formRes.ok?await formRes.json():{teams:{}}}catch(_){state.recentForm={teams:{}}}try{const h2hRes=await fetch("./data/head-to-head.json?v="+Date.now(),{cache:"no-store"});state.headToHead=h2hRes.ok?await h2hRes.json():{pairs:{}}}catch(_){state.headToHead={pairs:{}}}try{const oddsRes=await fetch("./data/odds-data.json?v="+Date.now(),{cache:"no-store"});state.oddsData=oddsRes.ok?await oddsRes.json():{events:{}}}catch(_){state.oddsData={events:{}}}try{const extra=await fetch("./data/match-details.json?v="+Date.now(),{cache:"no-store"});if(extra.ok){const raw=await extra.text();const escapedNewline=String.fromCharCode(92)+"n";const cleaned=raw.endsWith(escapedNewline)?raw.slice(0,-2):raw;const parsed=JSON.parse(cleaned);state.details=parsed&&parsed.matches?parsed:{}}else{state.details={}}}catch(_){state.details={}}try{const statusRes=await fetch("./data/site-status.json?v="+Date.now(),{cache:"no-store"});state.siteStatus=statusRes.ok?await statusRes.json():null}catch(_){state.siteStatus=null}rebuildTeamLogos();renderDataStatus(state.siteStatus);$("#dataMeta").textContent="Données générées le "+(data.generated_at_utc?new Date(data.generated_at_utc).toLocaleString("fr-FR"):"date inconnue")+" · "+(data.engine_version||"version moteur inconnue")+" · "+(data.model||"modèle non précisé")+" · statut "+(data.status||"inconnu")+(data.publication_approved===false?" · estimations non approuvées":"");renderList()}catch(e){$("#apiStatus").innerHTML='<span class="dot" style="background:#f59e0b"></span><span>État des données : <strong>À vérifier</strong></span>'+icon("info","icon small");$("#matchList").innerHTML='<div class="error"><strong>Impossible de charger les rencontres.</strong><br>'+esc(e.message)+'<br>Les fichiers de données sont conservés ; vérifiez <code>data/predictions-data.json</code>.</div>';$("#dataMeta").textContent="Données indisponibles — aucune rencontre n'est inventée."}}
 document.querySelectorAll("[data-range]").forEach(b=>b.addEventListener("click",()=>{state.range=b.dataset.range;document.querySelectorAll("[data-range]").forEach(x=>x.classList.toggle("active",x===b));renderList()}));$("#search").addEventListener("input",e=>{state.search=e.target.value;renderList()});$("#sort").addEventListener("change",e=>{state.sort=e.target.value;renderList()});$("#matchList").addEventListener("click",e=>{const card=e.target.closest("[data-id]");if(card){state.selected=card.dataset.id;state.tab="overview";renderList()}});$("#matchList").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-id]")){e.preventDefault();state.selected=e.target.dataset.id;state.tab="overview";renderList()}});$("#detailContent").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b){state.tab=b.dataset.tab;renderDetail(rowsAll().find(r=>r.id===state.selected))}});load();
 })();
 </script>
