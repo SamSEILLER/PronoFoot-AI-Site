@@ -717,6 +717,32 @@ button:focus-visible,.sort-select:focus-visible,.search:focus-visible{outline:2p
  #detailContent .complementary-grid{grid-template-columns:minmax(0,1fr);gap:7px}
  #detailContent .complementary-grid .collection-item{grid-column:auto}
 }
+
+/* Bilan saison : présentation visuelle avec anneaux de moyenne par match */
+#detailContent .season-goals-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+#detailContent .season-goals-card{padding:0;overflow:hidden;background:#fff;border:1px solid #e2eaf3;border-radius:12px}
+#detailContent .season-goals-team-heading{padding:12px 15px;background:linear-gradient(110deg,#eaf8f2,#f0f7fc);border-bottom:1px solid #e6eef5}
+#detailContent .season-goals-card:nth-child(2) .season-goals-team-heading{background:linear-gradient(110deg,#edf4fc,#f2f6fb)}
+#detailContent .season-goals-team-heading>span{display:block;color:#68819c;font-size:10px;font-weight:800;letter-spacing:.8px}
+#detailContent .season-goals-team-heading h4{font-size:16px;margin:2px 0 0;color:#122b4c}
+#detailContent .season-goals-visual-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:13px 8px}
+#detailContent .season-goals-metric{display:flex;align-items:center;justify-content:space-around;gap:8px;min-width:0;padding:5px 8px}
+#detailContent .season-goals-metric+.season-goals-metric{border-left:1px solid #e5edf5}
+#detailContent .season-goals-metric-copy{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0}
+#detailContent .season-goals-metric-copy>span{font-size:11px;color:#607895;font-weight:650}
+#detailContent .season-goals-metric-copy>strong{font-size:30px;line-height:1.1;color:#078653;font-weight:850;font-variant-numeric:tabular-nums}
+#detailContent .season-goals-metric.against .season-goals-metric-copy>strong{color:#dc4545}
+#detailContent .season-goals-metric-copy>small{font-size:10px;color:#71849b;white-space:nowrap}
+#detailContent .season-goals-ring{width:72px;height:72px;flex:0 0 72px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--ring-color) var(--ring-pct),#e1e7ed var(--ring-pct));position:relative}
+#detailContent .season-goals-ring:before{content:"";position:absolute;inset:7px;background:#fff;border-radius:50%}
+#detailContent .season-goals-ring>div{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;line-height:1.1}
+#detailContent .season-goals-ring strong{font-size:15px;color:#152d4a;font-variant-numeric:tabular-nums}
+#detailContent .season-goals-ring span{font-size:9px;color:#647991;margin-top:3px}
+#detailContent .season-goals-ring.for{--ring-color:#159b67}
+#detailContent .season-goals-ring.against{--ring-color:#e44747}
+#detailContent .season-goals-card>.stats-muted{padding:0 14px 10px;margin:0;font-size:10px}
+@media(max-width:700px){#detailContent .season-goals-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:430px){#detailContent .season-goals-visual-metrics{padding:10px 4px}#detailContent .season-goals-metric{gap:5px;padding:4px}#detailContent .season-goals-ring{width:58px;height:58px;flex-basis:58px}#detailContent .season-goals-ring:before{inset:6px}#detailContent .season-goals-metric-copy>strong{font-size:25px}#detailContent .season-goals-metric-copy>span{font-size:10px}}
 </style>
 <!-- Public deployment refresh: 2026-10-27 -->
 </head>
@@ -1599,11 +1625,16 @@ function statsProbabilityHTML(r){
  const sections=[];
  const seasonGoalsTeam=(name)=>{
   const t=teamStanding(r,name);
-  const played=Number(t?.played),forGoals=Number(t?.goals_for),againstGoals=Number(t?.goals_against);
+  const played=Number(t?.played);
   const validPlayed=Number.isFinite(played)&&played>0;
+  const rawFor=t?.goals_for,rawAgainst=t?.goals_against;
+  const forGoals=rawFor!==null&&rawFor!==undefined&&rawFor!==""?Number(rawFor):NaN;
+  const againstGoals=rawAgainst!==null&&rawAgainst!==undefined&&rawAgainst!==""?Number(rawAgainst):NaN;
   const fmt=v=>Number.isFinite(v)?v.toLocaleString("fr-FR",{maximumFractionDigits:2}):"—";
-  const avg=(goals)=>validPlayed&&Number.isFinite(goals)?fmt(goals/played):"—";
-  return '<div class="season-goals-card"><h4>'+esc(name||"Équipe")+'</h4><div class="season-goals-metrics"><div><span>Buts marqués</span><strong>'+fmt(forGoals)+'</strong></div><div><span>Buts encaissés</span><strong>'+fmt(againstGoals)+'</strong></div><div><span>Marqués / match</span><strong>'+avg(forGoals)+'</strong></div><div><span>Encaissés / match</span><strong>'+avg(againstGoals)+'</strong></div></div><p class="stats-muted">'+(validPlayed?played+" matchs pris en compte":"Nombre de matchs indisponible")+'</p></div>';
+  const avgValue=goals=>validPlayed&&Number.isFinite(goals)?goals/played:NaN;
+  const ring=(value,tone)=>'<div class="season-goals-ring '+tone+'" style="--ring-pct:'+(Number.isFinite(value)?Math.max(0,Math.min(100,value/3*100)):0)+'%"><div><strong>'+(Number.isFinite(value)?fmt(value):"—")+'</strong><span>/ match</span></div></div>';
+  const metric=(label,total,average,tone)=>'<div class="season-goals-metric '+tone+'"><div class="season-goals-metric-copy"><span>'+label+'</span><strong>'+fmt(total)+'</strong><small>'+(Number.isFinite(average)?fmt(average)+' / match':'Moyenne indisponible')+'</small></div>'+ring(average,tone)+'</div>';
+  return '<div class="season-goals-card"><div class="season-goals-team-heading"><span>'+(name===r.home?'DOMICILE':'EXTÉRIEUR')+'</span><h4>'+esc(name||"Équipe")+'</h4></div><div class="season-goals-visual-metrics">'+metric("Buts marqués",forGoals,avgValue(forGoals),"for")+metric("Buts encaissés",againstGoals,avgValue(againstGoals),"against")+'</div><p class="stats-muted">'+(validPlayed?played+" matchs pris en compte":"Nombre de matchs indisponible")+'</p></div>';
  };
  const seasonComp=standingsForMatch(r);
  sections.push('<div class="info-card stats-section season-goals-section"><h3>Buts sur la saison en cours</h3><p class="stats-muted">Bilan de saison disponible pour cette compétition. Les moyennes sont calculées en divisant les buts par les matchs joués.</p><div class="season-goals-grid">'+seasonGoalsTeam(r.home)+seasonGoalsTeam(r.away)+'</div>'+(seasonComp?'<p class="stats-muted">Saison : '+esc(seasonComp.season||"non renseignée")+' · '+(state.standings?.official_standings===false?"tableau provisoire calculé depuis les archives de matchs":"source de classement disponible")+'.</p>':'<p class="stats-muted">Bilan de saison indisponible pour cette compétition ou cette équipe.</p>')+'</div>');
