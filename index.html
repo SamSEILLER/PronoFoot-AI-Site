@@ -1664,19 +1664,41 @@ const body=state.tab==="odds"?'<h2 class="section-title">'+icon("chart")+'Toutes
 $("#detailContent").innerHTML='<div class="detail-meta"><div><span class="flag">'+flag(c,r.competition_id||r.competitionId||"")+'</span> <strong>'+esc(c)+'</strong> · <span>'+matchdayOrDate(r,d)+'</span></div><div class="detail-date">'+esc(fmtDate(d))+' · '+esc(d?new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false}).format(d):"—")+' '+icon("clock","icon small")+'</div></div><div class="hero-match"><div class="hero-team"><span class="hero-crest team-logo">'+teamImage(r,"home")+'</span><span>'+esc(r.home)+'</span>'+compactRank(r,r.home)+'</div><div class="hero-vs">VS</div><div class="hero-team"><span class="hero-crest team-logo">'+teamImage(r,"away")+'</span><span>'+esc(r.away)+'</span>'+compactRank(r,r.away)+'</div></div>'+((r.home_expected_goals!==null&&r.home_expected_goals!==undefined&&r.home_expected_goals!==""&&Number.isFinite(Number(r.home_expected_goals))&&r.away_expected_goals!==null&&r.away_expected_goals!==undefined&&r.away_expected_goals!==""&&Number.isFinite(Number(r.away_expected_goals)))?'<div class="expected-goals"><span class="expected-goals-label">Buts attendus</span><span class="expected-goals-team">'+esc(r.home)+'<strong>'+Number(r.home_expected_goals).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong></span><span aria-hidden="true">–</span><span class="expected-goals-team">'+esc(r.away)+'<strong>'+Number(r.away_expected_goals).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+'</strong></span><span class="expected-goals-total">Total du match <strong>'+(Number(r.home_expected_goals)+Number(r.away_expected_goals)).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+' buts</strong></span></div>':"")+'<div class="tabs"><button class="tab '+(state.tab==="overview"?"active":"")+'" data-tab="overview">'+icon("chart","icon small")+'Vue d’ensemble</button><button class="tab '+(state.tab==="stats"?"active":"")+'" data-tab="stats">'+icon("stats","icon small")+'Statistiques</button><button class="tab '+(state.tab==="analysis"?"active":"")+'" data-tab="analysis">'+icon("analysis","icon small")+'Analyse</button><button class="tab '+(state.tab==="odds"?"active":"")+'" data-tab="odds">'+icon("users","icon small")+'Cotes</button></div>'+body}
 async function renderDataStatus(status){
  const el=$("#apiStatus");
- const keys=["database","odds","match_details"];
- const sources=keys.map(key=>({key,item:status&&status[key]}));
+ const keys=["database","statistics","odds","match_details"];
+ const labels={database:"base de données",statistics:"statistiques",odds:"cotes",match_details:"détails des matchs"};
+ const thresholds={database:36,statistics:36,odds:48,match_details:36};
  const now=Date.now();
- const thresholds={database:36,odds:48,match_details:36};
- const ages=sources.map(x=>{const t=Date.parse(x.item?.updated_at_utc||"");return {key:x.key,item:x.item,age:Number.isFinite(t)?(now-t)/3600000:Infinity}});
- const hasError=sources.some(x=>x.item&&(x.item.status==="error"||Number(x.item.errors||0)>0||Number(x.item.issues||0)>0));
- const missing=sources.some(x=>!x.item||!x.item.updated_at_utc||x.item.status==="unavailable");
- const stale=ages.some(x=>x.age>thresholds[x.key]);
- const oldSources=ages.filter(x=>x.age>thresholds[x.key]).map(x=>x.key);
- let level="ok",label="En ligne",detail="Les collectes suivies sont récentes.";
- if(hasError){level="error";label="Erreur";detail="Une erreur de collecte ou de qualité est signalée."}
- else if(ages.some(x=>x.age>=72)){level="error";label="Erreur";detail="Une source suivie n’a pas été actualisée depuis au moins 72 h."}
- else if(missing||stale||sources.some(x=>x.item&&x.item.status!=="ok")){level="warning";label="À surveiller";detail=missing?"Une source de données est absente ou indisponible.":stale?"Une collecte dépasse son seuil de fraîcheur : "+oldSources.join(", ")+".":"Une source signale un état à vérifier."}
+ const sources=keys.map(key=>{
+  const item=status&&status[key];
+  const timestamp=Date.parse(item?.updated_at_utc||"");
+  const age=Number.isFinite(timestamp)?(now-timestamp)/3600000:Infinity;
+  return {key,item,age};
+ });
+ const database=sources.find(x=>x.key==="database");
+ const criticalError=!database.item||database.item.status==="error"||database.item.status==="unavailable"||Number(database.item.errors||0)>0||database.age>=72;
+ const problems=sources.filter(x=>{
+  const item=x.item;
+  return !item||!item.updated_at_utc||item.status!=="ok"||Number(item.errors||0)>0||Number(item.issues||0)>0||x.age>thresholds[x.key];
+ });
+ let level="ok",label="En ligne",detail="Les sources suivies sont récentes et ne signalent pas d’anomalie.";
+ if(criticalError){
+  level="error";label="Erreur";
+  detail="La source principale (base de données) est absente, en erreur ou trop ancienne.";
+ }else if(problems.length){
+  level="warning";label="À surveiller";
+  detail=problems.map(x=>{
+   const reasons=[];
+   if(!x.item)reasons.push("absente");
+   else{
+    if(!x.item.updated_at_utc)reasons.push("date de mise à jour absente");
+    if(x.item.status&&x.item.status!=="ok")reasons.push("statut "+x.item.status);
+    if(Number(x.item.errors||0)>0)reasons.push(Number(x.item.errors)+" erreur(s)");
+    if(Number(x.item.issues||0)>0)reasons.push(Number(x.item.issues)+" anomalie(s)");
+   }
+   if(x.age>thresholds[x.key])reasons.push("données anciennes");
+   return labels[x.key]+ " : "+(reasons.join(", ")||"à vérifier");
+  }).join(" · ");
+ }
  el.className="api-status"+(level==="warning"?" status-warning":level==="error"?" status-error":"");
  el.title=detail;
  el.innerHTML='<span class="dot"></span><span>État des données : <strong>'+label+'</strong></span>'+icon("info","icon small");
