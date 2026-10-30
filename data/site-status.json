@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T08:29:36.269878+00:00",
+  "generated_at_utc": "2026-10-30T11:01:01.200170+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
@@ -29,10 +29,10 @@
     "detail": "2 événement(s) non associé(s)"
   },
   "match_details": {
-    "status": "warning",
-    "label": "Données anciennes",
-    "updated_at_utc": "2026-10-28T11:24:31.507814+00:00",
-    "matches_processed": 30,
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-30T10:54:57.472362+00:00",
+    "matches_processed": 123,
     "errors": 0,
     "detail": "Collecte PitchAPI sans erreur détectée"
   }
