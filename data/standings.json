@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-29T19:56:25.707007+00:00",
+  "generated_at_utc": "2026-10-30T08:02:58.925384+00:00",
   "source": "Archives de matchs PitchAPI conservées dans le dépôt privé, dernière saison disponible par compétition",
   "method": "Calcul provisoire à partir des matchs terminés et des scores explicites ; 3 points pour une victoire, 1 pour un nul ; tri par points, différence de buts, buts marqués, victoires puis nom.",
   "official_standings": false,
@@ -857,7 +857,7 @@
       "season": "2026/2027",
       "status": "available",
       "reason": null,
-      "matches_counted": 88,
+      "matches_counted": 90,
       "teams": [
         {
           "team_id": "t_3CPHHF",
@@ -930,6 +930,20 @@
           "rank": 5
         },
         {
+          "team_id": "t_1YXpHZ",
+          "team": "Frosinone",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/097fc95a83112a7fa163b200006b2fdffd2823180101ff48cf116ec881a3d0f0.webp",
+          "played": 9,
+          "wins": 5,
+          "draws": 2,
+          "losses": 2,
+          "goals_for": 22,
+          "goals_against": 14,
+          "goal_difference": 8,
+          "points": 17,
+          "rank": 6
+        },
+        {
           "team_id": "t_2toJRF",
           "team": "Napoli",
           "image_url": "https://cdn.pitchapi.dev/images/teams/0755206cdb935eb37cd5bd42b54afc629d486c010c12029c096def4f5227db6f.webp",
@@ -940,20 +954,6 @@
           "goals_for": 17,
           "goals_against": 11,
           "goal_difference": 6,
-          "points": 14,
-          "rank": 6
-        },
-        {
-          "team_id": "t_1YXpHZ",
-          "team": "Frosinone",
-          "image_url": "https://cdn.pitchapi.dev/images/teams/097fc95a83112a7fa163b200006b2fdffd2823180101ff48cf116ec881a3d0f0.webp",
-          "played": 8,
-          "wins": 4,
-          "draws": 2,
-          "losses": 2,
-          "goals_for": 17,
-          "goals_against": 13,
-          "goal_difference": 4,
           "points": 14,
           "rank": 7
         },
@@ -1017,14 +1017,14 @@
           "team_id": "t_0r0zEG",
           "team": "Atalanta",
           "image_url": "https://cdn.pitchapi.dev/images/teams/108eb0aab69689251ffd6d722eff62fd754c93e39c20909a373b26464bbb38be.webp",
-          "played": 8,
+          "played": 9,
           "wins": 3,
-          "draws": 1,
+          "draws": 2,
           "losses": 4,
-          "goals_for": 14,
-          "goals_against": 15,
+          "goals_for": 16,
+          "goals_against": 17,
           "goal_difference": -1,
-          "points": 10,
+          "points": 11,
           "rank": 12
         },
         {
@@ -1045,13 +1045,13 @@
           "team_id": "t_35suku",
           "team": "Lecce",
           "image_url": "https://cdn.pitchapi.dev/images/teams/fd12bd6e2b68f30eee08cea1fb48d9fb43ce61b3e152f980732e2835fb8be9fd.webp",
-          "played": 8,
+          "played": 9,
           "wins": 3,
           "draws": 0,
-          "losses": 5,
-          "goals_for": 9,
-          "goals_against": 14,
-          "goal_difference": -5,
+          "losses": 6,
+          "goals_for": 10,
+          "goals_against": 19,
+          "goal_difference": -9,
           "points": 9,
           "rank": 14
         },
@@ -1098,6 +1098,20 @@
           "rank": 17
         },
         {
+          "team_id": "t_3QzSiW",
+          "team": "Fiorentina",
+          "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp",
+          "played": 9,
+          "wins": 1,
+          "draws": 2,
+          "losses": 6,
+          "goals_for": 11,
+          "goals_against": 21,
+          "goal_difference": -10,
+          "points": 5,
+          "rank": 18
+        },
+        {
           "team_id": "t_2QjZae",
           "team": "Parma",
           "image_url": "https://cdn.pitchapi.dev/images/teams/2bc9e6c9d46925f545749ecd287f49bb9ab6671e48084d1ad6093334b4df069d.webp",
@@ -1109,20 +1123,6 @@
           "goals_against": 15,
           "goal_difference": -10,
           "points": 5,
-          "rank": 18
-        },
-        {
-          "team_id": "t_3QzSiW",
-          "team": "Fiorentina",
-          "image_url": "https://cdn.pitchapi.dev/images/teams/52f92c4c2ae57c14bc3d2ead58a2f899ab2fa12bebb91e6f627af2b99608dfce.webp",
-          "played": 8,
-          "wins": 1,
-          "draws": 1,
-          "losses": 6,
-          "goals_for": 9,
-          "goals_against": 19,
-          "goal_difference": -10,
-          "points": 4,
           "rank": 19
         },
         {
