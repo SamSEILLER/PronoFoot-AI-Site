@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T08:02:59.870659+00:00",
+  "generated_at_utc": "2026-10-30T08:29:36.269878+00:00",
   "database": {
     "status": "ok",
     "label": "À jour",
@@ -17,16 +17,16 @@
     "detail": "0 anomalie(s) structurelle(s)"
   },
   "odds": {
-    "status": "warning",
-    "label": "À vérifier",
-    "updated_at_utc": "2026-10-30T08:01:23.047725+00:00",
+    "status": "ok",
+    "label": "À jour",
+    "updated_at_utc": "2026-10-30T08:28:02.999560+00:00",
     "matched_events": 49,
-    "events_with_odds": 27,
-    "errors": 1,
-    "rate_limit_reached": true,
+    "events_with_odds": 49,
+    "errors": 0,
+    "rate_limit_reached": false,
     "unmatched": 2,
     "without_markets": 0,
-    "detail": "certaines rencontres rapprochées sans cote; 2 événement(s) non associé(s)"
+    "detail": "2 événement(s) non associé(s)"
   },
   "match_details": {
     "status": "warning",

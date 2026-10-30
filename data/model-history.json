@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T08:02:59.086713+00:00",
+  "generated_at_utc": "2026-10-30T08:29:35.303097+00:00",
   "versions": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
@@ -126,9 +126,9 @@
       "model": "poisson_baseline_v1",
       "analysis_version_hash": "f8c3c2d0deb9",
       "first_seen_utc": "2026-10-29T14:53:04.020815+00:00",
-      "last_evaluated_utc": "2026-10-30T08:02:59.086713+00:00",
-      "source_commit": "9f0312a24fb2bed335859417b0be130aa9f5313d",
-      "analysis_start_utc": "2026-10-30T08:01:37+00:00",
+      "last_evaluated_utc": "2026-10-30T08:29:35.303097+00:00",
+      "source_commit": "4744e6a54fef6722ade92e323d2b8b2456273180",
+      "analysis_start_utc": "2026-10-30T08:28:17+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,
