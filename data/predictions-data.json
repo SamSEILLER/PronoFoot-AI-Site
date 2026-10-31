@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T06:54:29.120254+00:00",
+  "generated_at_utc": "2026-10-31T07:46:17.692059+00:00",
   "model": "poisson_baseline_v1",
   "engine_version": "V1.1",
   "engine_version_notes": "Seuil minimal abaissé à 1 match d’historique exploitable par équipe ; baseline Poisson expérimentale avec régularisation.",
@@ -7,7 +7,7 @@
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
-  "analysis_start_utc": "2026-10-31T06:54:11+00:00",
+  "analysis_start_utc": "2026-10-31T07:46:00+00:00",
   "version_backtest": {
     "method": "walk_forward_chronological_since_analysis_change",
     "evaluated_matches": 0,
@@ -436034,10 +436034,10 @@
   "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives.",
   "analysis_version": "poisson_baseline_v1-f8c3c2d0deb9",
   "analysis_version_hash": "f8c3c2d0deb9",
-  "analysis_version_since_utc": "2026-10-31T06:54:11+00:00",
+  "analysis_version_since_utc": "2026-10-31T07:46:00+00:00",
   "first_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
   "latest_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
-  "analysis_source_commit": "15fce48b4a947f21b5edf24e50fef67ebf4ec10c",
+  "analysis_source_commit": "b1c3f96c3f03bba5e0991df33b730b809d76696c",
   "model_history": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
@@ -436164,9 +436164,9 @@
       "model": "poisson_baseline_v1",
       "analysis_version_hash": "f8c3c2d0deb9",
       "first_seen_utc": "2026-10-29T14:53:04.020815+00:00",
-      "last_evaluated_utc": "2026-10-31T06:55:20.625189+00:00",
-      "source_commit": "15fce48b4a947f21b5edf24e50fef67ebf4ec10c",
-      "analysis_start_utc": "2026-10-31T06:54:11+00:00",
+      "last_evaluated_utc": "2026-10-31T07:46:57.761762+00:00",
+      "source_commit": "b1c3f96c3f03bba5e0991df33b730b809d76696c",
+      "analysis_start_utc": "2026-10-31T07:46:00+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,
