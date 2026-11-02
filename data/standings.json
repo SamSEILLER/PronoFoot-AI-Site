@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-02T05:59:34.761189+00:00",
+  "generated_at_utc": "2026-11-02T06:05:26.946222+00:00",
   "source": "Archives de matchs PitchAPI conservées dans le dépôt privé, dernière saison disponible par compétition",
   "method": "Calcul provisoire à partir des matchs terminés et des scores explicites ; 3 points pour une victoire, 1 pour un nul ; tri par points, différence de buts, buts marqués, victoires puis nom.",
   "official_standings": false,

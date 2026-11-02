@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-02T05:58:56.000679+00:00",
+  "generated_at_utc": "2026-11-02T06:04:47.232465+00:00",
   "model": "poisson_baseline_v1",
   "engine_version": "V1.1",
   "engine_version_notes": "Seuil minimal abaissé à 1 match d’historique exploitable par équipe ; baseline Poisson expérimentale avec régularisation.",
@@ -7,7 +7,7 @@
   "publication_approved": false,
   "evaluation_start_utc": "2026-02-21T19:30:00+00:00",
   "evaluation_status": "REVIEW_REQUIRED",
-  "analysis_start_utc": "2026-11-02T05:58:15+00:00",
+  "analysis_start_utc": "2026-11-02T05:58:45+00:00",
   "version_backtest": {
     "method": "walk_forward_chronological_since_analysis_change",
     "evaluated_matches": 0,
@@ -47509,7 +47509,7 @@
   "recent_results": [
     {
       "id": "us-mls:m_4ISBoI",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-02T02:45:00Z",
@@ -47518,12 +47518,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.43921422,
-        "draw": 0.2324839,
-        "away": 0.32830188
+        "home": 0.43931862,
+        "draw": 0.23246453,
+        "away": 0.32821685
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -47532,9 +47532,9 @@
         "display": "3–1"
       },
       "correct": true,
-      "history_matches": 1542,
-      "home_expected_goals": 1.727,
-      "away_expected_goals": 1.4669,
+      "history_matches": 1556,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.8,
@@ -49731,12 +49731,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_3ZI50v",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-02T01:30:00Z",
@@ -49745,12 +49745,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.49672571,
-        "draw": 0.23095307,
-        "away": 0.27232122
+        "home": 0.49685521,
+        "draw": 0.23092503,
+        "away": 0.27221976
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -49759,9 +49759,9 @@
         "display": "1–3"
       },
       "correct": false,
-      "history_matches": 1542,
-      "home_expected_goals": 1.7998,
-      "away_expected_goals": 1.2783,
+      "history_matches": 1555,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.65,
@@ -51958,12 +51958,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_32DOrP",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-02T00:00:00Z",
@@ -51972,12 +51972,12 @@
       "predicted_outcome": "away",
       "predicted_label": "2",
       "probabilities": {
-        "home": 0.34338697,
-        "draw": 0.23083574,
-        "away": 0.42577729
+        "home": 0.34353106,
+        "draw": 0.23083314,
+        "away": 0.4256358
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -51986,9 +51986,9 @@
         "display": "1–2"
       },
       "correct": true,
-      "history_matches": 1542,
-      "home_expected_goals": 1.5312,
-      "away_expected_goals": 1.7258,
+      "history_matches": 1554,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 2.65,
@@ -54185,12 +54185,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_0TL8RX",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-01T21:30:00Z",
@@ -54199,12 +54199,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.44642393,
-        "draw": 0.23940045,
-        "away": 0.31417562
+        "home": 0.446551,
+        "draw": 0.23938496,
+        "away": 0.31406404
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -54213,9 +54213,9 @@
         "display": "3–1"
       },
       "correct": true,
-      "history_matches": 1542,
-      "home_expected_goals": 1.6581,
-      "away_expected_goals": 1.3557,
+      "history_matches": 1552,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 2.23,
@@ -56412,12 +56412,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_2JCuPI",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-01T21:30:00Z",
@@ -56426,12 +56426,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.53521734,
-        "draw": 0.23056192,
-        "away": 0.23422074
+        "home": 0.53534033,
+        "draw": 0.23053415,
+        "away": 0.23412552
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -56440,9 +56440,9 @@
         "display": "3–2"
       },
       "correct": true,
-      "history_matches": 1542,
-      "home_expected_goals": 1.81,
-      "away_expected_goals": 1.12,
+      "history_matches": 1552,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.45,
@@ -58743,12 +58743,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "pt-primeira-liga:m_3oWCl5",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-11-01T20:30:00Z",
@@ -58757,12 +58757,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.45134189,
-        "draw": 0.2519084,
-        "away": 0.29674971
+        "home": 0.4514082,
+        "draw": 0.25190881,
+        "away": 0.29668299
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -58771,18 +58771,18 @@
         "display": "3–0"
       },
       "correct": true,
-      "history_matches": 685,
-      "home_expected_goals": 1.5383,
-      "away_expected_goals": 1.1992,
+      "history_matches": 691,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.75,
-        "draw": 3.5,
-        "away": 4.8,
+        "home": 1.7,
+        "draw": 3.55,
+        "away": 5.2,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T04:24:30.362740+00:00",
-        "source_updated_at": "2026-10-25T20:51:07.731Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T18:14:13.884Z"
       },
       "odds_markets": [
         {
@@ -60203,12 +60203,12 @@
           "source_market_name": "Team Total Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_41Zlyp",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "MLS",
       "competition_id": "us-mls",
       "kickoff": "2026-11-01T20:30:00Z",
@@ -60217,12 +60217,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.50202795,
-        "draw": 0.23349887,
-        "away": 0.26447318
+        "home": 0.50210015,
+        "draw": 0.23349038,
+        "away": 0.26440947
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -60231,18 +60231,18 @@
         "display": "5–1"
       },
       "correct": true,
-      "history_matches": 1542,
-      "home_expected_goals": 1.7713,
-      "away_expected_goals": 1.2252,
+      "history_matches": 1551,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.52,
-        "draw": 4.5,
+        "home": 1.54,
+        "draw": 4.4,
         "away": 5.2,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T04:24:30.362740+00:00",
-        "source_updated_at": "2026-10-25T22:27:42.777Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-11-01T04:08:29.656Z"
       },
       "odds_markets": [
         {
@@ -62443,12 +62443,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "es-la-liga:m_34Q5mN",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-11-01T20:00:00Z",
@@ -62457,12 +62457,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.4849797,
-        "draw": 0.25798466,
-        "away": 0.25703564
+        "home": 0.48501315,
+        "draw": 0.2579633,
+        "away": 0.25702355
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -62471,18 +62471,18 @@
         "display": "2–1"
       },
       "correct": true,
-      "history_matches": 859,
-      "home_expected_goals": 1.514,
-      "away_expected_goals": 1.0274,
+      "history_matches": 867,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.0,
+        "home": 2.15,
         "draw": 3.55,
-        "away": 3.6,
+        "away": 3.25,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T04:24:30.362740+00:00",
-        "source_updated_at": "2026-10-21T13:51:05.935Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-11-01T05:54:51.693Z"
       },
       "odds_markets": [
         {
@@ -65775,12 +65775,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "fr-ligue-1:m_22n8XS",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-11-01T19:45:00Z",
@@ -65789,12 +65789,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.48192732,
-        "draw": 0.22732393,
-        "away": 0.29074874
+        "home": 0.48223196,
+        "draw": 0.22723894,
+        "away": 0.29052911
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -65803,18 +65803,18 @@
         "display": "2–0"
       },
       "correct": true,
-      "history_matches": 684,
-      "home_expected_goals": 1.837,
-      "away_expected_goals": 1.3847,
+      "history_matches": 691,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.82,
+        "home": 1.89,
         "draw": 3.85,
-        "away": 3.8,
+        "away": 3.55,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-24T17:45:31.678Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T18:43:43.745Z"
       },
       "odds_markets": [
         {
@@ -68782,12 +68782,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "it-serie-a:m_0cwaNs",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-11-01T19:45:00Z",
@@ -68796,12 +68796,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.40056705,
-        "draw": 0.27369158,
-        "away": 0.32574137
+        "home": 0.40078143,
+        "draw": 0.27360062,
+        "away": 0.32561795
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -68810,9 +68810,9 @@
         "display": "2–0"
       },
       "correct": true,
-      "history_matches": 848,
-      "home_expected_goals": 1.2917,
-      "away_expected_goals": 1.1365,
+      "history_matches": 857,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 2.32,
@@ -71893,12 +71893,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "be-first-division-a:m_20rWJL",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-11-01T18:15:00Z",
@@ -71907,12 +71907,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.5165491,
-        "draw": 0.24429186,
-        "away": 0.23915904
+        "home": 0.51656839,
+        "draw": 0.24426024,
+        "away": 0.23917137
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -71921,18 +71921,18 @@
         "display": "5–2"
       },
       "correct": true,
-      "history_matches": 705,
-      "home_expected_goals": 1.6569,
-      "away_expected_goals": 1.0454,
+      "history_matches": 713,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.42,
+        "home": 1.45,
         "draw": 4.5,
-        "away": 6.75,
+        "away": 6.4,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T18:52:58.245Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T12:15:51.314Z"
       },
       "odds_markets": [
         {
@@ -73808,12 +73808,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "pt-primeira-liga:m_38QZjU",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-11-01T18:00:00Z",
@@ -73822,12 +73822,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.44464428,
-        "draw": 0.25916178,
-        "away": 0.29619393
+        "home": 0.44501301,
+        "draw": 0.25913963,
+        "away": 0.29584736
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -73836,18 +73836,18 @@
         "display": "2–1"
       },
       "correct": true,
-      "history_matches": 685,
-      "home_expected_goals": 1.4662,
-      "away_expected_goals": 1.1473,
+      "history_matches": 689,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.08,
-        "draw": 3.3,
-        "away": 3.5,
+        "home": 1.82,
+        "draw": 3.4,
+        "away": 4.35,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-26T03:41:15.549Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T11:11:24.388Z"
       },
       "odds_markets": [
         {
@@ -75216,12 +75216,12 @@
           "source_market_name": "Team Total Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "pt-primeira-liga:m_2B05zd",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-11-01T18:00:00Z",
@@ -75230,12 +75230,12 @@
       "predicted_outcome": "away",
       "predicted_label": "2",
       "probabilities": {
-        "home": 0.34335544,
-        "draw": 0.26604563,
-        "away": 0.39059894
+        "home": 0.34373572,
+        "draw": 0.26607769,
+        "away": 0.39018659
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -75244,18 +75244,18 @@
         "display": "0–2"
       },
       "correct": true,
-      "history_matches": 685,
-      "home_expected_goals": 1.2288,
-      "away_expected_goals": 1.329,
+      "history_matches": 689,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 3.05,
-        "draw": 3.05,
-        "away": 2.43,
+        "home": 3.3,
+        "draw": 3.15,
+        "away": 2.23,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T18:03:30.324Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-29T08:26:37.385Z"
       },
       "odds_markets": [
         {
@@ -76624,12 +76624,12 @@
           "source_market_name": "Team Total Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "be-first-division-a:m_4CxQAt",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-11-01T17:30:00Z",
@@ -76638,12 +76638,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.47347544,
-        "draw": 0.26395988,
-        "away": 0.26256469
+        "home": 0.47334436,
+        "draw": 0.26387961,
+        "away": 0.26277603
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -76652,18 +76652,18 @@
         "display": "2–0"
       },
       "correct": true,
-      "history_matches": 705,
-      "home_expected_goals": 1.4555,
-      "away_expected_goals": 1.0117,
+      "history_matches": 712,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": null,
       "odds_markets": [],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "es-la-liga:m_4fAP3c",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-11-01T17:30:00Z",
@@ -76672,12 +76672,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.47876368,
-        "draw": 0.24901102,
-        "away": 0.2722253
+        "home": 0.47886456,
+        "draw": 0.24896348,
+        "away": 0.27217196
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -76686,18 +76686,18 @@
         "display": "0–1"
       },
       "correct": false,
-      "history_matches": 859,
-      "home_expected_goals": 1.5917,
-      "away_expected_goals": 1.1376,
+      "history_matches": 866,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.5,
-        "draw": 3.3,
-        "away": 2.8,
+        "home": 2.35,
+        "draw": 3.35,
+        "away": 2.95,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T04:18:24.409Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-29T22:49:44.407Z"
       },
       "odds_markets": [
         {
@@ -79821,12 +79821,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "it-serie-a:m_1Z3qMe",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-11-01T17:00:00Z",
@@ -79835,12 +79835,12 @@
       "predicted_outcome": "away",
       "predicted_label": "2",
       "probabilities": {
-        "home": 0.31655342,
-        "draw": 0.28511238,
-        "away": 0.3983342
+        "home": 0.31682159,
+        "draw": 0.28503647,
+        "away": 0.39814194
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -79849,18 +79849,18 @@
         "display": "1–2"
       },
       "correct": true,
-      "history_matches": 848,
-      "home_expected_goals": 1.0497,
-      "away_expected_goals": 1.2143,
+      "history_matches": 856,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": null,
       "odds_markets": [],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "de-bundesliga:m_0ryKWG",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-11-01T16:30:00Z",
@@ -79869,12 +79869,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.54402418,
-        "draw": 0.21882785,
-        "away": 0.23714796
+        "home": 0.54391053,
+        "draw": 0.2188638,
+        "away": 0.23722566
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -79883,18 +79883,18 @@
         "display": "3–1"
       },
       "correct": true,
-      "history_matches": 674,
-      "home_expected_goals": 1.9614,
-      "away_expected_goals": 1.2296,
+      "history_matches": 682,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.57,
-        "draw": 4.5,
-        "away": 4.75,
+        "home": 1.53,
+        "draw": 4.4,
+        "away": 5.25,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-24T14:51:55.128Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T12:22:14.646Z"
       },
       "odds_markets": [
         {
@@ -82719,12 +82719,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "gb-premier-league:m_1cQmo2",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Premier League",
       "competition_id": "gb-premier-league",
       "kickoff": "2026-11-01T16:30:00Z",
@@ -82733,12 +82733,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.39308243,
-        "draw": 0.25809548,
-        "away": 0.34882209
+        "home": 0.39328793,
+        "draw": 0.25811443,
+        "away": 0.34859764
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -82747,18 +82747,18 @@
         "display": "0–1"
       },
       "correct": false,
-      "history_matches": 840,
-      "home_expected_goals": 1.3956,
-      "away_expected_goals": 1.2996,
+      "history_matches": 848,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 3.15,
-        "draw": 3.75,
-        "away": 2.2,
+        "home": 2.88,
+        "draw": 3.35,
+        "away": 2.48,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T23:35:58.61Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-11-01T03:23:05.129Z"
       },
       "odds_markets": [
         {
@@ -85934,12 +85934,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "fr-ligue-1:m_1IGE7o",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-11-01T16:15:00Z",
@@ -85948,12 +85948,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.54724042,
-        "draw": 0.23760893,
-        "away": 0.21515064
+        "home": 0.54742352,
+        "draw": 0.23750992,
+        "away": 0.21506656
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -85962,9 +85962,9 @@
         "display": "2–0"
       },
       "correct": true,
-      "history_matches": 684,
-      "home_expected_goals": 1.7262,
-      "away_expected_goals": 0.9876,
+      "history_matches": 689,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.38,
@@ -88889,12 +88889,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "fr-ligue-1:m_18Uw0k",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-11-01T16:15:00Z",
@@ -88903,12 +88903,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.42341728,
-        "draw": 0.23760818,
-        "away": 0.33897454
+        "home": 0.42366959,
+        "draw": 0.23752333,
+        "away": 0.33880708
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -88917,18 +88917,18 @@
         "display": "3–1"
       },
       "correct": true,
-      "history_matches": 684,
-      "home_expected_goals": 1.6441,
-      "away_expected_goals": 1.4492,
+      "history_matches": 689,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.3,
-        "draw": 3.55,
-        "away": 2.8,
+        "home": 2.28,
+        "draw": 3.45,
+        "away": 2.9,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-23T10:32:16.079Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T16:13:58.09Z"
       },
       "odds_markets": [
         {
@@ -91584,12 +91584,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "pt-primeira-liga:m_1XcT1U",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Primeira Liga",
       "competition_id": "pt-primeira-liga",
       "kickoff": "2026-11-01T15:30:00Z",
@@ -91598,12 +91598,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.44077875,
-        "draw": 0.27002258,
-        "away": 0.28919866
+        "home": 0.44088201,
+        "draw": 0.27000031,
+        "away": 0.28911768
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -91612,9 +91612,9 @@
         "display": "1–0"
       },
       "correct": true,
-      "history_matches": 685,
-      "home_expected_goals": 1.3755,
-      "away_expected_goals": 1.0597,
+      "history_matches": 688,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.75,
@@ -92992,12 +92992,12 @@
           "source_market_name": "Team Total Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "es-la-liga:m_3Zye1t",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-11-01T15:15:00Z",
@@ -93006,12 +93006,12 @@
       "predicted_outcome": "away",
       "predicted_label": "2",
       "probabilities": {
-        "home": 0.37188525,
-        "draw": 0.24325035,
-        "away": 0.3848644
+        "home": 0.37235905,
+        "draw": 0.24319241,
+        "away": 0.38444854
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -93020,18 +93020,18 @@
         "display": "0–3"
       },
       "correct": true,
-      "history_matches": 859,
-      "home_expected_goals": 1.4822,
-      "away_expected_goals": 1.5117,
+      "history_matches": 865,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 9.5,
-        "draw": 6.5,
-        "away": 1.26,
+        "home": 12.0,
+        "draw": 7.5,
+        "away": 1.19,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T04:18:24.409Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T22:10:26.982Z"
       },
       "odds_markets": [
         {
@@ -96766,12 +96766,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "be-first-division-a:m_3bo24D",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-11-01T15:00:00Z",
@@ -96780,12 +96780,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.49890403,
-        "draw": 0.24752741,
-        "away": 0.25356856
+        "home": 0.49890773,
+        "draw": 0.24750205,
+        "away": 0.25359021
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "away",
       "actual_score": {
@@ -96794,18 +96794,18 @@
         "display": "1–2"
       },
       "correct": false,
-      "history_matches": 705,
-      "home_expected_goals": 1.6185,
-      "away_expected_goals": 1.0799,
+      "history_matches": 711,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": null,
       "odds_markets": [],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "de-bundesliga:m_1cglVW",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Bundesliga",
       "competition_id": "de-bundesliga",
       "kickoff": "2026-11-01T14:30:00Z",
@@ -96814,12 +96814,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.46287665,
-        "draw": 0.24068135,
-        "away": 0.296442
+        "home": 0.46276826,
+        "draw": 0.24069879,
+        "away": 0.29653294
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "draw",
       "actual_score": {
@@ -96828,18 +96828,18 @@
         "display": "1–1"
       },
       "correct": false,
-      "history_matches": 674,
-      "home_expected_goals": 1.6629,
-      "away_expected_goals": 1.2853,
+      "history_matches": 681,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.63,
-        "draw": 3.6,
-        "away": 2.43,
+        "home": 2.6,
+        "draw": 3.45,
+        "away": 2.55,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T13:08:00.111Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T12:18:36.459Z"
       },
       "odds_markets": [
         {
@@ -99521,12 +99521,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "fr-ligue-1:m_0h9fte",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Ligue 1",
       "competition_id": "fr-ligue-1",
       "kickoff": "2026-11-01T14:00:00Z",
@@ -99535,12 +99535,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.51947714,
-        "draw": 0.22772941,
-        "away": 0.25279345
+        "home": 0.51951025,
+        "draw": 0.22769456,
+        "away": 0.25279518
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -99549,9 +99549,9 @@
         "display": "5–1"
       },
       "correct": true,
-      "history_matches": 684,
-      "home_expected_goals": 1.8461,
-      "away_expected_goals": 1.2243,
+      "history_matches": 688,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.73,
@@ -102359,12 +102359,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "it-serie-a:m_1PHYqG",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-11-01T14:00:00Z",
@@ -102373,12 +102373,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.47292353,
-        "draw": 0.25166024,
-        "away": 0.27541622
+        "home": 0.47306453,
+        "draw": 0.25158075,
+        "away": 0.27535472
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -102387,9 +102387,9 @@
         "display": "2–1"
       },
       "correct": true,
-      "history_matches": 848,
-      "home_expected_goals": 1.5619,
-      "away_expected_goals": 1.1305,
+      "history_matches": 854,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.43,
@@ -105613,12 +105613,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "it-serie-a:m_2mVrHa",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-11-01T14:00:00Z",
@@ -105627,12 +105627,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.48115217,
-        "draw": 0.24500097,
-        "away": 0.27384686
+        "home": 0.52305575,
+        "draw": 0.23156796,
+        "away": 0.24537629
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -105641,9 +105641,9 @@
         "display": "2–0"
       },
       "correct": true,
-      "history_matches": 848,
-      "home_expected_goals": 1.6333,
-      "away_expected_goals": 1.1719,
+      "history_matches": 854,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 2.06,
@@ -109127,12 +109127,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "es-la-liga:m_3CY7K4",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "La Liga",
       "competition_id": "es-la-liga",
       "kickoff": "2026-11-01T13:00:00Z",
@@ -109141,12 +109141,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.42382376,
-        "draw": 0.27085201,
-        "away": 0.30532423
+        "home": 0.42395475,
+        "draw": 0.27082204,
+        "away": 0.30522321
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -109155,18 +109155,18 @@
         "display": "3–1"
       },
       "correct": true,
-      "history_matches": 859,
-      "home_expected_goals": 1.3473,
-      "away_expected_goals": 1.1003,
+      "history_matches": 864,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 2.88,
-        "draw": 2.95,
-        "away": 2.7,
+        "home": 3.15,
+        "draw": 3.0,
+        "away": 2.45,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-25T18:22:40.392Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T20:29:30.429Z"
       },
       "odds_markets": [
         {
@@ -112251,12 +112251,12 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "be-first-division-a:m_0A4Iq5",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Belgian Pro League",
       "competition_id": "be-first-division-a",
       "kickoff": "2026-11-01T12:30:00Z",
@@ -112265,12 +112265,12 @@
       "predicted_outcome": "away",
       "predicted_label": "2",
       "probabilities": {
-        "home": 0.3626564,
-        "draw": 0.26599448,
-        "away": 0.37134912
+        "home": 0.36264843,
+        "draw": 0.26596547,
+        "away": 0.3713861
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -112279,18 +112279,18 @@
         "display": "2–1"
       },
       "correct": false,
-      "history_matches": 705,
-      "home_expected_goals": 1.2733,
-      "away_expected_goals": 1.2918,
+      "history_matches": 710,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
-        "home": 1.97,
-        "draw": 3.7,
-        "away": 3.4,
+        "home": 2.06,
+        "draw": 3.55,
+        "away": 3.25,
         "bookmaker": "Unibet",
         "source": "Odds-API.io",
-        "fetched_at": "2026-10-26T06:00:14.911712+00:00",
-        "source_updated_at": "2026-10-26T04:18:39.101Z"
+        "fetched_at": "2026-11-01T05:58:20.335421+00:00",
+        "source_updated_at": "2026-10-31T18:40:09.694Z"
       },
       "odds_markets": [
         {
@@ -114387,12 +114387,12 @@
           "source_market_name": "Total Shots on Target Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "it-serie-a:m_3MjGnF",
-      "prediction_created_at": "2026-10-29T14:06:16.154240+00:00",
+      "prediction_created_at": null,
       "competition": "Serie A",
       "competition_id": "it-serie-a",
       "kickoff": "2026-11-01T11:30:00Z",
@@ -114401,12 +114401,12 @@
       "predicted_outcome": "home",
       "predicted_label": "1",
       "probabilities": {
-        "home": 0.54639053,
-        "draw": 0.24123935,
-        "away": 0.21237011
+        "home": 0.54652656,
+        "draw": 0.2411175,
+        "away": 0.21235594
       },
       "engine_version": "V1.1",
-      "prediction_status": "ESTIMATE_ONLY",
+      "prediction_status": "NO BET",
       "prediction_reason": null,
       "actual_outcome": "home",
       "actual_score": {
@@ -114415,9 +114415,9 @@
         "display": "1–0"
       },
       "correct": true,
-      "history_matches": 848,
-      "home_expected_goals": 1.6879,
-      "away_expected_goals": 0.9536,
+      "history_matches": 853,
+      "home_expected_goals": null,
+      "away_expected_goals": null,
       "status": "finished",
       "odds_1x2": {
         "home": 1.28,
@@ -117901,8 +117901,8 @@
           "source_market_name": "Total Shots Home"
         }
       ],
-      "prediction_snapshot_available": true,
-      "prediction_model_version": "poisson_baseline_v1-617d458edd7b"
+      "prediction_snapshot_available": false,
+      "prediction_model_version": null
     },
     {
       "id": "us-mls:m_3WwDHh",
@@ -540543,10 +540543,10 @@
   "note": "Estimations expérimentales, non calibrées et non approuvées pour publication comme pronostics validés. Les scores affichés sont les résultats finaux présents dans les archives.",
   "analysis_version": "poisson_baseline_v1-f8c3c2d0deb9",
   "analysis_version_hash": "f8c3c2d0deb9",
-  "analysis_version_since_utc": "2026-11-02T05:58:15+00:00",
+  "analysis_version_since_utc": "2026-11-02T05:58:45+00:00",
   "first_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
   "latest_archived_prediction_at_utc": "2026-10-29T14:06:16.154240+00:00",
-  "analysis_source_commit": "701ae0dbf5a2c485504fea39452244e8edf77061",
+  "analysis_source_commit": "3b5fe184a164148d8622c4572edb1f14fd620780",
   "model_history": [
     {
       "version_id": "poisson_baseline_v1-bb49a8eea007",
@@ -540673,9 +540673,9 @@
       "model": "poisson_baseline_v1",
       "analysis_version_hash": "f8c3c2d0deb9",
       "first_seen_utc": "2026-10-29T14:53:04.020815+00:00",
-      "last_evaluated_utc": "2026-11-02T05:59:34.943390+00:00",
-      "source_commit": "701ae0dbf5a2c485504fea39452244e8edf77061",
-      "analysis_start_utc": "2026-11-02T05:58:15+00:00",
+      "last_evaluated_utc": "2026-11-02T06:05:27.153619+00:00",
+      "source_commit": "3b5fe184a164148d8622c4572edb1f14fd620780",
+      "analysis_start_utc": "2026-11-02T05:58:45+00:00",
       "evaluated_matches": 0,
       "skipped_matches": 0,
       "brier_score": null,
